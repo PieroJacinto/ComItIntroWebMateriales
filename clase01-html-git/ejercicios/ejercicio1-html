@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1 - Completar</title>
+</head>
+<body>
+    <!-- EJERCICIO EN CLASE: Los estudiantes completan esto -->
+    
+    <header>
+        <h1><!--  pongan el título de su sitio --></h1>
+        <nav>
+            <!--  agreguen la lista de navegación -->
+        </nav>
+    </header>
+
+    <main>
+        <h2><!--  pongan un saludo --></h2>
+        <p><!--  escriban su presentación --></p>
+        
+        <!--  agreguen una lista de 3 cosas sobre ellos -->
+        
+    </main>
+
+    <footer>
+        <!--  pongan su nombre y año -->
+    </footer>
+</body>
+</html>

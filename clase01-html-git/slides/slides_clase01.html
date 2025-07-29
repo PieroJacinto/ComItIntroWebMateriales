@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 1: HTML Básico + Git</title>
+    <link rel="stylesheet" href="./slides_clase1.css">
+</head>
+<body>
+    <div class="slideshow-container">
+        
+        <!-- Slide 1: Bienvenida -->
+        <div class="slide active">
+            <div class="big-emoji">🚀</div>
+            <h1>BIENVENIDOS AL CURSO</h1>
+            <h2>Introducción al Desarrollo Web</h2>
+            <p>👋 ¡Hola! Soy Piero Jacinto </p>
+            <p>🎯 Objetivo: <span class="highlight">Crear tu sitio web personal completo</span></p>
+            <p>⏰ 9 clases de 3 horas cada una</p>
+            <p>🔥 70% práctica, 30% teoría</p>
+        </div>
+
+        <!-- Slide 2: ¿Qué vamos a lograr? -->
+        <div class="slide">
+            <h2>🎯 ¿QUÉ VAS A LOGRAR?</h2>
+            <p>Al final del curso tendrás:</p>
+            <ul class="check-list">
+                <li>🌐 Tu sitio web personal completo</li>
+                <li>📱 Funciona en móviles y desktop</li>
+                <li>⚡ Con interactividad JavaScript</li>
+                <li>🎨 Diseño profesional y atractivo</li>
+                <li>🐙 Portfolio en GitHub</li>
+                <li>💪 Confianza para crear páginas web</li>
+            </ul>
+            <p><span class="highlight">🚀 De cero a desarrollador web en 4.5 semanas</span></p>
+        </div>
+
+        <!-- Slide 3: Agenda de hoy -->
+        <div class="slide">
+            <h2>📋 AGENDA DE HOY (3 HORAS)</h2>
+            <ul>
+                <li><span class="highlight">🚀 Introducción + Setup (45 min)</span>
+                    <ul>
+                        <li>Bienvenida al curso</li>
+                        <li>Estructura de repositorios</li>
+                        <li>Setup de herramientas</li>
+                    </ul>
+                </li>
+                <li><span class="highlight">🏗️ HTML Básico (75 min)</span>
+                    <ul>
+                        <li>Estructura básica</li>
+                        <li>Etiquetas esenciales</li>
+                        <li>Formularios</li>
+                    </ul>
+                </li>
+                <li><span class="highlight">🔧 Git y GitHub (75 min)</span>
+                    <ul>
+                        <li>Conceptos básicos</li>
+                        <li>Crear repositorio personal</li>
+                        <li>Workflow completo</li>
+                    </ul>
+                </li>
+                <li><span class="highlight">🎯 Proyecto Personal (15 min)</span></li>
+            </ul>
+        </div>
+
+        <!-- Slide 4: Estructura de Trabajo -->
+        <div class="slide">
+            <h2>📚 ESTRUCTURA DE TRABAJO</h2>
+            <p><span class="highlight">Vamos a trabajar con 2 repositorios:</span></p>
+            
+            <div class="repo-box">
+                <h3>📚 Repositorio Compartido</h3>
+                <p><strong>intro-desarrollo-web-materiales</strong></p>
+                <p>✅ Ejemplos, ejercicios, recursos</p>
+                <p>✅ Solo haces <code>git pull</code> para actualizar</p>
+                <p>⚠️ NO puedes hacer push aquí</p>
+            </div>
+
+            <div class="repo-box">
+                <h3>👨‍🎓 Tu Repositorio Personal</h3>
+                <p><strong>mi-proyecto-web</strong> (o el nombre que elijas)</p>
+                <p>✅ TU sitio web personal</p>
+                <p>✅ Aquí haces push de tu trabajo</p>
+                <p>✅ Esto es lo que se evalúa</p>
+            </div>
+        </div>
+
+        <!-- Slide 5: ¿Qué es HTML? -->
+        <div class="slide">
+            <h2>🏗️ HTML = HYPERTEXT MARKUP LANGUAGE</h2>
+            <p>📝 HTML es el <span class="highlight">ESQUELETO</span> de la web</p>
+            <ul>
+                <li>🧱 HTML = Estructura</li>
+                <li>🎨 CSS = Diseño</li>
+                <li>⚡ JavaScript = Funcionalidad</li>
+            </ul>
+            <p>📱 Como construir una casa:</p>
+            <ul>
+                <li>HTML = Paredes, techo, puertas</li>
+                <li>CSS = Pintura, decoración</li>
+                <li>JS = Electricidad, plomería</li>
+            </ul>
+        </div>
+
+        <!-- Slide 6: Anatomía HTML -->
+        <div class="slide">
+            <h2>🔬 ANATOMÍA DE UNA ETIQUETA HTML</h2>
+            <div class="code">&lt;h1&gt;Mi título&lt;/h1&gt;
+  ↑      ↑     ↑
+Apertura|  Cierre
+     Contenido
+
+&lt;img src="foto.jpg" alt="Mi foto"&gt;
+     ↑              ↑
+  Atributo      Atributo</div>
+            <p>💡 <span class="highlight">Siempre abrir y cerrar etiquetas</span></p>
+            <p>🔗 Atributos dan información extra</p>
+        </div>
+
+        <!-- Slide 7: Estructura básica HTML -->
+        <div class="slide">
+            <h2>🏠 ESTRUCTURA BÁSICA HTML</h2>
+            <div class="code">&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Mi Página&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- Tu contenido aquí --&gt;
+&lt;/body&gt;
+&lt;/html&gt;</div>
+            <p>🧠 <strong>head</strong> = información para el navegador</p>
+            <p>👁️ <strong>body</strong> = lo que ve el usuario</p>
+        </div>
+
+        <!-- Slide 8: Etiquetas esenciales -->
+        <div class="slide">
+            <h2>🏷️ ETIQUETAS QUE USAMOS HOY</h2>
+            <div class="two-column">
+                <div>
+                    <h3>🏠 Estructura:</h3>
+                    <div class="code">&lt;header&gt; &lt;main&gt; &lt;footer&gt;</div>
+                    <h3>📰 Contenido:</h3>
+                    <div class="code">&lt;h1&gt; &lt;h2&gt; &lt;p&gt; &lt;ul&gt; &lt;li&gt;</div>
+                </div>
+                <div>
+                    <h3>🔗 Enlaces:</h3>
+                    <div class="code">&lt;a href="..."&gt;Enlace&lt;/a&gt;</div>
+                    <h3>🖼️ Imágenes:</h3>
+                    <div class="code">&lt;img src="..." alt="..."&gt;</div>
+                    <h3>📋 Formularios:</h3>
+                    <div class="code">&lt;form&gt; &lt;input&gt; &lt;textarea&gt;</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 9: Estructura semántica -->
+        <div class="slide">
+            <h2>🏠 ESTRUCTURA SEMÁNTICA</h2>
+            <div class="code">&lt;header&gt;
+    &lt;!-- Título del sitio, navegación --&gt;
+&lt;/header&gt;
+
+&lt;main&gt;
+    &lt;!-- Contenido principal --&gt;
+&lt;/main&gt;
+
+&lt;footer&gt;
+    &lt;!-- Pie de página --&gt;
+&lt;/footer&gt;</div>
+            <p>💡 Como una casa:</p>
+            <ul>
+                <li>header = techo</li>
+                <li>main = habitaciones</li>
+                <li>footer = cimientos</li>
+            </ul>
+        </div>
+
+        <!-- Slide 10: Navegación -->
+        <div class="slide">
+            <h2>🧭 NAVEGACIÓN TÍPICA</h2>
+            <div class="code">&lt;nav&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="index.html"&gt;Inicio&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="sobre-mi.html"&gt;Sobre Mí&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="proyectos.html"&gt;Proyectos&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="contacto.html"&gt;Contacto&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;</div>
+            <p>🔗 Enlaces internos vs externos:</p>
+            <ul>
+                <li>"index.html" = misma carpeta</li>
+                <li>"https://google.com" = otro sitio</li>
+            </ul>
+        </div>
+
+        <!-- Slide 11: Formularios -->
+        <div class="slide">
+            <h2>📋 FORMULARIO BÁSICO</h2>
+            <div class="code">&lt;form&gt;
+    &lt;label for="nombre"&gt;Nombre:&lt;/label&gt;
+    &lt;input type="text" id="nombre" required&gt;
+    
+    &lt;label for="email"&gt;Email:&lt;/label&gt;
+    &lt;input type="email" id="email" required&gt;
+    
+    &lt;label for="mensaje"&gt;Mensaje:&lt;/label&gt;
+    &lt;textarea id="mensaje" rows="5"&gt;&lt;/textarea&gt;
+    
+    &lt;button type="submit"&gt;Enviar&lt;/button&gt;
+&lt;/form&gt;</div>
+            <p><span class="highlight">🔗 label conecta con input usando for="id"</span></p>
+        </div>
+
+        <!-- Slide 12: ¿Qué es Git? -->
+        <div class="slide">
+            <h2>🐙 ¿QUÉ ES GIT Y GITHUB?</h2>
+            <div class="two-column">
+                <div>
+                    <h3>Git = Control de Versiones</h3>
+                    <ul>
+                        <li>💾 Guarda historial completo</li>
+                        <li>🔄 Vuelve a versiones anteriores</li>
+                        <li>🤝 Trabajo en equipo</li>
+                        <li>📊 Ve qué cambió cuándo</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>GitHub = La Nube</h3>
+                    <ul>
+                        <li>☁️ Backup automático</li>
+                        <li>💼 Portfolio profesional</li>
+                        <li>🌐 Compartir código</li>
+                        <li>👀 Los empleadores lo ven</li>
+                    </ul>
+                </div>
+            </div>
+            <p><span class="highlight">🎯 Como WhatsApp: Escribes → Envías → Queda guardado</span></p>
+        </div>
+
+        <!-- Slide 13: Comandos Git básicos -->
+        <div class="slide">
+            <h2>⚡ COMANDOS GIT BÁSICOS</h2>
+            <div class="code">git status          # Ver qué cambió
+git add .           # Preparar archivos
+git commit -m "..."  # Guardar con mensaje
+git push            # Subir a GitHub
+git pull            # Actualizar desde GitHub</div>
+            <p>🔄 <span class="highlight">Workflow diario:</span></p>
+            <ol>
+                <li>Hacer cambios en archivos</li>
+                <li><code>git add .</code></li>
+                <li><code>git commit -m "Descripción"</code></li>
+                <li><code>git push</code></li>
+            </ol>
+        </div>
+
+        <!-- Slide 14: Tu proyecto personal -->
+        <div class="slide">
+            <h2>🎯 TU PROYECTO PERSONAL</h2>
+            <p>Durante 9 clases vas a crear:</p>
+            <ul class="check-list">
+                <li>🌐 Sitio web de 4 páginas</li>
+                <li>📱 Completamente responsive</li>
+                <li>⚡ Con JavaScript funcional</li>
+                <li>🎨 Con diseño profesional</li>
+            </ul>
+            <p>4 opciones para elegir:</p>
+            <ul>
+                <li>👤 Portfolio Personal</li>
+                <li>📝 Blog Personal</li>
+                <li>🍽️ Restaurante</li>
+                <li>💼 Servicio/Emprendimiento</li>
+            </ul>
+            <p><span class="highlight">🤔 ¿Cuál te motiva más?</span></p>
+        </div>
+
+        <!-- Slide 15: Portfolio Personal -->
+        <div class="slide">
+            <h2>👤 OPCIÓN 1: PORTFOLIO PERSONAL</h2>
+            <p>📄 Páginas:</p>
+            <ul>
+                <li><strong>index.html</strong> - Tu presentación profesional</li>
+                <li><strong>sobre-mi.html</strong> - Biografía, estudios, experiencia</li>
+                <li><strong>proyectos.html</strong> - Showcase de trabajos</li>
+                <li><strong>contacto.html</strong> - Formulario + redes sociales</li>
+            </ul>
+            <p>💼 <span class="highlight">Perfecto para conseguir trabajo</span></p>
+            <p>🎯 Muestra tus habilidades y personalidad</p>
+        </div>
+
+        <!-- Slide 16: Blog Personal -->
+        <div class="slide">
+            <h2>📝 OPCIÓN 2: BLOG PERSONAL</h2>
+            <p>📄 Páginas:</p>
+            <ul>
+                <li><strong>index.html</strong> - Últimos artículos destacados</li>
+                <li><strong>sobre-mi.html</strong> - Quién eres, por qué escribes</li>
+                <li><strong>articulos.html</strong> - Lista completa de posts</li>
+                <li><strong>contacto.html</strong> - Para que te escriban lectores</li>
+            </ul>
+            <p>✍️ <span class="highlight">Comparte tu conocimiento</span></p>
+            <p>🎯 Sobre tecnología, hobbies, experiencias</p>
+        </div>
+
+        <!-- Slide 17: Restaurante -->
+        <div class="slide">
+            <h2>🍽️ OPCIÓN 3: RESTAURANTE</h2>
+            <p>📄 Páginas:</p>
+            <ul>
+                <li><strong>index.html</strong> - Historia, ambiente, bienvenida</li>
+                <li><strong>menu.html</strong> - Platos con precios por categorías</li>
+                <li><strong>galeria.html</strong> - Fotos del lugar y comida</li>
+                <li><strong>contacto.html</strong> - Ubicación, horarios, reservas</li>
+            </ul>
+            <p>🍕 <span class="highlight">Real o inventado, tu eliges</span></p>
+            <p>🎯 Perfecto para practicar diseño visual</p>
+        </div>
+
+        <!-- Slide 18: Servicio/Emprendimiento -->
+        <div class="slide">
+            <h2>💼 OPCIÓN 4: SERVICIO/EMPRENDIMIENTO</h2>
+            <p>📄 Páginas:</p>
+            <ul>
+                <li><strong>index.html</strong> - Propuesta de valor, problema que resuelves</li>
+                <li><strong>servicios.html</strong> - Detalle de servicios y precios</li>
+                <li><strong>nosotros.html</strong> - Experiencia, testimonios</li>
+                <li><strong>contacto.html</strong> - Formulario de cotización</li>
+            </ul>
+            <p>🚀 <span class="highlight">Tu idea de negocio</span></p>
+            <p>🎯 Consultoría, freelance, startup</p>
+        </div>
+
+        <!-- Slide 19: Setup repositorios -->
+        <div class="slide">
+            <h2>🔧 SETUP DE REPOSITORIOS</h2>
+            <p><span class="highlight">Paso 1: Clonar repositorio compartido</span></p>
+            <div class="code">git clone https://github.com/profesor/intro-desarrollo-web-materiales.git
+cd intro-desarrollo-web-materiales</div>
+
+            <p><span class="highlight">Paso 2: Crear TU repositorio personal</span></p>
+            <ul>
+                <li>Ir a github.com → New repository</li>
+                <li>Nombre: "mi-proyecto-web"</li>
+                <li>✅ Public ✅ Add README</li>
+                <li>Create repository</li>
+            </ul>
+
+            <div class="code">cd ..
+git clone https://github.com/tu-usuario/mi-proyecto-web.git
+cd mi-proyecto-web</div>
+        </div>
+
+        <!-- Slide 20: Práctica en clase -->
+        <div class="slide">
+            <h2>💻 PRÁCTICA JUNTOS</h2>
+            <p><span class="highlight">Vamos a hacer todos juntos:</span></p>
+            <ul class="check-list">
+                <li>1️⃣ Elegir tipo de proyecto (5 min)</li>
+                <li>2️⃣ Crear estructura básica (10 min)</li>
+                <li>3️⃣ Crear index.html básico (15 min)</li>
+                <li>4️⃣ Primer commit y push (10 min)</li>
+                <li>5️⃣ Ver resultado en GitHub (5 min)</li>
+            </ul>
+            <p>📝 Estructura mínima:</p>
+            <ul>
+                <li>Header con navegación</li>
+                <li>Main con presentación</li>
+                <li>Footer con tu nombre</li>
+            </ul>
+            <p><span class="highlight">🎯 ¡Tu primera página web!</span></p>
+        </div>
+
+        <!-- Slide 21: Ejercicios -->
+        <div class="slide">
+            <h2>🏃‍♂️ EJERCICIOS EN CLASE</h2>
+            <p>📁 En tu repositorio compartido:</p>
+            <ul>
+                <li><strong>ejercicios/ejercicio-1.html</strong>
+                    <br>🎯 Practicar estructura HTML básica</li>
+                <li><strong>ejercicios/ejercicio-2.html</strong>
+                    <br>🎯 Crear formulario de contacto completo</li>
+            </ul>
+            <p>💡 <span class="highlight">Los ejercicios tienen comentarios TODO:</span></p>
+            <div class="code">&lt;!-- TODO: Agregar un h1 aquí --&gt;</div>
+            <p>🎯 Completar todos los TODOs</p>
+            <p>🤝 Ayúdense entre compañeros</p>
+        </div>
+
+        <!-- Slide 22: Tarea para casa -->
+        <div class="slide">
+            <h2>📝 TAREA PARA LA PRÓXIMA CLASE</h2>
+            <p><span class="highlight">En TU repositorio personal:</span></p>
+            <ul class="check-list">
+                <li>index.html - Página principal completa</li>
+                <li>sobre-mi.html (o segunda página según tu proyecto)</li>
+                <li>proyectos.html (o tercera página según tu proyecto)</li>
+                <li>contacto.html - Formulario completo</li>
+            </ul>
+            <p><span class="highlight">Preparación para CSS:</span></p>
+            <ul class="check-list">
+                <li>📚 Leer recursos/ux-basico-para-desarrolladores.md</li>
+                <li>🔍 Analizar 3 sitios web que te gusten</li>
+                <li>🎨 Elegir 3 colores para tu proyecto</li>
+            </ul>
+            <p><span class="highlight">⏰ Fecha límite: [Completar]</span></p>
+        </div>
+
+        <!-- Slide 23: Criterios de evaluación -->
+        <div class="slide">
+            <h2>📊 ¿CÓMO SE EVALÚA?</h2>
+            <div class="two-column">
+                <div>
+                    <h3>Excelente (4):</h3>
+                    <ul class="check-list">
+                        <li>HTML semántico perfecto</li>
+                        <li>Contenido real y completo</li>
+                        <li>Navegación perfecta</li>
+                        <li>Commits profesionales</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Insuficiente (1):</h3>
+                    <ul class="warning-list">
+                        <li>HTML problemático</li>
+                        <li>Lorem ipsum</li>
+                        <li>Enlaces rotos</li>
+                        <li>Git problemático</li>
+                    </ul>
+                </div>
+            </div>
+            <p><span class="highlight">💡 Enfócate en contenido REAL, no placeholders</span></p>
+        </div>
+
+        <!-- Slide 24: Recursos de ayuda -->
+        <div class="slide">
+            <h2>🆘 SI NECESITAS AYUDA</h2>
+            <p>📚 En tu repositorio compartido:</p>
+            <ul>
+                <li>tarea-casa/README.md - Instrucciones detalladas</li>
+                <li>recursos/git-basico.md - Comandos Git</li>
+                <li>recursos/html-etiquetas.md - Referencia HTML</li>
+                <li>ejemplos/ - Código de demostración</li>
+            </ul>
+            <p>🌐 Online:</p>
+            <ul>
+                <li>developer.mozilla.org (MDN)</li>
+                <li>w3schools.com</li>
+            </ul>
+            <p>💬 Contacto:</p>
+            <ul>
+                <li>Email: [tu-email]</li>
+                <li>Slack: [canal del curso]</li>
+            </ul>
+            <p><span class="highlight">🤝 ¡Ayúdense entre compañeros!</span></p>
+        </div>
+
+        <!-- Slide 25: Próxima clase -->
+        <div class="slide">
+            <h2>🔮 PRÓXIMA CLASE: CSS BÁSICO</h2>
+            <p>Vamos a ver:</p>
+            <ul>
+                <li>🎨 Colores y tipografías</li>
+                <li>📦 Modelo de caja</li>
+                <li>🎯 Selectores CSS</li>
+                <li>✨ Primeros estilos</li>
+            </ul>
+            <p>💡 Trae preparado:</p>
+            <ul>
+                <li>Tu proyecto con 4 páginas HTML</li>
+                <li>Ideas de colores que te gusten</li>
+                <li>Ejemplos de sitios que te inspiren</li>
+            </ul>
+            <p><span class="highlight">🚀 ¡Tu sitio se va a ver increíble!</span></p>
+        </div>
+
+        <!-- Slide 26: Cierre -->
+        <div class="slide">
+            <div class="big-emoji">🎉</div>
+            <h2>¡FELICITACIONES!</h2>
+            <p>Hoy lograste:</p>
+            <ul class="check-list">
+                <li>Tu primera página web</li>
+                <li>Configurar Git como profesional</li>
+                <li>Crear tu repositorio en GitHub</li>
+                <li>Definir tu proyecto personal</li>
+                <li>Entender la estructura de trabajo</li>
+            </ul>
+            <p><span class="highlight">📈 Progreso del curso: 11% completado</span></p>
+            <p>🎯 Para la próxima:</p>
+            <ul>
+                <li>Completar las 4 páginas HTML</li>
+                <li>Hacer commits regulares</li>
+                <li>¡Mostrar tu progreso con orgullo!</li>
+            </ul>
+            <p><span class="highlight">👏 ¡Excelente primera clase!</span></p>
+        </div>
+
+    </div>
+
+    <div class="slide-counter">
+        <span id="current-slide">1</span> / <span id="total-slides">26</span>
+    </div>
+
+    <div class="navigation">
+        <button class="nav-btn" onclick="previousSlide()">◀ Anterior</button>
+        <button class="nav-btn" onclick="nextSlide()">Siguiente ▶</button>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+
+        document.getElementById('total-slides').textContent = totalSlides;
+
+        function showSlide(n) {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (n + totalSlides) % totalSlides;
+            slides[currentSlide].classList.add('active');
+            document.getElementById('current-slide').textContent = currentSlide + 1;
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        function previousSlide() {
+            showSlide(currentSlide - 1);
+        }
+
+        // Navegación con teclado
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                nextSlide();
+            } else if (e.key === 'ArrowLeft') {
+                previousSlide();
+            }
+        });
+
+        // Navegación con click
+        document.addEventListener('click', function(e) {
+            if (e.target.closest('.nav-btn')) return;
+            if (e.clientX > window.innerWidth / 2) {
+                nextSlide();
+            } else {
+                previousSlide();
+            }
+        });
+    </script>
+</body>
+</html>
+                <li
