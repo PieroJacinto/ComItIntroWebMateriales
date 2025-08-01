@@ -7,3 +7,80 @@
 <!-- Paso 3: Diferentes tipos de input -->
 
 <!-- Paso 4: Botón de envío -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario</title>
+  </head>
+  <body>
+    <h1>Contacto</h1>
+
+    <form action="">
+      <div>
+        <label for="nombre"> Nombre:</label>
+        <input type="text" name="nombre" id="nombre" />
+      </div>
+
+      <div>
+        <input type="email" name="email" id="email" placeholder="Email" />
+      </div>
+      <div>
+        <label for="asunto"> Asunto:</label>
+        <input type="text" name="asunto" id="asunto" />
+      </div>
+      <div>
+        <label for="mensaje"> Mensaje:</label>
+        <textarea name="mensaje" id="mensaje"></textarea>
+      </div>
+      <input
+        type="password"
+        name="password"
+        id="password"
+        placeholder="password"
+        />
+        <div>
+            <label for="si">si</label>
+            <input type="checkbox" />
+        </div>
+        <div>
+            <label for="no">no</label>
+            <input type="checkbox" />
+        </div>
+        <div>
+            <label for="no">no</label>
+            <input type="radio" />
+        </div>
+        <label for="pet-select">Choose a pet:</label>
+        
+        <select name="pets" id="pet-select">
+            <option value="">--Por favor elegi una opcion--</option>
+            <option value="dog">Perro</option>
+            <option value="cat">Gato</option>
+            <option value="hamster">Hamster</option>
+            <option value="parrot">Loro</option>
+            <option value="spider">Araña</option>
+            <option value="goldfish">Pez Dorado</option>
+        </select>
+
+        <fieldset>
+            <legend>Choose your monster's features:</legend>
+
+            <div>
+                <input type="checkbox" id="scales" name="scales"  />
+                <label for="scales">Scales</label>
+            </div>
+
+            <div>
+                <input type="checkbox" id="horns" name="horns" />
+                <label for="horns">Horns</label>
+            </div>
+            </fieldset>
+        <div>
+          <button type="submit">Enviar</button>
+        </div>
+    </form>
+  </body>
+</html>
