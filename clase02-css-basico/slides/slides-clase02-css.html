@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 2: CSS Básico</title>
+    <link rel="stylesheet" href="./slides-clase02-css.css">
+</head>
+<body>
+    <div class="slideshow-container">
+        
+        <!-- Slide 1: Bienvenida -->
+        <div class="slide active">
+            <div class="big-emoji">🎨</div>
+            <h1>CLASE 2: CSS BÁSICO</h1>
+            <h2>Dale vida a tu proyecto web</h2>
+            <p>🎯 Hoy: Transformar tu HTML en un diseño atractivo</p>
+            <p>⏰ 3 horas de práctica intensiva</p>
+            <p>💪 De básico a profesional</p>
+        </div>
+
+        <!-- Slide 2: Repaso HTML -->
+        <div class="slide">
+            <h2>📋 REPASO RÁPIDO</h2>
+            <p><span class="highlight">¿Todos terminaron las 4 páginas HTML?</span></p>
+            <ul class="check-list">
+                <li>¿Enlaces funcionan entre páginas?</li>
+                <li>¿Formulario está completo?</li>
+                <li>¿Algún problema con Git?</li>
+                <li>¿Todo subido a GitHub?</li>
+            </ul>
+            <p>🔧 <span class="highlight">¡Solucionemos dudas rápido!</span></p>
+        </div>
+
+        <!-- Slide 3: Discusión UX -->
+        <div class="slide">
+            <div class="big-emoji">🔍</div>
+            <h2>DISCUSIÓN UX</h2>
+            <p><span class="highlight">¿Quién leyó la guía de UX?</span></p>
+            <ul>
+                <li>🌐 ¿Qué 3 sitios analizaron?</li>
+                <li>🎨 ¿Qué les gustó del diseño?</li>
+                <li>🎯 ¿Qué 3 colores eligieron?</li>
+                <li>⚡ ¿Cuál es la acción principal de su sitio?</li>
+            </ul>
+            <p><span class="highlight">¡Compartan sus descubrimientos!</span></p>
+        </div>
+
+        <!-- Slide 4: ¿Qué es CSS? -->
+        <div class="slide">
+            <h2>🎨 ¿QUÉ ES CSS?</h2>
+            <p><span class="highlight">CSS = Cascading Style Sheets</span></p>
+            <ul>
+                <li>🏗️ <strong>HTML</strong> = Estructura (el esqueleto)</li>
+                <li>🎨 <strong>CSS</strong> = Presentación (la piel y ropa)</li>
+                <li>⚡ <strong>JavaScript</strong> = Comportamiento (los músculos)</li>
+            </ul>
+            <p>🏠 Como construir una casa:</p>
+            <ul>
+                <li>HTML = Paredes y habitaciones</li>
+                <li>CSS = Pintura y decoración</li>
+                <li>JS = Electricidad y funcionalidad</li>
+            </ul>
+        </div>
+
+        <!-- Slide 5: Formas de incluir CSS -->
+        <div class="slide">
+            <h2>🔧 FORMAS DE INCLUIR CSS</h2>
+            <div class="two-column">
+                <div>
+                    <h3>✅ CSS Externo (RECOMENDADO)</h3>
+                    <div class="code">&lt;link rel="stylesheet" href="css/styles.css"&gt;</div>
+                    <h3>⚠️ CSS Interno (solo para pruebas)</h3>
+                    <div class="code">&lt;style&gt;
+    body { color: red; }
+&lt;/style&gt;</div>
+                </div>
+                <div>
+                    <h3>❌ CSS Inline (EVITAR)</h3>
+                    <div class="code">&lt;p style="color: red;"&gt;Texto&lt;/p&gt;</div>
+                    <p><span class="highlight">¿Por qué externo?</span></p>
+                    <ul>
+                        <li>Reutilizable</li>
+                        <li>Organizado</li>
+                        <li>Fácil de mantener</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 6: Sintaxis CSS -->
+        <div class="slide">
+            <h2>📝 SINTAXIS CSS</h2>
+            <div class="code">selector {
+    propiedad: valor;
+    otra-propiedad: otro-valor;
+}
+
+/* Ejemplo real */
+h1 {
+    color: #3498db;
+    font-size: 2rem;
+    text-align: center;
+}</div>
+            <p>💡 <span class="highlight">Partes importantes:</span></p>
+            <ul>
+                <li><strong>Selector:</strong> A qué elemento aplicar estilos</li>
+                <li><strong>Propiedad:</strong> Qué aspecto cambiar</li>
+                <li><strong>Valor:</strong> Cómo cambiarlo</li>
+            </ul>
+        </div>
+
+        <!-- Slide 7: Selectores básicos -->
+        <div class="slide">
+            <h2>🎯 SELECTORES BÁSICOS</h2>
+            <div class="code">/* Selector de elemento */
+h1 {
+    color: blue;
+}
+
+/* Selector de clase */
+.mi-clase {
+    background-color: red;
+}
+
+/* Selector de ID */
+#mi-id {
+    border: 2px solid green;
+}
+
+/* Selector descendiente */
+nav ul {
+    list-style: none;
+}</div>
+            <p><span class="highlight">Especificidad: ID > Clase > Elemento</span></p>
+        </div>
+
+        <!-- Slide 8: Colores -->
+        <div class="slide">
+            <h2>🌈 COLORES EN CSS</h2>
+            <div class="two-column">
+                <div>
+                    <h3>Formas de definir colores:</h3>
+                    <div class="code">/* Hexadecimal (MÁS COMÚN) */
+color: #3498db;
+color: #333333;
+
+/* Nombres básicos */
+color: red;
+color: white;
+
+/* RGB */
+color: rgb(52, 152, 219);</div>
+                </div>
+                <div>
+                    <h3>Colores profesionales:</h3>
+                    <div style="text-align: center;">
+                        <div class="color-demo" style="background: #3498db;"></div>
+                        <div class="color-demo" style="background: #2c3e50;"></div>
+                        <div class="color-demo" style="background: #e74c3c;"></div>
+                        <div class="color-demo" style="background: #27ae60;"></div>
+                    </div>
+                    <p>#3498db #2c3e50 #e74c3c #27ae60</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 9: Tipografías -->
+        <div class="slide">
+            <h2>✍️ TIPOGRAFÍAS</h2>
+            <div class="code">body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.destacado {
+    font-style: italic;
+    text-decoration: underline;
+}</div>
+            <p>💡 <span class="highlight">Reglas importantes:</span></p>
+            <ul>
+                <li>Mínimo 16px para texto legible</li>
+                <li>Máximo 2 fuentes por sitio</li>
+                <li>Line-height de 1.5 o 1.6</li>
+            </ul>
+        </div>
+
+        <!-- Slide 10: Modelo de caja -->
+        <div class="slide">
+            <h2>📦 MODELO DE CAJA</h2>
+            <p><span class="highlight">¡Todo elemento HTML es una caja!</span></p>
+            <div class="code">.mi-caja {
+    /* Contenido */
+    width: 300px;
+    height: 200px;
+    
+    /* Padding (espacio interno) */
+    padding: 20px;
+    
+    /* Border (borde) */
+    border: 2px solid #333;
+    
+    /* Margin (espacio externo) */
+    margin: 20px;
+    
+    /* ¡IMPORTANTE! */
+    box-sizing: border-box;
+}</div>
+            <p><span class="highlight">🎯 SIEMPRE usar box-sizing: border-box</span></p>
+        </div>
+
+        <!-- Slide 11: Visualización modelo de caja -->
+        <div class="slide">
+            <h2>📊 MODELO DE CAJA VISUAL</h2>
+            <div style="background: rgba(255,255,255,0.1); padding: 40px; border-radius: 15px; margin: 20px 0;">
+                <div style="border: 3px solid #FFD700; padding: 30px; border-radius: 10px; background: rgba(255,215,0,0.1);">
+                    <div style="text-align: center; color: #FFD700; font-weight: bold; margin-bottom: 10px;">MARGIN</div>
+                    <div style="border: 3px solid #FF6B6B; padding: 20px; border-radius: 8px; background: rgba(255,107,107,0.1);">
+                        <div style="text-align: center; color: #FF6B6B; font-weight: bold; margin-bottom: 10px;">BORDER</div>
+                        <div style="border: 3px solid #4ECDC4; padding: 15px; border-radius: 6px; background: rgba(78,205,196,0.1);">
+                            <div style="text-align: center; color: #4ECDC4; font-weight: bold; margin-bottom: 10px;">PADDING</div>
+                            <div style="background: rgba(255,255,255,0.9); color: #333; padding: 20px; border-radius: 4px; text-align: center; font-weight: bold;">
+                                CONTENIDO
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p><span class="highlight">Margin = Espacio externo | Padding = Espacio interno</span></p>
+        </div>
+
+        <!-- Slide 12: Práctica en clase -->
+        <div class="slide">
+            <h2>💻 PRÁCTICA JUNTOS (75 MIN)</h2>
+            <ul>
+                <li><span class="highlight">1️⃣ Crear archivo CSS</span> (15 min)</li>
+                <li><span class="highlight">2️⃣ Estilizar header y navegación</span> (30 min)</li>
+                <li><span class="highlight">3️⃣ Estilizar contenido principal</span> (30 min)</li>
+            </ul>
+            <p>📝 Estructura CSS base:</p>
+            <ul>
+                <li>Reset CSS (* { margin: 0; padding: 0; })</li>
+                <li>Estilos de header</li>
+                <li>Estilos de navegación</li>
+                <li>Estilos de contenido</li>
+                <li>Estilos de formulario</li>
+                <li>Estilos de footer</li>
+            </ul>
+        </div>
+
+        <!-- Slide 13: Estructura CSS -->
+        <div class="slide">
+            <h2>🏗️ ESTRUCTURA CSS RECOMENDADA</h2>
+            <div class="code">/* ===== RESET Y BASE ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* ===== HEADER ===== */
+
+/* ===== NAVEGACIÓN ===== */
+
+/* ===== MAIN CONTENT ===== */
+
+/* ===== FOOTER ===== */</div>
+        </div>
+
+        <!-- Slide 14: Header y navegación ejemplo -->
+        <div class="slide">
+            <h2>🏠 HEADER Y NAVEGACIÓN</h2>
+            <div class="code">header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;    
+}
+</div>
+        </div>
+
+        <!-- Slide 15: Contenido principal -->
+        <div class="slide">
+            <h2>📝 CONTENIDO PRINCIPAL</h2>
+            <div class="code">main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 0.5rem;
+}
+
+p {
+    margin-bottom: 1rem;
+    text-align: justify;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}</div>
+        </div>
+
+        <!-- Slide 16: Formularios -->
+        <div class="slide">
+            <h2>📋 FORMULARIOS ATRACTIVOS</h2>
+            <div class="code">form {
+    background-color: #f8f9fa;
+    padding: 2rem;
+    border-radius: 8px;
+    margin: 2rem 0;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #bdc3c7;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+</div>
+        </div>
+
+        <!-- Slide 17: Botones -->
+        <div class="slide">
+            <h2>🔘 BOTONES PROFESIONALES</h2>
+            <div class="code">button {
+    background-color: #3498db;
+    color: white;
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;    
+}
+
+</div>
+            <p><span class="highlight">💡 Transitions hacen todo más suave</span></p>
+        </div>
+
+        <!-- Slide 18: Footer -->
+        <div class="slide">
+            <h2>🦶 FOOTER PROFESIONAL</h2>
+            <div class="code">footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 3rem;
+}
+
+footer p {
+    margin-bottom: 0;
+}</div>
+            <p>🎯 <span class="highlight">El footer cierra visualmente tu sitio</span></p>
+        </div>
+
+        <!-- Slide 19: Tarea para casa -->
+        <div class="slide">
+            <h2>📝 TAREA PARA LA PRÓXIMA CLASE</h2>
+            <p><span class="highlight">CSS completo aplicado:</span></p>
+            <ul class="check-list">
+                <li>Archivo css/styles.css creado y vinculado</li>
+                <li>Reset CSS aplicado</li>
+                <li>Paleta de colores consistente (tus 3 colores)</li>
+                <li>Header y navegación estilizados</li>
+                <li>Formularios atractivos</li>
+                <li>Efectos hover en elementos interactivos</li>
+                <li>Footer profesional</li>
+            </ul>
+            <p><span class="highlight">⏰ Tienes hasta el [fecha]</span></p>
+        </div>
+
+   
+        <!-- Slide 21: Tips de diseño -->
+        <div class="slide">
+            <h2>💡 TIPS DE DISEÑO RÁPIDO</h2>
+            <ul>
+                <li>🎨 <strong>Máximo 3-4 colores</strong> principales</li>
+                <li>📏 <strong>Espaciado consistente</strong> (múltiplos de 8px)</li>
+                <li>✨ <strong>Transiciones suaves</strong> (0.3s ease)</li>
+                <li>📱 <strong>Texto legible</strong> (mínimo 16px)</li>
+                <li>🎯 <strong>Jerarquía clara</strong> (h1 > h2 > p)</li>
+                <li>🔘 <strong>Botones que parecen botones</strong></li>
+            </ul>
+            <p><span class="highlight">🚫 Menos es más - no sobrecargar</span></p>
+        </div>
+
+        <!-- Slide 22: Errores comunes -->
+        <div class="slide">
+            <h2>🚫 ERRORES COMUNES A EVITAR</h2>
+            <div class="two-column">
+                <div>
+                    <h3>❌ No hacer:</h3>
+                    <ul class="cross-list">
+                        <li>Demasiados colores</li>
+                        <li>Texto muy pequeño (&lt;16px)</li>
+                        <li>Sin espaciado (todo pegado)</li>
+                        <li>CSS inline en HTML</li>
+                        <li>No usar box-sizing</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>✅ Mejor así:</h3>
+                    <ul class="check-list">
+                        <li>Máximo 3 colores</li>
+                        <li>16px+ para texto</li>
+                        <li>Margin y padding apropiados</li>
+                        <li>CSS en archivo separado</li>
+                        <li>Siempre box-sizing: border-box</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 23: Herramientas útiles -->
+        <div class="slide">
+            <h2>🔧 HERRAMIENTAS ÚTILES</h2>
+            <ul>
+                <li>🔍 <strong>Chrome DevTools</strong> (F12) - Inspeccionar estilos</li>
+                <li>🎨 <strong>Coolors.co</strong> - Paletas de colores</li>
+                <li>🔤 <strong>Google Fonts</strong> - Tipografías gratuitas</li>
+                <li>📱 <strong>Responsively</strong> - Testing responsive</li>
+                <li>✅ <strong>CSS Validator</strong> - Verificar errores</li>
+            </ul>
+            <p><span class="highlight">💡 DevTools es tu mejor amigo para CSS</span></p>
+        </div>
+
+        <!-- Slide 24: Chrome DevTools -->
+        <div class="slide">
+            <h2>🔍 CHROME DEVTOOLS BÁSICO</h2>
+            <ul>
+                <li><strong>F12</strong> - Abrir DevTools</li>
+                <li><strong>Ctrl+Shift+C</strong> - Inspeccionar elemento</li>
+                <li><strong>Elements tab</strong> - Ver HTML y CSS</li>
+                <li><strong>Styles panel</strong> - Editar CSS en tiempo real</li>
+                <li><strong>Computed tab</strong> - Ver estilos finales</li>
+            </ul>
+            <p><span class="highlight">🎯 Practica inspeccionando sitios que te gusten</span></p>
+        </div>
+
+        <!-- Slide 25: Próxima clase preview -->
+        <div class="slide">
+            <h2>🔮 PRÓXIMA CLASE: FLEXBOX</h2>
+            <p>Vamos a ver:</p>
+            <ul>
+                <li>📐 Layouts modernos con Flexbox</li>
+                <li>🔄 Organizar elementos fácilmente</li>
+                <li>📱 Diseño responsive básico</li>
+                <li>🎯 Centrar elementos como un pro</li>
+            </ul>
+            <p>💡 Trae preparado:</p>
+            <ul>
+                <li>Tu proyecto con CSS básico aplicado</li>
+                <li>Ideas de cómo organizar tus elementos</li>
+                <li>Referencias de layouts que te gusten</li>
+            </ul>
+        </div>
+
+        <!-- Slide 26: Recursos de ayuda -->
+        <div class="slide">
+            <h2>🆘 SI NECESITAS AYUDA</h2>
+            <p>📚 En tu repositorio:</p>
+            <ul>
+                <li>tarea-proxima-clase/README.md</li>
+                <li>recursos/css-cheatsheet.md</li>
+                <li>recursos/colores-recomendados.md</li>
+                <li>recursos/google-fonts-guia.md</li>
+            </ul>
+            <p>🌐 Online:</p>
+            <ul>
+                <li>MDN CSS Reference</li>
+                <li>CSS-Tricks.com</li>
+                <li>W3Schools CSS</li>
+            </ul>
+            <p><span class="highlight">🤝 ¡Ayúdense entre compañeros!</span></p>
+        </div>
+
+        <!-- Slide 27: Motivación -->
+        <div class="slide">
+            <h2>🚀 ¡TU SITIO VA A CAMBIAR COMPLETAMENTE!</h2>
+            <p>Antes de hoy:</p>
+            <ul>
+                <li>😐 HTML básico y sin estilo</li>
+                <li>📝 Solo estructura</li>
+                <li>⚫ Todo en blanco y negro</li>
+            </ul>
+            <p>Después de hoy:</p>
+            <ul class="check-list">
+                <li>✨ Diseño colorido y atractivo</li>
+                <li>🎨 Tipografías profesionales</li>
+                <li>🔘 Botones que invitan a hacer click</li>
+                <li>💫 Efectos suaves y modernos</li>
+            </ul>
+            <p><span class="highlight">¡Vas a estar orgulloso de tu trabajo!</span></p>
+        </div>
+
+        <!-- Slide 28: Cierre -->
+        <div class="slide">
+            <div class="big-emoji">🎉</div>
+            <h2>¡EXCELENTE SEGUNDA CLASE!</h2>
+            <p>Hoy lograste:</p>
+            <ul class="check-list">
+                <li>Entender CSS y el modelo de caja</li>
+                <li>Aplicar colores y tipografías</li>
+                <li>Crear tu primer archivo CSS</li>
+                <li>Transformar HTML básico en diseño atractivo</li>
+            </ul>
+            <p><span class="highlight">📈 Progreso del curso: 22% completado</span></p>
+            <p>🎯 Para la próxima:</p>
+            <ul>
+                <li>Completar CSS en todas las páginas</li>
+                <li>Usar tus colores elegidos consistentemente</li>
+                <li>¡Mostrar tu sitio estilizado!</li>
+            </ul>
+            <p><span class="highlight">👏 ¡Tu sitio ya se ve profesional!</span></p>
+        </div>
+
+    </div>
+
+    <div class="slide-counter">
+        <span id="current-slide">1</span> / <span id="total-slides">28</span>
+    </div>
+
+    <div class="navigation">
+        <button class="nav-btn" onclick="previousSlide()">◀ Anterior</button>
+        <button class="nav-btn" onclick="nextSlide()">Siguiente ▶</button>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+
+        document.getElementById('total-slides').textContent = totalSlides;
+
+        function showSlide(n) {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (n + totalSlides) % totalSlides;
+            slides[currentSlide].classList.add('active');
+            document.getElementById('current-slide').textContent = currentSlide + 1;
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        function previousSlide() {
+            showSlide(currentSlide - 1);
+        }
+
+        // Navegación con teclado
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                nextSlide();
+            } else if (e.key === 'ArrowLeft') {
+                previousSlide();
+            }
+        });
+
+        // Navegación con click
+        document.addEventListener('click', function(e) {
+            if (e.target.closest('.nav-btn')) return;
+            if (e.clientX > window.innerWidth / 2) {
+                nextSlide();
+            } else {
+                previousSlide();
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,184 @@
+/* ========================================
+           EJEMPLO AVANZADO: Variables CSS
+           ========================================
+           
+           NOTA: Este es un ejemplo OPCIONAL de técnica avanzada.
+           En Clase 2 nos enfocamos en CSS básico, pero aquí puedes 
+           ver cómo los profesionales organizan colores.
+        */
+
+        /* ===== VARIABLES CSS (OPCIONAL) ===== */
+        :root {
+            /* Colores principales */
+            --color-primario: #3498db;      /* Azul */
+            --color-secundario: #2c3e50;    /* Gris oscuro */
+            --color-acento: #e74c3c;        /* Rojo */
+            
+            /* Colores neutros */
+            --color-texto: #333333;         /* Texto normal */
+            --color-fondo: #ffffff;         /* Fondo blanco */
+            --color-gris-claro: #f8f9fa;    /* Fondos suaves */
+            
+            /* Espaciado */
+            --espaciado-xs: 0.5rem;         /* 8px */
+            --espaciado-sm: 1rem;           /* 16px */
+            --espaciado-md: 2rem;           /* 32px */
+            --espaciado-lg: 3rem;           /* 48px */
+        }
+
+        /* ===== CSS BÁSICO (LO QUE USAMOS EN CLASE 2) ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--color-texto);      /* Usando variable */
+            background-color: var(--color-fondo);
+        }
+
+        /* ===== USANDO VARIABLES ===== */
+        header {
+            background-color: var(--color-primario);
+            color: white;
+            padding: var(--espaciado-md) 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: var(--espaciado-sm);
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            margin-top: var(--espaciado-sm);
+        }
+
+        nav li {
+            display: inline-block;
+            margin: 0 var(--espaciado-sm);
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: var(--espaciado-xs) var(--espaciado-sm);
+            border-radius: 4px;
+        }
+
+        nav a:hover {
+            background-color: var(--color-acento);
+        }
+
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: var(--espaciado-lg) var(--espaciado-md);
+        }
+
+        .seccion {
+            margin-bottom: var(--espaciado-lg);
+        }
+
+        h2 {
+            color: var(--color-secundario);
+            font-size: 2rem;
+            margin-bottom: var(--espaciado-sm);
+            border-bottom: 3px solid var(--color-primario);
+            padding-bottom: var(--espaciado-xs);
+        }
+
+        p {
+            margin-bottom: var(--espaciado-sm);
+            text-align: justify;
+        }
+
+        .card {
+            background-color: var(--color-gris-claro);
+            padding: var(--espaciado-md);
+            border-radius: 8px;
+            margin-bottom: var(--espaciado-md);
+            border-left: 4px solid var(--color-primario);
+        }
+
+        .btn-principal {
+            display: inline-block;
+            background-color: var(--color-acento);
+            color: white;
+            text-decoration: none;
+            padding: var(--espaciado-sm) var(--espaciado-md);
+            border-radius: 4px;
+            font-weight: bold;
+            margin: var(--espaciado-xs) 0;
+        }
+
+        .btn-secundario {
+            display: inline-block;
+            background-color: transparent;
+            color: var(--color-primario);
+            text-decoration: none;
+            padding: var(--espaciado-sm) var(--espaciado-md);
+            border: 2px solid var(--color-primario);
+            border-radius: 4px;
+            font-weight: bold;
+            margin: var(--espaciado-xs) 0;
+        }
+
+        footer {
+            background-color: var(--color-secundario);
+            color: white;
+            text-align: center;
+            padding: var(--espaciado-lg) var(--espaciado-md);
+            margin-top: var(--espaciado-lg);
+        }
+
+        /* ===== COMPARACIÓN ===== */
+        .comparacion {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--espaciado-md);
+            margin: var(--espaciado-lg) 0;
+        }
+
+        .sin-variables {
+            background-color: #ffe6e6;
+            padding: var(--espaciado-sm);
+            border-radius: 8px;
+        }
+
+        .con-variables {
+            background-color: #e6ffe6;
+            padding: var(--espaciado-sm);
+            border-radius: 8px;
+        }
+
+        code {
+            background-color: rgba(0,0,0,0.1);
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+
+        .codigo-ejemplo {
+            background-color: #f8f9fa;
+            padding: var(--espaciado-sm);
+            border-radius: 8px;
+            margin: var(--espaciado-sm) 0;
+            overflow-x: auto;
+        }
+
+        .codigo-ejemplo pre {
+            margin: 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }

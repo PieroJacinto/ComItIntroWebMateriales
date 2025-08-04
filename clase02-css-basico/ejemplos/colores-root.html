@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo: Variables CSS con :root</title>
+  <link rel="stylesheet" href="./colores-root.css">
+</head>
+<body>
+    <header>
+        <h1>Variables CSS con :root</h1>
+        <nav>
+            <ul>
+                <li><a href="#que-son">¿Qué son?</a></li>
+                <li><a href="#ventajas">Ventajas</a></li>
+                <li><a href="#comparacion">Comparación</a></li>
+                <li><a href="#como-usar">Cómo usar</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="que-son" class="seccion">
+            <h2>¿Qué son las Variables CSS?</h2>
+            <p>Las variables CSS (también llamadas Custom Properties) te permiten <strong>definir valores una vez y reutilizarlos</strong> en todo tu CSS. Es como crear "constantes" para colores, espaciado, fuentes, etc.</p>
+            
+            <div class="card">
+                <h3>🎯 En lugar de repetir colores:</h3>
+                <p>En lugar de escribir <code>#3498db</code> 20 veces en tu CSS, defines <code>--color-primario: #3498db</code> una vez y lo usas con <code>var(--color-primario)</code>.</p>
+            </div>
+        </section>
+
+        <section id="ventajas" class="seccion">
+            <h2>🚀 Ventajas de las Variables</h2>
+            
+            <div class="card">
+                <h3>✅ Mantenimiento fácil</h3>
+                <p>¿Quieres cambiar el color azul? Cambias UNA línea y se actualiza en todo el sitio.</p>
+            </div>
+
+            <div class="card">
+                <h3>✅ Consistencia garantizada</h3>
+                <p>No más "¿era #3498db o #3399dd?". Una variable, un color, siempre igual.</p>
+            </div>
+
+            <div class="card">
+                <h3>✅ Código más legible</h3>
+                <p><code>var(--color-primario)</code> es más claro que <code>#3498db</code>.</p>
+            </div>
+
+            <div class="card">
+                <h3>✅ Profesional</h3>
+                <p>Es la forma moderna que usan las empresas y frameworks como Bootstrap.</p>
+            </div>
+        </section>
+
+        <section id="comparacion" class="seccion">
+            <h2>📊 Comparación: Antes vs Después</h2>
+            
+            <div class="comparacion">
+                <div class="sin-variables">
+                    <h3>❌ Sin Variables (Repetitivo)</h3>
+                    <div class="codigo-ejemplo">
+                        <pre>header {
+    background-color: #3498db;
+}
+
+.btn-primary {
+    background-color: #3498db;
+}
+
+.link {
+    color: #3498db;
+}
+
+.border {
+    border-color: #3498db;
+}
+
+/* Si quiero cambiar el azul, 
+   tengo que cambiar 4+ lugares */</pre>
+                    </div>
+                </div>
+
+                <div class="con-variables">
+                    <h3>✅ Con Variables (Inteligente)</h3>
+                    <div class="codigo-ejemplo">
+                        <pre>:root {
+    --color-primario: #3498db;
+}
+
+header {
+    background-color: var(--color-primario);
+}
+
+.btn-primary {
+    background-color: var(--color-primario);
+}
+
+.link {
+    color: var(--color-primario);
+}
+
+.border {
+    border-color: var(--color-primario);
+}
+
+/* Para cambiar el azul, 
+   solo cambio UNA línea */</pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="como-usar" class="seccion">
+            <h2>🔧 Cómo Usar Variables CSS</h2>
+            
+            <div class="card">
+                <h3>Paso 1: Definir Variables en :root</h3>
+                <div class="codigo-ejemplo">
+                    <pre>:root {
+    /* Nombres descriptivos con -- */
+    --color-primario: #3498db;
+    --color-secundario: #2c3e50;
+    --espaciado-grande: 2rem;
+    --fuente-principal: Arial, sans-serif;
+}</pre>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Paso 2: Usar Variables con var()</h3>
+                <div class="codigo-ejemplo">
+                    <pre>header {
+    background-color: var(--color-primario);
+    padding: var(--espaciado-grande);
+    font-family: var(--fuente-principal);
+}
+
+.btn {
+    background-color: var(--color-secundario);
+    margin: var(--espaciado-grande);
+}</pre>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Paso 3: Cambiar todo desde un lugar</h3>
+                <div class="codigo-ejemplo">
+                    <pre>/* Para cambiar todo el tema, solo modifica :root */
+:root {
+    --color-primario: #e74c3c;  /* Cambió de azul a rojo */
+    --color-secundario: #34495e;
+    /* ¡Todo el sitio cambia automáticamente! */
+}</pre>
+                </div>
+            </div>
+        </section>
+
+        <section class="seccion">
+            <h2>🎯 ¿Cuándo Usar Variables?</h2>
+            
+            <div class="card">
+                <h3>✅ Úsalas cuando:</h3>
+                <ul>
+                    <li>Tienes colores que se repiten (como tu paleta)</li>
+                    <li>Quieres espaciado consistente</li>
+                    <li>Trabajas en proyectos grandes</li>
+                    <li>Quieres facilitar cambios futuros</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>⏳ No las necesitas aún si:</h3>
+                <ul>
+                    <li>Estás aprendiendo CSS básico</li>
+                    <li>Tu proyecto es muy pequeño</li>
+                    <li>Prefieres dominar lo fundamental primero</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="seccion">
+            <h2>💡 Ejemplos Prácticos</h2>
+            
+            <p>Esta página usa variables CSS. <strong>¡Inspecciona el código para ver cómo!</strong></p>
+
+            <div style="text-align: center; margin: 2rem 0;">
+                <a href="#" class="btn-principal">Botón Principal</a>
+                <a href="#" class="btn-secundario">Botón Secundario</a>
+            </div>
+
+            <div class="card">
+                <h3>🔍 Ejercicio:</h3>
+                <p>Abre las DevTools (F12) y busca la sección <code>:root</code> en los estilos. ¿Puedes cambiar el <code>--color-primario</code> y ver cómo cambia todo el sitio?</p>
+            </div>
+        </section>
+
+        <section class="seccion">
+            <h2>🚀 Próximos Pasos</h2>
+            
+            <div class="card">
+                <h3>Para la Clase 2:</h3>
+                <p><strong>Enfócate en CSS básico:</strong> colores directos, selectores, modelo de caja. Las variables son técnica avanzada que puedes explorar después.</p>
+            </div>
+
+            <div class="card">
+                <h3>Para el futuro:</h3>
+                <p>Una vez que domines CSS básico, puedes <strong>refactorizar</strong> tu código para usar variables y hacerlo más profesional.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Ejemplo de Variables CSS - ComuIT</p>
+        <p>Este ejemplo usa variables CSS para mantener consistencia visual</p>
+    </footer>
+
+    <script>
+        // Pequeño script para cambiar variables dinámicamente
+        console.log('💡 Tip: Prueba cambiar las variables CSS en las DevTools!');
+        console.log('1. Abre DevTools (F12)');
+        console.log('2. Ve a la pestaña Elements');
+        console.log('3. Busca el elemento <html> o :root');
+        console.log('4. Cambia el valor de --color-primario');
+        console.log('5. ¡Observa cómo cambia todo el sitio!');
+
+        // Función para cambiar tema (opcional - para demostración)
+        function cambiarTema() {
+            const root = document.documentElement;
+            const esOscuro = root.style.getPropertyValue('--color-primario') === '#e74c3c';
+            
+            if (esOscuro) {
+                root.style.setProperty('--color-primario', '#3498db');
+                root.style.setProperty('--color-secundario', '#2c3e50');
+            } else {
+                root.style.setProperty('--color-primario', '#e74c3c');
+                root.style.setProperty('--color-secundario', '#c0392b');
+            }
+        }
+
+        // Agregar evento para cambiar tema al hacer doble click en el header
+        document.querySelector('header').addEventListener('dblclick', cambiarTema);
+    </script>
+</body>
+</html>
