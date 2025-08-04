@@ -71,7 +71,7 @@ clases/claseXX-tema/
 
 ```bash
 # Clonar el repositorio de materiales (se crea en Clase 1)
-git clone ["aqui la url del repo que se crea en clase 1 por ejemplo intro-desarrollo-web-materiales"]
+git clone https://github.com/PieroJacinto/ComItIntroWebMateriales.git
 cd intro-desarrollo-web-materiales
 ```
 
