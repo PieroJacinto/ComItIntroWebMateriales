@@ -1,0 +1,55 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'Courier New', Courier, monospace;
+}
+:root {
+    --color-primario: #3498db;    /* Tu primer color */
+    --color-secundario: #2c3e50;  /* Tu segundo color */
+    --color-acento: #e74c3c;      /* Tu tercer color */
+    --color-texto: #333;
+    --color-fondo: #ffffff;
+}
+
+/* ============================  HEADER ======================== */
+.caja-ejemplo{
+    border: solid 5px red;
+    /* contenido */
+    width: 300px;
+    /* padding (espaciado interno) */
+    padding:20px;
+    /* margin (espacio externo) */
+    margin: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+    /* estilos visuales */
+    background-color: #e8f4fd;
+    color: #2c3e50;
+   
+
+}
+
+/*  =================== FOOTER ========================== */
+
+.sin-box-sizing {
+    width: 300px;
+    padding: 20px;
+    border: solid 5px #e74c3c;
+    background-color: #fadbd8;
+    /* margin: 20px; */
+/* sin box sizing */
+
+}
+
+/*  =========================== SECCION PRODUCTOS =========================== */
+
+.demo-spacing{
+    background-color: #d5dbdb;
+    margin-top: 30px    ;
+}
+.cajaHija{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
