@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegación con Flexbox - Aplicación Práctica</title>
+    <link rel="stylesheet" href="./navegacion-flex.css">
+</head>
+<body>
+    <div class="contenedor-ejemplos">
+        <h1>🧭 Navegación con Flexbox - Aplicación Práctica</h1>
+
+        <!-- PASO 1: TRANSFORMACIÓN BÁSICA -->
+        <div class="paso">
+            <h2>Paso 1: Transformación Básica</h2>
+            
+            <h3>❌ Tu navegación actual (inline-block):</h3>
+            <div class="nav-antes">
+                <h4>Mi Sitio Web</h4>
+                <nav>
+                    <ul>
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="#">Sobre Mí</a></li>
+                        <li><a href="#">Proyectos</a></li>
+                        <li><a href="#">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="codigo">/* TU CSS ACTUAL */
+nav ul {
+    text-align: center;
+}
+nav li {
+    display: inline-block;
+    margin: 0 1rem;
+}</div>
+
+            <h3>✅ Con Flexbox (3 líneas):</h3>
+            <div class="nav-despues">
+                <h4>Mi Sitio Web</h4>
+                <nav>
+                    <ul>
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="#">Sobre Mí</a></li>
+                        <li><a href="#">Proyectos</a></li>
+                        <li><a href="#">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="codigo">/* REEMPLAZA POR ESTO */
+nav ul {
+    <span class="destacado">display: flex;</span>
+    <span class="destacado">justify-content: center;</span>
+    <span class="destacado">gap: 2rem;</span>
+}</div>
+
+            <div class="nota">
+                <strong>🎯 Resultado inmediato:</strong> Sin espacios problemáticos, centrado perfecto, espaciado consistente.
+            </div>
+        </div>
+
+        <!-- PASO 2: LAYOUTS COMUNES -->
+        <div class="paso">
+            <h2>Paso 2: Layouts Profesionales</h2>
+            
+            <h3>Logo izquierda, navegación derecha:</h3>
+            <div class="layout-logo-nav">
+                <div class="logo">Mi Logo</div>
+                <nav>
+                    <ul>
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="#">Sobre Mí</a></li>
+                        <li><a href="#">Proyectos</a></li>
+                        <li><a href="#">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="codigo">header {
+    <span class="destacado">display: flex;</span>
+    <span class="destacado">justify-content: space-between;</span>
+    <span class="destacado">align-items: center;</span>
+}
+
+nav ul {
+    display: flex;
+    gap: 2rem;
+}</div>
+
+            <h3>Navegación vertical (para sidebars):</h3>
+            <div class="layout-vertical">
+                <h4>Mi Sitio Web</h4>
+                <nav>
+                    <ul>
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="#">Sobre Mí</a></li>
+                        <li><a href="#">Proyectos</a></li>
+                        <li><a href="#">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="codigo">header {
+    display: flex;
+    <span class="destacado">flex-direction: column;</span>
+    align-items: center;
+    gap: 1.5rem;
+}
+
+nav ul {
+    display: flex;
+    <span class="destacado">flex-direction: column;</span>
+    gap: 1rem;
+}</div>
+
+            <h3>Responsive automático:</h3>
+            <div class="layout-responsive">
+                <h1>Mi Sitio Web</h1>
+                <nav>
+                    <ul>
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="#">Sobre Mí</a></li>
+                        <li><a href="#">Proyectos</a></li>
+                        <li><a href="#">Portfolio</a></li>
+                        <li><a href="#">Servicios</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="codigo">nav ul {
+    display: flex;
+    <span class="destacado">flex-wrap: wrap;</span>
+    justify-content: center;
+    gap: 1rem;
+}
+
+/* Responsive automático */</div>
+        </div>
+
+        <!-- PASO 3: GUÍA PRÁCTICA -->
+        <div class="paso">
+            <h2>Paso 3: Aplica a Tu Proyecto AHORA</h2>
+            
+            <div class="guia-practica">
+                <h3>🎯 Checklist de aplicación:</h3>
+                <ul class="checklist">
+                    <li>Abre tu archivo CSS actual</li>
+                    <li>Busca la sección de navegación</li>
+                    <li>Reemplaza display: inline-block por display: flex</li>
+                    <li>Agrega justify-content: center</li>
+                    <li>Reemplaza margins por gap</li>
+                    <li>Prueba en el navegador</li>
+                    <li>Experimenta con diferentes justify-content</li>
+                    <li>Haz commit: "Convertir navegación a Flexbox"</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- PASO 4: PROBLEMAS COMUNES -->
+        <div class="paso">
+            <h2>Paso 4: Solución de Problemas</h2>
+            
+            <div class="problema-solucion">
+                <div class="problema">
+                    <h4>❌ Problema: "No se centra verticalmente"</h4>
+                    <div class="codigo" style="background: #721c24; color: #f8d7da;">header {
+    display: flex;
+    justify-content: center;
+    height: 80px;
+    /* Solo horizontal */
+}</div>
+                </div>
+                
+                <div class="solucion">
+                    <h4>✅ Solución: Agregar align-items</h4>
+                    <div class="codigo" style="background: #155724; color: #d4edda;">header {
+    display: flex;
+    justify-content: center;
+    <span class="destacado">align-items: center;</span>
+    height: 80px;
+}</div>
+                </div>
+            </div>
+
+            <div class="problema-solucion">
+                <div class="problema">
+                    <h4>❌ Problema: "Espaciado inconsistente"</h4>
+                    <div class="codigo" style="background: #721c24; color: #f8d7da;">nav a {
+    margin-right: 1rem;
+}
+/* Último queda mal */</div>
+                </div>
+                
+                <div class="solucion">
+                    <h4>✅ Solución: Usar gap</h4>
+                    <div class="codigo" style="background: #155724; color: #d4edda;">nav ul {
+    display: flex;
+    <span class="destacado">gap: 1rem;</span>
+}
+/* Perfecto automático */</div>
+                </div>
+            </div>
+
+            <div class="problema-solucion">
+                <div class="problema">
+                    <h4>❌ Problema: "No responsive"</h4>
+                    <div class="codigo" style="background: #721c24; color: #f8d7da;">nav ul {
+    display: flex;
+    /* Se desborda en móvil */
+}</div>
+                </div>
+                
+                <div class="solucion">
+                    <h4>✅ Solución: Agregar flex-wrap</h4>
+                    <div class="codigo" style="background: #155724; color: #d4edda;">nav ul {
+    display: flex;
+    <span class="destacado">flex-wrap: wrap;</span>
+    justify-content: center;
+}</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PASO 5: TU TURNO -->
+        <div class="paso">
+            <h2>🚀 ¡Tu Turno!</h2>
+            
+            <div class="nota">
+                <strong>📝 Desafío inmediato:</strong><br><br>
+                
+                <strong>1. Transforma tu navegación:</strong><br>
+                • Abre tu proyecto actual<br>
+                • Aplica Flexbox a tu navegación<br>
+                • Experimenta con justify-content<br><br>
+                
+                <strong>2. Prueba diferentes layouts:</strong><br>
+                • Logo izquierda, nav derecha<br>
+                • Navegación completamente centrada<br>
+                • Responsive con flex-wrap<br><br>
+                
+                <strong>3. Siguiente nivel:</strong><br>
+                • Aplica Flexbox a otras secciones<br>
+                • Experimenta con align-items<br>
+                • ¡Prepárate para cards con Flexbox!
+            </div>
+
+            <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 2rem; border-radius: 8px; text-align: center; margin-top: 2rem;">
+                <h3>🎯 ¡Navegación Moderna Conseguida!</h3>
+                <p>Tu navegación ahora es flexible, responsive y profesional.</p>
+                <p><strong>Siguiente:</strong> Cards y layouts complejos con Flexbox.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Efectos hover para mejorar la experiencia
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-2px)';
+                this.style.transition = 'transform 0.2s ease';
+            });
+            
+            link.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+
+        console.log('🧭 Navegación con Flexbox cargada!');
+        console.log('💡 Tip: Aplica esto inmediatamente a tu proyecto');
+        console.log('🔧 Tip: Experimenta con DevTools para ver los cambios');
+    </script>
+</body>
+</html>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        .contenedor-ejemplos {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #2c3e50;
+            font-size: 2.5rem;
+        }
+
+        h2 {
+            color: #3498db;
+            margin: 3rem 0 1rem 0;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            color: #34495e;
+            margin: 2rem 0 1rem 0;
+        }
+
+        .ejemplo {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .codigo {
+            background-color: #2d3748;
+            color: #e2e8f0;
+            padding: 1.5rem;
+            border-radius: 6px;
+            font-family: 'Courier New', monospace;
+            margin: 1rem 0;
+            overflow-x: auto;
+        }
+
+        .destacado {
+            background-color: #ffd700;
+            color: #333;
+            padding: 0.2rem 0.5rem;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+
+        .nota {
+            background-color: #e8f4fd;
+            border-left: 4px solid #3498db;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 4px 4px 0;
+        }
+
+        /* ======= EJEMPLO 1: SIN FLEXBOX ======= */
+        .header-sin-flex {
+            background-color: #e74c3c;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .nav-sin-flex ul {
+            list-style: none;
+            text-align: center;
+        }
+
+        .nav-sin-flex li {
+            display: inline-block;
+            margin: 0 1rem;
+        }
+
+        .nav-sin-flex a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-sin-flex a:hover {
+            background-color: rgba(255,255,255,0.2);
+        }
+
+        /* ======= EJEMPLO 2: CON FLEXBOX BÁSICO ======= */
+        .header-flex-basico {
+            background-color: #27ae60;
+            color: white;
+            padding: 1rem;
+        }
+
+        .header-flex-basico h1 {
+            text-align: center;
+            margin-bottom: 1rem;
+            color: white;
+            font-size: 1.8rem;
+        }
+
+        .nav-flex-basico ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .nav-flex-basico a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-flex-basico a:hover {
+            background-color: rgba(255,255,255,0.2);
+        }
+
+        /* ======= EJEMPLO 3: LOGO IZQUIERDA, NAV DERECHA ======= */
+        .header-logo-nav {
+            background-color: #3498db;
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-horizontal ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-horizontal a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-horizontal a:hover {
+            background-color: rgba(255,255,255,0.2);
+        }
+
+        /* ======= EJEMPLO 4: NAV VERTICAL ======= */
+        .header-vertical {
+            background-color: #9b59b6;
+            color: white;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .header-vertical h1 {
+            color: white;
+            font-size: 1.8rem;
+        }
+
+        .nav-vertical ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .nav-vertical a {
+            color: white;
+            text-decoration: none;
+            padding: 0.75rem 2rem;
+            border-radius: 25px;
+            transition: all 0.3s;
+            text-align: center;
+            border: 2px solid transparent;
+        }
+
+        .nav-vertical a:hover {
+            background-color: rgba(255,255,255,0.2);
+            border-color: rgba(255,255,255,0.3);
+        }
+
+        /* ======= EJEMPLO 5: NAV RESPONSIVE ======= */
+        .header-responsive {
+            background-color: #e67e22;
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .header-responsive h1 {
+            color: white;
+            font-size: 1.8rem;
+        }
+
+        .nav-responsive ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .nav-responsive a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            transition: background-color 0.3s;
+            white-space: nowrap;
+        }
+
+        .nav-responsive a:hover {
+            background-color: rgba(255,255,255,0.2);
+        }
+
+        /* ======= EJEMPLO 6: NAV CON JUSTIFY-CONTENT VARIATIONS ======= */
+        .nav-variations {
+            background-color: #34495e;
+            color: white;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+
+        .nav-variations ul {
+            list-style: none;
+            display: flex;
+            gap: 1rem;
+            padding: 0.5rem;
+        }
+
+        .nav-variations a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            background-color: rgba(255,255,255,0.1);
+            transition: background-color 0.3s;
+        }
+
+        .nav-variations a:hover {
+            background-color: rgba(255,255,255,0.2);
+        }
+
+        .justify-start ul { justify-content: flex-start; }
+        .justify-center ul { justify-content: center; }
+        .justify-end ul { justify-content: flex-end; }
+        .justify-between ul { justify-content: space-between; }
+        .justify-around ul { justify-content: space-around; }
+        .justify-evenly ul { justify-content: space-evenly; }
+
+        /* ======= DEMO INTERACTIVO ======= */
+        .playground {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+        }
+
+        .playground h3 {
+            color: white;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .playground-nav {
+            background-color: rgba(255,255,255,0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .playground-nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .playground-nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            background-color: rgba(255,255,255,0.2);
+        }
+
+        .control-panel {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        .control-btn {
+            background-color: rgba(255,255,255,0.2);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .control-btn:hover {
+            background-color: rgba(255,255,255,0.3);
+        }
+
+        .control-btn.active {
+            background-color: #ffd700;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor-ejemplos">
+        <h1>🧭 Navegación con Flexbox</h1>
+
+        <!-- EJEMPLO 1: Sin Flexbox -->
+        <div class="ejemplo">
+            <h2>1. ❌ Navegación Sin Flexbox (Forma Antigua)</h2>
+            
+            <header class="header-sin-flex">
+                <h1>Mi Sitio Web</h1>
+                <nav class="nav-sin-flex">
+                    <ul>
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="#">Sobre Mí</a></li>
+                        <li><a href="#">Proyectos</a></li>
+                        <li><a href="#">Contacto</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <div class="codigo">nav ul {
+    display: flex;
+    <span class="destacado">flex-wrap: wrap;</span>
+    justify-content: center;
+    gap: 1rem;
+}
+
+/* Los elementos se adaptan automáticamente:
+   - En pantallas grandes: una fila
+   - En pantallas pequeñas: múltiples filas */</div>
+
+            <div class="nota">
+                <strong>📱 flex-wrap: wrap</strong><br>
+                Permite que los elementos salten a la siguiente línea cuando no hay espacio. ¡Responsive automático sin media queries!
+            </div>
+        </div>
+
+        <!-- EJEMPLO 6: Variaciones de justify-content -->
+        <div class="ejemplo">
+            <h2>6. 🎚️ Todas las Variaciones de justify-content</h2>
+            
+            <h3>flex-start (izquierda):</h3>
+            <nav class="nav-variations justify-start">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+
+            <h3>center (centro):</h3>
+            <nav class="nav-variations justify-center">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+
+            <h3>flex-end (derecha):</h3>
+            <nav class="nav-variations justify-end">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+
+            <h3>space-between (espacio entre):</h3>
+            <nav class="nav-variations justify-between">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+
+            <h3>space-around (espacio alrededor):</h3>
+            <nav class="nav-variations justify-around">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+
+            <h3>space-evenly (espacio uniforme):</h3>
+            <nav class="nav-variations justify-evenly">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="codigo">/* Experimenta con todas las opciones */
+nav ul {
+    display: flex;
+    gap: 1rem;
+    
+    justify-content: flex-start;    /* ⬅️ */
+    justify-content: center;        /* ↔️ */
+    justify-content: flex-end;      /* ➡️ */
+    justify-content: space-between; /* ↔️ */
+    justify-content: space-around;  /* ↔️ */
+    justify-content: space-evenly;  /* ↔️ */
+}</div>
+        </div>
+
+        <!-- DEMO INTERACTIVO -->
+        <div class="ejemplo">
+            <h2>7. 🎮 Demo Interactivo</h2>
+            
+            <div class="playground">
+                <h3>¡Experimenta en tiempo real!</h3>
+                <p>Haz clic en los botones para cambiar el justify-content:</p>
+                
+                <nav class="playground-nav" id="demoNav">
+                    <ul>
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="#">Sobre Mí</a></li>
+                        <li><a href="#">Proyectos</a></li>
+                        <li><a href="#">Contacto</a></li>
+                    </ul>
+                </nav>
+
+                <div class="control-panel">
+                    <button class="control-btn active" onclick="cambiarJustify('center')">center</button>
+                    <button class="control-btn" onclick="cambiarJustify('flex-start')">flex-start</button>
+                    <button class="control-btn" onclick="cambiarJustify('flex-end')">flex-end</button>
+                    <button class="control-btn" onclick="cambiarJustify('space-between')">space-between</button>
+                    <button class="control-btn" onclick="cambiarJustify('space-around')">space-around</button>
+                    <button class="control-btn" onclick="cambiarJustify('space-evenly')">space-evenly</button>
+                </div>
+
+                <div class="codigo" id="codigoActual">justify-content: center;</div>
+            </div>
+        </div>
+
+        <!-- CONVERSIÓN PASO A PASO -->
+        <div class="ejemplo">
+            <h2>8. 🔧 Convierte Tu Navegación: Paso a Paso</h2>
+            
+            <div class="nota">
+                <strong>📝 Guía para convertir tu navegación actual:</strong><br><br>
+                
+                <strong>Paso 1: Identifica tu HTML actual</strong><br>
+                <div class="codigo"><!-- Tu HTML actual probablemente es: -->
+&lt;nav&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="index.html"&gt;Inicio&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="sobre-mi.html"&gt;Sobre Mí&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="proyectos.html"&gt;Proyectos&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="contacto.html"&gt;Contacto&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;</div>
+
+                <strong>Paso 2: Reemplaza tu CSS actual por esto:</strong><br>
+                <div class="codigo">/* ANTES - Borra esto */
+nav ul {
+    list-style: none;
+    text-align: center;
+}
+
+nav li {
+    display: inline-block;
+    margin: 0 1rem;
+}
+
+/* DESPUÉS - Usa esto */
+nav ul {
+    list-style: none;
+    <span class="destacado">display: flex;</span>
+    <span class="destacado">justify-content: center;</span>
+    <span class="destacado">gap: 2rem;</span>
+}</div>
+
+                <strong>Paso 3: Elige tu layout preferido:</strong><br>
+                • **Centro:** `justify-content: center`<br>
+                • **Logo izquierda, nav derecha:** `justify-content: space-between` en el header<br>
+                • **Distribuido:** `justify-content: space-evenly`<br><br>
+
+                <strong>Paso 4: Haz responsive:</strong><br>
+                <div class="codigo">nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    <span class="destacado">flex-wrap: wrap;</span>  /* Se adapta a móviles */
+}</div>
+
+                <strong>¡Listo! Tu navegación ahora es moderna y flexible.</strong>
+            </div>
+        </div>
+
+        <!-- PROBLEMAS COMUNES -->
+        <div class="ejemplo">
+            <h2>9. 🚫 Problemas Comunes y Soluciones</h2>
+            
+            <h3>❌ Problema: "No se centra verticalmente"</h3>
+            <div class="codigo">/* MAL - Solo justify-content */
+header {
+    display: flex;
+    justify-content: center;
+    height: 80px;
+}
+
+/* BIEN - Agregar align-items */
+header {
+    display: flex;
+    justify-content: center;
+    <span class="destacado">align-items: center;</span>
+    height: 80px;
+}</div>
+
+            <h3>❌ Problema: "Espaciado inconsistente"</h3>
+            <div class="codigo">/* MAL - Margin manual */
+nav a {
+    margin-right: 1rem;
+}
+
+/* BIEN - Usar gap */
+nav ul {
+    display: flex;
+    <span class="destacado">gap: 1rem;</span>
+}</div>
+
+            <h3>❌ Problema: "No funciona en móviles"</h3>
+            <div class="codigo">/* MAL - Sin flex-wrap */
+nav ul {
+    display: flex;
+    justify-content: center;
+}
+
+/* BIEN - Con flex-wrap */
+nav ul {
+    display: flex;
+    justify-content: center;
+    <span class="destacado">flex-wrap: wrap;</span>
+    gap: 1rem;
+}</div>
+
+            <div class="nota">
+                <strong>💡 Regla de oro:</strong><br>
+                Siempre agrega `align-items: center` cuando tengas altura fija y quieras centrado vertical perfecto.
+            </div>
+        </div>
+
+        <!-- PARA PRACTICAR -->
+        <div class="ejemplo">
+            <h2>10. 🚀 ¡Tu Turno!</h2>
+            
+            <div class="playground">
+                <h3>🎯 Aplica esto a tu proyecto ahora</h3>
+                <p><strong>Desafío:</strong> Transforma tu navegación actual usando Flexbox</p>
+                
+                <div style="text-align: left; margin: 1rem 0;">
+                    <p><strong>1. Abre tu archivo CSS</strong></p>
+                    <p><strong>2. Encuentra tu navegación actual</strong></p>
+                    <p><strong>3. Reemplaza con Flexbox</strong></p>
+                    <p><strong>4. Experimenta con justify-content</strong></p>
+                    <p><strong>5. Prueba en móvil (DevTools)</strong></p>
+                </div>
+
+                <p><strong>Siguiente archivo:</strong> cards-flexbox.html</p>
+                <p><strong>Objetivo:</strong> Navegación moderna y responsive</p>
+            </div>
+
+            <div class="nota">
+                <strong>🔧 Tip de debugging:</strong><br>
+                Usa Chrome DevTools (F12) → selecciona tu contenedor flex → verás visualmente cómo funciona Flexbox.<br><br>
+                
+                <strong>⚡ Tip de productividad:</strong><br>
+                Empieza siempre con `display: flex` y `justify-content: center`. Desde ahí, ajusta según necesites.
+            </div>
+        </div>
+
+    </div>
+
+    <!-- JavaScript para interactividad -->
+    <script>
+        function cambiarJustify(valor) {
+            const nav = document.getElementById('demoNav').querySelector('ul');
+            const codigo = document.getElementById('codigoActual');
+            
+            // Cambiar el estilo
+            nav.style.justifyContent = valor;
+            
+            // Actualizar el código mostrado
+            codigo.textContent = `justify-content: ${valor};`;
+            
+            // Actualizar botones activos
+            document.querySelectorAll('.control-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+        }
+
+        // Efectos hover para mejorar la experiencia
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-2px)';
+                this.style.transition = 'transform 0.2s ease';
+            });
+            
+            link.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+
+        // Console tips
+        console.log('🧭 Navegación con Flexbox cargada!');
+        console.log('💡 Tip: Experimenta con el demo interactivo');
+        console.log('🔧 Tip: Abre DevTools y inspecciona los contenedores flex');
+        console.log('📱 Tip: Usa responsive mode para ver cómo se adapta');
+    </script>
+</body>
+</html></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <div class="codigo">.nav-sin-flex ul {
+    list-style: none;
+    text-align: center;
+}
+
+.nav-sin-flex li {
+    <span class="destacado">display: inline-block;</span>
+    margin: 0 1rem;
+}
+
+/* Problemas:
+   - Espacios en blanco entre elementos
+   - Difícil de controlar alineación vertical
+   - No responsive automáticamente */</div>
+
+            <div class="nota">
+                <strong>Problemas de inline-block:</strong><br>
+                • Espacios en blanco misteriosos entre elementos<br>
+                • Difícil centrado vertical<br>
+                • No se adapta bien a diferentes tamaños de pantalla
+            </div>
+        </div>
+
+        <!-- EJEMPLO 2: Con Flexbox Básico -->
+        <div class="ejemplo">
+            <h2>2. ✅ Navegación Con Flexbox (Moderna)</h2>
+            
+            <header class="header-flex-basico">
+                <h1>Mi Sitio Web</h1>
+                <nav class="nav-flex-basico">
+                    <ul>
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="#">Sobre Mí</a></li>
+                        <li><a href="#">Proyectos</a></li>
+                        <li><a href="#">Contacto</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <div class="codigo">.nav-flex-basico ul {
+    list-style: none;
+    <span class="destacado">display: flex;</span>
+    <span class="destacado">justify-content: center;</span>
+    <span class="destacado">gap: 2rem;</span>
+}
+
+/* Ventajas:
+   - Sin espacios en blanco problemáticos
+   - Centrado perfecto
+   - Espaciado consistente con gap
+   - Más fácil de mantener */</div>
+
+            <div class="nota">
+                <strong>🎯 Transformación simple:</strong><br>
+                Solo cambiamos 3 líneas y eliminamos los problemas de inline-block. ¡El poder de Flexbox!
+            </div>
+        </div>
+
+        <!-- EJEMPLO 3: Logo izquierda, nav derecha -->
+        <div class="ejemplo">
+            <h2>3. 🔄 Layout: Logo Izquierda, Nav Derecha</h2>
+            
+            <header class="header-logo-nav">
+                <div class="logo">Mi Logo</div>
+                <nav class="nav-horizontal">
+                    <ul>
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="#">Sobre Mí</a></li>
+                        <li><a href="#">Proyectos</a></li>
+                        <li><a href="#">Contacto</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <div class="codigo">header {
+    <span class="destacado">display: flex;</span>
+    <span class="destacado">justify-content: space-between;</span>
+    <span class="destacado">align-items: center;</span>
+    padding: 1rem 2rem;
+}
+
+nav ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}</div>
+
+            <div class="nota">
+                <strong>💡 space-between es perfecto para:</strong><br>
+                • Logo en un extremo, navegación en el otro<br>
+                • Distribución automática del espacio<br>
+                • Layout profesional muy común
+            </div>
+        </div>
+
+        <!-- EJEMPLO 4: Navegación vertical -->
+        <div class="ejemplo">
+            <h2>4. ↕️ Navegación Vertical</h2>
+            
+            <header class="header-vertical">
+                <h1>Mi Sitio Web</h1>
+                <nav class="nav-vertical">
+                    <ul>
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="#">Sobre Mí</a></li>
+                        <li><a href="#">Proyectos</a></li>
+                        <li><a href="#">Contacto</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <div class="codigo">header {
+    display: flex;
+    <span class="destacado">flex-direction: column;</span>
+    align-items: center;
+    gap: 1.5rem;
+}
+
+nav ul {
+    display: flex;
+    <span class="destacado">flex-direction: column;</span>
+    gap: 1rem;
+}</div>
+
+            <div class="nota">
+                <strong>🔄 flex-direction: column</strong><br>
+                Cambia el eje principal de horizontal a vertical. Perfecto para navegaciones tipo sidebar o diseños centrados.
+            </div>
+        </div>
+
+        <!-- EJEMPLO 5: Navegación responsive -->
+        <div class="ejemplo">
+            <h2>5. 📱 Navegación Responsive Automática</h2>
+            
+            <header class="header-responsive">
+                <h1>Mi Sitio Web</h1>
+                <nav class="nav-responsive">
+                    <ul>
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="#">Sobre Mí</a></li>
+                        <li><a href="#">Proyectos</a></li>
+                        <li><a href="#">Portafolio</a></li>
+                        <li><a href="#">Servicios</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contacto</a>

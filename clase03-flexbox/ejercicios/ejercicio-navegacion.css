@@ -1,0 +1,303 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  background: #2c3e50;
+  color: white;
+  padding: 2rem;
+  text-align: center;
+}
+
+.header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.header p {
+  opacity: 0.9;
+  font-size: 1.1rem;
+}
+
+.ejercicio {
+  padding: 2rem;
+  border-bottom: 2px solid #ecf0f1;
+}
+
+.ejercicio:last-child {
+  border-bottom: none;
+}
+
+.ejercicio h2 {
+  color: #3498db;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.instrucciones {
+  background: #e8f6f3;
+  border-left: 4px solid #26de81;
+  padding: 1rem 1.5rem;
+  margin: 1rem 0;
+  border-radius: 6px;
+}
+
+.codigo {
+  background: #2c3e50;
+  color: #ecf0f1;
+  padding: 1.5rem;
+  border-radius: 8px;
+  font-family: "Courier New", monospace;
+  margin: 1rem 0;
+  border-left: 4px solid #3498db;
+  overflow-x: auto;
+  white-space: pre;
+  line-height: 1.5;
+}
+
+.destacado {
+  background: #f39c12;
+  color: #2c3e50;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+/* NAVEGACIONES DE EJEMPLO PARA PRACTICAR */
+
+/* 1. Navegación SIN Flexbox (punto de partida) */
+.nav-sin-flex {
+  background: #34495e;
+  padding: 1rem 2rem;
+  margin: 1rem 0;
+  border-radius: 8px;
+}
+
+.nav-sin-flex ul {
+  list-style: none;
+  text-align: center;
+}
+
+.nav-sin-flex li {
+  display: inline-block;
+  margin: 0 1rem;
+}
+
+.nav-sin-flex a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+.nav-sin-flex a:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* 2. Navegación CON Flexbox básico */
+.nav-flex-basico {
+  background: #27ae60;
+  padding: 1rem 2rem;
+  margin: 1rem 0;
+  border-radius: 8px;
+}
+
+.nav-flex-basico ul {
+  /* TODO: Los estudiantes deben completar aquí */
+  list-style: none;
+
+  /* ACTIVIDAD PASO A PASO:
+     1. Activar Flexbox: display: flex;
+     2. Centrar elementos: justify-content: center;
+     3. Espaciado moderno: gap: 2rem; */
+}
+
+.nav-flex-basico a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+.nav-flex-basico a:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* 3. Header completo con logo y nav */
+.header-completo {
+  background: #9b59b6;
+  padding: 1rem 2rem;
+  margin: 1rem 0;
+  border-radius: 8px;
+}
+
+.header-flex {
+  /* TODO: Los estudiantes deben completar aquí */
+
+  /* ACTIVIDAD: Hacer que logo esté a la izquierda y nav a la derecha:
+     1. display: flex;
+     2. justify-content: space-between;
+     3. align-items: center; */
+}
+
+.logo {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-derecha ul {
+  /* TODO: Hacer esta nav horizontal también con flex */
+  list-style: none;
+  
+  /* ACTIVIDAD:
+     1. display: flex;
+     2. gap: 1rem; */
+}
+
+.nav-derecha li {
+  /* Ya no necesitas display: inline-block si usas flex en el ul */
+}
+
+.nav-derecha a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+  margin-left: 1rem;
+}
+
+.nav-derecha a:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* 4. Navegación vertical (para sidebar) */
+.nav-vertical {
+  background: #e74c3c;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  border-radius: 8px;
+  max-width: 250px;
+}
+
+.nav-vertical ul {
+  /* TODO: Los estudiantes deben hacer esto vertical:
+     1. display: flex;
+     2. flex-direction: column;
+     3. gap: 1rem; */
+  list-style: none;
+}
+
+.nav-vertical a {
+  color: white;
+  text-decoration: none;
+  padding: 1rem;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+  display: block;
+}
+
+.nav-vertical a:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* 5. Navegación responsive */
+.nav-responsive {
+  background: #f39c12;
+  padding: 1rem 2rem;
+  margin: 1rem 0;
+  border-radius: 8px;
+}
+
+.nav-responsive ul {
+  /* TODO: Los estudiantes deben hacer esto responsive:
+     1. display: flex;
+     2. flex-wrap: wrap;
+     3. justify-content: center;
+     4. gap: 1rem; */
+  list-style: none;
+}
+
+.nav-responsive a {
+  color: white;
+  text-decoration: none;
+  padding: 0.75rem 1.25rem;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+  display: block;
+  white-space: nowrap;
+}
+
+.nav-responsive a:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.resultado {
+  background: #d5edda;
+  border: 1px solid #c3e6cb;
+  border-left: 4px solid #28a745;
+  padding: 1rem 1.5rem;
+  margin: 1rem 0;
+  border-radius: 6px;
+}
+
+.checklist {
+  background: #fff3cd;
+  border: 1px solid #ffeaa7;
+  border-left: 4px solid #fdcb6e;
+  padding: 1rem 1.5rem;
+  margin: 1rem 0;
+  border-radius: 6px;
+}
+
+.checklist ul {
+  margin: 0.5rem 0;
+  margin-left: 1.5rem;
+}
+
+.paso {
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+  padding: 1rem;
+  margin: 0.5rem 0;
+  border-radius: 6px;
+  border-left: 4px solid #007bff;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 1rem;
+  }
+
+  .container {
+    margin: 0;
+  }
+
+  .ejercicio {
+    padding: 1rem;
+  }
+}

@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexbox Playground - Experimentación</title>
+    <link rel="stylesheet" href="./flexbox-playground.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>🎮 Flexbox Playground</h1>
+      <div class="intro">
+        <p>¡Experimenta con todas las propiedades de Flexbox en tiempo real!</p>
+        <p>
+          Cambia los controles y ve cómo afectan al layout instantáneamente.
+        </p>
+      </div>
+
+      <div class="playground">
+        <!-- CONTROLES -->
+        <div class="controls">
+          <!-- justify-content -->
+          <div class="control-group">
+            <h3>justify-content (Horizontal)</h3>
+            <div class="control-buttons">
+              <button
+                class="btn active"
+                onclick="cambiarPropiedad('justify-content', 'flex-start')"
+              >
+                flex-start
+              </button>
+              <button
+                class="btn"
+                onclick="cambiarPropiedad('justify-content', 'center')"
+              >
+                center
+              </button>
+              <button
+                class="btn"
+                onclick="cambiarPropiedad('justify-content', 'flex-end')"
+              >
+                flex-end
+              </button>
+              <button
+                class="btn"
+                onclick="cambiarPropiedad('justify-content', 'space-between')"
+              >
+                space-between
+              </button>
+              <button
+                class="btn"
+                onclick="cambiarPropiedad('justify-content', 'space-around')"
+              >
+                space-around
+              </button>
+              <button
+                class="btn"
+                onclick="cambiarPropiedad('justify-content', 'space-evenly')"
+              >
+                space-evenly
+              </button>
+            </div>
+          </div>
+
+          <!-- align-items -->
+          <div class="control-group">
+            <h3>align-items (Vertical)</h3>
+            <div class="control-buttons">
+              <button
+                class="btn active"
+                onclick="cambiarPropiedad('align-items', 'stretch')"
+              >
+                stretch
+              </button>
+              <button
+                class="btn"
+                onclick="cambiarPropiedad('align-items', 'flex-start')"
+              >
+                flex-start
+              </button>
+              <button
+                class="btn"
+                onclick="cambiarPropiedad('align-items', 'center')"
+              >
+                center
+              </button>
+              <button
+                class="btn"
+                onclick="cambiarPropiedad('align-items', 'flex-end')"
+              >
+                flex-end
+              </button>
+              <button
+                class="btn"
+                onclick="cambiarPropiedad('align-items', 'baseline')"
+              >
+                baseline
+              </button>
+            </div>
+          </div>
+
+          <!-- flex-direction -->
+          <div class="control-group">
+            <h3>flex-direction (Dirección)</h3>
+            <div class="control-buttons">
+              <button
+                class="btn active"
+                onclick="cambiarPropiedad('flex-direction', 'row')"
+              >
+                row
+              </button>
+              <button
+                class="btn"
+                onclick="cambiarPropiedad('flex-direction', 'row-reverse')"
+              >
+                row-reverse
+              </button>
+              <button
+                class="btn"
+                onclick="cambiarPropiedad('flex-direction', 'column')"
+              >
+                column
+              </button>
+              <button
+                class="btn"
+                onclick="cambiarPropiedad('flex-direction', 'column-reverse')"
+              >
+                column-reverse
+              </button>
+            </div>
+          </div>
+
+          <!-- flex-wrap -->
+          <div class="control-group">
+            <h3>flex-wrap (Envolvimiento)</h3>
+            <div class="control-buttons">
+              <button
+                class="btn active"
+                onclick="cambiarPropiedad('flex-wrap', 'nowrap')"
+              >
+                nowrap
+              </button>
+              <button
+                class="btn"
+                onclick="cambiarPropiedad('flex-wrap', 'wrap')"
+              >
+                wrap
+              </button>
+              <button
+                class="btn"
+                onclick="cambiarPropiedad('flex-wrap', 'wrap-reverse')"
+              >
+                wrap-reverse
+              </button>
+            </div>
+          </div>
+
+          <!-- gap -->
+          <div class="control-group">
+            <h3>gap (Espaciado)</h3>
+            <div class="control-buttons">
+              <button class="btn" onclick="cambiarPropiedad('gap', '0')">
+                0
+              </button>
+              <button class="btn" onclick="cambiarPropiedad('gap', '0.5rem')">
+                0.5rem
+              </button>
+              <button
+                class="btn active"
+                onclick="cambiarPropiedad('gap', '1rem')"
+              >
+                1rem
+              </button>
+              <button class="btn" onclick="cambiarPropiedad('gap', '2rem')">
+                2rem
+              </button>
+              <button class="btn" onclick="cambiarPropiedad('gap', '3rem')">
+                3rem
+              </button>
+            </div>
+          </div>
+
+          <!-- Altura del contenedor -->
+          <div class="control-group">
+            <h3>Altura del Contenedor</h3>
+            <div class="control-buttons">
+              <button class="btn" onclick="cambiarAltura('200px')">
+                Baja (200px)
+              </button>
+              <button class="btn active" onclick="cambiarAltura('300px')">
+                Media (300px)
+              </button>
+              <button class="btn" onclick="cambiarAltura('400px')">
+                Alta (400px)
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- DEMO CONTAINER -->
+        <div class="demo-container">
+          <h3>Contenedor Flex (Padre)</h3>
+          <div class="flex-container" id="flexContainer">
+            <div class="flex-item item-1">Item 1</div>
+            <div class="flex-item item-2">Item 2<br />Más contenido</div>
+            <div class="flex-item item-3">Item 3</div>
+          </div>
+        </div>
+
+        <!-- CÓDIGO ACTUAL -->
+        <div class="codigo-actual" id="codigoActual">
+          .flex-container {
+          <span class="property-highlight">display: flex;</span>
+          <span class="property-highlight">justify-content: flex-start;</span>
+          <span class="property-highlight">align-items: stretch;</span>
+          <span class="property-highlight">flex-direction: row;</span>
+          <span class="property-highlight">flex-wrap: nowrap;</span>
+          <span class="property-highlight">gap: 1rem;</span>
+          height: 300px; }
+        </div>
+
+        <!-- INSPECTOR -->
+        <div class="inspector">
+          <h4>🔍 Inspector de Propiedades</h4>
+          <p>
+            <strong>Contenedor actual:</strong>
+            <span id="containerInfo">display: flex con 3 items</span>
+          </p>
+          <p>
+            <strong>Eje principal:</strong>
+            <span id="ejeInfo">Horizontal (izquierda → derecha)</span>
+          </p>
+          <p>
+            <strong>Eje secundario:</strong>
+            <span id="ejeSecundarioInfo">Vertical (arriba ↓ abajo)</span>
+          </p>
+          <p>
+            <strong>Comportamiento:</strong>
+            <span id="comportamientoInfo"
+              >Items en fila, se estiran verticalmente</span
+            >
+          </p>
+        </div>
+
+        <!-- CONTROLES DE ACCIÓN -->
+        <div style="text-align: center; margin: 2rem 0">
+          <button class="reset-btn" onclick="resetear()">
+            🔄 Resetear Todo
+          </button>
+          <button
+            class="btn"
+            onclick="agregarItem()"
+            style="background: #27ae60; padding: 1rem 2rem; font-size: 1rem"
+          >
+            ➕ Agregar Item
+          </button>
+          <button
+            class="btn"
+            onclick="removerItem()"
+            style="background: #e74c3c; padding: 1rem 2rem; font-size: 1rem"
+          >
+            ➖ Remover Item
+          </button>
+        </div>
+      </div>
+
+      <!-- LAYOUTS PREDEFINIDOS -->
+      <div class="playground">
+        <h2 style="text-align: center; margin-bottom: 2rem">
+          🎯 Layouts Comunes (Click para aplicar)
+        </h2>
+        <div class="preset-layouts">
+          <div class="preset-card" onclick="aplicarPreset('navegacion')">
+            <h4>🧭 Navegación Centrada</h4>
+            <p>justify-content: center</p>
+            <p>align-items: center</p>
+          </div>
+          <div class="preset-card" onclick="aplicarPreset('header')">
+            <h4>🏠 Header Logo/Nav</h4>
+            <p>justify-content: space-between</p>
+            <p>align-items: center</p>
+          </div>
+          <div class="preset-card" onclick="aplicarPreset('centrado')">
+            <h4>🎯 Centrado Perfecto</h4>
+            <p>justify-content: center</p>
+            <p>align-items: center</p>
+          </div>
+          <div class="preset-card" onclick="aplicarPreset('cards')">
+            <h4>🎴 Cards Responsive</h4>
+            <p>flex-wrap: wrap</p>
+            <p>justify-content: center</p>
+          </div>
+          <div class="preset-card" onclick="aplicarPreset('vertical')">
+            <h4>↕️ Lista Vertical</h4>
+            <p>flex-direction: column</p>
+            <p>align-items: center</p>
+          </div>
+          <div class="preset-card" onclick="aplicarPreset('distribuido')">
+            <h4>📐 Distribuido</h4>
+            <p>justify-content: space-evenly</p>
+            <p>align-items: center</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- TIPS -->
+      <div class="tips">
+        <h3>💡 Tips para Experimentar</h3>
+        <ul>
+          <li>
+            <strong>Cambia flex-direction a column</strong> y observa cómo
+            cambian los ejes
+          </li>
+          <li>
+            <strong>Usa flex-wrap: wrap</strong> y agrega más items para ver el
+            comportamiento
+          </li>
+          <li>
+            <strong
+              >Combina justify-content: center con align-items: center</strong
+            >
+            para centrado perfecto
+          </li>
+          <li>
+            <strong>Prueba space-between</strong> para separar elementos a los
+            extremos
+          </li>
+          <li>
+            <strong>Experimenta con diferentes alturas</strong> para ver mejor
+            align-items
+          </li>
+          <li>
+            <strong>Abre DevTools (F12)</strong> para inspeccionar el contenedor
+            flex en el navegador
+          </li>
+        </ul>
+      </div>
+
+      <!-- DESAFÍOS -->
+      <div class="playground">
+        <h3 style="text-align: center; margin-bottom: 2rem">🎮 Desafíos</h3>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+          "
+        >
+          <div class="preset-card">
+            <h4>🥇 Desafío 1</h4>
+            <p>Crea una navegación con elementos distribuidos uniformemente</p>
+            <small>Pista: space-evenly</small>
+          </div>
+          <div class="preset-card">
+            <h4>🥈 Desafío 2</h4>
+            <p>Centra perfectamente los elementos horizontal y verticalmente</p>
+            <small>Pista: center + center</small>
+          </div>
+          <div class="preset-card">
+            <h4>🥉 Desafío 3</h4>
+            <p>Crea una lista vertical con elementos centrados</p>
+            <small>Pista: flex-direction</small>
+          </div>
+          <div class="preset-card">
+            <h4>🏆 Desafío Maestro</h4>
+            <p>
+              Replica el layout de un header típico: logo izquierda, nav derecha
+            </p>
+            <small>Pista: space-between</small>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Estado actual del flexbox
+      let estadoActual = {
+        "justify-content": "flex-start",
+        "align-items": "stretch",
+        "flex-direction": "row",
+        "flex-wrap": "nowrap",
+        gap: "1rem",
+        height: "300px",
+      };
+
+      let contadorItems = 3;
+
+      function cambiarPropiedad(propiedad, valor) {
+        const container = document.getElementById("flexContainer");
+        const codigo = document.getElementById("codigoActual");
+
+        // Actualizar estado
+        estadoActual[propiedad] = valor;
+
+        // Aplicar al DOM
+        container.style[propiedad.replace("-", "")] = valor;
+        if (propiedad === "flex-direction") {
+          container.style.flexDirection = valor;
+        }
+        if (propiedad === "flex-wrap") {
+          container.style.flexWrap = valor;
+        }
+        if (propiedad === "justify-content") {
+          container.style.justifyContent = valor;
+        }
+        if (propiedad === "align-items") {
+          container.style.alignItems = valor;
+        }
+
+        // Actualizar botones activos
+        const grupo = event.target.parentElement;
+        grupo
+          .querySelectorAll(".btn")
+          .forEach((btn) => btn.classList.remove("active"));
+        event.target.classList.add("active");
+
+        // Actualizar código
+        actualizarCodigo();
+
+        // Actualizar inspector
+        actualizarInspector();
+      }
+
+      function cambiarAltura(altura) {
+        const container = document.getElementById("flexContainer");
+        estadoActual.height = altura;
+        container.style.height = altura;
+
+        // Actualizar botones activos
+        const grupo = event.target.parentElement;
+        grupo
+          .querySelectorAll(".btn")
+          .forEach((btn) => btn.classList.remove("active"));
+        event.target.classList.add("active");
+
+        actualizarCodigo();
+      }
+
+      function actualizarCodigo() {
+        const codigo = document.getElementById("codigoActual");
+        codigo.innerHTML = `
+.flex-container {
+    <span class="property-highlight">display: flex;</span>
+    <span class="property-highlight">justify-content: ${estadoActual["justify-content"]};</span>
+    <span class="property-highlight">align-items: ${estadoActual["align-items"]};</span>
+    <span class="property-highlight">flex-direction: ${estadoActual["flex-direction"]};</span>
+    <span class="property-highlight">flex-wrap: ${estadoActual["flex-wrap"]};</span>
+    <span class="property-highlight">gap: ${estadoActual["gap"]};</span>
+    height: ${estadoActual["height"]};
+}`;
+      }
+
+      function actualizarInspector() {
+        const containerInfo = document.getElementById("containerInfo");
+        const ejeInfo = document.getElementById("ejeInfo");
+        const ejeSecundarioInfo = document.getElementById("ejeSecundarioInfo");
+        const comportamientoInfo =
+          document.getElementById("comportamientoInfo");
+
+        const itemCount = document.querySelectorAll(".flex-item").length;
+        containerInfo.textContent = `display: flex con ${itemCount} items`;
+
+        // Determinar ejes según flex-direction
+        if (estadoActual["flex-direction"].includes("row")) {
+          ejeInfo.textContent = "Horizontal (izquierda → derecha)";
+          ejeSecundarioInfo.textContent = "Vertical (arriba ↓ abajo)";
+        } else {
+          ejeInfo.textContent = "Vertical (arriba ↓ abajo)";
+          ejeSecundarioInfo.textContent = "Horizontal (izquierda → derecha)";
+        }
+
+        // Describir comportamiento
+        let comportamiento = "";
+        if (estadoActual["flex-wrap"] === "wrap") {
+          comportamiento += "Items pueden envolver, ";
+        } else {
+          comportamiento += "Items en una línea, ";
+        }
+
+        if (estadoActual["align-items"] === "stretch") {
+          comportamiento += "se estiran para llenar el eje secundario";
+        } else {
+          comportamiento += `alineados ${estadoActual["align-items"]} en eje secundario`;
+        }
+
+        comportamientoInfo.textContent = comportamiento;
+      }
+
+      function agregarItem() {
+        contadorItems++;
+        const container = document.getElementById("flexContainer");
+        const nuevoItem = document.createElement("div");
+        nuevoItem.className = "flex-item";
+        nuevoItem.textContent = `Item ${contadorItems}`;
+        nuevoItem.style.background = `hsl(${Math.random() * 360}, 70%, 60%)`;
+        container.appendChild(nuevoItem);
+        actualizarInspector();
+      }
+
+      function removerItem() {
+        const container = document.getElementById("flexContainer");
+        const items = container.querySelectorAll(".flex-item");
+        if (items.length > 1) {
+          container.removeChild(items[items.length - 1]);
+          actualizarInspector();
+        }
+      }
+
+      function resetear() {
+        estadoActual = {
+          "justify-content": "flex-start",
+          "align-items": "stretch",
+          "flex-direction": "row",
+          "flex-wrap": "nowrap",
+          gap: "1rem",
+          height: "300px",
+        };
+
+        const container = document.getElementById("flexContainer");
+        container.style.justifyContent = "flex-start";
+        container.style.alignItems = "stretch";
+        container.style.flexDirection = "row";
+        container.style.flexWrap = "nowrap";
+        container.style.gap = "1rem";
+        container.style.height = "300px";
+
+        // Resetear items a 3
+        container.innerHTML = `
+                <div class="flex-item item-1">Item 1</div>
+                <div class="flex-item item-2">Item 2<br>Más contenido</div>
+                <div class="flex-item item-3">Item 3</div>
+            `;
+        contadorItems = 3;
+
+        // Resetear botones activos
+        document
+          .querySelectorAll(".btn.active")
+          .forEach((btn) => btn.classList.remove("active"));
+        document.querySelectorAll(".control-group").forEach((grupo, index) => {
+          grupo.querySelector(".btn").classList.add("active");
+        });
+
+        actualizarCodigo();
+        actualizarInspector();
+      }
+
+      function aplicarPreset(tipo) {
+        const container = document.getElementById("flexContainer");
+
+        // Resetear primero
+        resetear();
+
+        switch (tipo) {
+          case "navegacion":
+            estadoActual["justify-content"] = "center";
+            estadoActual["align-items"] = "center";
+            container.style.justifyContent = "center";
+            container.style.alignItems = "center";
+            break;
+
+          case "header":
+            estadoActual["justify-content"] = "space-between";
+            estadoActual["align-items"] = "center";
+            container.style.justifyContent = "space-between";
+            container.style.alignItems = "center";
+            break;
+
+          case "centrado":
+            estadoActual["justify-content"] = "center";
+            estadoActual["align-items"] = "center";
+            container.style.justifyContent = "center";
+            container.style.alignItems = "center";
+            break;
+
+          case "cards":
+            estadoActual["flex-wrap"] = "wrap";
+            estadoActual["justify-content"] = "center";
+            estadoActual["gap"] = "2rem";
+            container.style.flexWrap = "wrap";
+            container.style.justifyContent = "center";
+            container.style.gap = "2rem";
+            // Agregar más items para ver el wrap
+            for (let i = 0; i < 3; i++) {
+              agregarItem();
+            }
+            break;
+
+          case "vertical":
+            estadoActual["flex-direction"] = "column";
+            estadoActual["align-items"] = "center";
+            container.style.flexDirection = "column";
+            container.style.alignItems = "center";
+            break;
+
+          case "distribuido":
+            estadoActual["justify-content"] = "space-evenly";
+            estadoActual["align-items"] = "center";
+            container.style.justifyContent = "space-evenly";
+            container.style.alignItems = "center";
+            break;
+        }
+
+        actualizarCodigo();
+        actualizarInspector();
+      }
+
+      // Inicializar
+      document.addEventListener("DOMContentLoaded", function () {
+        actualizarCodigo();
+        actualizarInspector();
+
+        console.log("🎮 Flexbox Playground cargado!");
+        console.log("💡 Tip: Experimenta con todas las combinaciones");
+        console.log("🎯 Tip: Los layouts predefinidos son muy útiles");
+        console.log(
+          "🔧 Tip: Abre DevTools para ver cómo se inspecciona Flexbox"
+        );
+      });
+    </script>
+  </body>
+</html>

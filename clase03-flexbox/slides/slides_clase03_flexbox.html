@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 3: Flexbox y Layouts Modernos</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            overflow: hidden;
+        }
+
+        .slideshow-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slide {
+            display: none;
+            text-align: center;
+            padding: 40px;
+            max-width: 1100px;
+            animation: fadeIn 0.5s;
+        }
+
+        .slide.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 25px;
+            color: #FFD700;
+        }
+
+        h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #87CEEB;
+        }
+
+        p, li {
+            font-size: 1.3rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        ul {
+            text-align: left;
+            margin: 0 auto;
+            display: inline-block;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .code {
+            background: rgba(0,0,0,0.3);
+            padding: 20px;
+            border-radius: 10px;
+            font-family: 'Courier New', monospace;
+            font-size: 1.1rem;
+            margin: 20px 0;
+            text-align: left;
+            white-space: pre-wrap;
+            overflow-x: auto;
+        }
+
+        .highlight {
+            background: rgba(255,255,255,0.2);
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .navigation {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+        }
+
+        .nav-btn {
+            background: rgba(255,255,255,0.2);
+            border: 2px solid white;
+            color: white;
+            padding: 10px 20px;
+            margin: 0 5px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .nav-btn:hover {
+            background: white;
+            color: #667eea;
+        }
+
+        .slide-counter {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            background: rgba(0,0,0,0.3);
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 1.1rem;
+        }
+
+        .big-emoji {
+            font-size: 4rem;
+            margin: 20px 0;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            text-align: left;
+        }
+
+        .check-list {
+            list-style: none;
+        }
+
+        .check-list li:before {
+            content: "✅ ";
+            margin-right: 10px;
+        }
+
+        .cross-list {
+            list-style: none;
+        }
+
+        .cross-list li:before {
+            content: "❌ ";
+            margin-right: 10px;
+        }
+
+        .flex-demo {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .flex-container-demo {
+            display: flex;
+            background: rgba(255,255,255,0.2);
+            padding: 15px;
+            border-radius: 8px;
+            gap: 10px;
+            margin: 10px 0;
+        }
+
+        .flex-item-demo {
+            background: #FFD700;
+            color: #333;
+            padding: 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            text-align: center;
+            min-width: 80px;
+        }
+
+        .center-demo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .card-demo {
+            background: rgba(255,255,255,0.9);
+            color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 10px;
+            flex: 1;
+            min-width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slideshow-container">
+        
+        <!-- Slide 1: Bienvenida -->
+        <div class="slide active">
+            <div class="big-emoji">📐</div>
+            <h1>CLASE 3: FLEXBOX</h1>
+            <h2>Layouts Modernos y Flexibles</h2>
+            <p>🎯 Hoy: Transformar tu proyecto con Flexbox</p>
+            <p>⏰ 3 horas de layouts poderosos</p>
+            <p>💪 Centrar elementos como un profesional</p>
+            <p>🚀 Navegaciones modernas y responsivas</p>
+        </div>
+
+        <!-- Slide 2: Repaso CSS -->
+        <div class="slide">
+            <h2>📋 REPASO RÁPIDO</h2>
+            <p><span class="highlight">¿Todos tienen CSS aplicado en sus proyectos?</span></p>
+            <ul class="check-list">
+                <li>¿Navegación estilizada?</li>
+                <li>¿Colores consistentes?</li>
+                <li>¿Formularios atractivos?</li>
+                <li>¿Todo funciona en GitHub?</li>
+            </ul>
+            <p>🎉 <span class="highlight">¡Celebremos el progreso!</span></p>
+            <p>Veamos 2-3 proyectos...</p>
+        </div>
+
+        <!-- Slide 3: El problema -->
+        <div class="slide">
+            <h2>🤔 EL PROBLEMA QUE RESUELVE FLEXBOX</h2>
+            <div class="two-column">
+                <div>
+                    <h3>❌ Antes (difícil):</h3>
+                    <div class="code">/* Centrar verticalmente */
+.elemento {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Navegación horizontal */
+nav li {
+    display: inline-block;
+    margin: 0 1rem;
+}</div>
+                </div>
+                <div>
+                    <h3>✅ Ahora (fácil):</h3>
+                    <div class="code">/* Centrar cualquier cosa */
+.contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Navegación horizontal */
+nav ul {
+    display: flex;
+    gap: 2rem;
+}</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: ¿Qué es Flexbox? -->
+        <div class="slide">
+            <h2>📐 ¿QUÉ ES FLEXBOX?</h2>
+            <p><span class="highlight">Flexible Box Layout = Sistema de layout unidimensional</span></p>
+            <ul>
+                <li>🎯 **Una dimensión:** Organiza elementos en **una fila** O **una columna**</li>
+                <li>📦 **Flex Container:** El padre con `display: flex`</li>
+                <li>🧩 **Flex Items:** Los hijos directos del container</li>
+                <li>⚡ **Automático:** Distribución inteligente del espacio</li>
+                <li>📱 **Responsive:** Se adapta automáticamente</li>
+            </ul>
+            <div class="flex-demo">
+                <p><strong>Demo visual:</strong></p>
+                <div class="flex-container-demo">
+                    <div class="flex-item-demo">Item 1</div>
+                    <div class="flex-item-demo">Item 2</div>
+                    <div class="flex-item-demo">Item 3</div>
+                </div>
+                <p style="text-align: center; margin-top: 10px;">¡Se organizan automáticamente en fila!</p>
+            </div>
+        </div>
+
+        <!-- Slide 5: Display Flex -->
+        <div class="slide">
+            <h2>🔧 DISPLAY: FLEX - EL INICIO</h2>
+            <div class="code">.contenedor {
+    display: flex;
+    /* ¡Magia! Los hijos se organizan en fila */
+}
+
+/* Los hijos son automáticamente "flex items" */</div>
+            <h3>Lo que pasa automáticamente:</h3>
+            <ul class="check-list">
+                <li>Los elementos se ponen en **una fila**</li>
+                <li>Se **estiran** para tener la misma altura</li>
+                <li>Se **adaptan** al espacio disponible</li>
+                <li>No se **superponen** nunca</li>
+            </ul>
+            <p><span class="highlight">🎯 Una línea de código = layout inteligente</span></p>
+        </div>
+
+        <!-- Slide 6: Justify-content -->
+        <div class="slide">
+            <h2>↔️ JUSTIFY-CONTENT</h2>
+            <p><span class="highlight">Controla la alineación HORIZONTAL (eje principal)</span></p>
+            <div class="code">.contenedor {
+    display: flex;
+    
+    justify-content: flex-start;    /* ⬅️ izquierda (default) */
+    justify-content: center;        /* ↔️ centro */
+    justify-content: flex-end;      /* ➡️ derecha */
+    justify-content: space-between; /* ↔️ espacio entre elementos */
+    justify-content: space-around;  /* ↔️ espacio alrededor */
+    justify-content: space-evenly;  /* ↔️ espacio uniforme */
+}</div>
+            <h3>Casos de uso comunes:</h3>
+            <ul>
+                <li>**center** - Logo, navegación centrada</li>
+                <li>**space-between** - Logo izquierda, nav derecha</li>
+                <li>**space-evenly** - Navegación distribuida</li>
+            </ul>
+        </div>
+
+        <!-- Slide 7: Align-items -->
+        <div class="slide">
+            <h2>↕️ ALIGN-ITEMS</h2>
+            <p><span class="highlight">Controla la alineación VERTICAL (eje secundario)</span></p>
+            <div class="code">.contenedor {
+    display: flex;
+    height: 300px; /* Necesita altura para ver efecto */
+    
+    align-items: stretch;     /* ⬍ estiran para llenar (default) */
+    align-items: flex-start;  /* ⬆️ arriba */
+    align-items: center;      /* ↕️ centro */
+    align-items: flex-end;    /* ⬇️ abajo */
+    align-items: baseline;    /* — línea base del texto */
+}</div>
+            <div class="center-demo">
+                <div style="background: #FFD700; color: #333; padding: 20px; border-radius: 10px;">
+                    <strong>¡PERFECTAMENTE CENTRADO!</strong><br>
+                    justify-content: center + align-items: center
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 8: Flex-direction -->
+        <div class="slide">
+            <h2>🔄 FLEX-DIRECTION</h2>
+            <p><span class="highlight">Cambia la dirección del eje principal</span></p>
+            <div class="code">.contenedor {
+    display: flex;
+    
+    flex-direction: row;          /* → horizontal (default) */
+    flex-direction: row-reverse;  /* ← horizontal invertido */
+    flex-direction: column;       /* ↓ vertical */
+    flex-direction: column-reverse; /* ↑ vertical invertido */
+}</div>
+            <h3>💡 Importante:</h3>
+            <ul>
+                <li>**row:** justify-content = horizontal, align-items = vertical</li>
+                <li>**column:** justify-content = vertical, align-items = horizontal</li>
+                <li>Los ejes se **intercambian** según la dirección</li>
+            </ul>
+        </div>
+
+        <!-- Slide 9: Gap -->
+        <div class="slide">
+            <h2>📏 GAP - ESPACIADO INTELIGENTE</h2>
+            <p><span class="highlight">La forma moderna de dar espaciado entre elementos</span></p>
+            <div class="two-column">
+                <div>
+                    <h3>❌ Forma vieja:</h3>
+                    <div class="code">.item {
+    margin-right: 1rem;
+}
+
+.item:last-child {
+    margin-right: 0;
+}
+
+/* Complicado y propenso a errores */</div>
+                </div>
+                <div>
+                    <h3>✅ Con gap:</h3>
+                    <div class="code">.contenedor {
+    display: flex;
+    gap: 1rem;
+}
+
+/* ¡Simple y perfecto! */</div>
+                </div>
+            </div>
+            <h3>Opciones de gap:</h3>
+            <ul>
+                <li>`gap: 1rem;` - Mismo espacio horizontal y vertical</li>
+                <li>`gap: 1rem 2rem;` - Vertical 1rem, horizontal 2rem</li>
+            </ul>
+        </div>
+
+        <!-- Slide 10: Flex properties -->
+        <div class="slide">
+            <h2>🎚️ PROPIEDADES DE FLEX ITEMS</h2>
+            <p><span class="highlight">Para controlar elementos individuales</span></p>
+            <div class="code">.flex-item {
+    /* Cuánto puede CRECER */
+    flex-grow: 0;    /* no crece (default) */
+    flex-grow: 1;    /* crece proporcionalmente */
+    flex-grow: 2;    /* crece el doble que flex-grow: 1 */
+    
+    /* Cuánto puede ENCOGERSE */
+    flex-shrink: 1;  /* puede encogerse (default) */
+    flex-shrink: 0;  /* no se encoge nunca */
+    
+    /* Tamaño BASE */
+    flex-basis: auto;   /* tamaño del contenido (default) */
+    flex-basis: 200px;  /* tamaño específico */
+}</div>
+            <h3>🎯 Shorthand más usado:</h3>
+            <div class="code">.item { flex: 1; }        /* Reparte espacio equitativamente */
+.item { flex: 2; }        /* Toma el doble de espacio */
+.item { flex: 0 0 200px; } /* 200px fijo, no crece ni encoge */</div>
+        </div>
+
+        <!-- Slide 11: Práctica Navegación -->
+        <div class="slide">
+            <h2>🧭 NAVEGACIÓN CON FLEXBOX</h2>
+            <h3>Transformemos tu navegación actual:</h3>
+            <div class="two-column">
+                <div>
+                    <h3>Antes:</h3>
+                    <div class="code">nav ul {
+    list-style: none;
+    text-align: center;
+}
+
+nav li {
+    display: inline-block;
+    margin: 0 1rem;
+}</div>
+                </div>
+                <div>
+                    <h3>Después:</h3>
+                    <div class="code">nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}</div>
+                </div>
+            </div>
+            <h3>Layouts comunes:</h3>
+            <ul>
+                <li>**Logo izquierda, nav derecha:** `justify-content: space-between`</li>
+                <li>**Todo centrado:** `flex-direction: column` + `align-items: center`</li>
+                <li>**Responsive automático:** `flex-wrap: wrap`</li>
+            </ul>
+        </div>
+
+        <!-- Slide 12: Demo en vivo -->
+        <div class="slide">
+            <h2>💻 DEMO EN VIVO</h2>
+            <p><span class="highlight">Vamos a transformar una navegación juntos</span></p>
+            <h3>Lo que vamos a hacer:</h3>
+            <ul class="check-list">
+                <li>Tomar una navegación sin Flexbox</li>
+                <li>Aplicar `display: flex`</li>
+                <li>Experimentar con `justify-content`</li>
+                <li>Probar `align-items`</li>
+                <li>Usar `gap` para espaciado</li>
+                <li>Hacer responsive con `flex-wrap`</li>
+            </ul>
+            <p>🎯 <span class="highlight">¡Que todos sigan en su código!</span></p>
+        </div>
+
+        <!-- Slide 13: Cards con Flexbox -->
+        <div class="slide">
+            <h2>🎴 CARDS CON FLEXBOX</h2>
+            <p><span class="highlight">Layout de cards que se adapta automáticamente</span></p>
+            <div class="code">.cards-container {
+    display: flex;
+    flex-wrap: wrap;    /* Permite múltiples líneas */
+    gap: 2rem;
+    justify-content: center;
+}
+
+.card {
+    flex: 0 1 300px;    /* Base 300px, puede encogerse */
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+}</div>
+            <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; margin: 20px 0;">
+                <div class="card-demo">
+                    <h4>Proyecto 1</h4>
+                    <p>Descripción del proyecto...</p>
+                </div>
+                <div class="card-demo">
+                    <h4>Proyecto 2</h4>
+                    <p>Descripción del proyecto...</p>
+                </div>
+                <div class="card-demo">
+                    <h4>Proyecto 3</h4>
+                    <p>Descripción del proyecto...</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 14: Layout principal -->
+        <div class="slide">
+            <h2>📄 LAYOUT DE CONTENIDO PRINCIPAL</h2>
+            <div class="code">/* Sección con imagen y texto */
+.seccion {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+.seccion img {
+    flex: 0 0 40%;  /* Imagen 40% fijo */
+}
+
+.seccion-contenido {
+    flex: 1;        /* Texto toma resto del espacio */
+}
+
+/* Alternar imagen izquierda/derecha */
+.seccion:nth-child(even) {
+    flex-direction: row-reverse;
+}</div>
+            <h3>Perfect para:</h3>
+            <ul>
+                <li>Página "Sobre mí" con foto y texto</li>
+                <li>Sección de servicios con iconos</li>
+                <li>Portfolio con imágenes de proyectos</li>
+            </ul>
+        </div>
+
+        <!-- Slide 15: Centrado perfecto -->
+        <div class="slide">
+            <h2>🎯 CENTRADO PERFECTO</h2>
+            <p><span class="highlight">El santo grial del CSS - centrar cualquier cosa</span></p>
+            <div class="code">/* Centrar horizontal Y vertical */
+.contenedor {
+    display: flex;
+    justify-content: center;  /* horizontal */
+    align-items: center;      /* vertical */
+    min-height: 100vh;        /* altura completa */
+}
+
+/* Para centrar el main completo */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}</div>
+        </div>
+
+        <!-- Slide 16: Responsive automático -->
+        <div class="slide">
+            <h2>📱 RESPONSIVE AUTOMÁTICO</h2>
+            <p><span class="highlight">Flexbox se adapta sin media queries</span></p>
+            <div class="code">/* Cards que se adaptan solas */
+.responsive-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.responsive-item {
+    flex: 1 1 250px;  /* Crece, encoge, base 250px */
+    min-width: 250px;  /* No más pequeño que esto */
+}
+
+/* Navegación que se adapta */
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}</div>
+            <h3>🎯 Ventajas:</h3>
+            <ul>
+                <li>Se adapta al contenido automáticamente</li>
+                <li>Menos código que con media queries</li>
+                <li>Comportamiento más inteligente</li>
+            </ul>
+        </div>
+
+        <!-- Slide 17: Práctica en clase -->
+        <div class="slide">
+            <h2>💻 PRÁCTICA JUNTOS (75 MIN)</h2>
+            <ul>
+                <li><span class="highlight">1️⃣ Navegación con Flexbox</span> (25 min)</li>
+                <li><span class="highlight">2️⃣ Layout principal flexible</span> (25 min)</li>
+                <li><span class="highlight">3️⃣ Cards y elementos repetitivos</span> (25 min)</li>
+            </ul>
+            <h3>📝 Estructura de trabajo:</h3>
+            <ul>
+                <li>Convertir header/navegación a Flexbox</li>
+                <li>Mejorar layout de main content</li>
+                <li>Crear sección con cards flexibles</li>
+                <li>Centrar elementos apropiadamente</li>
+                <li>Usar gap para espaciado consistente</li>
+            </ul>
+            <p><span class="highlight">🎯 ¡Aplicamos todo a sus proyectos!</span></p>
+        </div>
+
+        <!-- Slide 18: Errores comunes -->
+        <div class="slide">
+            <h2>🚫 ERRORES COMUNES A EVITAR</h2>
+            <div class="two-column">
+                <div>
+                    <h3>❌ No hacer:</h3>
+                    <ul class="cross-list">
+                        <li>Aplicar flex al item en lugar del container</li>
+                        <li>No definir altura para centrado vertical</li>
+                        <li>Confundir justify-content con align-items</li>
+                        <li>Usar margin en lugar de gap</li>
+                        <li>Sobrecomplicar con muchas propiedades</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>✅ Mejor así:</h3>
+                    <ul class="check-list">
+                        <li>display: flex en el PADRE</li>
+                        <li>Definir altura para centrado vertical</li>
+                        <li>justify = horizontal, align = vertical</li>
+                        <li>Usar gap para espaciado</li>
+                        <li>Empezar simple, agregar propiedades gradualmente</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 19: Flexbox vs Grid -->
+        <div class="slide">
+            <h2>🤔 ¿FLEXBOX O CSS GRID?</h2>
+            <div class="two-column">
+                <div>
+                    <h3>📐 Usar Flexbox cuando:</h3>
+                    <ul class="check-list">
+                        <li>Layout de **una dimensión** (fila O columna)</li>
+                        <li>Navegaciones horizontales</li>
+                        <li>Centrar elementos</li>
+                        <li>Cards en una fila</li>
+                        <li>Distribución de espacio</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>⬜ Usar CSS Grid cuando:</h3>
+                    <ul>
+                        <li>Layout de **dos dimensiones** (filas Y columnas)</li>
+                        <li>Grillas complejas</li>
+                        <li>Layout de página completa</li>
+                        <li>Galerías de imágenes</li>
+                        <li>Dashboard con widgets</li>
+                    </ul>
+                </div>
+            </div>
+            <p><span class="highlight">🎯 Regla simple: 1D = Flexbox, 2D = Grid</span></p>
+        </div>
+
+        <!-- Slide 20: Herramientas útiles -->
+        <div class="slide">
+            <h2>🔧 HERRAMIENTAS PARA FLEXBOX</h2>
+            <ul>
+                <li>🐸 **Flexbox Froggy** - Juego para practicar flexbox</li>
+                <li>🎮 **Flexbox Defense** - Otro juego divertido</li>
+                <li>📚 **CSS-Tricks Guide** - Referencia visual completa</li>
+                <li>🔍 **Chrome DevTools** - Inspeccionar flex containers</li>
+                <li>🎨 **Flexbox Patterns** - Ejemplos de layouts comunes</li>
+            </ul>
+            <p><span class="highlight">💡 Chrome DevTools muestra visualmente el flex container</span></p>
+        </div>
+
+        <!-- Slide 21: Tarea para casa -->
+        <div class="slide">
+            <h2>📝 TAREA PARA LA PRÓXIMA CLASE</h2>
+            <p><span class="highlight">Transformar tu proyecto con Flexbox:</span></p>
+            <ul class="check-list">
+                <li>Navegación convertida a Flexbox</li>
+                <li>Layout principal mejorado con Flexbox</li>
+                <li>Al menos 2 secciones usando Flexbox creativo</li>
+                <li>Cards o elementos repetitivos organizados</li>
+                <li>Elementos centrados apropiadamente</li>
+                <li>Gap usado para espaciado consistente</li>
+                <li>Código limpio y comentado</li>
+            </ul>
+            <p><span class="highlight">⏰ Tienes hasta el [fecha]</span></p>
+        </div>
+
+        <!-- Slide 22: Tips finales -->
+        <div class="slide">
+            <h2>💡 TIPS PARA DOMINAR FLEXBOX</h2>
+            <ul>
+                <li>🎯 **Empieza simple:** Solo `display: flex` y ve qué pasa</li>
+                <li>🔧 **Usa DevTools:** Inspecciona para entender qué hace cada propiedad</li>
+                <li>🎮 **Practica con juegos:** Flexbox Froggy es divertido y educativo</li>
+                <li>📱 **Piensa mobile-first:** Flexbox es perfecto para responsive</li>
+                <li>🎨 **Gap es tu amigo:** Siempre usa gap en lugar de margin</li>
+                <li>📐 **Una dimensión:** Recuerda que Flexbox es para una fila O una columna</li>
+            </ul>
+            <p><span class="highlight">🚀 Con práctica, Flexbox se vuelve intuitivo</span></p>
+        </div>
+
+        <!-- Slide 23: Próxima clase preview -->
+        <div class="slide">
+            <h2>🔮 PRÓXIMA CLASE: RESPONSIVE DESIGN</h2>
+            <p>Vamos a ver:</p>
+            <ul>
+                <li>📱 Media queries para diferentes dispositivos</li>
+                <li>🎯 Mobile-first approach</li>
+                <li>📐 Breakpoints estratégicos</li>
+                <li>🖼️ Imágenes responsive</li>
+                <li>⚡ Optimización para diferentes pantallas</li>
+            </ul>
+            <p>💡 Trae preparado:</p>
+            <ul>
+                <li>Tu proyecto con Flexbox aplicado</li>
+                <li>Ideas de cómo adaptar tu diseño a móviles</li>
+                <li>Referencias de sitios responsive que te gusten</li>
+            </ul>
+        </div>
+
+        <!-- Slide 24: Motivación -->
+        <div class="slide">
+            <h2>🚀 ¡TU PROYECTO SE VE MÁS PROFESIONAL!</h2>
+            <p>Antes de hoy:</p>
+            <ul>
+                <li>😐 Elementos difíciles de organizar</li>
+                <li>📝 Centrado complicado</li>
+                <li>⚫ Layouts rígidos</li>
+            </ul>
+            <p>Después de hoy:</p>
+            <ul class="check-list">
+                <li>✨ Layouts flexibles y modernos</li>
+                <li>🎯 Centrado perfecto sin esfuerzo</li>
+                <li>📱 Adaptación automática a diferentes tamaños</li>
+                <li>💫 Navegación profesional</li>
+                <li>🎴 Cards organizadas perfectamente</li>
+            </ul>
+            <p><span class="highlight">¡Tu código es más limpio y potente!</span></p>
+        </div>
+
+        <!-- Slide 25: Cierre -->
+        <div class="slide">
+            <div class="big-emoji">🎉</div>
+            <h2>¡EXCELENTE TERCERA CLASE!</h2>
+            <p>Hoy lograste:</p>
+            <ul class="check-list">
+                <li>Dominar los conceptos fundamentales de Flexbox</li>
+                <li>Centrar elementos como un profesional</li>
+                <li>Crear navegaciones modernas y flexibles</li>
+                <li>Organizar contenido con layouts inteligentes</li>
+                <li>Preparar tu proyecto para ser responsive</li>
+            </ul>
+            <p><span class="highlight">📈 Progreso del curso: 33% completado</span></p>
+            <p>🎯 Para la próxima:</p>
+            <ul>
+                <li>Aplicar Flexbox a todo tu proyecto</li>
+                <li>Experimentar con diferentes layouts</li>
+                <li>¡Mostrar tu nuevo diseño flexible!</li>
+            </ul>
+            <p><span class="highlight">👏 ¡Tu sitio ya parece profesional!</span></p>
+        </div>
+
+    </div>
+
+    <div class="slide-counter">
+        <span id="current-slide">1</span> / <span id="total-slides">25</span>
+    </div>
+
+    <div class="navigation">
+        <button class="nav-btn" onclick="previousSlide()">◀ Anterior</button>
+        <button class="nav-btn" onclick="nextSlide()">Siguiente ▶</button>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+
+        document.getElementById('total-slides').textContent = totalSlides;
+
+        function showSlide(n) {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (n + totalSlides) % totalSlides;
+            slides[currentSlide].classList.add('active');
+            document.getElementById('current-slide').textContent = currentSlide + 1;
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        function previousSlide() {
+            showSlide(currentSlide - 1);
+        }
+
+        // Navegación con teclado
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                nextSlide();
+            } else if (e.key === 'ArrowLeft') {
+                previousSlide();
+            }
+        });
+
+        // Navegación con click
+        document.addEventListener('click', function(e) {
+            if (e.target.closest('.nav-btn')) return;
+            if (e.clientX > window.innerWidth / 2) {
+                nextSlide();
+            } else {
+                previousSlide();
+            }
+        });
+    </script>
+</body>
+</html>

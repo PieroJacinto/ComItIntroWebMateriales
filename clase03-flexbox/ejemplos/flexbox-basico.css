@@ -1,0 +1,262 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  padding: 2rem;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #2c3e50;
+}
+
+h2 {
+  color: #3498db;
+  margin: 2rem 0 1rem 0;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 0.5rem;
+}
+
+.ejemplo {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.codigo {
+  background-color: #2d3748;
+  color: #e2e8f0;
+  padding: 1rem;
+  border-radius: 4px;
+  font-family: "Courier New", monospace;
+  margin: 1rem 0;
+  overflow-x: auto;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.destacado {
+  background-color: #ffd700;
+  color: #333;
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+  font-weight: bold;
+}
+
+.nota {
+  background-color: #e8f4fd;
+  border-left: 4px solid #3498db;
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 0 4px 4px 0;
+}
+
+/* === SIN FLEXBOX === */
+.sin-flex {
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border: 2px dashed #dc3545;
+}
+
+.sin-flex div {
+  background-color: #dc3545;
+  color: white;
+  padding: 1rem;
+  margin: 0.5rem;
+  text-align: center;
+  border-radius: 4px;
+}
+
+/* === CON FLEXBOX === */
+.con-flex {
+  background-color: #e8f5e8;
+  padding: 1rem;
+  border: 2px solid #28a745;
+  display: flex;
+  gap: 1rem;
+}
+
+.con-flex div {
+  background-color: #28a745;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 4px;
+  flex: 1;
+}
+
+/* === JUSTIFY-CONTENT DEMOS === */
+.demo-container {
+  background-color: #f8f9fa;
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 4px;
+  border: 2px solid #6c757d;
+}
+
+.flex-demo {
+  display: flex;
+  gap: 1rem;
+  min-height: 80px;
+  align-items: center;
+}
+
+.flex-item {
+  background-color: #3498db;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 4px;
+  min-width: 100px;
+}
+
+.justify-start {
+  justify-content: flex-start;
+}
+.justify-center {
+  justify-content: center;
+}
+.justify-end {
+  justify-content: flex-end;
+}
+.justify-between {
+  justify-content: space-between;
+}
+.justify-around {
+  justify-content: space-around;
+}
+.justify-evenly {
+  justify-content: space-evenly;
+}
+
+/* === ALIGN-ITEMS DEMOS === */
+.align-demo {
+  display: flex;
+  height: 120px;
+  gap: 1rem;
+  background-color: #f8f9fa;
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 4px;
+  border: 2px solid #6c757d;
+}
+
+.align-item {
+  background-color: #e74c3c;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 4px;
+  min-width: 80px;
+}
+
+.align-start {
+  align-items: flex-start;
+}
+.align-center {
+  align-items: center;
+}
+.align-end {
+  align-items: flex-end;
+}
+.align-stretch {
+  align-items: stretch;
+}
+
+/* === GAP DEMOS === */
+.sin-gap {
+  display: flex;
+  background-color: #fff3cd;
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 4px;
+}
+
+.sin-gap div {
+  background-color: #ffc107;
+  color: #333;
+  padding: 1rem;
+  margin-right: 1rem;
+  text-align: center;
+  border-radius: 4px;
+}
+
+.sin-gap div:last-child {
+  margin-right: 0;
+}
+
+.con-gap {
+  display: flex;
+  gap: 1rem;
+  background-color: #d4edda;
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 4px;
+}
+
+.con-gap div {
+  background-color: #28a745;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 4px;
+}
+
+/* === FLEX PROPERTIES DEMO === */
+.flex-props-demo {
+  display: flex;
+  gap: 1rem;
+  background-color: #e8f4fd;
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 4px;
+  height: 100px;
+  align-items: center;
+}
+
+.flex-1 {
+  flex: 1;
+  background: #3498db;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 4px;
+}
+.flex-2 {
+  flex: 2;
+  background: #e74c3c;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 4px;
+}
+.flex-fixed {
+  flex: 0 0 150px;
+  background: #27ae60;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 4px;
+}
+
+.centrado-perfecto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 8px;
+  margin: 1rem 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+}

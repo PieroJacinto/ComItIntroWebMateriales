@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Básico - Conceptos Fundamentales</title>
+  <link rel="stylesheet" href="./flexbox-basico.css">
+</head>
+<body>
+    <h1>🎯 Flexbox Básico - Solo Conceptos</h1>
+
+    <!-- CONCEPTO 1: Display Flex -->
+    <div class="ejemplo">
+        <h2>1. 🔄 ¿Qué hace display: flex?</h2>
+        
+        <h3>Sin Flexbox (normal):</h3>
+        <div class="sin-flex">
+            <div>Elemento 1</div>
+            <div>Elemento 2</div>
+            <div>Elemento 3</div>
+        </div>
+        
+        <h3>Con Flexbox:</h3>
+        <div class="con-flex">
+            <div>Elemento 1</div>
+            <div>Elemento 2</div>
+            <div>Elemento 3</div>
+        </div>
+
+        <div class="codigo">.contenedor {
+    <span class="destacado">display: flex;</span>
+}
+
+/* ¡Fila automática! */</div>
+
+        <div class="nota">
+            <strong>💡 La magia:</strong> Una línea de CSS transforma elementos de bloque apilados en una fila organizada horizontalmente.
+        </div>
+    </div>
+
+    <!-- CONCEPTO 2: justify-content -->
+    <div class="ejemplo">
+        <h2>2. ↔️ justify-content - Alineación Horizontal</h2>
+        
+        <h3>flex-start (izquierda):</h3>
+        <div class="demo-container">
+            <div class="flex-demo justify-start">
+                <div class="flex-item">A</div>
+                <div class="flex-item">B</div>
+                <div class="flex-item">C</div>
+            </div>
+        </div>
+
+        <h3>center (centro):</h3>
+        <div class="demo-container">
+            <div class="flex-demo justify-center">
+                <div class="flex-item">A</div>
+                <div class="flex-item">B</div>
+                <div class="flex-item">C</div>
+            </div>
+        </div>
+
+        <h3>space-between (espacio entre):</h3>
+        <div class="demo-container">
+            <div class="flex-demo justify-between">
+                <div class="flex-item">A</div>
+                <div class="flex-item">B</div>
+                <div class="flex-item">C</div>
+            </div>
+        </div>
+
+        <h3>space-evenly (espacio uniforme):</h3>
+        <div class="demo-container">
+            <div class="flex-demo justify-evenly">
+                <div class="flex-item">A</div>
+                <div class="flex-item">B</div>
+                <div class="flex-item">C</div>
+            </div>
+        </div>
+
+        <div class="codigo">justify-content: center;
+justify-content: space-between;
+justify-content: space-evenly;</div>
+
+        <div class="nota">
+            <strong>🎯 Casos comunes:</strong><br>
+            • <strong>center:</strong> Navegación centrada<br>
+            • <strong>space-between:</strong> Logo izquierda, menú derecha<br>
+            • <strong>space-evenly:</strong> Botones distribuidos
+        </div>
+    </div>
+
+    <!-- CONCEPTO 3: align-items -->
+    <div class="ejemplo">
+        <h2>3. ↕️ align-items - Alineación Vertical</h2>
+        
+        <h3>flex-start (arriba):</h3>
+        <div class="align-demo align-start">
+            <div class="align-item">A</div>
+            <div class="align-item">B<br>Más<br>Alto</div>
+            <div class="align-item">C</div>
+        </div>
+
+        <h3>center (centro vertical):</h3>
+        <div class="align-demo align-center">
+            <div class="align-item">A</div>
+            <div class="align-item">B<br>Más<br>Alto</div>
+            <div class="align-item">C</div>
+        </div>
+
+        <h3>flex-end (abajo):</h3>
+        <div class="align-demo align-end">
+            <div class="align-item">A</div>
+            <div class="align-item">B<br>Más<br>Alto</div>
+            <div class="align-item">C</div>
+        </div>
+
+        <div class="codigo">align-items: center;
+align-items: flex-start;
+align-items: flex-end;</div>
+
+        <div class="nota">
+            <strong>💡 Centrado perfecto:</strong> justify-content: center + align-items: center
+        </div>
+    </div>
+
+    <!-- CONCEPTO 4: Gap vs Margin -->
+    <div class="ejemplo">
+        <h2>4. 📏 gap - Espaciado Moderno</h2>
+        
+        <h3>❌ Forma antigua con margin:</h3>
+        <div class="sin-gap">
+            <div>Item 1</div>
+            <div>Item 2</div>
+            <div>Item 3</div>
+        </div>
+        <div class="codigo">/* Complicado */
+.item {
+    margin-right: 1rem;
+}
+.item:last-child {
+    margin-right: 0;
+}</div>
+
+        <h3>✅ Forma moderna con gap:</h3>
+        <div class="con-gap">
+            <div>Item 1</div>
+            <div>Item 2</div>
+            <div>Item 3</div>
+        </div>
+        <div class="codigo">/* Simple */
+.contenedor {
+    display: flex;
+    <span class="destacado">gap: 1rem;</span>
+}</div>
+
+        <div class="nota">
+            <strong>🎯 Ventajas del gap:</strong> Una línea de código, sin excepciones, funciona siempre.
+        </div>
+    </div>
+
+    <!-- CONCEPTO 5: flex: 1 -->
+    <div class="ejemplo">
+        <h2>5. 🎚️ flex: 1 - Reparto de Espacio</h2>
+        
+        <h3>Diferentes proporciones:</h3>
+        <div class="flex-props-demo">
+            <div class="flex-1">flex: 1</div>
+            <div class="flex-2">flex: 2<br>(doble)</div>
+            <div class="flex-1">flex: 1</div>
+        </div>
+
+        <h3>Con elemento fijo:</h3>
+        <div class="flex-props-demo">
+            <div class="flex-fixed">Fijo 150px</div>
+            <div class="flex-1">flex: 1<br>(resto del espacio)</div>
+            <div class="flex-fixed">Fijo 150px</div>
+        </div>
+
+        <div class="codigo">.item { flex: 1; }         /* Igual */
+.destacado { flex: 2; }    /* Doble */
+.fijo { flex: 0 0 150px; } /* Fijo */</div>
+
+        <div class="nota">
+            <strong>🎯 flex: 1 es mágico:</strong> Reparte el espacio disponible automáticamente.
+        </div>
+    </div>
+
+    <!-- CONCEPTO 6: Centrado Perfecto -->
+    <div class="ejemplo">
+        <h2>6. 🎯 El Santo Grial: Centrado Perfecto</h2>
+        
+        <div class="centrado-perfecto">
+            ¡PERFECTAMENTE CENTRADO!<br>
+            Horizontal Y Vertical
+        </div>
+
+        <div class="codigo">.centrar-todo {
+    display: flex;
+    <span class="destacado">justify-content: center;</span>
+    <span class="destacado">align-items: center;</span>
+    height: 200px;
+}</div>
+
+        <div class="nota">
+            <strong>🚀 Esto antes era súper difícil:</strong> Con Flexbox son solo 2 líneas de CSS.
+        </div>
+    </div>
+
+    <!-- DEMO INTERACTIVO -->
+    <div class="ejemplo">
+        <h2>7. 🎮 Experimenta</h2>
+        
+        <div class="nota">
+            <strong>🔧 Abre Chrome DevTools (F12):</strong><br>
+            1. Selecciona cualquier contenedor flex de arriba<br>
+            2. En el panel Styles, cambia las propiedades<br>
+            3. Experimenta con justify-content, align-items, gap<br>
+            4. ¡Ve los cambios en tiempo real!
+        </div>
+
+        <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 2rem; border-radius: 8px; text-align: center;">
+            <h3>🎯 ¡Ahora sabes Flexbox!</h3>
+            <p>Con estos 5 conceptos puedes crear layouts increíbles.</p>
+            <p><strong>Siguiente:</strong> Aplicar esto a navegaciones reales.</p>
+        </div>
+    </div>
+
+    <script>
+        // Efectos hover para mejor interactividad
+        document.querySelectorAll('.flex-item, .align-item').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.05)';
+                this.style.transition = 'transform 0.2s ease';
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1)';
+            });
+        });
+
+        console.log('🎯 Flexbox Básico cargado!');
+        console.log('💡 Tip: Experimenta con DevTools en cualquier contenedor flex');
+    </script>
+</body>
+</html><!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Básico</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            padding: 2rem;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #2c3e50;
+        }
+
+        h2 {
+            color: #3498db;
+            margin: 2rem 0 1rem 0;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 0.5rem;
+        }
+
+        .ejemplo {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        /* === EJEMPLO 1: Sin Flexbox === */
+        .sin-flex {
+            background-color: #f8f9fa;
+            padding: 1rem;
+            border: 2px dashed #dc3545;
+        }
+
+        .sin-flex div {
+            background-color: #dc3545;
+            color: white;
+            padding: 1rem;
+            margin: 0.5rem;
+            text-align: center;
+            border-radius: 4px;
+        }
+
+        /* === EJEMPLO 2: Con Flexbox === */
+        .con-flex {
+            background-color: #e8f5e8;
+            padding: 1rem;
+            border: 2px solid #28a745;
+            display: flex;
+        }
+
+        .con-flex div {
+            background-color: #28a745;
+            color: white;
+            padding: 1rem;
+            margin: 0.5rem;
+            text-align: center;
+            border-radius: 4px;
+        }
+
+        /* === EJEMPLO 3: Justify-content === */
+        .justify-start {
+            display: flex;
+            justify-content: flex-start;
+            background-color: #fff3cd;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+
+        .justify-center {
+            display: flex;
+            justify-content: center;
+            background-color: #d4edda;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+
+        .justify-end {
+            display: flex;
+            justify-content: flex-end;
+            background-color: #d1ecf1;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+
+        .justify-between {
+            display: flex;
+            justify-content: space-between;
+            background-color: #e2e3e5;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+
+        .justify-around {
+            display: flex;
+            justify-content: space-around;
+            background-color: #f8d7da;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+
+        .justify-evenly {
+            display: flex;
+            justify-content: space-evenly;
+            background-color: #e7e8ea;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+
+        .flex-item {
+            background-color: #3498db;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            border-radius: 4px;
+            min-width: 100px;
+        }
+
+        /* === EJEMPLO 4: Align-items === */
+        .align-demo {
+            display: flex;
+            height: 150px;
+            background-color: #f8f9fa;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+            border: 2px solid #6c757d;
+        }
+
+        .align-start {
+            align-items: flex-start;
+        }
+
+        .align-center {
+            align-items: center;
+        }
+
+        .align-end {
+            align-items: flex-end;
+        }
+
+        .align-stretch {
+            align-items: stretch;
+        }
+
+        .align-item {
+            background-color: #e74c3c;
+            color: white;
+            padding: 1rem;
+            margin: 0 0.5rem;
+            text-align: center;
+            border-radius: 4px;
+            min-width: 80px;
+        }
+
+        /* === EJEMPLO 5: Gap === */
+        .sin-gap {
+            display: flex;
+            background-color: #fff3cd;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+
+        .sin-gap div {
+            background-color: #ffc107;
+            color: #333;
+            padding: 1rem;
+            margin-right: 1rem;
+            text-align: center;
+            border-radius: 4px;
+        }
+
+        .sin-gap div:last-child {
+            margin-right: 0;
+        }
+
+        .con-gap {
+            display: flex;
+            gap: 1rem;
+            background-color: #d4edda;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+
+        .con-gap div {
+            background-color: #28a745;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            border-radius: 4px;
+        }
+
+        /* === CÓDIGO VISUAL === */
+        .codigo {
+            background-color: #2d3748;
+            color: #e2e8f0;
+            padding: 1rem;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            margin: 1rem 0;
+            overflow-x: auto;
+        }
+
+        .destacado {
+            background-color: #3498db;
+            color: white;
+            padding: 0.2rem 0.5rem;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+
+        .nota {
+            background-color: #e8f4fd;
+            border-left: 4px solid #3498db;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .demo-interactivo {
+            background-color: #e8f5e8;
+            border: 2px solid #28a745;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎯 Flexbox Básico - Conceptos Fundamentales</h1>
+
+    <!-- EJEMPLO 1: Diferencia Sin/Con Flexbox -->
+    <div class="ejemplo">
+        <h2>1. 🔄 Diferencia: Sin Flexbox vs Con Flexbox</h2>
+        
+        <h3>Sin Flexbox (comportamiento normal):</h3>
+        <div class="sin-flex">
+            <div>Elemento 1</div>
+            <div>Elemento 2</div>
+            <div>Elemento 3</div>
+        </div>
+        
+        <div class="codigo">.sin-flex {
+    /* Sin display: flex */
+    background-color: #f8f9fa;
+    padding: 1rem;
+}
+
+/* Los elementos se apilan verticalmente (block) */</div>
+
+        <h3>Con Flexbox:</h3>
+        <div class="con-flex">
+            <div>Elemento 1</div>
+            <div>Elemento 2</div>
+            <div>Elemento 3</div>
+        </div>
+
+        <div class="codigo">.con-flex {
+    <span class="destacado">display: flex;</span>
+    background-color: #e8f5e8;
+    padding: 1rem;
+}
+
+/* ¡Los elementos se organizan en fila automáticamente! */</div>
+
+        <div class="nota">
+            <strong>💡 La magia de display: flex:</strong> Una sola línea de CSS transforma el comportamiento de los elementos hijos, organizándolos en una fila horizontal con distribución inteligente del espacio.
+        </div>
+    </div>
+
+    <!-- EJEMPLO 2: justify-content -->
+    <div class="ejemplo">
+        <h2>2. ↔️ justify-content (Alineación Horizontal)</h2>
+        
+        <p><strong>justify-content</strong> controla cómo se distribuyen los elementos en el eje principal (horizontal por defecto).</p>
+
+        <h3>flex-start (izquierda - default):</h3>
+        <div class="justify-start">
+            <div class="flex-item">A</div>
+            <div class="flex-item">B</div>
+            <div class="flex-item">C</div>
+        </div>
+        <div class="codigo">justify-content: flex-start; /* ⬅️ Todo a la izquierda */</div>
+
+        <h3>center (centro):</h3>
+        <div class="justify-center">
+            <div class="flex-item">A</div>
+            <div class="flex-item">B</div>
+            <div class="flex-item">C</div>
+        </div>
+        <div class="codigo">justify-content: center; /* ↔️ Todo al centro */</div>
+
+        <h3>flex-end (derecha):</h3>
+        <div class="justify-end">
+            <div class="flex-item">A</div>
+            <div class="flex-item">B</div>
+            <div class="flex-item">C</div>
+        </div>
+        <div class="codigo">justify-content: flex-end; /* ➡️ Todo a la derecha */</div>
+
+        <h3>space-between (espacio entre):</h3>
+        <div class="justify-between">
+            <div class="flex-item">A</div>
+            <div class="flex-item">B</div>
+            <div class="flex-item">C</div>
+        </div>
+        <div class="codigo">justify-content: space-between; /* ↔️ Espacio entre elementos */</div>
+
+        <h3>space-around (espacio alrededor):</h3>
+        <div class="justify-around">
+            <div class="flex-item">A</div>
+            <div class="flex-item">B</div>
+            <div class="flex-item">C</div>
+        </div>
+        <div class="codigo">justify-content: space-around; /* ↔️ Espacio alrededor de cada elemento */</div>
+
+        <h3>space-evenly (espacio uniforme):</h3>
+        <div class="justify-evenly">
+            <div class="flex-item">A</div>
+            <div class="flex-item">B</div>
+            <div class="flex-item">C</div>
+        </div>
+        <div class="codigo">justify-content: space-evenly; /* ↔️ Espacio exactamente igual */</div>
+
+        <div class="nota">
+            <strong>🎯 Casos de uso:</strong><br>
+            • <strong>center:</strong> Navegación centrada<br>
+            • <strong>space-between:</strong> Logo izquierda, menú derecha<br>
+            • <strong>space-evenly:</strong> Elementos distribuidos uniformemente
+        </div>
+    </div>
+
+    <!-- EJEMPLO 3: align-items -->
+    <div class="ejemplo">
+        <h2>3. ↕️ align-items (Alineación Vertical)</h2>
+        
+        <p><strong>align-items</strong> controla cómo se alinean los elementos en el eje secundario (vertical por defecto).</p>
+
+        <h3>flex-start (arriba):</h3>
+        <div class="align-demo align-start">
+            <div class="align-item">A</div>
+            <div class="align-item">B<br>Más<br>Contenido</div>
+            <div class="align-item">C</div>
+        </div>
+        <div class="codigo">align-items: flex-start; /* ⬆️ Todo arriba */</div>
+
+        <h3>center (centro vertical):</h3>
+        <div class="align-demo align-center">
+            <div class="align-item">A</div>
+            <div class="align-item">B<br>Más<br>Contenido</div>
+            <div class="align-item">C</div>
+        </div>
+        <div class="codigo">align-items: center; /* ↕️ Centrado vertical */</div>
+
+        <h3>flex-end (abajo):</h3>
+        <div class="align-demo align-end">
+            <div class="align-item">A</div>
+            <div class="align-item">B<br>Más<br>Contenido</div>
+            <div class="align-item">C</div>
+        </div>
+        <div class="codigo">align-items: flex-end; /* ⬇️ Todo abajo */</div>
+
+        <h3>stretch (estirar - default):</h3>
+        <div class="align-demo align-stretch">
+            <div class="align-item">A</div>
+            <div class="align-item">B<br>Más<br>Contenido</div>
+            <div class="align-item">C</div>
+        </div>
+        <div class="codigo">align-items: stretch; /* ⬍ Se estiran para llenar altura */</div>
+
+        <div class="nota">
+            <strong>💡 Truco para centrado perfecto:</strong><br>
+            <code>justify-content: center</code> + <code>align-items: center</code> = Centrado horizontal Y vertical
+        </div>
+    </div>
+
+    <!-- EJEMPLO 4: Gap vs Margin -->
+    <div class="ejemplo">
+        <h2>4. 📏 gap vs margin (Espaciado Moderno)</h2>
+        
+        <h3>❌ Forma antigua con margin:</h3>
+        <div class="sin-gap">
+            <div>Item 1</div>
+            <div>Item 2</div>
+            <div>Item 3</div>
+        </div>
+        <div class="codigo">.item {
+    margin-right: 1rem;
+}
+
+.item:last-child {
+    margin-right: 0; /* Quitar margen del último */
+}
+
+/* Complicado y propenso a errores */</div>
+
+        <h3>✅ Forma moderna con gap:</h3>
+        <div class="con-gap">
+            <div>Item 1</div>
+            <div>Item 2</div>
+            <div>Item 3</div>
+        </div>
+        <div class="codigo">.container {
+    display: flex;
+    <span class="destacado">gap: 1rem;</span>
+}
+
+/* ¡Simple, limpio y perfecto! */</div>
+
+        <div class="nota">
+            <strong>🎯 Ventajas del gap:</strong><br>
+            • Solo una línea de código<br>
+            • No necesita excepciones para el último elemento<br>
+            • Funciona horizontal y vertical<br>
+            • Se adapta automáticamente si los elementos cambian
+        </div>
+    </div>
+
+    <!-- EJEMPLO 5: Demo Interactivo -->
+    <div class="ejemplo">
+        <h2>5. 🎮 Demo Interactivo</h2>
+        
+        <div class="demo-interactivo">
+            <h3>¡Abre Chrome DevTools (F12) y experimenta!</h3>
+            <p>Selecciona el contenedor de abajo y cambia estas propiedades en el Inspector:</p>
+            <ul style="list-style: none; padding: 0;">
+                <li>• <code>justify-content: center</code></li>
+                <li>• <code>align-items: center</code></li>
+                <li>• <code>flex-direction: column</code></li>
+                <li>• <code>gap: 2rem</code></li>
+            </ul>
+        </div>
+
+        <div class="con-flex" style="height: 200px; justify-content: flex-start; align-items: flex-start;">
+            <div>Elemento 1</div>
+            <div>Elemento 2</div>
+            <div>Elemento 3</div>
+        </div>
+
+        <div class="codigo">/* Experimenta cambiando estos valores */
+.contenedor {
+    display: flex;
+    justify-content: flex-start; /* Cambia por: center, space-between */
+    align-items: flex-start;     /* Cambia por: center, flex-end */
+    gap: 0.5rem;                 /* Cambia por: 1rem, 2rem */
+    height: 200px;
+}</div>
+    </div>
+
+    <!-- EJEMPLO 6: Casos de Uso Comunes -->
+    <div class="ejemplo">
+        <h2>6. 🎯 Casos de Uso Comunes</h2>
+        
+        <h3>Navegación centrada:</h3>
+        <div style="display: flex; justify-content: center; gap: 2rem; background: #2c3e50; padding: 1rem; border-radius: 4px;">
+            <a href="#" style="color: white; text-decoration: none;">Inicio</a>
+            <a href="#" style="color: white; text-decoration: none;">Sobre Mí</a>
+            <a href="#" style="color: white; text-decoration: none;">Proyectos</a>
+            <a href="#" style="color: white; text-decoration: none;">Contacto</a>
+        </div>
+        <div class="codigo">nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    list-style: none;
+}</div>
+
+        <h3>Logo izquierda, menú derecha:</h3>
+        <div style="display: flex; justify-content: space-between; align-items: center; background: #34495e; padding: 1rem; border-radius: 4px; color: white;">
+            <div style="font-weight: bold; font-size: 1.2rem;">Mi Logo</div>
+            <div style="display: flex; gap: 1rem;">
+                <a href="#" style="color: white; text-decoration: none;">Inicio</a>
+                <a href="#" style="color: white; text-decoration: none;">Contacto</a>
+            </div>
+        </div>
+        <div class="codigo">header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}</div>
+
+        <h3>Centrado perfecto:</h3>
+        <div style="display: flex; justify-content: center; align-items: center; height: 150px; background: #ecf0f1; border-radius: 4px;">
+            <div style="background: #3498db; color: white; padding: 1rem; border-radius: 4px; font-weight: bold;">
+                ¡Perfectamente centrado!
+            </div>
+        </div>
+        <div class="codigo">.centrar-todo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Para centrar en toda la pantalla */
+}</div>
+    </div>
+
+    <!-- EJEMPLO 7: Preparación para la práctica -->
+    <div class="ejemplo">
+        <h2>7. 🚀 ¡Hora de Practicar!</h2>
+        
+        <div class="nota">
+            <strong>📝 Para la práctica en clase:</strong><br><br>
+            
+            <strong>1. Transformar tu navegación:</strong><br>
+            • Añadir <code>display: flex</code> al contenedor ul<br>
+            • Usar <code>justify-content: center</code><br>
+            • Reemplazar margins por <code>gap</code><br><br>
+            
+            <strong>2. Mejorar el layout principal:</strong><br>
+            • Crear secciones con imagen y texto usando Flexbox<br>
+            • Centrar elementos importantes<br>
+            • Usar <code>align-items: center</code> para alineación vertical<br><br>
+            
+            <strong>3. Organizar elementos repetitivos:</strong><br>
+            • Cards de proyectos en fila<br>
+            • Información de contacto distribuida<br>
+            • Cualquier lista de elementos<br><br>
+            
+            <strong>💡 Recuerda:</strong> Empieza con <code>display: flex</code> y ve agregando propiedades una por una.
+        </div>
+
+        <div class="demo-interactivo">
+            <h3>🎯 Tu turno</h3>
+            <p>Abre tu proyecto y empieza transformando tu navegación con Flexbox</p>
+            <p><strong>Siguiente archivo:</strong> navegacion-flex.html</p>
+        </div>
+    </div>
+
+    <div style="text-align: center; margin: 3rem 0; padding: 2rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 8px;">
+        <h2 style="margin-bottom: 1rem;">🎉 ¡Flexbox es increíblemente poderoso!</h2>
+        <p>Con estos conceptos básicos ya puedes crear layouts modernos y flexibles.</p>
+        <p><strong>Próximo paso:</strong> Aplicar todo esto a tu proyecto personal.</p>
+    </div>
+
+    <!-- Scripts para interactividad opcional -->
+    <script>
+        // Función para destacar elementos cuando se hace hover
+        document.querySelectorAll('.flex-item, .align-item').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.05)';
+                this.style.transition = 'transform 0.2s ease';
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1)';
+            });
+        });
+
+        // Mostrar console.log cuando se carga la página
+        console.log('🎯 Flexbox Básico cargado!');
+        console.log('💡 Tip: Abre DevTools y experimenta cambiando las propiedades flex en tiempo real');
+        console.log('🔧 Selecciona cualquier contenedor flex y modifica: justify-content, align-items, gap');
+    </script>
+</body>
+</html>

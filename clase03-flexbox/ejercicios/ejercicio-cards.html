@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio: Cards con Flexbox</title>
+    <link rel="stylesheet" href="./ejercicio-cards.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎴 Ejercicio: Cards con Flexbox</h1>
+            <p>Organiza contenido en grillas flexibles y responsivas</p>
+        </div>
+
+        <!-- Ejercicio 1: Cards sin Flexbox -->
+        <div class="ejercicio">
+            <h2>Ejercicio 1: El Problema (Cards sin Flexbox)</h2>
+            
+            <div class="instrucciones">
+                <strong>🎯 Observa:</strong> Así se ven las cards sin Flexbox - se apilan verticalmente y no aprovechan el espacio
+            </div>
+
+            <div class="cards-sin-flex">
+                <div class="card">
+                    <h4>Plan Básico</h4>
+                    <p>Perfecto para empezar con las funcionalidades esenciales.</p>
+                    <div class="precio">$29/mes</div>
+                    <a href="#" class="btn">Elegir Plan</a>
+                </div>
+                <div class="card">
+                    <h4>Plan Pro</h4>
+                    <p>Ideal para profesionales que necesitan más funciones.</p>
+                    <div class="precio">$59/mes</div>
+                    <a href="#" class="btn">Elegir Plan</a>
+                </div>
+                <div class="card">
+                    <h4>Plan Empresa</h4>
+                    <p>Solución completa para equipos grandes y empresas.</p>
+                    <div class="precio">$99/mes</div>
+                    <a href="#" class="btn">Elegir Plan</a>
+                </div>
+            </div>
+
+            <div class="resultado">
+                <strong>❌ Problema:</strong> Las cards se apilan verticalmente, desperdiciando espacio horizontal. En pantallas grandes se ve muy mal.
+            </div>
+        </div>
+
+        <!-- Ejercicio 2: Cards con Flexbox básico -->
+        <div class="ejercicio">
+            <h2>Ejercicio 2: Cards en Fila Horizontal</h2>
+            
+            <div class="instrucciones">
+                <strong>🎯 Objetivo:</strong> Organizar las cards en fila horizontal usando Flexbox básico
+            </div>
+
+            <div class="paso">
+                <strong>📝 Tu tarea:</strong> Completa el CSS de <code>.cards-flex-basico</code>
+            </div>
+
+            <div class="codigo">/* Encuentra esta clase en el CSS y completa: */
+.cards-flex-basico {
+    /* TODO: Activar Flexbox */
+    /* display: ? */
+    
+    /* TODO: Espaciado entre cards */
+    /* gap: ? */
+}</div>
+
+            <div class="cards-flex-basico">
+                <div class="card">
+                    <h4>Plan Básico</h4>
+                    <p>Perfecto para empezar con las funcionalidades esenciales.</p>
+                    <div class="precio">$29/mes</div>
+                    <a href="#" class="btn">Elegir Plan</a>
+                </div>
+                <div class="card">
+                    <h4>Plan Pro</h4>
+                    <p>Ideal para profesionales que necesitan más funciones.</p>
+                    <div class="precio">$59/mes</div>
+                    <a href="#" class="btn">Elegir Plan</a>
+                </div>
+                <div class="card">
+                    <h4>Plan Empresa</h4>
+                    <p>Solución completa para equipos grandes y empresas.</p>
+                    <div class="precio">$99/mes</div>
+                    <a href="#" class="btn">Elegir Plan</a>
+                </div>
+            </div>
+
+            <div class="checklist">
+                <strong>✅ Verificar que:</strong>
+                <ul>
+                    <li>Las cards están en fila horizontal</li>
+                    <li>Tienen espaciado uniforme</li>
+                    <li>Todas tienen la misma altura automáticamente</li>
+                    <li>Se ve mucho mejor que la versión anterior</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Ejercicio 3: Cards responsive con wrap -->
+        <div class="ejercicio">
+            <h2>Ejercicio 3: Cards Responsive (con flex-wrap)</h2>
+            
+            <div class="instrucciones">
+                <strong>🎯 Objetivo:</strong> Crear cards que se adapten automáticamente a diferentes tamaños de pantalla
+            </div>
+
+            <div class="paso">
+                <strong>📝 Tu tarea:</strong> Completa el CSS para que las cards se reorganicen automáticamente
+            </div>
+
+            <div class="codigo">/* 1. Completa .cards-wrap: */
+.cards-wrap {
+    /* TODO: Activar Flexbox */
+    /* display: ? */
+    
+    /* TODO: Permitir salto de línea */
+    /* flex-wrap: ? */
+    
+    /* TODO: Espaciado */
+    /* gap: ? */
+    
+    /* TODO: Centrar las cards */
+    /* justify-content: ? */
+}
+
+/* 2. Completa .cards-wrap .card: */
+.cards-wrap .card {
+    /* TODO: Tamaño flexible con base 300px */
+    /* flex: 0 1 300px; */
+}</div>
+
+            <div class="cards-wrap">
+                <div class="card">
+                    <h4>Desarrollo Web</h4>
+                    <p>Sitios web modernos y responsivos con las últimas tecnologías.</p>
+                    <div class="precio">Desde $500</div>
+                    <a href="#" class="btn">Ver Más</a>
+                </div>
+                <div class="card">
+                    <h4>Diseño UI/UX</h4>
+                    <p>Interfaces intuitivas y experiencias de usuario excepcionales.</p>
+                    <div class="precio">Desde $300</div>
+                    <a href="#" class="btn">Ver Más</a>
+                </div>
+                <div class="card">
+                    <h4>Marketing Digital</h4>
+                    <p>Estrategias para aumentar tu presencia online y ventas.</p>
+                    <div class="precio">Desde $400</div>
+                    <a href="#" class="btn">Ver Más</a>
+                </div>
+                <div class="card">
+                    <h4>Consultoría Tech</h4>
+                    <p>Asesoramiento especializado para optimizar tus procesos.</p>
+                    <div class="precio">Desde $200</div>
+                    <a href="#" class="btn">Ver Más</a>
+                </div>
+            </div>
+
+            <div class="resultado">
+                <strong>🎉 Resultado esperado:</strong> Las cards se reorganizan automáticamente según el espacio disponible. ¡Prueba haciendo la ventana más pequeña!
+            </div>
+
+            <div class="checklist">
+                <strong>🔍 Prueba esto:</strong>
+                <ul>
+                    <li>Haz la ventana del navegador más pequeña</li>
+                    <li>Observa cómo las cards saltan a la siguiente línea</li>
+                    <li>En móvil se verá 1 card por fila, en tablet 2, en desktop 3+</li>
+                    <li>Todo sin media queries!</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Ejercicio 4: Cards en 3 columnas exactas -->
+        <div class="ejercicio">
+            <h2>Ejercicio 4: Tres Columnas Exactas</h2>
+            
+            <div class="instrucciones">
+                <strong>🎯 Objetivo:</strong> Crear exactamente 3 columnas que se repartan el espacio equitativamente
+            </div>
+
+            <div class="paso">
+                <strong>📝 Tu tarea:</strong> Usar <code>flex: 1</code> para que cada card tome exactamente 1/3 del espacio
+            </div>
+
+            <div class="codigo">/* 1. Completa .cards-3-columnas: */
+.cards-3-columnas {
+    /* TODO: Activar Flexbox */
+    /* display: ? */
+    
+    /* TODO: Espaciado */
+    /* gap: ? */
+}
+
+/* 2. Completa .cards-3-columnas .card: */
+.cards-3-columnas .card {
+    /* TODO: Cada card toma 1/3 del espacio */
+    /* flex: ? */
+}</div>
+
+            <div class="cards-3-columnas">
+                <div class="card">
+                    <h4>Frontend</h4>
+                    <p>React, Vue, Angular y tecnologías modernas de interfaz.</p>
+                    <div class="precio">Especialidad</div>
+                    <a href="#" class="btn">Explorar</a>
+                </div>
+                <div class="card">
+                    <h4>Backend</h4>
+                    <p>Node.js, Python, bases de datos y arquitectura.</p>
+                    <div class="precio">Especialidad</div>
+                    <a href="#" class="btn">Explorar</a>
+                </div>
+                <div class="card">
+                    <h4>DevOps</h4>
+                    <p>Deploy, CI/CD, Docker y gestión de infraestructura.</p>
+                    <div class="precio">Especialidad</div>
+                    <a href="#" class="btn">Explorar</a>
+                </div>
+            </div>
+
+            <div class="resultado">
+                <strong>🎉 Resultado esperado:</strong> Cada card toma exactamente 1/3 del espacio disponible, sin importar la cantidad de contenido.
+            </div>
+        </div>
+
+        <!-- Ejercicio 5: Cards con diferentes tamaños -->
+        <div class="ejercicio">
+            <h2>Ejercicio 5: Cards con Tamaños Diferentes</h2>
+            
+            <div class="instrucciones">
+                <strong>🎯 Objetivo:</strong> Dar diferentes tamaños a las cards para crear jerarquía visual
+            </div>
+
+            <div class="paso">
+                <strong>📝 Tu tarea:</strong> Usar diferentes valores de flex para crear cards de distintos tamaños
+            </div>
+
+            <div class="codigo">/* 1. Completa .cards-tamaños: */
+.cards-tamaños {
+    /* TODO: Activar Flexbox */
+    /* display: ? */
+    
+    /* TODO: Espaciado */
+    /* gap: ? */
+    
+    /* TODO: Alinear todas las cards a la misma altura */
+    /* align-items: ? */
+}
+
+/* 2. Completa las clases de tamaño: */
+.card-pequeña {
+    /* TODO: Tamaño pequeño */
+    /* flex: ? */
+}
+
+.card-grande {
+    /* TODO: Tamaño doble */
+    /* flex: ? */
+}
+
+.card-mediana {
+    /* TODO: Tamaño intermedio */
+    /* flex: ? */
+}</div>
+
+            <div class="cards-tamaños">
+                <div class="card card-pequeña">
+                    <h4>Plan Básico</h4>
+                    <p>Para empezar.</p>
+                    <div class="precio">$29</div>
+                    <a href="#" class="btn">Elegir</a>
+                </div>
+                <div class="card card-grande">
+                    <h4>Plan Profesional ⭐</h4>
+                    <p>¡El más popular! Incluye todas las funciones avanzadas, soporte prioritario, integraciones ilimitadas y acceso a beta features.</p>
+                    <div class="precio">$99/mes</div>
+                    <a href="#" class="btn">¡Más Popular!</a>
+                </div>
+                <div class="card card-mediana">
+                    <h4>Plan Premium</h4>
+                    <p>Funciones intermedias para equipos pequeños y medianos.</p>
+                    <div class="precio">$59</div>
+                    <a href="#" class="btn">Elegir</a>
+                </div>
+            </div>
+
+            <div class="resultado">
+                <strong>🎉 Resultado esperado:</strong> La card del medio (Plan Profesional) es más grande, destacando como la opción recomendada.
+            </div>
+        </div>
+
+        <!-- Ejercicio 6: Layout de proyectos -->
+        <div class="ejercicio">
+            <h2>Ejercicio 6: Layout de Proyectos (Mixto)</h2>
+            
+            <div class="instrucciones">
+                <strong>🎯 Objetivo:</strong> Crear un layout mixto con imagen fija y contenido flexible
+            </div>
+
+            <div class="paso">
+                <strong>📝 Tu tarea:</strong> Combinar tamaño fijo y flexible en el mismo contenedor
+            </div>
+
+            <div class="codigo">/* 1. Completa .proyecto-card: */
+.proyecto-card {
+    /* TODO: Activar Flexbox */
+    /* display: ? */
+    
+    /* TODO: Espaciado */
+    /* gap: ? */
+}
+
+/* 2. Completa .proyecto-imagen: */
+.proyecto-imagen {
+    /* TODO: Tamaño fijo del 40% */
+    /* flex: 0 0 40%; */
+}
+
+/* 3. Completa .proyecto-contenido: */
+.proyecto-contenido {
+    /* TODO: Toma el resto del espacio */
+    /* flex: ? */
+}</div>
+
+            <div class="proyecto-card">
+                <div class="proyecto-imagen">
+                    🌐 Web App
+                </div>
+                <div class="proyecto-contenido">
+                    <h4>E-commerce Moderno</h4>
+                    <p>Plataforma de ventas online con carrito de compras, pagos integrados y panel de administración completo.</p>
+                    <div>
+                        <span class="tecnologia">React</span>
+                        <span class="tecnologia">Node.js</span>
+                        <span class="tecnologia">MongoDB</span>
+                        <span class="tecnologia">Stripe</span>
+                    </div>
+                    <br><br>
+                    <a href="#" class="btn">Ver Proyecto</a>
+                </div>
+            </div>
+
+            <div class="proyecto-card">
+                <div class="proyecto-imagen">
+                    📱 Mobile App
+                </div>
+                <div class="proyecto-contenido">
+                    <h4>App de Delivery</h4>
+                    <p>Aplicación móvil para pedidos de comida con tracking en tiempo real y sistema de calificaciones.</p>
+                    <div>
+                        <span class="tecnologia">React Native</span>
+                        <span class="tecnologia">Firebase</span>
+                        <span class="tecnologia">Maps API</span>
+                    </div>
+                    <br><br>
+                    <a href="#" class="btn">Ver Proyecto</a>
+                </div>
+            </div>
+
+            <div class="resultado">
+                <strong>🎉 Resultado esperado:</strong> Layout profesional con imagen a tamaño fijo (40%) y contenido que toma el resto del espacio.
+            </div>
+        </div>
+
+        <!-- Aplicación al proyecto personal -->
+        <div class="ejercicio">
+            <h2>🚀 Aplicar a Tu Proyecto Personal</h2>
+            
+            <div class="instrucciones">
+                <strong>🎯 Ahora aplica lo aprendido:</strong> Organiza el contenido de tu proyecto usando cards con Flexbox
+            </div>
+
+            <div class="paso">
+                <strong>1. Identifica contenido repetitivo</strong>
+                <br>¿Tienes servicios, proyectos, artículos o productos que podrías organizar en cards?
+            </div>
+
+            <div class="paso">
+                <strong>2. Elige el tipo de layout</strong>
+                <br>• <strong>Cards responsive:</strong> Se adaptan automáticamente
+                <br>• <strong>3 columnas exactas:</strong> Para grillas perfectas
+                <br>• <strong>Tamaños diferentes:</strong> Para destacar contenido importante
+                <br>• <strong>Layout mixto:</strong> Para proyectos o servicios detallados
+            </div>
+
+            <div class="paso">
+                <strong>3. Implementa el HTML</strong>
+                <br>Crea la estructura de contenedor y cards
+            </div>
+
+            <div class="codigo"><!-- Ejemplo de estructura HTML -->
+<section class="mis-servicios">
+    <div class="cards-container">
+        <div class="card">
+            <h3>Servicio 1</h3>
+            <p>Descripción del servicio...</p>
+            <div class="precio">$100</div>
+            <a href="#" class="btn">Ver Más</a>
+        </div>
+        <div class="card">
+            <h3>Servicio 2</h3>
+            <p>Descripción del servicio...</p>
+            <div class="precio">$200</div>
+            <a href="#" class="btn">Ver Más</a>
+        </div>
+    </div>
+</section></div>
+
+            <div class="paso">
+                <strong>4. Aplica el CSS Flexbox</strong>
+                <br>Usa los patrones que acabas de aprender
+            </div>
+
+            <div class="codigo">/* Para cards responsive: */
+.cards-container {
+    /* TODO: Aplicar Flexbox responsive */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.card {
+    /* TODO: Tamaño flexible */
+    flex: 0 1 300px;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}</div>
+
+            <div class="checklist">
+                <strong>✅ Checklist para tu proyecto:</strong>
+                <ul>
+                    <li>Contenido organizado en cards visualmente atractivas</li>
+                    <li>Layout se adapta a diferentes tamaños de pantalla</li>
+                    <li>Espaciado uniforme y profesional</li>
+                    <li>Cards tienen hover effects</li>
+                    <li>Información importante está destacada</li>
+                    <li>Todo se ve organizado y limpio</li>
+                </ul>
+            </div>
+
+            <div class="resultado">
+                <strong>🎉 ¡Excelente!</strong> Tu proyecto ahora tiene un sistema de cards profesional que se adapta automáticamente. Has dominado uno de los layouts más útiles del desarrollo web moderno.
+            </div>
+        </div>
+
+        <!-- Próximos pasos -->
+        <div class="ejercicio">
+            <h2>🔮 Próximos Pasos</h2>
+            
+            <p><strong>¡Has completado los ejercicios de cards con Flexbox! Ahora puedes:</strong></p>
+            
+            <div class="paso">
+                <strong>📱 Aplicar responsive design</strong>
+                <br>En la próxima clase veremos media queries para ajustes más precisos
+            </div>
+
+            <div class="paso">
+                <strong>🎨 Mejorar el diseño</strong>
+                <br>Agregar colores, sombras y animaciones a tus cards
+            </div>
+
+            <div class="paso">
+                <strong>🔄 Combinar técnicas</strong>
+                <br>Usar Flexbox en navegación + cards + layout principal
+            </div>
+
+            <div class="paso">
+                <strong>📈 Nivel avanzado</strong>
+                <br>CSS Grid para layouts bidimensionales más complejos
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Pequeño script para mejorar la experiencia
+        console.log('🎴 Ejercicio de Cards con Flexbox cargado!');
+        console.log('💡 Tip: Experimenta con diferentes valores de flex para ver cómo cambian los tamaños');
+        console.log('🔧 Prueba cambiar el tamaño de la ventana para ver el comportamiento responsive');
+
+        // Función para destacar código cuando se hace hover
+        document.querySelectorAll('.codigo').forEach(codigo => {
+            codigo.addEventListener('mouseenter', function() {
+                this.style.borderLeft = '6px solid #f39c12';
+                this.style.transition = 'all 0.3s ease';
+            });
+            
+            codigo.addEventListener('mouseleave', function() {
+                this.style.borderLeft = '4px solid #3498db';
+            });
+        });
+
+        // Agregar efectos a las cards
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-8px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(-5px) scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>

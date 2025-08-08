@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio: Navegación con Flexbox</title>
+    <link rel="stylesheet" href="./ejercicio-navegacion.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🧭 Ejercicio: Navegación con Flexbox</h1>
+            <p>Transforma navegaciones básicas en layouts modernos y flexibles</p>
+        </div>
+
+        <!-- Ejercicio 1: Navegación básica horizontal -->
+        <div class="ejercicio">
+            <h2>Ejercicio 1: Navegación Horizontal Básica</h2>
+            
+            <div class="instrucciones">
+                <strong>🎯 Objetivo:</strong> Transformar esta navegación tradicional usando Flexbox
+            </div>
+
+            <p><strong>ANTES (navegación tradicional):</strong></p>
+            <nav class="nav-sin-flex">
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Sobre Mí</a></li>
+                    <li><a href="#">Proyectos</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </nav>
+
+            <div class="paso">
+                <strong>📝 Tu tarea:</strong> Modifica el CSS de <code>.nav-flex-basico ul</code> para usar Flexbox
+            </div>
+
+            <div class="codigo">/* Encuentra esta clase en el CSS y completa: */
+.nav-flex-basico ul {
+    list-style: none;
+    
+    /* TODO: 1. Activa Flexbox */
+    /* display: ? */
+    
+    /* TODO: 2. Centra los elementos */
+    /* justify-content: ? */
+    
+    /* TODO: 3. Agrega espaciado moderno */
+    /* gap: ? */
+}</div>
+
+            <p><strong>DESPUÉS (con Flexbox - completar CSS):</strong></p>
+            <nav class="nav-flex-basico">
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Sobre Mí</a></li>
+                    <li><a href="#">Proyectos</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </nav>
+
+            <div class="checklist">
+                <strong>✅ Verificar que:</strong>
+                <ul>
+                    <li>Los enlaces están en fila horizontal</li>
+                    <li>Están centrados</li>
+                    <li>Tienen espaciado uniforme</li>
+                    <li>Se ven mejor que la versión anterior</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Ejercicio 2: Header con logo y navegación -->
+        <div class="ejercicio">
+            <h2>Ejercicio 2: Header Completo (Logo + Navegación)</h2>
+            
+            <div class="instrucciones">
+                <strong>🎯 Objetivo:</strong> Crear un header moderno con logo a la izquierda y navegación a la derecha
+            </div>
+
+            <div class="paso">
+                <strong>📝 Tu tarea:</strong> Completa el CSS para lograr este layout:
+                <br>• Logo a la izquierda
+                <br>• Navegación a la derecha  
+                <br>• Todo alineado verticalmente
+            </div>
+
+            <div class="codigo">/* 1. Completa .header-flex: */
+.header-flex {
+    /* TODO: Activar Flexbox */
+    /* display: ? */
+    
+    /* TODO: Logo izquierda, nav derecha */
+    /* justify-content: ? */
+    
+    /* TODO: Alinear verticalmente */
+    /* align-items: ? */
+}
+
+/* 2. Completa .nav-derecha ul: */
+.nav-derecha ul {
+    /* TODO: Navegación horizontal */
+    /* display: ? */
+    list-style: none;
+    /* gap: ? */
+}</div>
+
+            <header class="header-completo">
+                <div class="header-flex">
+                    <div class="logo">Mi Sitio</div>
+                    <nav class="nav-derecha">
+                        <ul>
+                            <li><a href="#">Inicio</a></li>
+                            <li><a href="#">Servicios</a></li>
+                            <li><a href="#">Contacto</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </header>
+
+            <div class="resultado">
+                <strong>🎉 Resultado esperado:</strong> Logo "Mi Sitio" a la izquierda, navegación a la derecha, todo alineado.
+            </div>
+        </div>
+
+        <!-- Ejercicio 3: Navegación vertical -->
+        <div class="ejercicio">
+            <h2>Ejercicio 3: Navegación Vertical (Sidebar)</h2>
+            
+            <div class="instrucciones">
+                <strong>🎯 Objetivo:</strong> Crear una navegación vertical para sidebar usando flex-direction
+            </div>
+
+            <div class="paso">
+                <strong>📝 Tu tarea:</strong> Haz que estos enlaces se organicen verticalmente con espaciado uniforme
+            </div>
+
+            <div class="codigo">/* Completa .nav-vertical ul: */
+.nav-vertical ul {
+    /* TODO: Activar Flexbox */
+    /* display: ? */
+    
+    /* TODO: Dirección vertical */
+    /* flex-direction: ? */
+    
+    /* TODO: Espaciado uniforme */
+    /* gap: ? */
+    
+    list-style: none;
+}</div>
+
+            <nav class="nav-vertical">
+                <ul>
+                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="#">Perfil</a></li>
+                    <li><a href="#">Configuración</a></li>
+                    <li><a href="#">Ayuda</a></li>
+                    <li><a href="#">Salir</a></li>
+                </ul>
+            </nav>
+
+            <div class="resultado">
+                <strong>🎉 Resultado esperado:</strong> Enlaces apilados verticalmente con espaciado uniforme.
+            </div>
+        </div>
+
+        <!-- Ejercicio 4: Navegación responsive -->
+        <div class="ejercicio">
+            <h2>Ejercicio 4: Navegación Responsive</h2>
+            
+            <div class="instrucciones">
+                <strong>🎯 Objetivo:</strong> Crear una navegación que se adapte automáticamente a diferentes tamaños de pantalla
+            </div>
+
+            <div class="paso">
+                <strong>📝 Tu tarea:</strong> Usar flex-wrap para que los enlaces se reorganicen automáticamente
+            </div>
+
+            <div class="codigo">/* Completa .nav-responsive ul: */
+.nav-responsive ul {
+    /* TODO: Activar Flexbox */
+    /* display: ? */
+    
+    /* TODO: Permitir salto de línea */
+    /* flex-wrap: ? */
+    
+    /* TODO: Centrar elementos */
+    /* justify-content: ? */
+    
+    /* TODO: Espaciado */
+    /* gap: ? */
+    
+    list-style: none;
+}</div>
+
+            <nav class="nav-responsive">
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Productos</a></li>
+                    <li><a href="#">Servicios</a></li>
+                    <li><a href="#">Sobre Nosotros</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contacto</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </nav>
+
+            <div class="resultado">
+                <strong>🎉 Resultado esperado:</strong> En pantallas grandes, navegación horizontal. En pantallas pequeñas, se envuelve automáticamente.
+            </div>
+
+            <div class="checklist">
+                <strong>🔍 Prueba esto:</strong>
+                <ul>
+                    <li>Haz la ventana del navegador más pequeña</li>
+                    <li>Observa cómo los enlaces se reorganizan automáticamente</li>
+                    <li>No necesitas media queries para esto</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Aplicación al proyecto personal -->
+        <div class="ejercicio">
+            <h2>🚀 Aplicar a Tu Proyecto Personal</h2>
+            
+            <div class="instrucciones">
+                <strong>🎯 Ahora aplica lo aprendido:</strong> Transforma la navegación de tu proyecto usando Flexbox
+            </div>
+
+            <div class="paso">
+                <strong>1. Abre tu proyecto</strong>
+                <br>Encuentra la navegación en tu archivo CSS principal
+            </div>
+
+            <div class="paso">
+                <strong>2. Identifica tu estructura HTML</strong>
+                <br>¿Tienes un <code>&lt;nav&gt;&lt;ul&gt;&lt;li&gt;</code> o estructura similar?
+            </div>
+
+            <div class="paso">
+                <strong>3. Aplica Flexbox paso a paso</strong>
+                <br>• <code>display: flex</code> al contenedor ul
+                <br>• <code>justify-content</code> según tu diseño
+                <br>• <code>gap</code> para espaciado
+                <br>• <code>align-items: center</code> si es necesario
+            </div>
+
+            <div class="codigo">/* Ejemplo para aplicar a tu proyecto: */
+nav ul {
+    /* TODO: Aplicar Flexbox aquí */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    list-style: none;
+}
+
+/* Si tienes header con logo: */
+header {
+    /* TODO: Layout del header completo */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}</div>
+
+            <div class="checklist">
+                <strong>✅ Checklist para tu proyecto:</strong>
+                <ul>
+                    <li>Navegación se ve horizontal y organizada</li>
+                    <li>Espaciado uniforme entre enlaces</li>
+                    <li>Si tienes logo, está bien posicionado</li>
+                    <li>Todo está alineado verticalmente</li>
+                    <li>Se ve profesional y moderno</li>
+                    <li>Funciona en diferentes tamaños de pantalla</li>
+                </ul>
+            </div>
+
+            <div class="resultado">
+                <strong>🎉 ¡Felicitaciones!</strong> Tu navegación ahora usa Flexbox y se ve mucho más profesional. Este es el primer paso hacia layouts modernos.
+            </div>
+        </div>
+
+        <!-- Próximos pasos -->
+        <div class="ejercicio">
+            <h2>🔮 Próximos Pasos</h2>
+            
+            <p><strong>Ahora que dominas navegación con Flexbox, continuemos con:</strong></p>
+            
+            <div class="paso">
+                <strong>📄 ejercicio-cards.html</strong>
+                <br>Organizar contenido en cards responsivas
+            </div>
+
+            <div class="paso">
+                <strong>🎯 Tu proyecto personal</strong>
+                <br>Aplicar Flexbox a secciones principales y contenido
+            </div>
+
+            <div class="paso">
+                <strong>📱 Siguiente clase</strong>
+                <br>Responsive design y media queries
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Pequeño script para mejorar la experiencia
+        console.log('🧭 Ejercicio de Navegación con Flexbox cargado!');
+        console.log('💡 Tip: Usa las DevTools para experimentar con diferentes valores de justify-content');
+        console.log('🔧 Prueba: flex-start, center, flex-end, space-between, space-around, space-evenly');
+
+        // Función para destacar código cuando se hace hover
+        document.querySelectorAll('.codigo').forEach(codigo => {
+            codigo.addEventListener('mouseenter', function() {
+                this.style.borderLeft = '6px solid #f39c12';
+                this.style.transition = 'all 0.3s ease';
+            });
+            
+            codigo.addEventListener('mouseleave', function() {
+                this.style.borderLeft = '4px solid #3498db';
+            });
+        });
+    </script>
+</body>
+</html>

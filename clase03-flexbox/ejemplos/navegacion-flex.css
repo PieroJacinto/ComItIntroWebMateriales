@@ -1,0 +1,279 @@
+ * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        .contenedor-ejemplos {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #2c3e50;
+            font-size: 2.5rem;
+        }
+
+        h2 {
+            color: #3498db;
+            margin: 3rem 0 1rem 0;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 0.5rem;
+        }
+
+        .paso {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .codigo {
+            background-color: #2d3748;
+            color: #e2e8f0;
+            padding: 1.5rem;
+            border-radius: 6px;
+            font-family: 'Courier New', monospace;
+            margin: 1rem 0;
+            overflow-x: auto;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .destacado {
+            background-color: #ffd700;
+            color: #333;
+            padding: 0.2rem 0.5rem;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+
+        .nota {
+            background-color: #e8f4fd;
+            border-left: 4px solid #3498db;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 4px 4px 0;
+        }
+
+        /* ======= EJEMPLO 1: TRANSFORMACIÓN PASO A PASO ======= */
+        .nav-antes {
+            background-color: #e74c3c;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .nav-antes ul {
+            list-style: none;
+            text-align: center;
+        }
+
+        .nav-antes li {
+            display: inline-block;
+            margin: 0 1rem;
+        }
+
+        .nav-antes a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+        }
+
+        .nav-despues {
+            background-color: #27ae60;
+            color: white;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .nav-despues ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .nav-despues a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-despues a:hover {
+            background-color: rgba(255,255,255,0.2);
+        }
+
+        /* ======= LAYOUTS COMUNES ======= */
+        .layout-logo-nav {
+            background-color: #3498db;
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .layout-logo-nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .layout-logo-nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .layout-logo-nav a:hover {
+            background-color: rgba(255,255,255,0.2);
+        }
+
+        .layout-vertical {
+            background-color: #9b59b6;
+            color: white;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .layout-vertical ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .layout-vertical a {
+            color: white;
+            text-decoration: none;
+            padding: 0.75rem 2rem;
+            border-radius: 25px;
+            transition: all 0.3s;
+            text-align: center;
+            border: 2px solid transparent;
+        }
+
+        .layout-vertical a:hover {
+            background-color: rgba(255,255,255,0.2);
+            border-color: rgba(255,255,255,0.3);
+        }
+
+        .layout-responsive {
+            background-color: #e67e22;
+            color: white;
+            padding: 1rem 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .layout-responsive h1 {
+            color: white;
+            text-align: center;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        .layout-responsive ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .layout-responsive a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            transition: background-color 0.3s;
+            white-space: nowrap;
+        }
+
+        .layout-responsive a:hover {
+            background-color: rgba(255,255,255,0.2);
+        }
+
+        /* ======= GUÍA PRÁCTICA ======= */
+        .guia-practica {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+        }
+
+        .guia-practica h3 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .checklist {
+            list-style: none;
+            padding: 0;
+        }
+
+        .checklist li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .checklist li:before {
+            content: "✅";
+            position: absolute;
+            left: 0;
+        }
+
+        .problema-solucion {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .problema {
+            background: #f8d7da;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #dc3545;
+        }
+
+        .solucion {
+            background: #d4edda;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #28a745;
+        }
+
+        @media (max-width: 768px) {
+            .problema-solucion {
+                grid-template-columns: 1fr;
+            }
+        }

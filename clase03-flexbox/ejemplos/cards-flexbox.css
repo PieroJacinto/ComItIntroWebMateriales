@@ -1,0 +1,353 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+}
+
+.contenedor-principal {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+h2 {
+    color: #3498db;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 0.5rem;
+}
+
+.seccion {
+    background: white;
+    padding: 2rem;
+    margin-bottom: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* ======= ESTILOS DE LAS CARDS ======= */
+.card {
+    background: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e0e0e0;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card h4 {
+    color: #2c3e50;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.card p {
+    color: #666;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+.precio {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 0.75rem;
+    border-radius: 25px;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    display: inline-block;
+    min-width: 120px;
+}
+
+.btn {
+    background: #3498db;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 1rem;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    background: #2980b9;
+}
+
+/* ======= CÓDIGO Y NOTAS ======= */
+.codigo {
+    background: #2c3e50;
+    color: #ecf0f1;
+    padding: 1.5rem;
+    border-radius: 8px;
+    font-family: 'Courier New', monospace;
+    margin: 1.5rem 0;
+    border-left: 4px solid #3498db;
+    white-space: pre-line;
+    overflow-x: auto;
+}
+
+.destacado {
+    background: #f39c12;
+    color: #2c3e50;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.nota {
+    background: #e8f6f3;
+    border: 1px solid #26de81;
+    border-left: 4px solid #26de81;
+    padding: 1rem 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 6px;
+}
+
+/* ======= EJEMPLO 1: SIN FLEXBOX ======= */
+.cards-sin-flex {
+    /* Sin flexbox - comportamiento normal */
+}
+
+.cards-sin-flex .card {
+    margin-bottom: 2rem;
+    max-width: 300px;
+}
+
+/* ======= EJEMPLO 2: FLEXBOX BÁSICO ======= */
+.cards-flex-basico {
+    display: flex;
+    gap: 2rem;
+}
+
+/* ======= EJEMPLO 3: WRAP AUTOMÁTICO ======= */
+.cards-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.cards-wrap .card {
+    flex: 0 1 300px; /* Base 300px, puede encogerse */
+}
+
+/* ======= EJEMPLO 4: 3 COLUMNAS EXACTAS ======= */
+.cards-3-columnas {
+    display: flex;
+    gap: 2rem;
+}
+
+.cards-3-columnas .card {
+    flex: 1; /* Reparten espacio equitativamente */
+}
+
+/* ======= EJEMPLO 5: DIFERENTES TAMAÑOS ======= */
+.cards-tamaños {
+    display: flex;
+    gap: 2rem;
+    align-items: stretch; /* Misma altura */
+}
+
+.cards-tamaños .card-pequeña {
+    flex: 1;
+}
+
+.cards-tamaños .card-grande {
+    flex: 2; /* Toma el doble de espacio */
+}
+
+.cards-tamaños .card-mediana {
+    flex: 1.5;
+}
+
+/* ======= EJEMPLO 6: LAYOUT DE PROYECTOS ======= */
+.proyecto-card {
+    display: flex;
+    gap: 2rem;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    transition: all 0.3s ease;
+    text-align: left;
+}
+
+.proyecto-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.proyecto-imagen {
+    flex: 0 0 40%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.proyecto-contenido {
+    flex: 1;
+    padding: 2rem;
+}
+
+.proyecto-contenido h4 {
+    color: #2c3e50;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.proyecto-contenido p {
+    margin-bottom: 1rem;
+}
+
+.proyecto-contenido .tecnologias {
+    display: flex;
+    gap: 0.5rem;
+    margin: 1rem 0;
+    flex-wrap: wrap;
+}
+
+.tecnologia {
+    background: #e8f4fd;
+    color: #3498db;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+/* ======= DEMO INTERACTIVO ======= */
+.playground {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    margin: 2rem 0;
+}
+
+.playground h3 {
+    color: white;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.demo-container {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+.demo-cards {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.demo-card {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #333;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    min-width: 120px;
+    transition: all 0.3s ease;
+}
+
+.control-panel {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+.control-btn {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.control-btn:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.control-btn.active {
+    background-color: #ffd700;
+    color: #333;
+}
+
+/* ======= RESPONSIVE ======= */
+@media (max-width: 768px) {
+    .proyecto-card {
+        flex-direction: column;
+    }
+
+    .proyecto-imagen {
+        flex: 0 0 200px;
+    }
+
+    .cards-3-columnas {
+        flex-direction: column;
+    }
+
+    .cards-tamaños {
+        flex-direction: column;
+    }
+
+    .cards-flex-basico {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .contenedor-principal {
+        padding: 1rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .seccion {
+        padding: 1rem;
+    }
+}
