@@ -1,0 +1,41 @@
+.container {
+    display: flex; 
+    height: 400px;
+    background-color: aquamarine;
+    justify-content: space-around;
+    gap: 100px;
+    align-items: center;
+}
+.hijo1 {
+    height: 100px;
+    background-color: blue;
+    border: solid 2px black;
+    width: 250px;
+}
+.hijo2 {
+    height: 100px;
+    background-color: pink;
+    border: solid 2px black;
+    width: 250px;
+}
+
+.hijo3 {
+    height: 100px;
+    background-color: purple;
+    border: solid 2px black;
+    width: 250px;
+}
+
+.container-hijo{
+    display: flex;
+    gap: 50px;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.imagen {
+    height: 200px;
+    background-color: green;
+    border: solid 2px black;
+    width: 100px;
+}

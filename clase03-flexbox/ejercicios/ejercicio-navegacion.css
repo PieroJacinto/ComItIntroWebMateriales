@@ -127,7 +127,9 @@ body {
 .nav-flex-basico ul {
   /* TODO: Los estudiantes deben completar aquí */
   list-style: none;
-
+  display: flex;
+  justify-content: center;
+   gap: 2rem; 
   /* ACTIVIDAD PASO A PASO:
      1. Activar Flexbox: display: flex;
      2. Centrar elementos: justify-content: center;

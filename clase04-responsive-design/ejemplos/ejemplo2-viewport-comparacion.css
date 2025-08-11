@@ -1,0 +1,189 @@
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: #f8f9fa;
+}
+
+/* ===== HEADER ===== */
+header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+/* ===== MAIN CONTENT ===== */
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.comparison {
+  background: white;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+h1 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+h2 {
+  color: #34495e;
+  margin: 1.5rem 0 1rem 0;
+  font-size: 1.3rem;
+}
+
+.viewport-explanation {
+  background: #e8f5e8;
+  border-left: 4px solid #27ae60;
+  padding: 1rem;
+  border-radius: 5px;
+  margin: 1rem 0;
+}
+
+.without-viewport {
+  background: #ffe8e8;
+  border-left: 4px solid #e74c3c;
+  padding: 1rem;
+  border-radius: 5px;
+  margin: 1rem 0;
+}
+
+.code-block {
+  background: #2d3748;
+  color: #e2e8f0;
+  padding: 1rem;
+  border-radius: 8px;
+  font-family: "Courier New", monospace;
+  margin: 1rem 0;
+  overflow-x: auto;
+  white-space: pre;
+}
+
+.highlight {
+  background: #ffeaa7;
+  padding: 0.2rem 0.4rem;
+  border-radius: 3px;
+  font-weight: bold;
+}
+
+/* ===== DEMO BOXES ===== */
+.demo-box {
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.good {
+  border-color: #27ae60;
+  background: #e8f5e8;
+}
+
+.bad {
+  border-color: #e74c3c;
+  background: #ffe8e8;
+}
+
+/* ===== RESPONSIVE TEXT SIZES ===== */
+.text-demo {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+
+.mobile-text {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.desktop-simulated {
+  font-size: 0.7rem;
+  line-height: 1.4;
+}
+
+/* ===== BUTTONS ===== */
+.btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: #3498db;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  margin: 0.5rem;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background: #2980b9;
+}
+
+.btn-small {
+  padding: 0.3rem 0.6rem;
+  font-size: 0.7rem;
+}
+
+/* ===== GRID DEMO ===== */
+.grid-demo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.grid-item {
+  background: #667eea;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 8px;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: #2c3e50;
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  margin-top: 2rem;
+}
+
+/* ===== RESPONSIVE ADJUSTMENTS ===== */
+@media (max-width: 768px) {
+  .comparison {
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .btn {
+    padding: 0.8rem 1.5rem;
+    display: block;
+    margin: 0.5rem 0;
+  }
+}

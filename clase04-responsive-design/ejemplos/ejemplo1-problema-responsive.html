@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <!-- ❌ SIN viewport meta tag - ¡Este es el problema! -->
+    <title>Sitio SIN Responsive - PROBLEMA</title>
+    <link rel="stylesheet" href="./ejemplo1-problema-responsive.css">
+</head>
+<body>
+    <header>
+        <h1>Mi Sitio Web Problemático</h1>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#blog">Blog</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>¡Bienvenido!</h1>
+            <p>Este sitio se ve bien en desktop, pero terrible en móvil</p>
+            <a href="#contacto" class="btn">Contactar Ahora</a>
+        </section>
+
+        <section>
+            <h2>Nuestros Servicios</h2>
+            <div class="cards">
+                <div class="card">
+                    <h3>Desarrollo Web</h3>
+                    <p>Creamos sitios web modernos y funcionales que se adaptan a todos los dispositivos.</p>
+                    <a href="#" class="btn">Ver Más</a>
+                </div>
+                <div class="card">
+                    <h3>Diseño UI/UX</h3>
+                    <p>Diseños intuitivos que mejoran la experiencia del usuario y aumentan conversiones.</p>
+                    <a href="#" class="btn">Ver Más</a>
+                </div>
+                <div class="card">
+                    <h3>Consultoría</h3>
+                    <p>Asesoramiento estratégico para mejorar tu presencia digital y alcanzar tus objetivos.</p>
+                    <a href="#" class="btn">Ver Más</a>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Imagen Problemática</h2>
+            <img src="https://via.placeholder.com/800x400/667eea/white?text=Esta+imagen+se+desborda+en+móvil" alt="Imagen que se desborda" class="large-image">
+        </section>
+
+        <section>
+            <h2>Tabla Problemática</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Servicio</th>
+                        <th>Descripción Detallada</th>
+                        <th>Precio Inicial</th>
+                        <th>Tiempo de Entrega</th>
+                        <th>Garantía</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Sitio Web Básico</td>
+                        <td>Incluye hasta 5 páginas, diseño responsive, formulario de contacto</td>
+                        <td>$500 USD</td>
+                        <td>2-3 semanas</td>
+                        <td>6 meses</td>
+                    </tr>
+                    <tr>
+                        <td>E-commerce</td>
+                        <td>Tienda online completa con carrito, pagos, gestión de productos</td>
+                        <td>$1200 USD</td>
+                        <td>4-6 semanas</td>
+                        <td>12 meses</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <form>
+                <div class="form-group">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn">Enviar Mensaje</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Mi Sitio Web Problemático. Todos los derechos reservados.</p>
+        <p>Este sitio NO es responsive - se ve terrible en móvil!</p>
+    </footer>
+
+    <!-- ===== INSTRUCCIONES PARA EL PROFESOR ===== -->
+    <!--
+    
+    📱 DEMO: MOSTRAR PROBLEMAS EN MÓVIL
+    
+    1. Abrir este archivo en navegador (desktop)
+    2. Mostrar que se ve "bien" en desktop
+    3. Abrir DevTools (F12)
+    4. Activar vista móvil (icon de teléfono)
+    5. Mostrar TODOS estos problemas:
+    
+    ❌ PROBLEMAS EVIDENTES:
+    - Sin viewport tag → simula desktop en móvil
+    - Navegación se rompe y es difícil usar
+    - Cards horizontales no caben → scroll horizontal
+    - Imagen de 800px se desborda
+    - Tabla causa scroll horizontal  
+    - Texto muy pequeño para leer
+    - Botones muy pequeños para tocar
+    - Formulario difícil de usar
+    
+    💡 PUNTOS CLAVE PARA EXPLICAR:
+    - "¿Ven cómo se ve en móvil? ¡Es inutilizable!"
+    - "60% de usuarios están en móvil → perdemos audiencia"
+    - "Google penaliza sitios no responsive"
+    - "Hoy vamos a solucionar TODOS estos problemas"
+    
+    ⏰ TIMING: 5-7 minutos máximo
+    🎯 OBJETIVO: Que vean la importancia del responsive
+    
+    -->
+</body>
+</html>

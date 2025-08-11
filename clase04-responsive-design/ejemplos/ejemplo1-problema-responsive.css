@@ -1,0 +1,177 @@
+/* ===== CSS sin responsive - se ve mal en móvil ===== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Header con tamaños fijos - problema en móvil */
+header {
+  background-color: #2c3e50;
+  color: white;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+/* Navegación horizontal - se rompe en móvil */
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+  padding: 1rem 0;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-size: 1.1rem;
+}
+
+nav a:hover {
+  background-color: #34495e;
+}
+
+/* Contenido con ancho fijo - se desborda en móvil */
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: white;
+}
+
+.hero {
+  text-align: center;
+  padding: 3rem 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+}
+
+/* Cards en grid fijo - se rompe en móvil */
+.cards {
+  display: flex;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.card {
+  flex: 1;
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  min-width: 300px; /* ¡Esto causa scroll horizontal! */
+}
+
+.card h3 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.card p {
+  margin-bottom: 1rem;
+}
+
+/* Botón con tamaño fijo - muy pequeño para tocar en móvil */
+.btn {
+  display: inline-block;
+  background-color: #3498db;
+  color: white;
+  padding: 0.5rem 1rem; /* Muy pequeño para móvil */
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 0.9rem; /* Texto muy pequeño */
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #2980b9;
+}
+
+/* Formulario con inputs pequeños */
+form {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 10px;
+  margin: 2rem 0;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  font-size: 0.9rem; /* Muy pequeño */
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 0.5rem; /* Muy pequeño para tocar */
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  font-size: 0.9rem; /* Muy pequeño para leer */
+}
+
+/* Footer con texto pequeño */
+footer {
+  background-color: #2c3e50;
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  margin-top: 2rem;
+  font-size: 0.8rem; /* Muy pequeño */
+}
+
+/* Tabla que se desborda */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+  min-width: 600px; /* ¡Causa scroll horizontal! */
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  text-align: left;
+}
+
+th {
+  background-color: #f8f9fa;
+}
+
+/* Imagen que se desborda */
+.large-image {
+  width: 800px; /* ¡Ancho fijo que se desborda! */
+  height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin: 2rem 0;
+}

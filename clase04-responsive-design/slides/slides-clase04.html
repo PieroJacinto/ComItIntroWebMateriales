@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 4: Responsive + Efectos Básicos</title>
+    <link rel="stylesheet" href="./slides-clase04.css">
+    <link rel="stylesheet" href="./slide4-responsive.css">
+</head>
+<body>
+    <div class="slideshow-container">
+        
+        <!-- Slide 1: Portada -->
+        <div class="slide active">
+            <div class="big-emoji">📱</div>
+            <h1>CLASE 4</h1>
+            <h2>RESPONSIVE + EFECTOS BÁSICOS</h2>
+            <p>🎯 <span class="highlight">Tu sitio funcionará en TODOS los dispositivos</span></p>
+            <p>✨ <span class="highlight">+ efectos que lo harán sentir moderno</span></p>
+            <p>⏰ <span class="highlight">3 horas de transformación total</span></p>
+        </div>
+
+        <!-- Slide 2: Repaso -->
+        <div class="slide">
+            <h2>🔄 REPASO RÁPIDO</h2>
+            <p><span class="highlight">¿Qué dominamos hasta ahora?</span></p>
+            <ul class="check-list">
+                <li><strong>Clase 1:</strong> HTML semántico + Git básico</li>
+                <li><strong>Clase 2:</strong> CSS básico (colores, tipografías, modelo de caja)</li>
+                <li><strong>Clase 3:</strong> Flexbox para layouts modernos</li>
+            </ul>
+            <p>🚀 <span class="highlight">Hoy agregamos: responsive design + efectos interactivos</span></p>
+        </div>
+
+        <!-- Slide 3: DEMO - El problema -->
+        <div class="slide demo-slide">
+            <h2>🧪 DEMO: ¿CÓMO SE VE TU SITIO EN MÓVIL?</h2>
+            <p><span class="highlight">Vamos a ver el problema juntos:</span></p>
+            <ol>
+                <li>Abrir proyecto de estudiante en desktop</li>
+                <li>Activar DevTools (F12)</li>
+                <li>Cambiar a vista móvil</li>
+                <li>😱 <strong>¡Horror! Todo se ve mal</strong></li>
+            </ol>
+            <p>📁 <span class="highlight">Archivo: ejemplos/problema-sin-responsive.html</span></p>
+            <p>⏰ <span class="highlight">5 minutos de demostración</span></p>
+        </div>
+
+        <!-- Slide 4: Estadísticas móvil -->
+        <div class="slide">
+            <h2>📊 ¿POR QUÉ RESPONSIVE ES CRÍTICO?</h2>
+            <div class="responsive-demo">
+                <div class="device phone">
+                    <h4>📱 Móvil</h4>
+                    <p><strong>60%</strong></p>
+                    <p>del tráfico web</p>
+                </div>
+                <div class="device tablet">
+                    <h4>📱 Tablet</h4>
+                    <p><strong>15%</strong></p>
+                    <p>del tráfico web</p>
+                </div>
+                <div class="device desktop">
+                    <h4>💻 Desktop</h4>
+                    <p><strong>25%</strong></p>
+                    <p>del tráfico web</p>
+                </div>
+            </div>
+            <p><span class="highlight">Si tu sitio no funciona en móvil, pierdes 60% de usuarios</span></p>
+        </div>
+
+        <!-- Slide 5: Mobile First -->
+        <div class="slide">
+            <h2>📱 MOBILE FIRST APPROACH</h2>
+            <p><span class="highlight">Diseñamos primero para móviles:</span></p>
+            <ul class="check-list">
+                <li>Es más fácil expandir que comprimir</li>
+                <li>Fuerza a priorizar lo importante</li>
+                <li>Mejor performance general</li>
+                <li>Google prioriza sitios mobile-friendly</li>
+            </ul>
+            <p>🎯 <span class="highlight">Flujo: Móvil → Tablet → Desktop</span></p>
+        </div>
+
+        <!-- Slide 6: DEMO - Viewport -->
+        <div class="slide demo-slide">
+            <h2>🧪 DEMO: VIEWPORT META TAG</h2>
+            <p><span class="highlight">La diferencia más importante:</span></p>
+            <div class="code">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</div>
+            <p>Vamos a ver:</p>
+            <ul>
+                <li>Sin viewport: simula desktop en móvil</li>
+                <li>Con viewport: usa ancho real del dispositivo</li>
+            </ul>
+            <p>📁 <span class="highlight">Archivo: ejemplos/viewport-comparacion.html</span></p>
+            <p>⏰ <span class="highlight">5 minutos</span></p>
+        </div>
+
+        <!-- Slide 7: Media Queries -->
+        <div class="slide">
+            <h2>📐 MEDIA QUERIES BÁSICAS</h2>
+            <p><span class="highlight">Las reglas que adaptan tu CSS:</span></p>
+            <div class="code">/* Estilos base (móvil) */
+.navegacion {
+    flex-direction: column;
+}
+
+/* Tablet y más grande */
+@media (min-width: 768px) {
+    .navegacion {
+        flex-direction: row;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .navegacion {
+        gap: 2rem;
+    }
+}</div>
+        </div>
+
+        <!-- Slide 8: Breakpoints -->
+        <div class="slide">
+            <h2>⚡ BREAKPOINTS PRINCIPALES</h2>
+            <div class="two-column">
+                <div>
+                    <h3>📱 Móvil</h3>
+                    <p><strong>0px - 767px</strong></p>
+                    <p>Estilos base</p>
+                    <p>Sin media query</p>
+                </div>
+                <div>
+                    <h3>📱 Tablet</h3>
+                    <p><strong>768px+</strong></p>
+                    <p>@media (min-width: 768px)</p>
+                    <p>Horizontal layout</p>
+                </div>
+            </div>
+            <div class="two-column">
+                <div>
+                    <h3>💻 Desktop</h3>
+                    <p><strong>1024px+</strong></p>
+                    <p>@media (min-width: 1024px)</p>
+                    <p>Layout completo</p>
+                </div>
+                <div>
+                    <h3>🖥️ Large</h3>
+                    <p><strong>1200px+</strong></p>
+                    <p>@media (min-width: 1200px)</p>
+                    <p>Contenido más ancho</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 9: EJERCICIO 1 -->
+        <div class="slide practice-slide">
+            <h2>💻 EJERCICIO 1: NAVEGACIÓN RESPONSIVE</h2>
+            <p><span class="highlight">¡Tu turno de practicar!</span></p>
+            <ol>
+                <li>Abrir <strong>ejercicios/ejercicio-1.html</strong></li>
+                <li>Agregar viewport meta tag</li>
+                <li>Completar media queries para navegación</li>
+                <li>Probar en DevTools</li>
+            </ol>
+            <p>🎯 <span class="highlight">Objetivo: Navegación vertical en móvil, horizontal en desktop</span></p>
+            <p>⏰ <span class="highlight">15 minutos</span></p>
+            <p>💬 <span class="highlight">Comparte en chat cuando termines</span></p>
+        </div>
+
+        <!-- Slide 10: Revisión Ejercicio 1 -->
+        <div class="slide">
+            <h2>✅ REVISIÓN EJERCICIO 1</h2>
+            <p><span class="highlight">Puntos clave de la solución:</span></p>
+            <div class="code">/* ✅ Viewport obligatorio */
+&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+
+/* ✅ Media query para móvil */
+@media (max-width: 767px) {
+    nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    nav a {
+        padding: 1rem;
+        display: block;
+    }
+}</div>
+        </div>
+
+        <!-- Slide 11: Efectos Hover -->
+        <div class="slide">
+            <h2>✨ EFECTOS HOVER BÁSICOS</h2>
+            <p><span class="highlight">Dale vida a los elementos interactivos:</span></p>
+            <div class="code">/* Botón con hover suave */
+.btn {
+    background-color: #3498db;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+}</div>
+            <p>🎯 <span class="highlight">transition hace el cambio suave</span></p>
+        </div>
+
+        <!-- Slide 12: Focus en formularios -->
+        <div class="slide">
+            <h2>🎯 FOCUS EN FORMULARIOS</h2>
+            <p><span class="highlight">Mejor accesibilidad y experiencia:</span></p>
+            <div class="code">input {
+    border: 2px solid #ddd;
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}</div>
+            <p>💡 <span class="highlight">Accesibilidad = navegación por teclado</span></p>
+        </div>
+
+        <!-- Slide 13: Transiciones -->
+        <div class="slide">
+            <h2>🌊 TRANSICIONES SUAVES</h2>
+            <p><span class="highlight">La clave de interfaces modernas:</span></p>
+            <div class="code">/* Aplicar a todos los elementos interactivos */
+.btn, .card, nav a, input {
+    transition: all 0.3s ease;
+}
+
+/* Card con efecto elevation */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}</div>
+            <p>🎯 <span class="highlight">0.3s es el timing perfecto</span></p>
+        </div>
+
+        <!-- Slide 14: EJERCICIO 2 -->
+        <div class="slide practice-slide">
+            <h2>💻 EJERCICIO 2: EFECTOS BÁSICOS</h2>
+            <p><span class="highlight">Agregar vida a tu interfaz:</span></p>
+            <ol>
+                <li>Abrir <strong>ejercicios/ejercicio-2.html</strong></li>
+                <li>Completar efectos hover en navegación</li>
+                <li>Agregar hover a botones y cards</li>
+                <li>Implementar focus en formularios</li>
+                <li>Añadir transiciones suaves</li>
+            </ol>
+            <p>🎯 <span class="highlight">Objetivo: Interfaz que responde al usuario</span></p>
+            <p>⏰ <span class="highlight">20 minutos</span></p>
+        </div>
+
+        <!-- Slide 15: Revisión Ejercicio 2 -->
+        <div class="slide">
+            <h2>✅ REVISIÓN EJERCICIO 2</h2>
+            <p><span class="highlight">Efectos implementados:</span></p>
+            <ul class="check-list">
+                <li><strong>Hover:</strong> Botones, enlaces, cards se elevan</li>
+                <li><strong>Focus:</strong> Inputs con borde azul y sombra</li>
+                <li><strong>Transiciones:</strong> Todo suave con 0.3s ease</li>
+                <li><strong>Feedback:</strong> Usuario sabe qué es clickeable</li>
+            </ul>
+            <p>🎨 <span class="highlight">Resultado: Interfaz que se siente profesional</span></p>
+        </div>
+
+        <!-- Slide 16: Imágenes responsive -->
+        <div class="slide">
+            <h2>🖼️ IMÁGENES RESPONSIVE</h2>
+            <div class="code">/* Regla universal para imágenes */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Para imágenes hero */
+.hero-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    object-position: center;
+}</div>
+            <p>🎯 <span class="highlight">Nunca se desborden del contenedor</span></p>
+        </div>
+
+        <!-- Slide 17: APLICACIÓN AL PROYECTO -->
+        <div class="slide practice-slide">
+            <h2>🚀 APLICAR A TU PROYECTO PERSONAL</h2>
+            <p><span class="highlight">¡La parte más importante!</span></p>
+            <div class="two-column">
+                <div>
+                    <h3>✅ Responsive:</h3>
+                    <ul class="check-list">
+                        <li>Viewport en todas las páginas</li>
+                        <li>Navegación adaptable</li>
+                        <li>Imágenes responsive</li>
+                        <li>Testing en DevTools</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>✨ Efectos:</h3>
+                    <ul class="check-list">
+                        <li>Hover en navegación</li>
+                        <li>Hover en botones</li>
+                        <li>Focus en formularios</li>
+                        <li>Transiciones suaves</li>
+                    </ul>
+                </div>
+            </div>
+            <p>⏰ <span class="highlight">30 minutos de trabajo individual</span></p>
+        </div>
+
+        <!-- Slide 18: Testing responsive -->
+        <div class="slide">
+            <h2>🧪 TESTING RESPONSIVE</h2>
+            <p><span class="highlight">Cómo asegurarte de que funciona:</span></p>
+            <div class="two-column">
+                <div>
+                    <h3>DevTools:</h3>
+                    <ul class="check-list">
+                        <li>F12 → Toggle device toolbar</li>
+                        <li>Probar iPhone, iPad, Desktop</li>
+                        <li>Redimensionar manualmente</li>
+                        <li>Verificar sin scroll horizontal</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Dispositivos reales:</h3>
+                    <ul class="check-list">
+                        <li>Tu teléfono móvil</li>
+                        <li>Tablet si tienes</li>
+                        <li>Live Server + IP local</li>
+                        <li>GitHub Pages</li>
+                    </ul>
+                </div>
+            </div>
+            <p>🎯 <span class="highlight">Si funciona en móvil, funciona en todos lados</span></p>
+        </div>
+
+        <!-- Slide 19: Errores comunes -->
+        <div class="slide">
+            <h2>⚠️ ERRORES COMUNES</h2>
+            <div class="two-column">
+                <div>
+                    <h3>❌ Evita:</h3>
+                    <ul class="warning-list">
+                        <li>Olvidar viewport meta tag</li>
+                        <li>Texto menor a 16px</li>
+                        <li>Botones muy pequeños</li>
+                        <li>Scroll horizontal</li>
+                        <li>Efectos exagerados</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>✅ Mejor:</h3>
+                    <ul class="check-list">
+                        <li>Viewport en todas las páginas</li>
+                        <li>Mínimo 16px para texto</li>
+                        <li>Botones de 44px mínimo</li>
+                        <li>max-width: 100% en imágenes</li>
+                        <li>Efectos sutiles</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 20: Showcase resultados -->
+        <div class="slide demo-slide">
+            <h2>📤 SHOWCASE DE RESULTADOS</h2>
+            <p><span class="highlight">¡Vamos a ver los proyectos!</span></p>
+            <ol>
+                <li>La ruleta del profesor elegira 3 estudiantes para mostrar</li>                
+                <li>Celebremos los avances</li>
+            </ol>           
+            <p>🎯 <span class="highlight">¡Ver la evolución desde la Clase 1!</span></p>
+        </div>
+
+        <!-- Slide 21: Tarea para casa -->
+        <div class="slide">
+            <h2>📝 TAREA PARA LA PRÓXIMA CLASE</h2>
+            <p><span class="highlight">Perfeccionar responsive + efectos:</span></p>
+            <ul class="check-list">
+                <li>Todo tu sitio 100% responsive</li>
+                <li>Viewport meta tag en todas las páginas</li>
+                <li>Navegación que se adapta perfectamente</li>
+                <li>Todas las imágenes responsive</li>
+                <li>Efectos hover en elementos interactivos</li>
+                <li>Focus mejorado en formularios</li>
+                <li>Testeado en móvil real</li>
+                <li>Al menos 3 commits con mejoras</li>
+            </ul>
+            <p><span class="highlight">⏰ Hasta el [fecha]</span></p>
+        </div>
+
+        <!-- Slide 22: Testing móvil real -->
+        <div class="slide">
+            <h2>📱 TESTING EN TU TELÉFONO</h2>
+            <p><span class="highlight">Cómo probar en dispositivos reales:</span></p>
+            <ol>
+                <li>En VS Code: Live Server activo</li>
+                <li>Buscar IP de tu computadora</li>
+                <li>En tu móvil: http://TU-IP:5501</li>
+                <li>Probar navegación y funcionalidad</li>
+            </ol>
+            <p>📱 <span class="highlight">Alternativa: GitHub Pages</span></p>
+            <p>🎯 <span class="highlight">Si funciona bien en tu móvil, está perfecto</span></p>
+        </div>
+
+        <!-- Slide 23: Próxima clase -->
+        <div class="slide">
+            <h2>🔮 PRÓXIMA CLASE: JAVASCRIPT</h2>
+            <p><span class="highlight">Vamos a agregar interactividad:</span></p>
+            <ul>
+                <li>🔢 Variables y tipos de datos</li>
+                <li>🎯 Funciones básicas</li>
+                <li>💭 Lógica y condiciones</li>
+                <li>🎮 Primeros scripts interactivos</li>
+            </ul>
+            <p>💡 <span class="highlight">¡Tu sitio va a cobrar vida propia!</span></p>
+            <p>📚 <span class="highlight">Preparación: leer recursos/javascript-intro.md</span></p>
+        </div>
+
+        <!-- Slide 24: Recursos de ayuda -->
+        <div class="slide">
+            <h2>🆘 RECURSOS DE AYUDA</h2>
+            <div class="two-column">
+                <div>
+                    <h3>📚 En tu repo:</h3>
+                    <ul>
+                        <li>recursos/responsive-cheatsheet.md</li>
+                        <li>recursos/efectos-basicos.md</li>
+                        <li>tarea-proxima-clase/checklist.md</li>
+                        <li>recursos/testing-responsive.md</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>🌐 Online:</h3>
+                    <ul>
+                        <li>MDN Media Queries</li>
+                        <li>CSS-Tricks Flexbox Guide</li>
+                        <li>Can I Use (compatibilidad)</li>
+                        <li>Google Mobile-Friendly Test</li>
+                    </ul>
+                </div>
+            </div>
+            <p><span class="highlight">💬 ¡Usa el chat del curso para preguntas!</span></p>
+        </div>
+
+        <!-- Slide 25: Antes vs Después -->
+        <div class="slide">
+            <h2>🚀 ANTES VS DESPUÉS</h2>
+            <div class="two-column">
+                <div>
+                    <h3>😐 Antes de hoy:</h3>
+                    <ul class="warning-list">
+                        <li>Solo funcionaba en desktop</li>
+                        <li>Se veía terrible en móviles</li>
+                        <li>Sin efectos interactivos</li>
+                        <li>Parecía amateur</li>
+                        <li>60% de usuarios perdidos</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>🎉 Después de hoy:</h3>
+                    <ul class="check-list">
+                        <li>Perfecto en cualquier dispositivo</li>
+                        <li>Efectos suaves y modernos</li>
+                        <li>Experiencia profesional</li>
+                        <li>Feedback visual al usuario</li>
+                        <li>100% de usuarios felices</li>
+                    </ul>
+                </div>
+            </div>
+            <p><span class="highlight">¡Tu sitio ahora es de nivel profesional!</span></p>
+        </div>
+
+        <!-- Slide 26: Progreso del curso -->
+        <div class="slide">
+            <h2>📈 PROGRESO DEL CURSO</h2>
+            <div class="demo-box">
+                <h3>🎯 Lo que hemos logrado hasta ahora:</h3>
+                <ul class="check-list">
+                    <li><strong>Clase 1:</strong> Estructura HTML sólida</li>
+                    <li><strong>Clase 2:</strong> Diseño visual atractivo</li>
+                    <li><strong>Clase 3:</strong> Layouts modernos con Flexbox</li>
+                    <li><strong>Clase 4:</strong> Responsive + efectos profesionales</li>
+                </ul>
+                <p><strong>44% del curso completado</strong></p>
+            </div>
+            <p><span class="highlight">🚀 Siguiente: JavaScript para interactividad</span></p>
+        </div>
+
+        <!-- Slide 27: Motivación final -->
+        <div class="slide">
+            <h2>💪 ¡INCREÍBLE PROGRESO!</h2>
+            <p><span class="highlight">Hoy lograste:</span></p>
+            <ul class="check-list">
+                <li>Dominar responsive design</li>
+                <li>Crear efectos modernos</li>
+                <li>Mejorar experiencia de usuario</li>
+                <li>Escribir código profesional</li>
+                <li>Pensar mobile-first</li>
+            </ul>
+            <p>🎯 <span class="highlight">Ya tienes las bases sólidas de un desarrollador web</span></p>
+            <p>📱 <span class="highlight">Tu sitio funciona mejor que muchos sitios comerciales</span></p>
+        </div>
+
+        <!-- Slide 28: Cierre -->
+        <div class="slide">
+            <div class="big-emoji">🎉</div>
+            <h1>¡EXCELENTE CUARTA CLASE!</h1>
+            <h2>Transformación completada</h2>
+            <p><span class="highlight">De sitio básico a experiencia profesional</span></p>
+            <p><span class="highlight">📱 No olvides probar en tu teléfono</span></p>
+            <p><span class="highlight">💻 Completa la tarea para la próxima clase</span></p>
+            <p><span class="highlight">🚀 ¡Nos vemos la próxima semana con JavaScript!</span></p>
+        </div>
+
+    </div>
+
+    <!-- Navigation -->
+    <div class="navigation">
+        <button class="nav-btn" onclick="previousSlide()">◀ Anterior</button>
+        <button class="nav-btn" onclick="nextSlide()">Siguiente ▶</button>
+    </div>
+
+    <!-- Slide Counter -->
+    <div class="slide-counter">
+        <span id="current-slide">1</span> / <span id="total-slides">28</span>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+
+        document.getElementById('total-slides').textContent = totalSlides;
+
+        function showSlide(n) {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (n + totalSlides) % totalSlides;
+            slides[currentSlide].classList.add('active');
+            document.getElementById('current-slide').textContent = currentSlide + 1;
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        function previousSlide() {
+            showSlide(currentSlide - 1);
+        }
+
+        // Navegación con teclado
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                e.preventDefault();
+                nextSlide();
+            } else if (e.key === 'ArrowLeft') {
+                e.preventDefault();
+                previousSlide();
+            }
+        });
+
+        // Navegación con click (solo si no es en botones)
+        document.addEventListener('click', function(e) {
+            if (e.target.closest('.nav-btn')) return;
+            if (e.clientX > window.innerWidth / 2) {
+                nextSlide();
+            } else {
+                previousSlide();
+            }
+        });
+
+        // Touch navigation para móviles
+        let touchStartX = 0;
+        let touchEndX = 0;
+        
+        document.addEventListener('touchstart', function(e) {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+        
+        document.addEventListener('touchend', function(e) {
+            touchEndX = e.changedTouches[0].screenX;
+            if (touchStartX - touchEndX > 50) {
+                nextSlide();
+            } else if (touchEndX - touchStartX > 50) {
+                previousSlide();
+            }
+        });
+    </script>
+</body>
+</html>

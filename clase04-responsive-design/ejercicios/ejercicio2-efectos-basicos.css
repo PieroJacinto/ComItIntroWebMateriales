@@ -1,0 +1,266 @@
+/* ===== RESET CSS ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: #f8f9fa;
+}
+
+/* ===== HEADER ===== */
+header {
+  background-color: #2c3e50;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+/* ===== NAVEGACIÓN ===== */
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+  padding: 1rem 0;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+}
+
+/* TODO: Agregar efecto hover a la navegación */
+/* PISTA: Cambiar background-color en hover */
+/* PISTA: Agregar transition para suavidad */
+/*
+nav a:hover {
+    // TODO: Cambiar color de fondo
+}
+*/
+
+/* ===== MAIN CONTENT ===== */
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.card {
+  background: white;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* TODO: Agregar efecto hover a las cards */
+/* PISTA: Usar transform: translateY() para elevar */
+/* PISTA: Cambiar box-shadow para más profundidad */
+/*
+.card:hover {
+    // TODO: Mover hacia arriba con transform
+    // TODO: Aumentar box-shadow
+}
+*/
+
+h1 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  color: #34495e;
+  margin-bottom: 1rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+/* ===== BOTONES ===== */
+.btn {
+  display: inline-block;
+  background-color: #3498db;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  border-radius: 5px;
+  margin: 0.5rem 0.5rem 0.5rem 0;
+}
+
+/* TODO: Agregar efectos hover a botones */
+/* PISTA: Cambiar background-color */
+/* PISTA: Usar transform para elevar */
+/* PISTA: Agregar box-shadow */
+/*
+.btn:hover {
+    // TODO: Color más oscuro
+    // TODO: Elevar con transform: translateY()
+    // TODO: Agregar sombra
+}
+*/
+
+.btn-secondary {
+  background-color: #95a5a6;
+}
+
+/* TODO: Agregar hover para btn-secondary */
+/*
+.btn-secondary:hover {
+    // TODO: Color más oscuro
+}
+*/
+
+.btn-success {
+  background-color: #27ae60;
+}
+
+/* TODO: Agregar hover para btn-success */
+
+/* ===== FORMULARIO ===== */
+.form-group {
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+/* TODO: Agregar efecto focus a inputs */
+/* PISTA: Cambiar border-color */
+/* PISTA: Agregar box-shadow sutil */
+/* PISTA: Remover outline default */
+/*
+input:focus, textarea:focus {
+    // TODO: Quitar outline default
+    // TODO: Cambiar color del borde
+    // TODO: Agregar box-shadow sutil
+}
+*/
+
+/* ===== GRID DE PRODUCTOS ===== */
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.product {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* TODO: Agregar efecto hover a productos */
+/* PISTA: Elevar y aumentar sombra */
+/*
+.product:hover {
+    // TODO: Elevar con transform
+    // TODO: Aumentar box-shadow
+}
+*/
+
+.product img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.product-info {
+  padding: 1rem;
+}
+
+.product h3 {
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #27ae60;
+  margin: 0.5rem 0;
+}
+
+/* ===== ENLACES ===== */
+a.link {
+  color: #3498db;
+  text-decoration: none;
+}
+
+/* TODO: Agregar efecto hover a enlaces */
+/* PISTA: Cambiar color */
+
+/*
+a.link:hover {
+    // TODO: Color más oscuro
+    // TODO: Subrayado
+}
+*/
+
+/* ===== FOOTER ===== */
+footer {
+  background-color: #2c3e50;
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  margin-top: 2rem;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 767px) {
+  nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  nav a {
+    padding: 1rem;
+    display: block;
+    margin: 0 1rem;
+  }
+
+  .btn {
+    display: block;
+    text-align: center;
+    margin: 0.5rem 0;
+  }
+
+  main {
+    padding: 1rem;
+  }
+
+  .card {
+    padding: 1.5rem;
+  }
+}
+
+/* TODO: Agregar transiciones para suavidad */
+/* PISTA: Esto va al final para aplicar a todo */
+
+/*
+nav a, .btn, .card, .product, a.link, input, textarea {
+    // TODO: Agregar transition para suavidad
+}
+*/

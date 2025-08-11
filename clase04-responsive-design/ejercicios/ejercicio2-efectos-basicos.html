@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2: Efectos Básicos</title>
+    <link rel="stylesheet" href="./ejercicio2-efectos-basicos.css">
+</head>
+<body>
+    <header>
+        <h1>🎨 Ejercicio 2: Efectos Básicos</h1>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="card">
+            <h1>✨ Agregar Efectos Interactivos</h1>
+            <p><strong>Objetivo:</strong> Hacer que todos los elementos respondan suavemente al hover y focus</p>
+            
+            <h2>📋 Tareas a Completar:</h2>
+            <ol>
+                <li><strong>Navegación:</strong> Hover que cambie color de fondo</li>
+                <li><strong>Cards:</strong> Hover que las eleve y aumente sombra</li>
+                <li><strong>Botones:</strong> Hover con color + elevación + sombra</li>
+                <li><strong>Formularios:</strong> Focus que cambie borde y agregue sombra</li>
+                <li><strong>Productos:</strong> Hover que los eleve</li>
+                <li><strong>Enlaces:</strong> Hover que cambie color y agregue subrayado</li>
+                <li><strong>Transiciones:</strong> Agregar suavidad a todos los efectos</li>
+            </ol>
+
+            <h2>🎯 Conceptos a Practicar:</h2>
+            <ul>
+                <li><strong>:hover</strong> - Cuando el mouse está sobre el elemento</li>
+                <li><strong>:focus</strong> - Cuando el elemento está seleccionado</li>
+                <li><strong>transform: translateY()</strong> - Mover verticalmente</li>
+                <li><strong>box-shadow</strong> - Sombras para profundidad</li>
+                <li><strong>transition</strong> - Suavizar cambios</li>
+            </ul>
+
+            <div style="background: #e8f5e8; padding: 1rem; border-radius: 5px; margin: 1rem 0;">
+                <strong>💡 Tip:</strong> Usa transition: all 0.3s ease; para hacer todo suave
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>🔘 Botones para Probar</h2>
+            <p>Agrega efectos hover a estos botones:</p>
+            <a href="#" class="btn">Botón Principal</a>
+            <a href="#" class="btn btn-secondary">Botón Secundario</a>
+            <a href="#" class="btn btn-success">Botón Éxito</a>
+        </div>
+
+        <div class="card" id="productos">
+            <h2>🛍️ Productos</h2>
+            <p>Estos productos necesitan efectos hover:</p>
+            <div class="products">
+                <div class="product">
+                    <img src="https://via.placeholder.com/300x200/3498db/white?text=Producto+1" alt="Producto 1">
+                    <div class="product-info">
+                        <h3>Producto Increíble</h3>
+                        <p>Descripción del producto que es fantástico.</p>
+                        <div class="price">$99.99</div>
+                        <a href="#" class="btn">Comprar</a>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="https://via.placeholder.com/300x200/27ae60/white?text=Producto+2" alt="Producto 2">
+                    <div class="product-info">
+                        <h3>Otro Producto</h3>
+                        <p>Descripción de este otro producto genial.</p>
+                        <div class="price">$149.99</div>
+                        <a href="#" class="btn">Comprar</a>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="https://via.placeholder.com/300x200/e74c3c/white?text=Producto+3" alt="Producto 3">
+                    <div class="product-info">
+                        <h3>Producto Premium</h3>
+                        <p>El mejor producto de nuestra colección.</p>
+                        <div class="price">$199.99</div>
+                        <a href="#" class="btn">Comprar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" id="contacto">
+            <h2>📧 Formulario de Contacto</h2>
+            <p>Agrega efectos focus a estos campos:</p>
+            <form>
+                <div class="form-group">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="telefono">Teléfono:</label>
+                    <input type="tel" id="telefono" name="telefono" placeholder="+54 11 1234-5678">
+                </div>
+                <div class="form-group">
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuéntanos sobre tu proyecto..."></textarea>
+                </div>
+                <button type="submit" class="btn">Enviar Mensaje</button>
+            </form>
+        </div>
+
+        <div class="card">
+            <h2>🔗 Enlaces para Probar</h2>
+            <p>Estos enlaces también necesitan efectos hover:</p>
+            <ul>
+                <li><a href="#" class="link">Visita nuestro blog</a></li>
+                <li><a href="#" class="link">Conoce nuestro equipo</a></li>
+                <li><a href="#" class="link">Lee nuestras políticas</a></li>
+                <li><a href="#" class="link">Síguenos en redes sociales</a></li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>✅ Cómo Verificar que Está Correcto:</h2>
+            <ul>
+                <li><strong>Navegación:</strong> Los links cambian color al hacer hover</li>
+                <li><strong>Cards:</strong> Se elevan suavemente al pasar el mouse</li>
+                <li><strong>Botones:</strong> Cambian color y se elevan con sombra</li>
+                <li><strong>Formularios:</strong> Bordes azules y sombra al hacer focus</li>
+                <li><strong>Productos:</strong> Se elevan y aumenta su sombra</li>
+                <li><strong>Enlaces:</strong> Cambian color y se subrayan</li>
+                <li><strong>Todo suave:</strong> No hay cambios bruscos, todo tiene transición</li>
+            </ul>
+            
+            <div style="background: #fff3cd; padding: 1rem; border-radius: 5px; margin: 1rem 0;">
+                <strong>🧪 Testing:</strong> Pasa el mouse por todos los elementos y verifica que respondan suavemente
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Ejercicio de Efectos Básicos</p>
+        <p>¡Practica hover, focus y transiciones!</p>
+    </footer>
+
+    <!-- ===== INSTRUCCIONES PARA ESTUDIANTES ===== -->
+    <!--
+    
+    🎯 RESULTADO ESPERADO:
+    
+    Después de completar todos los TODOs:
+    
+    ✨ EFECTOS HOVER:
+    - Navegación: Background color change
+    - Cards: translateY(-5px) + box-shadow increase
+    - Botones: Background darker + translateY(-2px) + box-shadow
+    - Productos: translateY(-5px) + box-shadow increase
+    - Enlaces: Color change + text-decoration: underline
+    
+    🎯 EFECTOS FOCUS:
+    - Inputs: outline: none + border-color: #3498db + box-shadow sutil
+    - Textarea: mismo efecto que inputs
+    
+    🌊 TRANSICIONES:
+    - Todos los elementos: transition: all 0.3s ease;
+    - Cambios suaves, no bruscos
+    - Timing de 0.3s es perfecto para UX
+    
+    💡 VALORES SUGERIDOS:
+    - translateY(-5px) para cards y productos
+    - translateY(-2px) para botones
+    - box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15) para hover
+    - border-color: #3498db para focus
+    - box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1) para focus
+    
+    🔧 HERRAMIENTAS:
+    - Probar cada elemento con el mouse
+    - Tab por el formulario para probar focus
+    - DevTools para ver CSS aplicado
+    
+    ⏰ TIEMPO ESTIMADO: 20-25 minutos
+    
+    🆘 SI TE ATASCAS:
+    - Los TODOs tienen pistas específicas
+    - Pregunta sobre sintaxis de transform o box-shadow
+    - Revisa que las transiciones estén al final
+    - Usa DevTools para inspeccionar elementos
+    
+    -->
+</body>
+</html>

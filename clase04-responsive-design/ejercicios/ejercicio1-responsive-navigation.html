@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <!-- TODO: Agregar viewport meta tag aquí -->
+    <!-- PISTA: <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    
+    <title>Ejercicio 1: Navegación Responsive</title>
+    <link rel="stylesheet" href="./ejercicio1-responsive-navigation.css">
+</head>
+<body>
+    <header>
+        <div class="logo">🚀 Mi Sitio Responsive</div>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="card">
+            <h1>🎯 Ejercicio 1: Navegación Responsive</h1>
+            <p><strong>Objetivo:</strong> Hacer que esta navegación funcione perfectamente en móvil</p>
+            
+            <h2>📋 Tareas a Completar:</h2>
+            <ol>
+                <li><strong>Agregar viewport meta tag</strong> en el &lt;head&gt;</li>
+                <li><strong>Media query para navegación móvil:</strong>
+                    <ul>
+                        <li>Cambiar flex-direction a column</li>
+                        <li>Reducir gap entre elementos</li>
+                        <li>Hacer links más grandes para tocar</li>
+                    </ul>
+                </li>
+                <li><strong>Media query para botones móviles:</strong>
+                    <ul>
+                        <li>Padding más grande</li>
+                        <li>Consideraar display: block</li>
+                    </ul>
+                </li>
+                <li><strong>Media query para servicios:</strong>
+                    <ul>
+                        <li>Cambiar de horizontal a vertical</li>
+                    </ul>
+                </li>
+                <li><strong>Probar en DevTools</strong> vista móvil</li>
+            </ol>
+
+            <h2>✅ Cómo Verificar que Está Correcto:</h2>
+            <ul>
+                <li>En móvil: navegación vertical y fácil de usar</li>
+                <li>En desktop: navegación horizontal como antes</li>
+                <li>Botones grandes y fáciles de tocar en móvil</li>
+                <li>Servicios en columna en móvil</li>
+                <li>NO scroll horizontal en ningún tamaño</li>
+            </ul>
+
+            <a href="#servicios" class="btn">Ver Servicios</a>
+        </div>
+
+        <div class="card" id="servicios">
+            <h2>🛠️ Nuestros Servicios</h2>
+            <div class="services">
+                <div class="service">
+                    <h3>💻 Desarrollo</h3>
+                    <p>Sitios web modernos y funcionales</p>
+                </div>
+                <div class="service">
+                    <h3>🎨 Diseño</h3>
+                    <p>Interfaces atractivas y usables</p>
+                </div>
+                <div class="service">
+                    <h3>📱 Responsive</h3>
+                    <p>Perfecto en todos los dispositivos</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" id="contacto">
+            <h2>📞 Contacto</h2>
+            <p>¿Listo para hacer tu sitio responsive?</p>
+            <a href="#" class="btn">Contactar Ahora</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Mi Sitio Responsive</p>
+        <p>¡Este ejercicio me está enseñando responsive design!</p>
+    </footer>
+
+    <!-- ===== INSTRUCCIONES PARA ESTUDIANTES ===== -->
+    <!--
+    
+    🎯 RESULTADO ESPERADO:
+    
+    Después de completar todos los TODOs:
+    
+    📱 EN MÓVIL (DevTools):
+    - Navegación vertical y centrada
+    - Links con padding grande para tocar fácil
+    - Servicios uno debajo del otro
+    - Botones de ancho completo o más grandes
+    - Sin scroll horizontal
+    
+    💻 EN DESKTOP:
+    - Navegación horizontal como antes
+    - Servicios lado a lado
+    - Botones normales
+    
+    🔧 HERRAMIENTAS:
+    - DevTools (F12) → ícono móvil
+    - Probar diferentes tamaños
+    - Verificar que no hay scroll horizontal
+    
+    ⏰ TIEMPO ESTIMADO: 15-20 minutos
+    
+    🆘 SI TE ATAASCAS:
+    - Revisa el viewport meta tag primero
+    - Los media queries van DESPUÉS del CSS normal
+    - Usa @media (max-width: 767px) para móvil
+    - Pregunta a tu profesor o compañeros
+    
+    -->
+</body>
+</html>

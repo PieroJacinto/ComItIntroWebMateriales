@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <!-- ✅ CON viewport meta tag - ¡La diferencia es dramática! -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo: Viewport Meta Tag</title>
+    <link rel="stylesheet" href="./ejemplo2-viewport-comparacion.css">
+</head>
+<body>
+    <header>
+        <div class="logo">🔍 Viewport Meta Tag Demo</div>
+        <p>La diferencia entre tener y no tener viewport</p>
+    </header>
+
+    <main>
+        <div class="comparison">
+            <h1>🎯 ¿Qué hace el Viewport Meta Tag?</h1>
+            
+            <div class="viewport-explanation">
+                <h2>✅ CON Viewport Meta Tag (este archivo)</h2>
+                <div class="code-block">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</div>
+                <p><strong>Resultado:</strong> El navegador móvil usa el ancho real del dispositivo</p>
+                <ul>
+                    <li>Texto tamaño normal y legible</li>
+                    <li>Botones fáciles de tocar</li>
+                    <li>Diseño se adapta al móvil</li>
+                    <li>Media queries funcionan</li>
+                </ul>
+            </div>
+
+            <div class="without-viewport">
+                <h2>❌ SIN Viewport Meta Tag</h2>
+                <p><strong>Resultado:</strong> El navegador móvil simula una pantalla de ~980px</p>
+                <ul>
+                    <li>Todo se ve microscópico</li>
+                    <li>Hay que hacer zoom para leer</li>
+                    <li>Botones imposibles de tocar</li>
+                    <li>Media queries no funcionan bien</li>
+                </ul>
+            </div>
+
+            <h2>📱 Comparación de Tamaños</h2>
+            
+            <div class="demo-box good">
+                <h3>✅ Con Viewport (texto normal)</h3>
+                <div class="text-demo">
+                    <p class="mobile-text">Este texto se ve perfecto en móvil. Es fácil de leer y no necesitas hacer zoom. Los botones son del tamaño correcto para tocar con el dedo.</p>
+                    <a href="#" class="btn">Botón Fácil de Tocar</a>
+                </div>
+            </div>
+
+            <div class="demo-box bad">
+                <h3>❌ Sin Viewport (simulación)</h3>
+                <div class="text-demo">
+                    <p class="desktop-simulated">Este texto simula cómo se ve sin viewport. Está muy pequeño, es difícil de leer y necesitas hacer zoom. Los botones son microscópicos.</p>
+                    <a href="#" class="btn btn-small">Botón Microscópico</a>
+                </div>
+            </div>
+
+            <h2>🔧 Anatomía del Viewport Tag</h2>
+            <div class="code-block">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+
+Explicación:
+- name="viewport"        → Le dice al navegador que es configuración de viewport
+- width=device-width     → Usar el ancho real del dispositivo
+- initial-scale=1.0      → Zoom inicial al 100% (sin zoom)</div>
+
+            <h2>📊 Grid Responsivo</h2>
+            <p>Con viewport, este grid se adapta automáticamente:</p>
+            <div class="grid-demo">
+                <div class="grid-item">Item 1</div>
+                <div class="grid-item">Item 2</div>
+                <div class="grid-item">Item 3</div>
+            </div>
+
+            <div class="viewport-explanation">
+                <h2>🎯 Regla de Oro</h2>
+                <p class="highlight">TODAS las páginas web modernas DEBEN tener viewport meta tag</p>
+                <p>Sin él, tu sitio será inutilizable en móviles, sin importar qué tan buen CSS tengas.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Demo Viewport - Este sitio SÍ tiene viewport meta tag</p>
+        <p>¡Por eso se ve perfecto en móvil!</p>
+    </footer>
+
+    <!-- ===== INSTRUCCIONES PARA EL PROFESOR ===== -->
+    <!--
+    
+    📱 DEMO: MOSTRAR IMPORTANCIA DEL VIEWPORT
+    
+    🎯 OBJETIVO: Que entiendan que viewport es OBLIGATORIO
+    
+    📋 PASOS DE LA DEMO:
+    
+    1. Mostrar este archivo en desktop (se ve normal)
+    2. Cambiar a vista móvil en DevTools
+    3. Mostrar que se ve bien → tiene viewport
+    4. Abrir el archivo anterior (sin viewport) en móvil
+    5. Comparar lado a lado → diferencia dramática
+    
+    💡 PUNTOS CLAVE:
+    - "Viewport es LO PRIMERO que agregamos"
+    - "Sin viewport, media queries no funcionan bien"
+    - "width=device-width usa ancho real del móvil"
+    - "initial-scale=1.0 significa sin zoom inicial"
+    
+    🚨 ENFATIZAR:
+    - "Esto va en TODAS sus páginas"
+    - "Es la diferencia entre funcional e inutilizable"
+    - "Lo primero que verifico en cualquier sitio"
+    
+    ⏰ TIMING: 5 minutos
+    🔥 MOMENTO: "Todos agreguen viewport a su proyecto AHORA"
+    
+    -->
+</body>
+</html>
