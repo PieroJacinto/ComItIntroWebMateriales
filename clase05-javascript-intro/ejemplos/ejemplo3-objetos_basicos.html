@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo: Objetos Básicos</title>
+    <link rel="stylesheet" href="./ejemplo3-objetos_basicos.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🏷️ Objetos Básicos</h1>
+        
+        <!-- Demo 1: ¿Qué son los objetos? -->
+        <div class="demo-card">
+            <h2>1. 👤 ¿Qué son los Objetos?</h2>
+            
+            <div class="explanation">
+                💡 <strong>Analogía:</strong> Un objeto es como una ficha personal que agrupa información relacionada sobre una cosa o persona.
+            </div>
+            
+            <div class="code-block">// Crear un objeto persona
+let persona = {
+    nombre: "Juan",
+    edad: 25,
+    ciudad: "Buenos Aires",
+    esEstudiante: true
+};
+
+// Un objeto agrupa propiedades relacionadas
+// propiedad: valor</div>
+            
+            <div class="object-visualization">
+                <h3>🗂️ Visualización del Objeto:</h3>
+                <div class="visual-object">
+                    <div style="text-align: center; margin-bottom: 15px; font-weight: bold;">
+                        <span class="object-bracket">{</span> persona <span class="object-bracket">}</span>
+                    </div>
+                    <div class="object-property">
+                        <span class="property-key">nombre:</span>
+                        <span class="property-value">"Juan"</span>
+                    </div>
+                    <div class="object-property">
+                        <span class="property-key">edad:</span>
+                        <span class="property-value">25</span>
+                    </div>
+                    <div class="object-property">
+                        <span class="property-key">ciudad:</span>
+                        <span class="property-value">"Buenos Aires"</span>
+                    </div>
+                    <div class="object-property">
+                        <span class="property-key">esEstudiante:</span>
+                        <span class="property-value">true</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Demo 2: Crear objetos -->
+        <div class="demo-card">
+            <h2>2. 🛠️ Crear Objetos</h2>
+            
+            <div class="code-block">// Objeto vacío
+let objetoVacio = {};
+
+// Objeto producto
+let producto = {
+    nombre: "Laptop",
+    precio: 50000,
+    marca: "Dell",
+    disponible: true
+};
+
+// Objeto curso
+let curso = {
+    titulo: "JavaScript Básico",
+    duracion: 8,
+    instructor: "María",
+    modalidad: "virtual"
+};</div>
+            
+            <div class="explanation">
+                💡 Los objetos usan <strong>llaves { }</strong> y contienen pares de <strong>propiedad: valor</strong> separados por comas.
+            </div>
+        </div>
+
+        <!-- Demo 3: Acceder a propiedades -->
+        <div class="demo-card">
+            <h2>3. 🎯 Acceder a Propiedades</h2>
+            
+            <div class="code-block">let auto = {
+    marca: "Toyota",
+    modelo: "Corolla",
+    año: 2020,
+    color: "rojo"
+};
+
+// Notación punto (más común)
+let marca = auto.marca;        // "Toyota"
+let modelo = auto.modelo;      // "Corolla"
+
+// Notación corchetes (alternativa)
+let año = auto["año"];         // 2020
+let color = auto["color"];     // "rojo"
+
+console.log(marca, modelo, año, color);</div>
+            
+            <div class="explanation">
+                💡 <strong>Notación punto:</strong> objeto.propiedad - <strong>Notación corchetes:</strong> objeto["propiedad"]
+            </div>
+        </div>
+
+        <!-- Demo 4: Modificar objetos -->
+        <div class="demo-card">
+            <h2>4. ✏️ Modificar Objetos</h2>
+            
+            <div class="code-block">let estudiante = {
+    nombre: "Ana",
+    edad: 22,
+    carrera: "Programación"
+};
+
+// Cambiar una propiedad existente
+estudiante.edad = 23;
+
+// Agregar una nueva propiedad
+estudiante.universidad = "UTN";
+
+// Ver el objeto completo
+console.log(estudiante);</div>
+            
+            <div class="explanation">
+                💡 Los objetos son <strong>mutables</strong> - podemos cambiar y agregar propiedades después de crearlos.
+            </div>
+        </div>
+
+        <!-- Botones interactivos -->
+        <div class="buttons-section">
+            <div class="demo-card">
+                <h2>🎮 Demos Interactivas</h2>
+                
+                <button class="demo-button" onclick="demoCrearObjetos()">
+                    🛠️ Demo Crear Objetos
+                </button>
+                
+                <button class="demo-button" onclick="demoAccederPropiedades()">
+                    🎯 Demo Acceder Propiedades
+                </button>
+                
+                <button class="demo-button" onclick="demoModificarObjetos()">
+                    ✏️ Demo Modificar Objetos
+                </button>
+                
+                <button class="demo-button" onclick="demoObjetoDinamico()">
+                    🎨 Demo Objeto Dinámico
+                </button>
+            </div>
+        </div>
+
+        <!-- Objeto visual dinámico -->
+        <div class="demo-card">
+            <h2>🎨 Objeto Visual Dinámico</h2>
+            <div class="object-visualization">
+                <p style="margin-bottom: 40px;">Objeto actual: <strong id="object-name">persona</strong></p>
+                <div id="object-dinamico">
+                    <div class="visual-object">
+                        <div style="text-align: center; margin-bottom: 15px; font-weight: bold;">
+                            <span class="object-bracket">{</span> persona <span class="object-bracket">}</span>
+                        </div>
+                        <div class="object-property">
+                            <span class="property-key">nombre:</span>
+                            <span class="property-value">"María"</span>
+                        </div>
+                        <div class="object-property">
+                            <span class="property-key">edad:</span>
+                            <span class="property-value">25</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Salida de consola -->
+        <div class="demo-card">
+            <h2>📱 Consola de JavaScript</h2>
+            <div class="output-section">
+                <div id="console-output">¡Bienvenido a Objetos Básicos! Haz clic en los botones para ver las demos.
+También abre DevTools (F12) para ver la consola real del navegador.
+</div>
+                <button class="clear-button" onclick="limpiarConsola()">🧹 Limpiar Consola</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Objeto global para demos
+        let objetoDemo = { nombre: "María", edad: 25 };
+
+        // Función para mostrar en la consola personalizada
+        function escribirConsola(texto) {
+            const consola = document.getElementById('console-output');
+            consola.textContent += texto + '\n';
+            console.log(texto); // También en consola real
+            
+            // Auto-scroll al final
+            consola.scrollTop = consola.scrollHeight;
+        }
+
+        // Función para actualizar el objeto visual
+        function actualizarObjetoVisual(objeto, nombre) {
+            const contenedor = document.getElementById('object-dinamico');
+            const nombreObjeto = document.getElementById('object-name');
+            
+            nombreObjeto.textContent = nombre;
+            
+            let html = `
+                <div class="visual-object">
+                    <div style="text-align: center; margin-bottom: 15px; font-weight: bold;">
+                        <span class="object-bracket">{</span> ${nombre} <span class="object-bracket">}</span>
+                    </div>
+            `;
+            
+            for (let propiedad in objeto) {
+                let valor = objeto[propiedad];
+                if (typeof valor === 'string') {
+                    valor = `"${valor}"`;
+                }
+                html += `
+                    <div class="object-property">
+                        <span class="property-key">${propiedad}:</span>
+                        <span class="property-value">${valor}</span>
+                    </div>
+                `;
+            }
+            
+            html += '</div>';
+            contenedor.innerHTML = html;
+        }
+
+        // Demo 1: Crear Objetos
+        function demoCrearObjetos() {
+            escribirConsola("=== DEMO 1: Crear Objetos ===");
+            
+            let objetoVacio = {};
+            escribirConsola("Objeto vacío: " + JSON.stringify(objetoVacio));
+            
+            let producto = {
+                nombre: "Laptop",
+                precio: 50000,
+                marca: "Dell",
+                disponible: true
+            };
+            escribirConsola("Objeto producto: " + JSON.stringify(producto));
+            
+            let curso = {
+                titulo: "JavaScript Básico",
+                duracion: 8,
+                instructor: "María",
+                modalidad: "virtual"
+            };
+            escribirConsola("Objeto curso: " + JSON.stringify(curso));
+            
+            actualizarObjetoVisual(producto, "producto");
+            escribirConsola("");
+        }
+
+        // Demo 2: Acceder a Propiedades
+        function demoAccederPropiedades() {
+            escribirConsola("=== DEMO 2: Acceder a Propiedades ===");
+            
+            let auto = {
+                marca: "Toyota",
+                modelo: "Corolla",
+                año: 2020,
+                color: "rojo"
+            };
+            
+            escribirConsola("Objeto auto: " + JSON.stringify(auto));
+            
+            // Notación punto
+            let marca = auto.marca;
+            let modelo = auto.modelo;
+            escribirConsola("Notación punto:");
+            escribirConsola("auto.marca = " + marca);
+            escribirConsola("auto.modelo = " + modelo);
+            
+            // Notación corchetes
+            let año = auto["año"];
+            let color = auto["color"];
+            escribirConsola("Notación corchetes:");
+            escribirConsola('auto["año"] = ' + año);
+            escribirConsola('auto["color"] = ' + color);
+            
+            actualizarObjetoVisual(auto, "auto");
+            escribirConsola("");
+        }
+
+        // Demo 3: Modificar Objetos
+        function demoModificarObjetos() {
+            escribirConsola("=== DEMO 3: Modificar Objetos ===");
+            
+            let estudiante = {
+                nombre: "Ana",
+                edad: 22,
+                carrera: "Programación"
+            };
+            
+            escribirConsola("Objeto inicial: " + JSON.stringify(estudiante));
+            actualizarObjetoVisual(estudiante, "estudiante");
+            
+            setTimeout(() => {
+                estudiante.edad = 23;
+                escribirConsola("Después de cambiar edad: " + JSON.stringify(estudiante));
+                actualizarObjetoVisual(estudiante, "estudiante");
+                
+                setTimeout(() => {
+                    estudiante.universidad = "UTN";
+                    escribirConsola("Después de agregar universidad: " + JSON.stringify(estudiante));
+                    actualizarObjetoVisual(estudiante, "estudiante");
+                    escribirConsola("");
+                }, 1500);
+            }, 1500);
+        }
+
+        // Demo 4: Objeto Dinámico
+        function demoObjetoDinamico() {
+            escribirConsola("=== DEMO 4: Objeto Dinámico ===");
+            
+            let mascota = {};
+            escribirConsola("Objeto inicial vacío: " + JSON.stringify(mascota));
+            actualizarObjetoVisual(mascota, "mascota");
+            
+            setTimeout(() => {
+                mascota.nombre = "Max";
+                escribirConsola("Agregamos nombre: " + JSON.stringify(mascota));
+                actualizarObjetoVisual(mascota, "mascota");
+            }, 1000);
+            
+            setTimeout(() => {
+                mascota.tipo = "perro";
+                escribirConsola("Agregamos tipo: " + JSON.stringify(mascota));
+                actualizarObjetoVisual(mascota, "mascota");
+            }, 2000);
+            
+            setTimeout(() => {
+                mascota.edad = 3;
+                escribirConsola("Agregamos edad: " + JSON.stringify(mascota));
+                actualizarObjetoVisual(mascota, "mascota");
+            }, 3000);
+            
+            setTimeout(() => {
+                mascota.activo = true;
+                escribirConsola("Agregamos activo: " + JSON.stringify(mascota));
+                actualizarObjetoVisual(mascota, "mascota");
+                escribirConsola("¡Mira cómo se construyó el objeto paso a paso!");
+                escribirConsola("");
+            }, 4000);
+        }
+
+        // Limpiar consola
+        function limpiarConsola() {
+            document.getElementById('console-output').textContent = 'Consola limpia ✨\n';
+        }
+    </script>
+</body>
+</html>

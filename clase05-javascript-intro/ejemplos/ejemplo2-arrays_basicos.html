@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo: Arrays Básicos</title>
+    <link rel="stylesheet" href="./ejemplo2-arrays_basicos.css">
+</head>
+<body>
+    <div class="container">
+        <h1>📝 Arrays Básicos</h1>
+        
+        <!-- Demo 1: ¿Qué son los arrays? -->
+        <div class="demo-card">
+            <h2>1. 📚 ¿Qué son los Arrays?</h2>
+            
+            <div class="explanation">
+                💡 <strong>Analogía:</strong> Un array es como una estantería con cajones numerados. Cada cajón puede guardar un elemento.
+            </div>
+            
+            <div class="code-block">// Crear un array de frutas
+let frutas = ["manzana", "banana", "naranja"];
+
+// Cada elemento tiene una posición (índice) que empieza en 0
+// Posición:  0         1        2
+//           ["manzana", "banana", "naranja"]</div>
+            
+            <div class="array-visualization">
+                <h3>🗂️ Visualización del Array:</h3>
+                <div class="visual-array">
+                    <span class="array-bracket">[</span>
+                    <div class="array-item">
+                        <div class="array-index">0</div>
+                        "manzana"
+                    </div>
+                    <div class="array-item">
+                        <div class="array-index">1</div>
+                        "banana"
+                    </div>
+                    <div class="array-item">
+                        <div class="array-index">2</div>
+                        "naranja"
+                    </div>
+                    <span class="array-bracket">]</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Demo 2: Crear arrays -->
+        <div class="demo-card">
+            <h2>2. 🛠️ Crear Arrays</h2>
+            
+            <div class="code-block">// Array vacío
+let listaVacia = [];
+
+// Array de nombres
+let nombres = ["Ana", "Carlos", "María"];
+
+// Array de números
+let numeros = [10, 25, 30, 45];
+
+// Array mixto (diferentes tipos)
+let mixto = ["Juan", 25, true, "programador"];</div>
+            
+            <div class="explanation">
+                💡 Los arrays pueden contener <strong>strings, números, booleans</strong>, ¡incluso otros arrays!
+            </div>
+        </div>
+
+        <!-- Demo 3: Acceder a elementos -->
+        <div class="demo-card">
+            <h2>3. 🎯 Acceder a Elementos</h2>
+            
+            <div class="code-block">let frutas = ["manzana", "banana", "naranja"];
+
+// Acceder por índice (posición)
+let primera = frutas[0];  // "manzana"
+let segunda = frutas[1];  // "banana"  
+let tercera = frutas[2];  // "naranja"
+
+// Obtener la cantidad de elementos
+let cantidad = frutas.length; // 3
+
+// Último elemento usando length
+let ultima = frutas[frutas.length - 1]; // "naranja"</div>
+            
+            <div class="explanation">
+                💡 <strong>¡Importante!</strong> Los índices empiezan en <strong>0</strong>, no en 1. El primer elemento es [0].
+            </div>
+        </div>
+
+        <!-- Demo 4: Métodos básicos -->
+        <div class="demo-card">
+            <h2>4. 🔧 Métodos Básicos de Arrays</h2>
+            
+            <div class="code-block">let colores = ["rojo", "verde"];
+
+// Agregar al final con push()
+colores.push("azul");
+// Resultado: ["rojo", "verde", "azul"]
+
+// Quitar del final con pop()
+let ultimo = colores.pop(); // ultimo = "azul"
+// Resultado: ["rojo", "verde"]
+
+// Buscar elemento con indexOf()
+let posicion = colores.indexOf("verde"); // 1
+
+// Verificar si existe con includes()
+let existe = colores.includes("amarillo"); // false</div>
+            
+            <div class="explanation">
+                💡 <strong>push()</strong> agrega, <strong>pop()</strong> quita, <strong>indexOf()</strong> busca, <strong>includes()</strong> verifica.
+            </div>
+        </div>
+
+        <!-- Botones interactivos -->
+        <div class="buttons-section">
+            <div class="demo-card">
+                <h2>🎮 Demos Interactivas</h2>
+                
+                <button class="demo-button" onclick="demoCrearArrays()">
+                    🛠️ Demo Crear Arrays
+                </button>
+                
+                <button class="demo-button" onclick="demoAccederElementos()">
+                    🎯 Demo Acceder Elementos
+                </button>
+                
+                <button class="demo-button" onclick="demoMetodosBasicos()">
+                    🔧 Demo Métodos Básicos
+                </button>
+                
+                <button class="demo-button" onclick="demoArrayDinamico()">
+                    🎨 Demo Array Dinámico
+                </button>
+            </div>
+        </div>
+
+        <!-- Array visual dinámico -->
+        <div class="demo-card">
+            <h2>🎨 Array Visual Dinámico</h2>
+            <div class="array-visualization">
+                <p style="margin-bottom: 40px;">Array actual: <strong id="array-name">frutas</strong></p>
+                <div class="visual-array" id="array-dinamico">
+                    <span class="array-bracket">[</span>
+                    <div class="array-item">
+                        <div class="array-index">0</div>
+                        "manzana"
+                    </div>
+                    <div class="array-item">
+                        <div class="array-index">1</div>
+                        "banana"
+                    </div>
+                    <span class="array-bracket">]</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Salida de consola -->
+        <div class="demo-card">
+            <h2>📱 Consola de JavaScript</h2>
+            <div class="output-section">
+                <div id="console-output">¡Bienvenido a Arrays Básicos! Haz clic en los botones para ver las demos.
+También abre DevTools (F12) para ver la consola real del navegador.
+</div>
+                <button class="clear-button" onclick="limpiarConsola()">🧹 Limpiar Consola</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Array global para demos
+        let arrayDemo = ["manzana", "banana"];
+
+        // Función para mostrar en la consola personalizada
+        function escribirConsola(texto) {
+            const consola = document.getElementById('console-output');
+            consola.textContent += texto + '\n';
+            console.log(texto); // También en consola real
+            
+            // Auto-scroll al final
+            consola.scrollTop = consola.scrollHeight;
+        }
+
+        // Función para actualizar el array visual
+        function actualizarArrayVisual(array, nombre) {
+            const contenedor = document.getElementById('array-dinamico');
+            const nombreArray = document.getElementById('array-name');
+            
+            nombreArray.textContent = nombre;
+            contenedor.innerHTML = '<span class="array-bracket">[</span>';
+            
+            array.forEach((elemento, indice) => {
+                const item = document.createElement('div');
+                item.className = 'array-item';
+                item.innerHTML = `
+                    <div class="array-index">${indice}</div>
+                    "${elemento}"
+                `;
+                contenedor.appendChild(item);
+            });
+            
+            contenedor.innerHTML += '<span class="array-bracket">]</span>';
+        }
+
+        // Demo 1: Crear Arrays
+        function demoCrearArrays() {
+            escribirConsola("=== DEMO 1: Crear Arrays ===");
+            
+            let listaVacia = [];
+            escribirConsola("Array vacío: " + JSON.stringify(listaVacia));
+            escribirConsola("Longitud: " + listaVacia.length);
+            
+            let nombres = ["Ana", "Carlos", "María"];
+            escribirConsola("Array de nombres: " + JSON.stringify(nombres));
+            escribirConsola("Longitud: " + nombres.length);
+            
+            let numeros = [10, 25, 30, 45];
+            escribirConsola("Array de números: " + JSON.stringify(numeros));
+            escribirConsola("Longitud: " + numeros.length);
+            
+            let mixto = ["Juan", 25, true, "programador"];
+            escribirConsola("Array mixto: " + JSON.stringify(mixto));
+            escribirConsola("Longitud: " + mixto.length);
+            
+            actualizarArrayVisual(nombres, "nombres");
+            escribirConsola("");
+        }
+
+        // Demo 2: Acceder a Elementos
+        function demoAccederElementos() {
+            escribirConsola("=== DEMO 2: Acceder a Elementos ===");
+            
+            let frutas = ["manzana", "banana", "naranja", "kiwi"];
+            escribirConsola("Array frutas: " + JSON.stringify(frutas));
+            
+            let primera = frutas[0];
+            let segunda = frutas[1];
+            let tercera = frutas[2];
+            
+            escribirConsola("Primera fruta (índice 0): " + primera);
+            escribirConsola("Segunda fruta (índice 1): " + segunda);
+            escribirConsola("Tercera fruta (índice 2): " + tercera);
+            
+            let cantidad = frutas.length;
+            escribirConsola("Cantidad total: " + cantidad);
+            
+            let ultima = frutas[frutas.length - 1];
+            escribirConsola("Última fruta: " + ultima);
+            
+            actualizarArrayVisual(frutas, "frutas");
+            escribirConsola("");
+        }
+
+        // Demo 3: Métodos Básicos
+        function demoMetodosBasicos() {
+            escribirConsola("=== DEMO 3: Métodos Básicos ===");
+            
+            let colores = ["rojo", "verde"];
+            escribirConsola("Array inicial: " + JSON.stringify(colores));
+            actualizarArrayVisual(colores, "colores");
+            
+            setTimeout(() => {
+                colores.push("azul");
+                escribirConsola("Después de push('azul'): " + JSON.stringify(colores));
+                actualizarArrayVisual(colores, "colores");
+                
+                setTimeout(() => {
+                    let ultimo = colores.pop();
+                    escribirConsola("pop() devuelve: " + ultimo);
+                    escribirConsola("Array después de pop(): " + JSON.stringify(colores));
+                    actualizarArrayVisual(colores, "colores");
+                    
+                    setTimeout(() => {
+                        let posicion = colores.indexOf("verde");
+                        escribirConsola("indexOf('verde'): " + posicion);
+                        
+                        let existe = colores.includes("amarillo");
+                        escribirConsola("includes('amarillo'): " + existe);
+                        
+                        let existeVerde = colores.includes("verde");
+                        escribirConsola("includes('verde'): " + existeVerde);
+                        escribirConsola("");
+                    }, 1000);
+                }, 1000);
+            }, 1000);
+        }
+
+        // Demo 4: Array Dinámico
+        function demoArrayDinamico() {
+            escribirConsola("=== DEMO 4: Array Dinámico ===");
+            
+            let tareas = [];
+            escribirConsola("Array inicial vacío: " + JSON.stringify(tareas));
+            actualizarArrayVisual(tareas, "tareas");
+            
+            setTimeout(() => {
+                tareas.push("estudiar");
+                escribirConsola("Agregamos 'estudiar': " + JSON.stringify(tareas));
+                actualizarArrayVisual(tareas, "tareas");
+            }, 1000);
+            
+            setTimeout(() => {
+                tareas.push("ejercicio");
+                escribirConsola("Agregamos 'ejercicio': " + JSON.stringify(tareas));
+                actualizarArrayVisual(tareas, "tareas");
+            }, 2000);
+            
+            setTimeout(() => {
+                tareas.push("cocinar");
+                escribirConsola("Agregamos 'cocinar': " + JSON.stringify(tareas));
+                actualizarArrayVisual(tareas, "tareas");
+            }, 3000);
+            
+            setTimeout(() => {
+                let completada = tareas.pop();
+                escribirConsola("Completamos tarea: " + completada);
+                escribirConsola("Tareas restantes: " + JSON.stringify(tareas));
+                actualizarArrayVisual(tareas, "tareas");
+                escribirConsola("¡Mira cómo cambió el array visual!");
+                escribirConsola("");
+            }, 4000);
+        }
+
+        // Limpiar consola
+        function limpiarConsola() {
+            document.getElementById('console-output').textContent = 'Consola limpia ✨\n';
+        }
+    </script>
+</body>
+</html>

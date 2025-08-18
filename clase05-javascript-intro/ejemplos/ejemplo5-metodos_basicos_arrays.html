@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo: Métodos Básicos de Arrays</title>
+    <link rel="stylesheet" href="./ejemplo5-metodos_basicos_arrays.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🔧 Métodos Básicos de Arrays</h1>
+        
+        <!-- Demo 1: Introducción a métodos -->
+        <div class="demo-card">
+            <h2>1. 🛠️ ¿Qué son los Métodos de Arrays?</h2>
+            
+            <div class="explanation">
+                💡 Los <strong>métodos</strong> son funciones especiales que nos ayudan a trabajar con arrays de forma más fácil y rápida.
+            </div>
+            
+            <div class="code-block">// Sin métodos (forma manual)
+let tareas = ["estudiar"];
+tareas[tareas.length] = "ejercicio"; // Agregar manualmente
+
+// Con métodos (forma fácil)
+let tareas2 = ["estudiar"];
+tareas2.push("ejercicio"); // ¡Mucho más simple!</div>
+            
+            <div class="explanation">
+                💡 <strong>Ventaja:</strong> Los métodos hacen el código más limpio, fácil de leer y menos propenso a errores.
+            </div>
+        </div>
+
+        <!-- Demo 2: Métodos para agregar y quitar -->
+        <div class="demo-card">
+            <h2>2. ➕➖ Métodos para Agregar y Quitar</h2>
+            
+            <div class="method-grid">
+                <div class="method-card" id="push-card">
+                    <div class="method-name">push()</div>
+                    <div class="method-description">Agrega elemento(s) al final del array</div>
+                    <div class="method-example">array.push("nuevo")</div>
+                </div>
+                
+                <div class="method-card" id="pop-card">
+                    <div class="method-name">pop()</div>
+                    <div class="method-description">Quita y devuelve el último elemento</div>
+                    <div class="method-example">let ultimo = array.pop()</div>
+                </div>
+                
+                <div class="method-card" id="unshift-card">
+                    <div class="method-name">unshift()</div>
+                    <div class="method-description">Agrega elemento(s) al inicio del array</div>
+                    <div class="method-example">array.unshift("primero")</div>
+                </div>
+                
+                <div class="method-card" id="shift-card">
+                    <div class="method-name">shift()</div>
+                    <div class="method-description">Quita y devuelve el primer elemento</div>
+                    <div class="method-example">let primero = array.shift()</div>
+                </div>
+            </div>
+            
+            <div class="code-block">let frutas = ["banana"];
+
+// Agregar al final
+frutas.push("manzana");        // ["banana", "manzana"]
+
+// Agregar al inicio  
+frutas.unshift("kiwi");        // ["kiwi", "banana", "manzana"]
+
+// Quitar del final
+let ultima = frutas.pop();     // ultima = "manzana"
+                               // frutas = ["kiwi", "banana"]
+
+// Quitar del inicio
+let primera = frutas.shift();  // primera = "kiwi"
+                               // frutas = ["banana"]</div>
+        </div>
+
+        <!-- Demo 3: Métodos para buscar -->
+        <div class="demo-card">
+            <h2>3. 🔍 Métodos para Buscar</h2>
+            
+            <div class="method-grid">
+                <div class="method-card" id="indexof-card">
+                    <div class="method-name">indexOf()</div>
+                    <div class="method-description">Encuentra la posición de un elemento</div>
+                    <div class="method-example">array.indexOf("buscar")</div>
+                </div>
+                
+                <div class="method-card" id="includes-card">
+                    <div class="method-name">includes()</div>
+                    <div class="method-description">Verifica si un elemento existe</div>
+                    <div class="method-example">array.includes("buscar")</div>
+                </div>
+            </div>
+            
+            <div class="code-block">let colores = ["rojo", "verde", "azul", "verde"];
+
+// Buscar posición (devuelve el primer índice encontrado)
+let posicion = colores.indexOf("verde");    // 1
+let noExiste = colores.indexOf("amarillo"); // -1 (no encontrado)
+
+// Verificar existencia (devuelve true/false)
+let tieneRojo = colores.includes("rojo");     // true
+let tieneRosa = colores.includes("rosa");     // false</div>
+            
+            <div class="explanation">
+                💡 <strong>indexOf()</strong> devuelve <strong>-1</strong> si no encuentra el elemento. <strong>includes()</strong> devuelve <strong>true/false</strong>.
+            </div>
+        </div>
+
+        <!-- Demo 4: Métodos de utilidad -->
+        <div class="demo-card">
+            <h2>4. 🛠️ Métodos de Utilidad</h2>
+            
+            <div class="method-grid">
+                <div class="method-card" id="join-card">
+                    <div class="method-name">join()</div>
+                    <div class="method-description">Convierte array en string</div>
+                    <div class="method-example">array.join(", ")</div>
+                </div>
+                
+                <div class="method-card" id="length-card">
+                    <div class="method-name">length</div>
+                    <div class="method-description">Cuenta los elementos del array</div>
+                    <div class="method-example">array.length</div>
+                </div>
+            </div>
+            
+            <div class="code-block">let nombres = ["Ana", "Carlos", "María"];
+
+// Unir elementos en un string
+let lista = nombres.join(", ");        // "Ana, Carlos, María"
+let listaCon = nombres.join(" y ");    // "Ana y Carlos y María"
+let sinSeparador = nombres.join("");   // "AnaCarlosMaría"
+
+// Obtener cantidad de elementos
+let cantidad = nombres.length;         // 3</div>
+        </div>
+
+        <!-- Botones interactivos -->
+        <div class="buttons-section">
+            <div class="demo-card">
+                <h2>🎮 Demos Interactivas</h2>
+                
+                <button class="demo-button" onclick="demoAgregarQuitar()">
+                    ➕➖ Demo Agregar/Quitar
+                </button>
+                
+                <button class="demo-button" onclick="demoBuscar()">
+                    🔍 Demo Buscar Elementos
+                </button>
+                
+                <button class="demo-button" onclick="demoUtilidad()">
+                    🛠️ Demo Utilidades
+                </button>
+                
+                <button class="demo-button" onclick="demoCompleto()">
+                    🎯 Demo Completo
+                </button>
+            </div>
+        </div>
+
+        <!-- Array visual dinámico -->
+        <div class="demo-card">
+            <h2>🎨 Array Visual Dinámico</h2>
+            <div class="array-visualization">
+                <p style="margin-bottom: 40px;">Array actual: <strong id="array-name">tareas</strong></p>
+                <div class="visual-array" id="array-dinamico">
+                    <span class="array-bracket">[</span>
+                    <div class="array-item">
+                        <div class="array-index">0</div>
+                        "estudiar"
+                    </div>
+                    <span class="array-bracket">]</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Salida de consola -->
+        <div class="demo-card">
+            <h2>📱 Consola de JavaScript</h2>
+            <div class="output-section">
+                <div id="console-output">¡Bienvenido a Métodos Básicos de Arrays! Haz clic en los botones para ver las demos.
+También abre DevTools (F12) para ver la consola real del navegador.
+</div>
+                <button class="clear-button" onclick="limpiarConsola()">🧹 Limpiar Consola</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Array global para demos
+        let arrayDemo = ["estudiar"];
+
+        // Función para mostrar en la consola personalizada
+        function escribirConsola(texto) {
+            const consola = document.getElementById('console-output');
+            consola.textContent += texto + '\n';
+            console.log(texto); // También en consola real
+            
+            // Auto-scroll al final
+            consola.scrollTop = consola.scrollHeight;
+        }
+
+        // Función para actualizar el array visual
+        function actualizarArrayVisual(array, nombre) {
+            const contenedor = document.getElementById('array-dinamico');
+            const nombreArray = document.getElementById('array-name');
+            
+            nombreArray.textContent = nombre;
+            contenedor.innerHTML = '<span class="array-bracket">[</span>';
+            
+            if (array.length === 0) {
+                contenedor.innerHTML += '<span style="color: #ffd700; font-style: italic; margin: 0 20px;">vacío</span>';
+            } else {
+                array.forEach((elemento, indice) => {
+                    const item = document.createElement('div');
+                    item.className = 'array-item';
+                    item.innerHTML = `
+                        <div class="array-index">${indice}</div>
+                        "${elemento}"
+                    `;
+                    contenedor.appendChild(item);
+                });
+            }
+            
+            contenedor.innerHTML += '<span class="array-bracket">]</span>';
+        }
+
+        // Función para destacar método
+        function destacarMetodo(metodoId) {
+            // Quitar destaque anterior
+            document.querySelectorAll('.method-card').forEach(card => {
+                card.classList.remove('highlight-method');
+            });
+            
+            // Agregar destaque al método actual
+            if (metodoId) {
+                document.getElementById(metodoId).classList.add('highlight-method');
+            }
+        }
+
+        // Demo 1: Agregar y Quitar
+        function demoAgregarQuitar() {
+            escribirConsola("=== DEMO 1: Agregar y Quitar ===");
+            
+            let lista = ["inicio"];
+            escribirConsola("Array inicial: " + JSON.stringify(lista));
+            actualizarArrayVisual(lista, "lista");
+            
+            setTimeout(() => {
+                destacarMetodo('push-card');
+                lista.push("final");
+                escribirConsola("Después de push('final'): " + JSON.stringify(lista));
+                actualizarArrayVisual(lista, "lista");
+            }, 1000);
+            
+            setTimeout(() => {
+                destacarMetodo('unshift-card');
+                lista.unshift("primero");
+                escribirConsola("Después de unshift('primero'): " + JSON.stringify(lista));
+                actualizarArrayVisual(lista, "lista");
+            }, 2000);
+            
+            setTimeout(() => {
+                destacarMetodo('pop-card');
+                let ultimo = lista.pop();
+                escribirConsola("pop() devuelve: " + ultimo);
+                escribirConsola("Array después de pop(): " + JSON.stringify(lista));
+                actualizarArrayVisual(lista, "lista");
+            }, 3000);
+            
+            setTimeout(() => {
+                destacarMetodo('shift-card');
+                let primero = lista.shift();
+                escribirConsola("shift() devuelve: " + primero);
+                escribirConsola("Array después de shift(): " + JSON.stringify(lista));
+                actualizarArrayVisual(lista, "lista");
+                destacarMetodo(null);
+                escribirConsola("");
+            }, 4000);
+        }
+
+        // Demo 2: Buscar
+        function demoBuscar() {
+            escribirConsola("=== DEMO 2: Buscar Elementos ===");
+            
+            let animales = ["perro", "gato", "pájaro", "gato", "pez"];
+            escribirConsola("Array: " + JSON.stringify(animales));
+            actualizarArrayVisual(animales, "animales");
+            
+            setTimeout(() => {
+                destacarMetodo('indexof-card');
+                let posGato = animales.indexOf("gato");
+                escribirConsola("indexOf('gato'): " + posGato + " (primer ocurrencia)");
+                
+                let posNoExiste = animales.indexOf("león");
+                escribirConsola("indexOf('león'): " + posNoExiste + " (no existe = -1)");
+            }, 1000);
+            
+            setTimeout(() => {
+                destacarMetodo('includes-card');
+                let tieneGato = animales.includes("gato");
+                escribirConsola("includes('gato'): " + tieneGato);
+                
+                let tieneLeon = animales.includes("león");
+                escribirConsola("includes('león'): " + tieneLeon);
+                destacarMetodo(null);
+                escribirConsola("");
+            }, 2500);
+        }
+
+        // Demo 3: Utilidad
+        function demoUtilidad() {
+            escribirConsola("=== DEMO 3: Métodos de Utilidad ===");
+            
+            let ciudades = ["Buenos Aires", "Madrid", "París"];
+            escribirConsola("Array: " + JSON.stringify(ciudades));
+            actualizarArrayVisual(ciudades, "ciudades");
+            
+            setTimeout(() => {
+                destacarMetodo('join-card');
+                let conComas = ciudades.join(", ");
+                escribirConsola("join(', '): " + conComas);
+                
+                let conY = ciudades.join(" y ");
+                escribirConsola("join(' y '): " + conY);
+                
+                let sinSeparador = ciudades.join("");
+                escribirConsola("join(''): " + sinSeparador);
+            }, 1000);
+            
+            setTimeout(() => {
+                destacarMetodo('length-card');
+                escribirConsola("length: " + ciudades.length + " ciudades");
+                destacarMetodo(null);
+                escribirConsola("");
+            }, 2500);
+        }
+
+        // Demo 4: Completo
+        function demoCompleto() {
+            escribirConsola("=== DEMO 4: Ejemplo Completo ===");
+            escribirConsola("Simulando una lista de compras:");
+            
+            let compras = [];
+            escribirConsola("Lista inicial: " + JSON.stringify(compras));
+            actualizarArrayVisual(compras, "compras");
+            
+            setTimeout(() => {
+                compras.push("pan", "leche");
+                escribirConsola("Agregamos pan y leche: " + JSON.stringify(compras));
+                actualizarArrayVisual(compras, "compras");
+            }, 1000);
+            
+            setTimeout(() => {
+                compras.unshift("frutas");
+                escribirConsola("Agregamos frutas al inicio: " + JSON.stringify(compras));
+                actualizarArrayVisual(compras, "compras");
+            }, 2000);
+            
+            setTimeout(() => {
+                if (compras.includes("leche")) {
+                    escribirConsola("✅ Leche está en la lista");
+                }
+                
+                let posicion = compras.indexOf("pan");
+                escribirConsola("Pan está en la posición: " + posicion);
+            }, 3000);
+            
+            setTimeout(() => {
+                let lista = compras.join(" - ");
+                escribirConsola("Lista para imprimir: " + lista);
+                escribirConsola("Total de productos: " + compras.length);
+                escribirConsola("¡Demo completo!");
+                escribirConsola("");
+            }, 4000);
+        }
+
+        // Limpiar consola
+        function limpiarConsola() {
+            document.getElementById('console-output').textContent = 'Consola limpia ✨\n';
+        }
+    </script>
+</body>
+</html>

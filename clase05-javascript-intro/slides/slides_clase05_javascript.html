@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 5: JavaScript Fundamentos</title>
+    <link rel="stylesheet" href="./slides_clase05_javascript.css">
+</head>
+<body>
+    <div class="progress-bar" id="progress-bar"></div>
+    
+    <div class="slideshow-container">
+        
+        <!-- Slide 1: Portada -->
+        <div class="slide active">
+            <span class="emoji">🚀</span>
+            <h1>CLASE 5</h1>
+            <h2>JavaScript Fundamentos</h2>
+            <p><span class="highlight">¡Tu primer código JavaScript!</span></p>
+            <p>Variables, Arrays, Objetos, For Loops</p>
+            <p>🎯 De estático a dinámico</p>
+        </div>
+
+        <!-- Slide 2: Repaso -->
+        <div class="slide">
+            <h2>🔄 REPASO: ¿Dónde Estamos?</h2>
+            <p><span class="highlight">Lo que ya dominas:</span></p>
+            <ul>
+                <li>✅ <strong>Clase 1:</strong> HTML semántico + Git</li>
+                <li>✅ <strong>Clase 2:</strong> CSS básico (colores, tipografías, modelo de caja)</li>
+                <li>✅ <strong>Clase 3:</strong> Flexbox para layouts modernos</li>
+                <li>✅ <strong>Clase 4:</strong> Responsive design + efectos básicos</li>
+            </ul>
+            <p>🎯 <span class="highlight">Hoy:</span> ¡Agregar lógica e interactividad!</p>
+            <p>📈 <span class="highlight">Progreso:</span> 44% del curso completado</p>
+        </div>
+
+        <!-- Slide 3: Motivación -->
+        <div class="slide">
+            <h2>💡 ¿Por qué JavaScript?</h2>
+            <p><span class="highlight">Diferencia entre estático vs dinámico:</span></p>
+            <div class="code">/* 🚫 Página estática (solo HTML/CSS) */
+&lt;p&gt;Hola Juan&lt;/p&gt;
+&lt;p&gt;Productos: 5&lt;/p&gt;
+
+/* ✅ Página dinámica (con JavaScript) */
+let nombre = "Juan";
+let productos = 5;
+console.log("Hola " + nombre);
+console.log("Productos: " + productos);</div>
+            <p>🎯 <span class="highlight">JavaScript hace que tu sitio web cobre vida</span></p>
+        </div>
+
+        <!-- Slide 4: Agenda del día -->
+        <div class="slide">
+            <h2>📋 AGENDA DE HOY (3 horas)</h2>
+            <ul>
+                <li>🔄 <strong>Repaso y Motivación</strong> (15 min)</li>
+                <li>💡 <strong>Teoría + Demos</strong> (50 min)
+                    <ul>
+                        <li>Variables y tipos</li>
+                        <li>Arrays básicos</li>
+                        <li>Objetos básicos</li>
+                        <li>For loops tradicionales</li>
+                    </ul>
+                </li>
+                <li>🏃‍♂️ <strong>Ejercicios Prácticos</strong> (80 min)</li>
+                <li>📁 <strong>JavaScript en Archivos</strong> (25 min)</li>
+                <li>🎯 <strong>Cierre y Tarea</strong> (10 min)</li>
+            </ul>
+        </div>
+
+        <!-- Slide 5: Variables - DEMO -->
+        <div class="slide demo-slide">
+            <h2>📦 DEMO: Variables</h2>
+            <p><span class="highlight">🎬 Abrir: ejemplo1-variables_tipos.html</span></p>
+            <p>Variables = cajas que guardan información</p>
+            <div class="code">// ✅ Creando variables
+let nombre = "María";
+const edad = 25;
+let esEstudiante = true;
+
+// ✅ Mostrando en consola
+console.log("Hola " + nombre);
+console.log("Tienes " + edad + " años");</div>
+            <div class="console-tip">🔧 <strong>F12 → Console</strong> para ver resultados</div>
+        </div>
+
+        <!-- Slide 6: Variables - Teoría -->
+        <div class="slide">
+            <h2>📦 VARIABLES: Tipos de Datos</h2>
+            <div class="code">// 📝 STRING (texto)
+let nombre = "Ana";
+let apellido = 'Pérez';
+
+// 🔢 NUMBER (números)
+let edad = 25;
+let precio = 19.99;
+
+// ✅❌ BOOLEAN (verdadero/falso)
+let esEstudiante = true;
+let esProfesor = false;</div>
+            <p><span class="highlight">💡 let vs const:</span></p>
+            <p><strong>let</strong> = puede cambiar | <strong>const</strong> = no cambia</p>
+        </div>
+
+        <!-- Slide 7: Arrays - DEMO -->
+        <div class="slide demo-slide">
+            <h2>📚 DEMO: Arrays Básicos</h2>
+            <p><span class="highlight">🎬 Abrir: ejemplo2-arrays_basicos.html</span></p>
+            <p>Arrays = listas organizadas de datos</p>
+            <div class="code">// ✅ Creando arrays
+let frutas = ["manzana", "banana", "naranja"];
+
+// ✅ Accediendo a elementos
+console.log(frutas[0]); // "manzana"
+console.log(frutas[1]); // "banana"
+
+// ✅ Propiedades útiles
+console.log(frutas.length); // 3</div>
+            <p>🎯 <span class="highlight">¡Los índices empiezan en 0!</span></p>
+        </div>
+
+        <!-- Slide 8: Arrays - Métodos básicos -->
+        <div class="slide">
+            <h2>📚 ARRAYS: Métodos Básicos</h2>
+            <div class="code">let tareas = ["estudiar", "ejercicio"];
+
+// ➕ Agregar al final
+tareas.push("cocinar");
+console.log(tareas); // ["estudiar", "ejercicio", "cocinar"]
+
+// ➖ Quitar del final
+let ultimaTarea = tareas.pop();
+console.log(ultimaTarea); // "cocinar"
+
+// 🔍 Buscar elemento
+console.log(tareas.indexOf("estudiar")); // 0
+console.log(tareas.includes("limpiar")); // false
+
+// 🔗 Unir en string
+console.log(tareas.join(" - ")); // "estudiar - ejercicio"</div>
+        </div>
+
+        <!-- Slide 9: Objetos - DEMO -->
+        <div class="slide demo-slide">
+            <h2>🏷️ DEMO: Objetos Básicos</h2>
+            <p><span class="highlight">🎬 Abrir: ejemplo3-objetos_basicos.html</span></p>
+            <p>Objetos = información relacionada agrupada</p>
+            <div class="code">// ✅ Creando objetos
+let persona = {
+    nombre: "Carlos",
+    edad: 30,
+    ciudad: "Buenos Aires",
+    esEstudiante: false
+};
+
+// ✅ Accediendo a propiedades
+console.log(persona.nombre); // "Carlos"
+console.log(persona["edad"]); // 30</div>
+            <p>🎯 <span class="highlight">Piensa: ficha personal con datos organizados</span></p>
+        </div>
+
+        <!-- Slide 10: For Loops - DEMO -->
+        <div class="slide demo-slide">
+            <h2>🔄 DEMO: For Loops</h2>
+            <p><span class="highlight">🎬 Abrir: ejemplo4-for_loop_tradicional.html</span></p>
+            <p>For loops = repetir acciones de forma controlada</p>
+            <div class="code">let frutas = ["manzana", "banana", "naranja"];
+
+// ✅ For loop tradicional
+for (let i = 0; i < frutas.length; i++) {
+    console.log("Fruta " + (i + 1) + ": " + frutas[i]);
+}
+
+// 📤 Resultado:
+// Fruta 1: manzana
+// Fruta 2: banana  
+// Fruta 3: naranja</div>
+            <p>🎯 <span class="highlight">Estructura: inicio, condición, incremento</span></p>
+        </div>
+
+        <!-- Slide 11: For Loops - Teoría -->
+        <div class="slide">
+            <h2>🔄 FOR LOOPS: Anatomía</h2>
+            <div class="code">for (let i = 0; i < 5; i++) {
+    console.log("Vuelta número: " + i);
+}
+
+//    ①      ②      ③
+//    │      │      │
+//    │      │      └── Incremento (i++)
+//    │      └────────── Condición (i < 5)
+//    └──────────────── Inicio (let i = 0)</div>
+            <div class="warning">
+                <strong>⚠️ CUIDADO:</strong> <code>i++</code> no <code>i--</code> (loop infinito)
+            </div>
+            <p><span class="highlight">💡 La base de toda repetición en programación</span></p>
+        </div>
+
+        <!-- Slide 12: Métodos básicos arrays - DEMO -->
+        <div class="slide demo-slide">
+            <h2>🛠️ DEMO: Métodos de Arrays</h2>
+            <p><span class="highlight">🎬 Abrir: ejemplo5-metodos_basicos_arrays.html</span></p>
+            <div class="code">let lista = ["pan", "leche"];
+
+// ✅ Métodos que SÍ usamos hoy
+lista.push("huevos");      // Agregar
+lista.pop();               // Quitar
+lista.indexOf("pan");      // Buscar posición
+lista.includes("leche");   // ¿Existe?
+lista.join(", ");          // Unir con separador</div>
+            <div class="warning">
+                <strong>❌ NO usamos hoy:</strong> forEach, map, filter<br>
+                <strong>✅ Próxima clase:</strong> cuando aprendamos funciones
+            </div>
+        </div>
+
+        <!-- Slide 13: EJERCICIO 1 -->
+        <div class="slide practice-slide">
+            <h2>🏃‍♂️ EJERCICIO 1</h2>
+            <p><span class="highlight">📁 ejercicios/ejercicio1_variables.html</span></p>
+            <p><strong>🎯 Objetivo:</strong> Practicar variables, arrays y for loops</p>
+            <ul>
+                <li>💰 Calculadora de notas (variables y operaciones)</li>
+                <li>📝 Lista de tareas diarias (arrays y loops)</li>
+                <li>🛍️ Catálogo de productos (objetos)</li>
+                <li>🔤 Contador de letras (strings como arrays)</li>
+            </ul>
+            <p><span class="highlight">⏰ Tiempo: 25 minutos</span></p>
+            <p><span class="highlight">🔧 Trabajar en consola del navegador</span></p>
+        </div>
+
+        <!-- Slide 14: EJERCICIO 2 -->
+        <div class="slide practice-slide">
+            <h2>🏃‍♂️ EJERCICIO 2</h2>
+            <p><span class="highlight">📁 ejercicios/ejercicio2_clase5.html</span></p>
+            <p><strong>🎯 Objetivo:</strong> Aplicación práctica de todos los conceptos</p>
+            <p>Completar TODOs y experimentar con:</p>
+            <ul>
+                <li>📊 Gestión de datos complejos</li>
+                <li>🔄 Loops anidados básicos</li>
+                <li>🏷️ Objetos con arrays</li>
+                <li>🧮 Cálculos y estadísticas</li>
+            </ul>
+            <p><span class="highlight">⏰ Tiempo: 30 minutos</span></p>
+        </div>
+
+        <!-- Slide 15: JavaScript en Archivos -->
+        <div class="slide">
+            <h2>📁 JAVASCRIPT EN ARCHIVOS</h2>
+            <p><span class="highlight">¡De consola a archivos profesionales!</span></p>
+            <div class="code"><!-- En tu HTML -->
+&lt;script src="script.js"&gt;&lt;/script&gt;
+
+<!-- También dentro del HTML -->
+&lt;script&gt;
+    let mensaje = "¡Hola desde archivo!";
+    console.log(mensaje);
+&lt;/script&gt;</div>
+            <p>🎯 <span class="highlight">Preparación para la próxima clase</span></p>
+            <div class="success">
+                <strong>✅ Ventajas:</strong> Código organizado, reutilizable, profesional
+            </div>
+        </div>
+
+        <!-- Slide 16: Conceptos importantes -->
+        <div class="slide">
+            <h2>🧠 CONCEPTOS CLAVE DE HOY</h2>
+            <div class="success">
+                <strong>✅ SÍ aprendimos:</strong>
+                <ul>
+                    <li>Variables (let, const)</li>
+                    <li>Tipos: string, number, boolean</li>
+                    <li>Arrays y métodos básicos</li>
+                    <li>Objetos y propiedades</li>
+                    <li>For loops tradicionales</li>
+                </ul>
+            </div>
+            <div class="warning">
+                <strong>❌ NO vemos hasta Clase 6:</strong>
+                <ul>
+                    <li>Funciones</li>
+                    <li>Condicionales (if/else)</li>
+                    <li>forEach, map, filter</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 17: Tarea para casa -->
+        <div class="slide">
+            <h2>📝 TAREA PARA CASA</h2>
+            <p><span class="highlight">🎯 Ejercicios prácticos con JavaScript básico</span></p>
+            <ul>
+                <li>🔄 <strong>Repasar:</strong> Completar ejercicios de hoy</li>
+                <li>📁 <strong>Practicar:</strong> Crear archivos .js en tu proyecto</li>
+                <li>🧮 <strong>Experimentar:</strong> Variables y arrays con tu contenido</li>
+                <li>🎮 <strong>Explorar:</strong> Console.log con diferentes datos</li>
+            </ul>
+            <p>📂 <span class="highlight">En tu proyecto personal:</span></p>
+            <p>Crear <code>js/datos.js</code> con arrays de tu contenido</p>
+            <div class="console-tip">
+                Ver carpeta: <strong>tarea-proxima-clase/</strong>
+            </div>
+        </div>
+
+        <!-- Slide 18: Errores comunes -->
+        <div class="slide">
+            <h2>🚨 ERRORES COMUNES</h2>
+            <div class="warning">
+                <strong>❌ Confundir [] y {}</strong>
+                <div class="code">let persona = ["Juan", 25]; // ❌ Array
+let persona = {nombre: "Juan", edad: 25}; // ✅ Objeto</div>
+            </div>
+            <div class="warning">
+                <strong>❌ Índices (empiezan en 0)</strong>
+                <div class="code">let frutas = ["manzana", "banana"];
+console.log(frutas[1]); // ❌ "manzana"? NO!
+console.log(frutas[0]); // ✅ "manzana"</div>
+            </div>
+            <div class="warning">
+                <strong>❌ For loops infinitos</strong>
+                <div class="code">for (let i = 0; i < 10; i--) // ❌ Infinito!
+for (let i = 0; i < 10; i++) // ✅ Correcto</div>
+            </div>
+        </div>
+
+        <!-- Slide 19: Preparación Clase 6 -->
+        <div class="slide">
+            <h2>🔮 PRÓXIMA CLASE: Funciones y Lógica</h2>
+            <p><span class="highlight">Con los fundamentos de hoy, podrás:</span></p>
+            <ul>
+                <li>🔧 <strong>Funciones:</strong> Organizar tu código en bloques reutilizables</li>
+                <li>🤔 <strong>Condicionales:</strong> Tomar decisiones (if/else)</li>
+                <li>🎯 <strong>Métodos avanzados:</strong> forEach, map, filter</li>
+                <li>🧠 <strong>Lógica compleja:</strong> Combinar todo lo aprendido</li>
+            </ul>
+            <p>🎯 <span class="highlight">Tu JavaScript va a ser mucho más poderoso</span></p>
+        </div>
+
+        <!-- Slide 20: Cierre motivacional -->
+        <div class="slide summary-slide">
+            <span class="emoji">🎉</span>
+            <h2>¡FELICITACIONES!</h2>
+            <p><span class="highlight">¡Ya escribes JavaScript!</span></p>
+            <div class="success">
+                <strong>🏆 Logros de hoy:</strong>
+                <ul>
+                    <li>✅ Variables y tipos de datos</li>
+                    <li>✅ Arrays y métodos básicos</li>
+                    <li>✅ Objetos y propiedades</li>
+                    <li>✅ For loops tradicionales</li>
+                    <li>✅ Archivos .js profesionales</li>
+                </ul>
+            </div>
+            <p>📈 <span class="highlight">Progreso: 56% del curso completado</span></p>
+            <p>🚀 <span class="highlight">¡Tu sitio web está a punto de volverse realmente interactivo!</span></p>
+        </div>
+
+    </div>
+
+    <div class="slide-counter">
+        <span id="current-slide">1</span> / <span id="total-slides">20</span>
+    </div>
+
+    <div class="navigation">
+        <button class="nav-btn" onclick="previousSlide()">◀ Anterior</button>
+        <button class="nav-btn" onclick="nextSlide()">Siguiente ▶</button>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+        const progressBar = document.getElementById('progress-bar');
+
+        document.getElementById('total-slides').textContent = totalSlides;
+
+        function updateProgress() {
+            const progress = ((currentSlide + 1) / totalSlides) * 100;
+            progressBar.style.width = progress + '%';
+        }
+
+        function showSlide(n) {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (n + totalSlides) % totalSlides;
+            slides[currentSlide].classList.add('active');
+            document.getElementById('current-slide').textContent = currentSlide + 1;
+            updateProgress();
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        function previousSlide() {
+            showSlide(currentSlide - 1);
+        }
+
+        // Navegación con teclado
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                e.preventDefault();
+                nextSlide();
+            } else if (e.key === 'ArrowLeft') {
+                e.preventDefault();
+                previousSlide();
+            }
+        });
+
+        // Navegación con click
+        document.addEventListener('click', function(e) {
+            if (e.target.closest('.nav-btn')) return;
+            if (e.clientX > window.innerWidth / 2) {
+                nextSlide();
+            } else {
+                previousSlide();
+            }
+        });
+
+        // Touch/swipe para móviles
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        document.addEventListener('touchstart', function(e) {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        document.addEventListener('touchend', function(e) {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            if (touchEndX < touchStartX - 50) {
+                nextSlide();
+            }
+            if (touchEndX > touchStartX + 50) {
+                previousSlide();
+            }
+        }
+
+        // Inicializar
+        updateProgress();
+    </script>
+</body>
+</html>

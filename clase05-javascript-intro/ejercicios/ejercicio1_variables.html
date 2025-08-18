@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1: Variables, Arrays y For Loops</title>
+    <link rel="stylesheet" href="./ejercicio1_variables.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🎯 Ejercicio 1: Variables, Arrays y For Loops</h1>
+        
+        <!-- Instrucciones generales -->
+        <div class="exercise-card">
+            <h2>📋 Conceptos de esta Clase</h2>
+            <div class="instructions">
+                <strong>📚 Lo que YA aprendiste en esta clase:</strong>
+                <ul>
+                    <li>Variables: <code>let</code>, <code>const</code></li>
+                    <li>Tipos de datos: string, number, boolean</li>
+                    <li>Arrays básicos y métodos: <code>push()</code>, <code>pop()</code>, <code>indexOf()</code>, <code>includes()</code>, <code>join()</code></li>
+                    <li>Objetos básicos: creación y acceso a propiedades</li>
+                    <li>For loops tradicionales</li>
+                    <li>Operaciones matemáticas: +, -, *, /</li>
+                    <li>Concatenación de strings</li>
+                </ul>
+                <strong>⏰ Tiempo estimado:</strong> 25 minutos
+            </div>
+        </div>
+
+        <!-- Ejercicio 1: Variables y operaciones -->
+        <div class="exercise-card">
+            <span class="difficulty facil">FÁCIL</span>
+            <h2>Ejercicio 1.1: Calculadora de Notas</h2>
+            
+            <div class="instructions">
+                <strong>🧩 Problema:</strong> Tienes las calificaciones de un estudiante en 4 materias. Calcula estadísticas básicas.
+                <br><br>
+                <strong>📝 Tareas:</strong>
+                <ol>
+                    <li>Crea variables: <code>nota1 = 85</code>, <code>nota2 = 92</code>, <code>nota3 = 78</code>, <code>nota4 = 88</code></li>
+                    <li>Calcula el promedio de las 4 notas</li>
+                    <li>Calcula la suma total de puntos</li>
+                    <li>Encuentra la diferencia entre la nota más alta (92) y más baja (78)</li>
+                    <li>Muestra un reporte completo</li>
+                </ol>
+            </div>
+            
+            <div class="expected-output">
+                <strong>✅ Resultado esperado:</strong><br>
+                Nota 1: 85<br>
+                Nota 2: 92<br>
+                Nota 3: 78<br>
+                Nota 4: 88<br>
+                Promedio: 85.75<br>
+                Total puntos: 343<br>
+                Rango: 14 puntos
+            </div>
+        </div>
+
+        <!-- Ejercicio 2: Arrays y loops -->
+        <div class="exercise-card">
+            <span class="difficulty medio">MEDIO</span>
+            <h2>Ejercicio 1.2: Lista de Tareas Diarias</h2>
+            
+            <div class="instructions">
+                <strong>🧩 Problema:</strong> Organiza y procesa una lista de tareas usando arrays y for loops.
+                <br><br>
+                <strong>📝 Tareas:</strong>
+                <ol>
+                    <li>Crea <code>let tareas = ["desayunar", "estudiar", "ejercicio", "trabajo"];</code></li>
+                    <li>Crea <code>let duracion = [30, 120, 60, 480];</code> (minutos para cada tarea)</li>
+                    <li>Usa for loop para mostrar cada tarea con su duración</li>
+                    <li>Calcula el total de minutos del día</li>
+                    <li>Convierte el total a horas (dividir entre 60)</li>
+                    <li>Agrega una nueva tarea "cena" de 45 minutos al final</li>
+                </ol>
+            </div>
+            
+            <div class="expected-output">
+                <strong>✅ Resultado esperado:</strong><br>
+                desayunar: 30 minutos<br>
+                estudiar: 120 minutos<br>
+                ejercicio: 60 minutos<br>
+                trabajo: 480 minutos<br>
+                Total: 690 minutos (11.5 horas)<br>
+                Nueva tarea agregada: cena (45 min)
+            </div>
+        </div>
+
+        <!-- Ejercicio 3: Objetos y datos -->
+        <div class="exercise-card">
+            <span class="difficulty medio">MEDIO</span>
+            <h2>Ejercicio 1.3: Catálogo de Productos</h2>
+            
+            <div class="instructions">
+                <strong>🧩 Problema:</strong> Crea un catálogo de productos de una tienda usando objetos.
+                <br><br>
+                <strong>📝 Tareas:</strong>
+                <ol>
+                    <li>Crea 3 objetos producto con: nombre, precio, categoria, disponible (true/false)</li>
+                    <li>Guarda los productos en un array</li>
+                    <li>Usa for loop para mostrar cada producto</li>
+                    <li>Calcula el precio promedio de todos los productos</li>
+                    <li>Crea un objeto "resumen" con: totalProductos, precioPromedio, categorias encontradas</li>
+                </ol>
+            </div>
+            
+            <div class="expected-output">
+                <strong>✅ Ejemplo de resultado:</strong><br>
+                Producto 1: Laptop - $800 - Tecnología - Disponible<br>
+                Producto 2: Mesa - $150 - Muebles - Disponible<br>
+                Producto 3: Libro - $25 - Educación - No disponible<br>
+                Precio promedio: $325<br>
+                Total productos: 3
+            </div>
+        </div>
+
+        <!-- Ejercicio 4: String processing -->
+        <div class="exercise-card">
+            <span class="difficulty medio">MEDIO</span>
+            <h2>Ejercicio 1.4: Contador de Letras</h2>
+            
+            <div class="instructions">
+                <strong>🧩 Problema:</strong> Analiza una palabra contando letras específicas usando for loops.
+                <br><br>
+                <strong>📝 Tareas:</strong>
+                <ol>
+                    <li>Crea <code>let palabra = "programacion";</code></li>
+                    <li>Usa for loop para contar cuántas veces aparece la letra "a"</li>
+                    <li>Usa for loop para contar cuántas veces aparece la letra "r"</li>
+                    <li>Crea un string con todas las letras en mayúsculas usando for loop</li>
+                    <li>Muestra la palabra original, la palabra en mayúsculas, y los conteos</li>
+                </ol>
+                <strong>💡 Ayuda:</strong> Usa <code>palabra[i].toUpperCase()</code> para convertir a mayúscula
+            </div>
+            
+            <div class="expected-output">
+                <strong>✅ Resultado esperado:</strong><br>
+                Palabra original: programacion<br>
+                Palabra en mayúsculas: PROGRAMACION<br>
+                Letra 'a' aparece: 2 veces<br>
+                Letra 'r' aparece: 2 veces<br>
+                Total de letras: 12
+            </div>
+        </div>
+
+        <!-- Ejercicio 5: Proyecto integrador -->
+        <div class="exercise-card">
+            <span class="difficulty dificil">DIFÍCIL</span>
+            <h2>Ejercicio 1.5: Sistema de Calificaciones de Clase</h2>
+            
+            <div class="instructions">
+                <strong>🧩 Problema:</strong> Procesa las calificaciones de una clase completa de estudiantes.
+                <br><br>
+                <strong>📝 Tareas:</strong>
+                <ol>
+                    <li>Crea arrays: <code>estudiantes = ["Ana", "Luis", "María", "Carlos"]</code></li>
+                    <li>Crea arrays: <code>examen1 = [85, 90, 78, 92]</code>, <code>examen2 = [88, 85, 82, 89]</code></li>
+                    <li>Calcula el promedio individual de cada estudiante (promedio de sus 2 exámenes)</li>
+                    <li>Calcula el promedio general de la clase</li>
+                    <li>Encuentra la calificación más alta y más baja de la clase</li>
+                    <li>Crea un reporte final con toda la información</li>
+                </ol>
+            </div>
+            
+            <div class="expected-output">
+                <strong>✅ Resultado esperado:</strong><br>
+                Ana: Examen1=85, Examen2=88, Promedio=86.5<br>
+                Luis: Examen1=90, Examen2=85, Promedio=87.5<br>
+                María: Examen1=78, Examen2=82, Promedio=80<br>
+                Carlos: Examen1=92, Examen2=89, Promedio=90.5<br>
+                Promedio de la clase: 86.125<br>
+                Calificación más alta: 92<br>
+                Calificación más baja: 78
+            </div>
+        </div>
+
+        <!-- Tips -->
+        <div class="exercise-card">
+            <h2>💡 Tips para Resolver</h2>
+            <div class="console-tip">
+                <strong>🧠 Estrategias con las herramientas de Clase 5:</strong><br>
+                • <strong>Variables:</strong> Usa nombres descriptivos como <code>totalPrecio</code>, <code>contadorVocales</code><br>
+                • <strong>Arrays:</strong> Recuerda que los índices empiezan en 0<br>
+                • <strong>For loops:</strong> Estructura: <code>for (let i = 0; i < array.length; i++)</code><br>
+                • <strong>Objetos:</strong> Accede con <code>objeto.propiedad</code> o <code>objeto["propiedad"]</code><br>
+                • <strong>Strings:</strong> Actúa como arrays: <code>texto[0]</code> es el primer carácter<br>
+                • <strong>Debug:</strong> Usa <code>console.log()</code> frecuentemente para ver qué está pasando<br><br>
+                <strong>🔧 Abrir consola:</strong> F12 → Console
+            </div>
+        </div>
+    </div>
+</body>
+</html>

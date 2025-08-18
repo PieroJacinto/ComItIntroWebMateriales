@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2: Arrays, Objetos y Métodos Básicos</title>
+    <link rel="stylesheet" href="./ejercicio2_clase5.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🎯 Ejercicio 2: Arrays, Objetos y Métodos Básicos</h1>
+        
+        <!-- Instrucciones generales -->
+        <div class="exercise-card">
+            <h2>📋 Conceptos de esta Clase</h2>
+            <div class="instructions">
+                <strong>📚 Lo que YA dominaste con el Ejercicio 1:</strong>
+                <ul>
+                    <li>Variables: <code>let</code>, <code>const</code></li>
+                    <li>Tipos de datos: string, number, boolean</li>
+                    <li>Arrays básicos: crear, acceder, length</li>
+                    <li>Objetos básicos: creación y acceso a propiedades</li>
+                    <li>For loops tradicionales</li>
+                    <li>Operaciones matemáticas básicas</li>
+                    <li>Concatenación de strings</li>
+                </ul>
+                <strong>🆕 NUEVO - Lo que practicaremos ahora:</strong>
+                <ul>
+                    <li>Métodos de arrays: <code>push()</code>, <code>pop()</code>, <code>indexOf()</code>, <code>includes()</code>, <code>join()</code></li>
+                    <li>Arrays de objetos</li>
+                    <li>Manipulación avanzada de datos</li>                    
+                </ul>
+                <strong>⏰ Tiempo estimado:</strong> 30 minuos
+            </div>
+        </div>
+
+        <!-- Ejercicio 1: Métodos básicos de arrays -->
+        <div class="exercise-card">
+            <span class="difficulty facil">FÁCIL</span>
+            <h2>Ejercicio 2.1: Gestor de Playlist Musical</h2>
+            
+            <div class="instructions">
+                <strong>🧩 Problema:</strong> Crea y gestiona una playlist de música usando métodos básicos de arrays.
+                <br><br>
+                <strong>📝 Tareas:</strong>
+                <ol>
+                    <li>Crea <code>let playlist = ["Imagine", "Bohemian Rhapsody", "Hotel California"];</code></li>
+                    <li>Agrega "Stairway to Heaven" al final usando <code>push()</code></li>
+                    <li>Agrega "Yesterday" al final usando <code>push()</code></li>
+                    <li>Quita la última canción usando <code>pop()</code> y guárdala en una variable</li>
+                    <li>Busca la posición de "Imagine" usando <code>indexOf()</code></li>
+                    <li>Verifica si "Wonderwall" está en la playlist usando <code>includes()</code></li>
+                    <li>Convierte toda la playlist en un string separado por " | " usando <code>join()</code></li>
+                </ol>
+            </div>
+            
+            <div class="expected-output">
+                <strong>✅ Resultado esperado:</strong><br>
+                Playlist inicial: ["Imagine", "Bohemian Rhapsody", "Hotel California"]<br>
+                Después de agregar canciones: ["Imagine", "Bohemian Rhapsody", "Hotel California", "Stairway to Heaven", "Yesterday"]<br>
+                Canción removida: Yesterday<br>
+                Posición de "Imagine": 0<br>
+                ¿Está "Wonderwall"?: false<br>
+                Playlist como string: Imagine | Bohemian Rhapsody | Hotel California | Stairway to Heaven<br>
+                Total de canciones: 4
+            </div>
+        </div>
+
+        <!-- Ejercicio 2: Arrays de objetos -->
+        <div class="exercise-card">
+            <span class="difficulty medio">MEDIO</span>
+            <h2>Ejercicio 2.2: Biblioteca Personal de Libros</h2>
+            
+            <div class="instructions">
+                <strong>🧩 Problema:</strong> Gestiona una colección de libros usando arrays de objetos.
+                <br><br>
+                <strong>📝 Tareas:</strong>
+                <ol>
+                    <li>Crea 3 objetos libro con: titulo, autor, paginas</li>
+                    <li>Guarda los libros en un array llamado <code>biblioteca</code></li>
+                    <li>Usa for loop para mostrar cada libro con formato: "Título por Autor (X páginas)"</li>
+                    <li>Calcula el promedio de páginas de todos los libros</li>
+                    <li>Agrega un nuevo libro usando <code>push()</code></li>                    
+                </ol>
+            </div>
+            
+            <div class="expected-output">
+                <strong>✅ Ejemplo de resultado:</strong><br>
+                1. El Quijote por Miguel de Cervantes (863 páginas) <br>
+                2. Cien años de soledad por Gabriel García Márquez (471 páginas) <br>
+                3. 1984 por George Orwell (328 páginas)<br>
+                4. El Principito por Antoine de Saint-Exupéry (96 páginas)<br>                
+                Promedio de páginas: 439.5<br>                
+            </div>
+        </div>
+
+        <!-- Ejercicio 3: Análisis de datos -->
+        <div class="exercise-card">
+            <span class="difficulty medio">MEDIO</span>
+            <h2>Ejercicio 2.3: Análisis de Ventas Mensuales</h2>
+            
+            <div class="instructions">
+                <strong>🧩 Problema:</strong> Procesa datos de ventas mensuales de una tienda.
+                <br><br>
+                <strong>📝 Tareas:</strong>
+                <ol>
+                    <li>Crea <code>let meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo"];</code></li>
+                    <li>Crea <code>let ventas = [15000, 18500, 22000, 16800, 25000];</code></li>
+                    <li>Usa for loop para mostrar: "Enero: $15,000"</li>
+                    <li>Calcula el total de ventas de todos los meses</li>
+                    <li>Calcula el promedio mensual</li>
+                    <li>Busca la posición del mes "Marzo" usando <code>indexOf()</code></li>
+                    <li>Verifica si "Junio" está en la lista usando <code>includes()</code></li>
+                    <li>Agrega "Junio" con ventas de $19,500 usando <code>push()</code></li>
+                    <li>Crea un reporte como string usando <code>join()</code></li>
+                </ol>
+            </div>
+            
+            <div class="expected-output">
+                <strong>✅ Resultado esperado:</strong><br>
+                Enero: $15,000<br>
+                Febrero: $18,500<br>
+                Marzo: $22,000<br>
+                Abril: $16,800<br>
+                Mayo: $25,000<br>
+                Total ventas: $97,300<br>
+                Promedio mensual: $19,460<br>
+                Posición de "Marzo": 2<br>
+                ¿Está "Junio"?: false<br>
+                Después de agregar Junio: $116,800 total
+            </div>
+        </div>
+
+        <!-- Ejercicio 4: Búsqueda y filtrado -->
+        <div class="exercise-card">
+            <span class="difficulty medio">MEDIO</span>
+            <h2>Ejercicio 2.4: Sistema de Inventario Simple</h2>
+            
+            <div class="instructions">
+                <strong>🧩 Problema:</strong> Gestiona el inventario de una tienda pequeña.
+                <br><br>
+                <strong>📝 Tareas:</strong>
+                <ol>
+                    <li>Crea <code>let productos = ["manzanas", "peras", "naranjas", "plátanos", "uvas"];</code></li>
+                    <li>Crea <code>let stock = [25, 18, 30, 12, 8];</code></li>
+                    <li>Crea <code>let precios = [1.50, 2.00, 1.80, 1.20, 3.50];</code></li>
+                    <li>Usa for loop para mostrar cada producto con: stock y precio</li>
+                    <li>Busca la posición del producto "naranjas" usando <code>indexOf()</code></li>
+                    <li>Verifica si "mangos" está en el inventario usando <code>includes()</code></li>
+                    <li>Calcula el total de unidades en stock (suma de todo el stock)</li>
+                    <li>Calcula el valor total del inventario (stock × precio para cada producto)</li>
+                    <li>Agrega un nuevo producto: "mangos" con stock 15 y precio $2.50</li>
+                    <li>Convierte la lista de productos en un string separado por comas</li>
+                </ol>
+                <strong>💡 Ayuda:</strong> Usa los mismos índices para acceder a productos, stock y precios
+            </div>
+            
+            <div class="expected-output">
+                <strong>✅ Resultado esperado:</strong><br>
+                manzanas: 25 unidades - $1.50 c/u<br>
+                peras: 18 unidades - $2.00 c/u<br>
+                naranjas: 30 unidades - $1.80 c/u<br>
+                plátanos: 12 unidades - $1.20 c/u<br>
+                uvas: 8 unidades - $3.50 c/u<br>
+                Posición de "naranjas": 2<br>
+                ¿Están "mangos"?: false<br>
+                Total unidades en stock: 93<br>
+                Valor total del inventario: $175.90<br>
+                Productos: manzanas,peras,naranjas,plátanos,uvas,mangos
+            </div>
+        </div>
+
+        <!-- Ejercicio 5: Proyecto integrador -->
+        <div class="exercise-card">
+            <span class="difficulty dificil">DIFÍCIL</span>
+            <h2>Ejercicio 2.5: Red Social Básica - Gestión de Posts</h2>
+            
+            <div class="instructions">
+                <strong>🧩 Problema:</strong> Simula una mini red social donde puedes gestionar posts de usuarios.
+                <br><br>
+                <strong>📝 Tareas:</strong>
+                <ol>
+                    <li>Crea objetos post con: usuario, mensaje, likes, fecha (string simple como "2025-01-15")</li>
+                    <li>Crea un array <code>feed</code> con 4 posts diferentes</li>
+                    <li>Usa for loop para mostrar cada post con formato: "@usuario: mensaje (X likes)"</li>
+                    <li>Calcula el total de likes de todos los posts</li>
+                    <li>Calcula el promedio de likes por post</li>                    
+                    <li>Agrega un nuevo post al final del feed usando <code>push()</code></li>
+                    <li>Quita el último post usando <code>pop()</code> y muestra cuál fue</li>                    
+                    <li>Genera un "resumen del feed" con toda la información</li>
+                </ol>
+            </div>
+            
+            <div class="expected-output">
+                <strong>✅ Ejemplo de resultado:</strong><br>
+                @ana_dev: Aprendiendo JavaScript! 🚀 (15 likes)<br>
+                @carlos_code: Primer proyecto terminado 💪 (8 likes)<br>
+                @maria_tech: CSS es increíble ✨ (23 likes)<br>
+                @ana_dev: Arrays son muy útiles 📚 (12 likes)<br>
+                Total likes del feed: 58<br>
+                Promedio likes por post: 14.5<br>                
+                Nuevo post agregado<br> 
+                post removido: ("ultimo post removido") <br>                
+                Posts totales: 4
+            </div>
+        </div>
+
+        <!-- Tips -->
+        <div class="exercise-card">
+            <h2>💡 Tips para Resolver - Métodos Básicos de Arrays</h2>
+            <div class="console-tip">
+                <strong>🔧 Métodos que ya conoces:</strong><br>
+                • <code>array.push(elemento)</code> - Agrega al final<br>
+                • <code>array.pop()</code> - Quita del final (y lo devuelve)<br>
+                • <code>array.indexOf(elemento)</code> - Busca la posición (-1 si no existe)<br>
+                • <code>array.includes(elemento)</code> - Verifica si existe (true/false)<br>
+                • <code>array.join(separador)</code> - Convierte a string<br>
+                • <code>array.length</code> - Cantidad de elementos<br><br>
+                
+                <strong>🧠 Estrategias:</strong><br>
+                • <strong>Arrays paralelos:</strong> Usa el mismo índice para acceder a info relacionada<br>
+                • <strong>Variables de control:</strong> Para guardar el mayor, menor, etc.<br>
+                • <strong>Contadores:</strong> Variables que incrementes en el for loop<br>
+                • <strong>Búsquedas:</strong> Usa indexOf() o includes() antes de manipular<br>
+                • <strong>Debug:</strong> Imprime el array después de cada operación<br><br>
+                
+                <strong>🔧 Abrir consola:</strong> F12 → Console
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mensaje de bienvenida en la consola
+        console.log("🎯 EJERCICIO 2: ARRAYS, OBJETOS Y MÉTODOS BÁSICOS");
+        console.log("=".repeat(50));
+        console.log("💡 Abre las Herramientas de Desarrollador (F12) para empezar a programar!");
+        console.log("📝 Escribe tu código JavaScript aquí en la consola, o crea un archivo .js");
+        console.log("🚀 ¡Recuerda usar console.log() para ver los resultados!");
+    </script>
+</body>
+</html>

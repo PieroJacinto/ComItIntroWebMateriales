@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo: For Loop Tradicional</title>
+    <link rel="stylesheet" href="./ejemplo4-for_loop_tradicional.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🔄 For Loop Tradicional</h1>
+        
+        <!-- Demo 1: ¿Por qué necesitamos loops? -->
+        <div class="demo-card">
+            <h2>1. 🤔 ¿Por Qué Necesitamos Loops?</h2>
+            
+            <div class="explanation">
+                💡 <strong>Problema:</strong> ¿Qué pasa si queremos mostrar cada elemento de un array? ¿Escribimos todo a mano?
+            </div>
+            
+            <div class="code-block">// Forma manual (😫 MUY repetitiva)
+let frutas = ["manzana", "banana", "naranja", "kiwi"];
+
+console.log(frutas[0]); // manzana
+console.log(frutas[1]); // banana
+console.log(frutas[2]); // naranja
+console.log(frutas[3]); // kiwi
+
+// ¿Y si tenemos 100 frutas? 😱</div>
+            
+            <div class="explanation">
+                💡 <strong>Solución:</strong> ¡Los loops nos permiten repetir acciones automáticamente!
+            </div>
+        </div>
+
+        <!-- Demo 2: Estructura del for loop -->
+        <div class="demo-card">
+            <h2>2. 🏗️ Estructura del For Loop</h2>
+            
+            <div class="loop-structure">
+for (inicialización; condición; incremento) {
+    // código a repetir
+}
+            </div>
+            
+            <div class="loop-part">
+                <strong>1. Inicialización:</strong> let i = 0 (empezamos en 0)
+            </div>
+            <div class="loop-part">
+                <strong>2. Condición:</strong> i < array.length (mientras sea menor que el tamaño)
+            </div>
+            <div class="loop-part">
+                <strong>3. Incremento:</strong> i++ (sumamos 1 en cada vuelta)
+            </div>
+            
+            <div class="code-block">// Ejemplo básico
+for (let i = 0; i < 3; i++) {
+    console.log("Vuelta número: " + i);
+}
+
+// Resultado:
+// Vuelta número: 0
+// Vuelta número: 1  
+// Vuelta número: 2</div>
+        </div>
+
+        <!-- Demo 3: For loop con arrays -->
+        <div class="demo-card">
+            <h2>3. 📝 For Loop con Arrays</h2>
+            
+            <div class="code-block">let colores = ["rojo", "verde", "azul"];
+
+// Recorrer todo el array
+for (let i = 0; i < colores.length; i++) {
+    console.log("Color " + i + ": " + colores[i]);
+}
+
+// Resultado:
+// Color 0: rojo
+// Color 1: verde
+// Color 2: azul</div>
+            
+            <div class="explanation">
+                💡 <strong>i</strong> es el índice que va cambiando (0, 1, 2...) y <strong>colores[i]</strong> accede a cada elemento.
+            </div>
+        </div>
+
+        <!-- Demo 4: Visualización paso a paso -->
+        <div class="demo-card">
+            <h2>4. 👀 Visualización Paso a Paso</h2>
+            
+            <div class="loop-visualization">
+                <h3>🔄 Recorriendo el array: ["🍎", "🍌", "🍊"]</h3>
+                <p style="margin-bottom: 40px;">Observa cómo cambia <strong>i</strong> en cada iteración:</p>
+                <div id="loop-visual">
+                    <div class="loop-step">i = 0</div>
+                    <span class="loop-arrow">➜</span>
+                    <div class="loop-step">🍎</div>
+                    <span class="loop-arrow">➜</span>
+                    <div class="loop-step">i = 1</div>
+                    <span class="loop-arrow">➜</span>
+                    <div class="loop-step">🍌</div>
+                    <span class="loop-arrow">➜</span>
+                    <div class="loop-step">i = 2</div>
+                    <span class="loop-arrow">➜</span>
+                    <div class="loop-step">🍊</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Demo 5: Ejemplos prácticos -->
+        <div class="demo-card">
+            <h2>5. 💼 Ejemplos Prácticos</h2>
+            
+            <div class="code-block">// Sumar todos los números de un array
+let numeros = [10, 20, 30];
+let suma = 0;
+
+for (let i = 0; i < numeros.length; i++) {
+    suma = suma + numeros[i];
+}
+console.log("Suma total: " + suma); // 60
+
+// Contar elementos que cumplen una condición
+let edades = [15, 25, 17, 30, 16];
+let mayores = 0;
+
+for (let i = 0; i < edades.length; i++) {
+    if (edades[i] >= 18) {
+        mayores = mayores + 1;
+    }
+}
+console.log("Mayores de edad: " + mayores); // 2</div>
+        </div>
+
+        <!-- Botones interactivos -->
+        <div class="buttons-section">
+            <div class="demo-card">
+                <h2>🎮 Demos Interactivas</h2>
+                
+                <button class="demo-button" onclick="demoBasico()">
+                    🔢 Demo Loop Básico
+                </button>
+                
+                <button class="demo-button" onclick="demoArrays()">
+                    📝 Demo con Arrays
+                </button>
+                
+                <button class="demo-button" onclick="demoSuma()">
+                    ➕ Demo Suma Números
+                </button>
+                
+                <button class="demo-button" onclick="demoAnimado()">
+                    🎨 Demo Animado
+                </button>
+            </div>
+        </div>
+
+        <!-- Loop visual dinámico -->
+        <div class="demo-card">
+            <h2>🎨 Loop Visual Dinámico</h2>
+            <div class="loop-visualization">
+                <p style="margin-bottom: 40px;">Observa el loop en acción:</p>
+                <div id="loop-dinamico">
+                    <div class="loop-step">Esperando...</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Salida de consola -->
+        <div class="demo-card">
+            <h2>📱 Consola de JavaScript</h2>
+            <div class="output-section">
+                <div id="console-output">¡Bienvenido a For Loops! Haz clic en los botones para ver las demos.
+También abre DevTools (F12) para ver la consola real del navegador.
+</div>
+                <button class="clear-button" onclick="limpiarConsola()">🧹 Limpiar Consola</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Función para mostrar en la consola personalizada
+        function escribirConsola(texto) {
+            const consola = document.getElementById('console-output');
+            consola.textContent += texto + '\n';
+            console.log(texto); // También en consola real
+            
+            // Auto-scroll al final
+            consola.scrollTop = consola.scrollHeight;
+        }
+
+        // Función para actualizar el visualizador dinámico
+        function actualizarVisualizador(mensaje, color = '#32cd32') {
+            const contenedor = document.getElementById('loop-dinamico');
+            contenedor.innerHTML = `<div class="loop-step" style="background: ${color};">${mensaje}</div>`;
+        }
+
+        // Demo 1: Loop Básico
+        function demoBasico() {
+            escribirConsola("=== DEMO 1: Loop Básico ===");
+            escribirConsola("for (let i = 0; i < 5; i++)");
+            
+            actualizarVisualizador("Ejecutando loop básico...", '#ff6b6b');
+            
+            for (let i = 0; i < 5; i++) {
+                escribirConsola("Vuelta " + i + ": ¡Hola mundo!");
+            }
+            
+            escribirConsola("El loop terminó cuando i llegó a 5");
+            actualizarVisualizador("Loop básico completado ✅");
+            escribirConsola("");
+        }
+
+        // Demo 2: Loop con Arrays
+        function demoArrays() {
+            escribirConsola("=== DEMO 2: Loop con Arrays ===");
+            
+            let animales = ["perro", "gato", "pájaro", "pez"];
+            escribirConsola("Array: " + JSON.stringify(animales));
+            escribirConsola("Recorriendo con for loop:");
+            
+            actualizarVisualizador("Recorriendo array de animales...", '#9b59b6');
+            
+            for (let i = 0; i < animales.length; i++) {
+                escribirConsola("Posición " + i + ": " + animales[i]);
+            }
+            
+            escribirConsola("Total de animales: " + animales.length);
+            actualizarVisualizador("Array recorrido completo ✅");
+            escribirConsola("");
+        }
+
+        // Demo 3: Suma con Loop
+        function demoSuma() {
+            escribirConsola("=== DEMO 3: Suma con Loop ===");
+            
+            let precios = [100, 250, 75, 300];
+            escribirConsola("Precios: " + JSON.stringify(precios));
+            
+            let total = 0;
+            escribirConsola("Calculando total paso a paso:");
+            
+            actualizarVisualizador("Calculando suma total...", '#e67e22');
+            
+            for (let i = 0; i < precios.length; i++) {
+                total = total + precios[i];
+                escribirConsola("Paso " + (i + 1) + ": " + total + " (agregamos " + precios[i] + ")");
+            }
+            
+            escribirConsola("Total final: $" + total);
+            actualizarVisualizador("Suma completada: $" + total + " ✅");
+            escribirConsola("");
+        }
+
+        // Demo 4: Loop Animado
+        function demoAnimado() {
+            escribirConsola("=== DEMO 4: Loop Animado ===");
+            escribirConsola("Mira el visualizador dinámico...");
+            
+            let frutas = ["🍎", "🍌", "🍊", "🥝", "🍇"];
+            let contenedor = document.getElementById('loop-dinamico');
+            let delay = 0;
+            
+            // Limpiar contenedor
+            contenedor.innerHTML = '<div class="loop-step">Iniciando loop...</div>';
+            
+            for (let i = 0; i < frutas.length; i++) {
+                setTimeout(() => {
+                    let html = `
+                        <div class="loop-step loop-current">i = ${i}</div>
+                        <span class="loop-arrow">➜</span>
+                        <div class="loop-step loop-current">${frutas[i]}</div>
+                    `;
+                    contenedor.innerHTML = html;
+                    escribirConsola("Iteración " + i + ": " + frutas[i]);
+                    
+                    if (i === frutas.length - 1) {
+                        setTimeout(() => {
+                            contenedor.innerHTML = '<div class="loop-step">¡Loop completado!</div>';
+                            escribirConsola("¡Loop terminado!");
+                            escribirConsola("");
+                        }, 1000);
+                    }
+                }, delay);
+                delay += 1200;
+            }
+        }
+
+        // Limpiar consola
+        function limpiarConsola() {
+            document.getElementById('console-output').textContent = 'Consola limpia ✨\n';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+/*  header */
+
+
+/*  footer */
+
+
+/* medias querys */
+
+.caja1{
+    height: 200px;
+    border: solid black 4px;
+    background-color: blue;
+}
+.caja2{
+    height: 200px;
+    border: solid black 4px;
+    background-color: pink;
+}
+
+
+
+@media (min-width: 768px){
+    .caja1{
+        background-color: yellow;
+    }
+   
+}
+
+
+@media (min-width: 1200px){
+    .caja1{
+        background-color: blueviolet;
+    }
+}
+

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo: Variables y Tipos de Datos</title>
+    <link rel="stylesheet" href="./ejemplo1-variables_tipos.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🎯 Variables y Tipos de Datos</h1>
+        
+        <!-- Demo 1: Variables básicas -->
+        <div class="demo-card">
+            <h2>1. 📦 Variables - Cajas que guardan información</h2>
+            
+            <div class="code-block">// Crear variables con let
+let nombre = "María";
+let edad = 25;
+let esEstudiante = true;
+
+// Mostrar en consola
+console.log("Nombre:", nombre);
+console.log("Edad:", edad);
+console.log("Es estudiante:", esEstudiante);</div>
+            
+            <div class="explanation">
+                💡 <strong>Analogía:</strong> Las variables son como cajas etiquetadas donde guardamos diferentes tipos de información.
+            </div>
+        </div>
+
+        <!-- Demo 2: Tipos de datos -->
+        <div class="demo-card">
+            <h2>2. 🏷️ Tipos de Datos Fundamentales</h2>
+            
+            <div class="code-block">// String (texto) - siempre entre comillas
+let mensaje = "¡Hola mundo!";
+let ciudad = "Buenos Aires";
+
+// Number (números) - sin comillas
+let precio = 150.50;
+let cantidad = 3;
+
+// Boolean (verdadero/falso)
+let activo = true;
+let terminado = false;</div>
+            
+            <div class="explanation">
+                💡 <strong>Recuerda:</strong> Texto = comillas, Números = sin comillas, Boolean = true/false
+            </div>
+        </div>
+
+        <!-- Demo 3: Const vs Let -->
+        <div class="demo-card">
+            <h2>3. 🔒 Const vs Let</h2>
+            
+            <div class="code-block">// const - NO se puede cambiar después
+const PI = 3.14159;
+const NOMBRE_EMPRESA = "ComuIT";
+
+// let - SÍ se puede cambiar
+let contador = 0;
+contador = contador + 1; // Ahora vale 1
+contador = contador + 1; // Ahora vale 2</div>
+            
+            <div class="explanation">
+                💡 <strong>Usa const</strong> para valores que no cambiarán, <strong>let</strong> para valores que sí pueden cambiar.
+            </div>
+        </div>
+
+        <!-- Demo 4: Operaciones -->
+        <div class="demo-card">
+            <h2>4. ➕ Operaciones con Variables</h2>
+            
+            <div class="code-block">// Concatenar strings (unir texto)
+let saludo = "Hola " + nombre + "!";
+let informacion = "Tienes " + edad + " años";
+
+// Operaciones matemáticas
+let suma = 10 + 5;        // 15
+let multiplicacion = 4 * 3; // 12
+let division = 20 / 4;     // 5
+
+// Cambiar valores
+edad = edad + 1; // Cumplir años</div>
+        </div>
+
+        <!-- Botones interactivos -->
+        <div class="buttons-section">
+            <div class="demo-card">
+                <h2>🎮 Demos Interactivas</h2>
+                
+                <button class="demo-button" onclick="demoVariablesBasicas()">
+                    📦 Demo Variables Básicas
+                </button>
+                
+                <button class="demo-button" onclick="demoTiposDatos()">
+                    🏷️ Demo Tipos de Datos
+                </button>
+                
+                <button class="demo-button" onclick="demoConstLet()">
+                    🔒 Demo Const vs Let
+                </button>
+                
+                <button class="demo-button" onclick="demoOperaciones()">
+                    ➕ Demo Operaciones
+                </button>
+            </div>
+        </div>
+
+        <!-- Salida de consola -->
+        <div class="demo-card">
+            <h2>📱 Consola de JavaScript</h2>
+            <div class="output-section">
+                <div id="console-output">¡Bienvenido! Haz clic en los botones para ver las demos.
+También abre DevTools (F12) para ver la consola real del navegador.
+</div>
+                <button class="clear-button" onclick="limpiarConsola()">🧹 Limpiar Consola</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Función para mostrar en la consola personalizada
+        function escribirConsola(texto) {
+            const consola = document.getElementById('console-output');
+            consola.textContent += texto + '\n';
+            console.log(texto); // También en consola real
+            
+            // Auto-scroll al final
+            consola.scrollTop = consola.scrollHeight;
+        }
+
+        // Demo 1: Variables Básicas
+        function demoVariablesBasicas() {
+            escribirConsola("=== DEMO 1: Variables Básicas ===");
+            
+            let nombre = "María";
+            let edad = 25;
+            let esEstudiante = true;
+            
+            escribirConsola("Nombre: " + nombre);
+            escribirConsola("Edad: " + edad);
+            escribirConsola("Es estudiante: " + esEstudiante);
+            escribirConsola("Tipo de nombre: " + typeof nombre);
+            escribirConsola("Tipo de edad: " + typeof edad);
+            escribirConsola("Tipo de esEstudiante: " + typeof esEstudiante);
+            escribirConsola("");
+        }
+
+        // Demo 2: Tipos de Datos
+        function demoTiposDatos() {
+            escribirConsola("=== DEMO 2: Tipos de Datos ===");
+            
+            let mensaje = "¡Hola mundo!";
+            let ciudad = "Buenos Aires";
+            let precio = 150.50;
+            let cantidad = 3;
+            let activo = true;
+            let terminado = false;
+            
+            escribirConsola("String: " + mensaje + " (tipo: " + typeof mensaje + ")");
+            escribirConsola("String: " + ciudad + " (tipo: " + typeof ciudad + ")");
+            escribirConsola("Number: " + precio + " (tipo: " + typeof precio + ")");
+            escribirConsola("Number: " + cantidad + " (tipo: " + typeof cantidad + ")");
+            escribirConsola("Boolean: " + activo + " (tipo: " + typeof activo + ")");
+            escribirConsola("Boolean: " + terminado + " (tipo: " + typeof terminado + ")");
+            escribirConsola("");
+        }
+
+        // Demo 3: Const vs Let
+        function demoConstLet() {
+            escribirConsola("=== DEMO 3: Const vs Let ===");
+            
+            const PI = 3.14159;
+            const NOMBRE_EMPRESA = "ComuIT";
+            
+            escribirConsola("const PI = " + PI);
+            escribirConsola("const NOMBRE_EMPRESA = " + NOMBRE_EMPRESA);
+            
+            let contador = 0;
+            escribirConsola("let contador inicial = " + contador);
+            
+            contador = contador + 1;
+            escribirConsola("contador después de +1 = " + contador);
+            
+            contador = contador + 1;
+            escribirConsola("contador después de +1 otra vez = " + contador);
+            
+            escribirConsola("❌ const no se puede cambiar después de crearse");
+            escribirConsola("");
+        }
+
+        // Demo 4: Operaciones
+        function demoOperaciones() {
+            escribirConsola("=== DEMO 4: Operaciones ===");
+            
+            let nombre = "Juan";
+            let edad = 20;
+            
+            let saludo = "Hola " + nombre + "!";
+            let informacion = "Tienes " + edad + " años";
+            
+            escribirConsola("Concatenación de strings:");
+            escribirConsola(saludo);
+            escribirConsola(informacion);
+            
+            let suma = 10 + 5;
+            let multiplicacion = 4 * 3;
+            let division = 20 / 4;
+            
+            escribirConsola("Operaciones matemáticas:");
+            escribirConsola("10 + 5 = " + suma);
+            escribirConsola("4 * 3 = " + multiplicacion);
+            escribirConsola("20 / 4 = " + division);
+            
+            escribirConsola("Cambio de valores:");
+            escribirConsola("Edad antes: " + edad);
+            edad = edad + 1;
+            escribirConsola("Edad después: " + edad);
+            escribirConsola("");
+        }
+
+        // Limpiar consola
+        function limpiarConsola() {
+            document.getElementById('console-output').textContent = 'Consola limpia ✨\n';
+        }
+    </script>
+</body>
+</html>
