@@ -106,6 +106,8 @@ console.log("Catalogo de productos:");
 for(let i = 0; i < listaProductos.length; i++){
     let producto = listaProductos[i];
     console.log("producto: " + producto.nombre + ", precio: $" + producto.precio + ", categoria:" + producto.categoria + ", disponible: " + producto.disponible );
+
+    console.log( `producto: ${producto.nombre}, precio: $${producto.precio}, categoria: ${producto.categoria}, disponible: ${producto.disponible}`);    
 }
 
 let sumaPrecios = 0;
