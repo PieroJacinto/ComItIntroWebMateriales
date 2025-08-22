@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo 3: Loops Avanzados - Clase 6</title>
+    <link rel="stylesheet" href="./ejemplo-3-loops-avanzados.css">
+</head>
+<body>
+    <div class="container">
+        <!-- HEADER -->
+        <div class="header">
+            <h1>🔄 LOOPS AVANZADOS en JavaScript</h1>
+            <p>Aprende While y For...of loops para situaciones especiales y código más elegante</p>
+        </div>
+
+        <!-- DEMO 1: REPASO FOR TRADICIONAL -->
+        <div class="demo-section">
+            <h2>📚 Repaso: For Tradicional (Clase 5)</h2>
+            <p>Ya conoces el for loop tradicional. Es perfecto cuando necesitas el índice o un control preciso:</p>
+            
+            <div class="code-block">// For tradicional - cuando necesitas el índice
+let proyectos = ["Portfolio", "Blog", "Tienda"];
+
+for (let i = 0; i < proyectos.length; i++) {
+    console.log(`Proyecto ${i + 1}: ${proyectos[i]}`);
+}
+
+// También útil para rangos específicos
+for (let j = 1; j <= 5; j++) {
+    console.log(`Tabla del 3: 3 x ${j} = ${3 * j}`);
+}</div>
+
+            <div class="demo-controls">
+                <button class="btn" onclick="demoForTradicional()">📚 Probar For Tradicional</button>
+            </div>
+
+            <div class="console-output" id="consoleForTradicional">Presiona el botón para ver el resultado...</div>
+        </div>
+
+        <!-- DEMO 2: WHILE LOOPS -->
+        <div class="demo-section">
+            <h2>⏳ Demo 1: While Loops</h2>
+            <p><strong>While</strong> es perfecto cuando <em>no sabes cuántas iteraciones necesitas</em> de antemano.</p>
+            
+            <div class="code-block">// EJEMPLO 1: Buscar hasta encontrar algo
+let nombres = ["Ana", "Carlos", "María", "Pedro"];
+let buscando = "María";
+let encontrado = false;
+let contador = 0;
+
+while (!encontrado && contador < nombres.length) {
+    if (nombres[contador] === buscando) {
+        console.log(`¡Encontré a ${buscando} en la posición ${contador}!`);
+        encontrado = true;
+    } else {
+        console.log(`Revisando: ${nombres[contador]} - no es ${buscando}`);
+    }
+    contador++;
+}
+
+// EJEMPLO 2: Contador hasta una condición
+let puntos = 0;
+let nivel = 1;
+
+while (puntos < 100) {
+    puntos += Math.floor(Math.random() * 20) + 1; // Entre 1 y 20 puntos
+    console.log(`Nivel ${nivel}: ${puntos} puntos`);
+    nivel++;
+}
+console.log(`¡Alcanzaste 100 puntos en ${nivel - 1} niveles!`);</div>
+
+            <div class="demo-controls">
+                <button class="btn" onclick="demoWhileLoops()">⏳ Probar While Loops</button>
+            </div>
+
+            <div class="console-output" id="consoleWhileLoops">Presiona el botón para ver el resultado...</div>
+
+            <div class="warning-box">
+                <strong>⚠️ CUIDADO:</strong> Asegúrate de que la condición del while eventualmente se vuelva false, o tendrás un bucle infinito que puede bloquear tu navegador.
+            </div>
+        </div>
+
+        <!-- DEMO 3: FOR...OF LOOPS -->
+        <div class="demo-section">
+            <h2>✨ Demo 2: For...of Loops</h2>
+            <p><strong>For...of</strong> es la forma más elegante de iterar arrays cuando solo necesitas los valores:</p>
+            
+            <div class="code-block">// EJEMPLO 1: Iteración simple y elegante
+let tecnologias = ["HTML", "CSS", "JavaScript", "React"];
+
+console.log("=== Con for...of (ELEGANTE) ===");
+for (let tecnologia of tecnologias) {
+    console.log(`Aprendiendo: ${tecnologia}`);
+}
+
+// EJEMPLO 2: Trabajar con objetos en arrays
+let estudiantes = [
+    { nombre: "Ana", nota: 85 },
+    { nombre: "Carlos", nota: 92 },
+    { nombre: "María", nota: 78 }
+];
+
+console.log("\n=== Notas de estudiantes ===");
+for (let estudiante of estudiantes) {
+    let estado = estudiante.nota >= 80 ? "Aprobado ✅" : "Necesita mejorar ⚠️";
+    console.log(`${estudiante.nombre}: ${estudiante.nota} - ${estado}`);
+}
+
+// EJEMPLO 3: Sumar todos los valores
+let precios = [15.50, 23.75, 8.20, 45.00];
+let total = 0;
+
+for (let precio of precios) {
+    total += precio;
+}
+console.log(`\nTotal de compra: $${total.toFixed(2)}`);</div>
+
+            <div class="demo-controls">
+                <button class="btn" onclick="demoForOfLoops()">✨ Probar For...of Loops</button>
+            </div>
+
+            <div class="console-output" id="consoleForOfLoops">Presiona el botón para ver el resultado...</div>
+        </div>
+
+        <!-- DEMO 4: COMPARACIÓN PRÁCTICA -->
+        <div class="demo-section">
+            <h2>⚖️ Demo 3: ¿Cuándo usar cada loop?</h2>
+            <p>Veamos el mismo problema resuelto con diferentes tipos de loops:</p>
+            
+            <div class="comparison-grid">
+                <div class="comparison-item">
+                    <h4>🔢 FOR TRADICIONAL</h4>
+                    <div class="code-block">let frutas = ["🍎", "🍌", "🍊"];
+
+// Cuando necesitas el índice
+for (let i = 0; i < frutas.length; i++) {
+    console.log(`${i}: ${frutas[i]}`);
+}</div>
+                </div>
+
+                <div class="comparison-item">
+                    <h4>✨ FOR...OF</h4>
+                    <div class="code-block">let frutas = ["🍎", "🍌", "🍊"];
+
+// Cuando solo necesitas el valor
+for (let fruta of frutas) {
+    console.log(`Me gusta: ${fruta}`);
+}</div>
+                </div>
+            </div>
+
+            <div class="comparison-item" style="margin-top: 2rem;">
+                <h4>⏳ WHILE</h4>
+                <div class="code-block">let frutas = ["🍎", "🍌", "🍊"];
+let frutaFavorita = "🍌";
+let indice = 0;
+let encontrada = false;
+
+// Cuando no sabes cuántas iteraciones necesitas
+while (indice < frutas.length && !encontrada) {
+    if (frutas[indice] === frutaFavorita) {
+        console.log(`¡Encontré mi fruta favorita en posición ${indice}!`);
+        encontrada = true;
+    }
+    indice++;
+}</div>
+            </div>
+
+            <div class="demo-controls">
+                <button class="btn" onclick="demoComparacionLoops()">⚖️ Ver Comparación</button>
+            </div>
+
+            <div class="console-output" id="consoleComparacionLoops">Presiona el botón para ver el resultado...</div>
+        </div>
+
+        <!-- DEMO 5: CASOS PRÁCTICOS -->
+        <div class="demo-section">
+            <h2>🎯 Demo 4: Casos Prácticos</h2>
+            <p>Ejemplos reales donde estos loops son útiles en tu proyecto:</p>
+            
+            <div class="code-block">// CASO 1: Validar formulario hasta que esté correcto (while)
+function validarPassword() {
+    let intentos = 0;
+    let passwordCorrecta = false;
+    let maxIntentos = 3;
+    
+    while (!passwordCorrecta && intentos < maxIntentos) {
+        intentos++;
+        console.log(`Intento ${intentos} de validación...`);
+        
+        // Simular validación
+        let esValida = Math.random() > 0.5;
+        if (esValida) {
+            console.log("✅ Password válida");
+            passwordCorrecta = true;
+        } else {
+            console.log("❌ Password inválida");
+        }
+    }
+    
+    if (!passwordCorrecta) {
+        console.log("🚫 Máximo de intentos alcanzado");
+    }
+}
+
+// CASO 2: Mostrar navegación (for...of)
+let paginasMenu = [
+    { nombre: "Inicio", url: "index.html" },
+    { nombre: "Sobre mí", url: "about.html" },
+    { nombre: "Proyectos", url: "projects.html" },
+    { nombre: "Contacto", url: "contact.html" }
+];
+
+console.log("\n=== Generando navegación ===");
+for (let pagina of paginasMenu) {
+    console.log(`<a href="${pagina.url}">${pagina.nombre}</a>`);
+}
+
+// CASO 3: Estadísticas de proyecto (for...of)
+let proyectos = [
+    { nombre: "Portfolio", lenguajes: ["HTML", "CSS", "JS"], completado: true },
+    { nombre: "Blog", lenguajes: ["HTML", "CSS"], completado: false },
+    { nombre: "Tienda", lenguajes: ["HTML", "CSS", "JS", "React"], completado: false }
+];
+
+let completados = 0;
+let totalLenguajes = 0;
+
+for (let proyecto of proyectos) {
+    if (proyecto.completado) {
+        completados++;
+    }
+    totalLenguajes += proyecto.lenguajes.length;
+    console.log(`${proyecto.nombre}: ${proyecto.lenguajes.join(", ")}`);
+}
+
+console.log(`\n📊 Estadísticas:`);
+console.log(`Proyectos completados: ${completados}/${proyectos.length}`);
+console.log(`Promedio de lenguajes por proyecto: ${(totalLenguajes / proyectos.length).toFixed(1)}`);</div>
+
+            <div class="demo-controls">
+                <button class="btn" onclick="demoCasosPracticos()">🎯 Ver Casos Prácticos</button>
+            </div>
+
+            <div class="console-output" id="consoleCasosPracticos">Presiona el botón para ver el resultado...</div>
+        </div>
+
+        <!-- GUÍA DE DECISIÓN -->
+        <div class="demo-section">
+            <h2>🧭 Guía de Decisión: ¿Qué loop usar?</h2>
+            
+            <div class="highlight-box">
+                <h3>🔢 Usa FOR TRADICIONAL cuando:</h3>
+                <ul>
+                    <li>✅ Necesitas el índice de cada elemento</li>
+                    <li>✅ Quieres iterar con un patrón específico (de 2 en 2, hacia atrás, etc.)</li>
+                    <li>✅ Necesitas control preciso sobre el inicio, fin y incremento</li>
+                </ul>
+            </div>
+
+            <div class="highlight-box">
+                <h3>✨ Usa FOR...OF cuando:</h3>
+                <ul>
+                    <li>✅ Solo necesitas los valores del array</li>
+                    <li>✅ Quieres código más limpio y legible</li>
+                    <li>✅ Vas a procesar todos los elementos del array</li>
+                </ul>
+            </div>
+
+            <div class="highlight-box">
+                <h3>⏳ Usa WHILE cuando:</h3>
+                <ul>
+                    <li>✅ No sabes cuántas iteraciones necesitas</li>
+                    <li>✅ La condición de parada es compleja</li>
+                    <li>✅ Necesitas buscar algo específico</li>
+                    <li>✅ Quieres validar hasta que algo sea correcto</li>
+                </ul>
+            </div>
+
+            <div class="warning-box">
+                <h3>🎯 Regla de oro:</h3>
+                <p><strong>Elige el loop que haga tu código más claro y fácil de entender.</strong> En la próxima clase veremos que hay métodos como forEach, map y filter que pueden ser aún más elegantes para ciertos casos.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        /* 
+        ===================================
+        NOTAS PARA EL PROFESOR - TIMING
+        ===================================
+        
+        🎯 DEMO 1 (Repaso FOR): 3-4 minutos
+        - Rápido repaso de for tradicional
+        - Conectar con conocimiento previo
+        
+        🎯 DEMO 2 (While): 7-8 minutos
+        - Explicar concepto de "no saber cuántas iteraciones"
+        - Enfatizar importancia de evitar bucles infinitos
+        - Mostrar casos donde while es mejor que for
+        
+        🎯 DEMO 3 (For...of): 5-6 minutos
+        - Mostrar elegancia del código
+        - Comparar directamente con for tradicional
+        - Explicar cuándo es mejor usar cada uno
+        
+        🎯 DEMO 4 (Comparación): 4-5 minutos
+        - Mismo problema, tres soluciones
+        - Enfatizar las diferencias
+        
+        🎯 DEMO 5 (Casos prácticos): 5-6 minutos
+        - Conectar con proyectos reales
+        - Ejemplos que usarán en su proyecto personal
+        
+        TOTAL: ~25 minutos (perfecto para la sección de 25 min del cronograma)
+        
+        ===================================
+        PUNTOS CLAVE A ENFATIZAR:
+        ===================================
+        
+        1. While para condiciones dinámicas
+        2. For...of para código más elegante  
+        3. For tradicional cuando necesitas índice
+        4. Siempre evitar bucles infinitos
+        5. Elegir el loop que hace el código más claro
+        
+        ===================================
+        PREPARACIÓN PARA FUNCIONES (Clase 6):
+        ===================================
+        
+        Estos ejemplos ya usan algunas funciones simples que se explicarán
+        en la siguiente sección de la clase. Los estudiantes verán que
+        podemos organizar este código en funciones reutilizables.
+        */
+
+        // ===== FUNCIONES PARA DEMOS =====
+
+        function demoForTradicional() {
+            const output = document.getElementById('consoleForTradicional');
+            output.textContent = ''; // Limpiar
+            
+            let resultado = '';
+            
+            // Demo 1: For con índice
+            resultado += '=== FOR TRADICIONAL - Con índice ===\n';
+            let proyectos = ["Portfolio", "Blog", "Tienda"];
+            
+            for (let i = 0; i < proyectos.length; i++) {
+                resultado += `Proyecto ${i + 1}: ${proyectos[i]}\n`;
+            }
+            
+            resultado += '\n=== FOR TRADICIONAL - Tabla de multiplicar ===\n';
+            for (let j = 1; j <= 5; j++) {
+                resultado += `Tabla del 3: 3 x ${j} = ${3 * j}\n`;
+            }
+            
+            output.textContent = resultado;
+        }
+
+        function demoWhileLoops() {
+            const output = document.getElementById('consoleWhileLoops');
+            output.textContent = '';
+            
+            let resultado = '';
+            
+            // Demo 1: Buscar hasta encontrar
+            resultado += '=== WHILE LOOP - Buscar elemento ===\n';
+            let nombres = ["Ana", "Carlos", "María", "Pedro"];
+            let buscando = "María";
+            let encontrado = false;
+            let contador = 0;
+            
+            while (!encontrado && contador < nombres.length) {
+                if (nombres[contador] === buscando) {
+                    resultado += `¡Encontré a ${buscando} en la posición ${contador}!\n`;
+                    encontrado = true;
+                } else {
+                    resultado += `Revisando: ${nombres[contador]} - no es ${buscando}\n`;
+                }
+                contador++;
+            }
+            
+            // Demo 2: Contador dinámico
+            resultado += '\n=== WHILE LOOP - Puntos aleatorios ===\n';
+            let puntos = 0;
+            let nivel = 1;
+            
+            while (puntos < 100) {
+                let puntosGanados = Math.floor(Math.random() * 20) + 1;
+                puntos += puntosGanados;
+                resultado += `Nivel ${nivel}: +${puntosGanados} puntos (Total: ${puntos})\n`;
+                nivel++;
+            }
+            resultado += `¡Alcanzaste 100+ puntos en ${nivel - 1} niveles!\n`;
+            
+            output.textContent = resultado;
+        }
+
+        function demoForOfLoops() {
+            const output = document.getElementById('consoleForOfLoops');
+            output.textContent = '';
+            
+            let resultado = '';
+            
+            // Demo 1: Iteración simple
+            resultado += '=== FOR...OF - Tecnologías ===\n';
+            let tecnologias = ["HTML", "CSS", "JavaScript", "React"];
+            
+            for (let tecnologia of tecnologias) {
+                resultado += `Aprendiendo: ${tecnologia}\n`;
+            }
+            
+            // Demo 2: Objetos en arrays
+            resultado += '\n=== FOR...OF - Estudiantes ===\n';
+            let estudiantes = [
+                { nombre: "Ana", nota: 85 },
+                { nombre: "Carlos", nota: 92 },
+                { nombre: "María", nota: 78 }
+            ];
+            
+            for (let estudiante of estudiantes) {
+                let estado = estudiante.nota >= 80 ? "Aprobado ✅" : "Necesita mejorar ⚠️";
+                resultado += `${estudiante.nombre}: ${estudiante.nota} - ${estado}\n`;
+            }
+            
+            // Demo 3: Sumar valores
+            resultado += '\n=== FOR...OF - Cálculo total ===\n';
+            let precios = [15.50, 23.75, 8.20, 45.00];
+            let total = 0;
+            
+            for (let precio of precios) {
+                total += precio;
+                resultado += `Agregando: $${precio.toFixed(2)}\n`;
+            }
+            resultado += `Total de compra: $${total.toFixed(2)}\n`;
+            
+            output.textContent = resultado;
+        }
+
+        function demoComparacionLoops() {
+            const output = document.getElementById('consoleComparacionLoops');
+            output.textContent = '';
+            
+            let resultado = '';
+            let frutas = ["🍎", "🍌", "🍊"];
+            
+            // For tradicional
+            resultado += '=== FOR TRADICIONAL (con índice) ===\n';
+            for (let i = 0; i < frutas.length; i++) {
+                resultado += `${i}: ${frutas[i]}\n`;
+            }
+            
+            // For...of
+            resultado += '\n=== FOR...OF (solo valores) ===\n';
+            for (let fruta of frutas) {
+                resultado += `Me gusta: ${fruta}\n`;
+            }
+            
+            // While
+            resultado += '\n=== WHILE (buscar específico) ===\n';
+            let frutaFavorita = "🍌";
+            let indice = 0;
+            let encontrada = false;
+            
+            while (indice < frutas.length && !encontrada) {
+                if (frutas[indice] === frutaFavorita) {
+                    resultado += `¡Encontré mi fruta favorita en posición ${indice}!\n`;
+                    encontrada = true;
+                } else {
+                    resultado += `Revisando posición ${indice}: ${frutas[indice]}\n`;
+                }
+                indice++;
+            }
+            
+            resultado += '\n💡 Cada loop tiene su propósito específico\n';
+            
+            output.textContent = resultado;
+        }
+
+        function demoCasosPracticos() {
+            const output = document.getElementById('consoleCasosPracticos');
+            output.textContent = '';
+            
+            let resultado = '';
+            
+            // Caso 1: Validación con while
+            resultado += '=== CASO 1: Validación con WHILE ===\n';
+            let intentos = 0;
+            let passwordCorrecta = false;
+            let maxIntentos = 3;
+            
+            while (!passwordCorrecta && intentos < maxIntentos) {
+                intentos++;
+                resultado += `Intento ${intentos} de validación...\n`;
+                
+                // Simular validación aleatoria
+                let esValida = Math.random() > 0.6; // 40% probabilidad
+                if (esValida) {
+                    resultado += "✅ Password válida\n";
+                    passwordCorrecta = true;
+                } else {
+                    resultado += "❌ Password inválida\n";
+                }
+            }
+            
+            if (!passwordCorrecta) {
+                resultado += "🚫 Máximo de intentos alcanzado\n";
+            }
+            
+            // Caso 2: Navegación
+            resultado += '\n=== CASO 2: Navegación con FOR...OF ===\n';
+            let paginasMenu = [
+                { nombre: "Inicio", url: "index.html" },
+                { nombre: "Sobre mí", url: "about.html" },
+                { nombre: "Proyectos", url: "projects.html" },
+                { nombre: "Contacto", url: "contact.html" }
+            ];
+            
+            for (let pagina of paginasMenu) {
+                resultado += `<a href="${pagina.url}">${pagina.nombre}</a>\n`;
+            }
+            
+            // Caso 3: Estadísticas
+            resultado += '\n=== CASO 3: Estadísticas de proyectos ===\n';
+            let proyectos = [
+                { nombre: "Portfolio", lenguajes: ["HTML", "CSS", "JS"], completado: true },
+                { nombre: "Blog", lenguajes: ["HTML", "CSS"], completado: false },
+                { nombre: "Tienda", lenguajes: ["HTML", "CSS", "JS", "React"], completado: false }
+            ];
+            
+            let completados = 0;
+            let totalLenguajes = 0;
+            
+            for (let proyecto of proyectos) {
+                if (proyecto.completado) {
+                    completados++;
+                }
+                totalLenguajes += proyecto.lenguajes.length;
+                resultado += `${proyecto.nombre}: ${proyecto.lenguajes.join(", ")}\n`;
+            }
+            
+            resultado += `\n📊 Estadísticas:\n`;
+            resultado += `Proyectos completados: ${completados}/${proyectos.length}\n`;
+            resultado += `Promedio de lenguajes: ${(totalLenguajes / proyectos.length).toFixed(1)}\n`;
+            
+            output.textContent = resultado;
+        }
+
+        // ===== FUNCIÓN PARA LIMPIAR TODAS LAS CONSOLAS =====
+        function limpiarConsolas() {
+            const consolas = [
+                'consoleForTradicional',
+                'consoleWhileLoops', 
+                'consoleForOfLoops',
+                'consoleComparacionLoops',
+                'consoleCasosPracticos'
+            ];
+            
+            consolas.forEach(id => {
+                const elemento = document.getElementById(id);
+                if (elemento) {
+                    elemento.textContent = 'Consola limpiada...';
+                }
+            });
+        }
+
+        // ===== EJECUTAR DEMO AUTOMÁTICO AL CARGAR (OPCIONAL) =====
+        window.addEventListener('load', function() {
+            console.log('🔄 Ejemplo 3: Loops Avanzados cargado correctamente');
+            console.log('💡 Usa los botones para explorar diferentes tipos de loops');
+            
+            // Mostrar mensaje inicial en la primera consola
+            setTimeout(() => {
+                const primeraConsola = document.getElementById('consoleForTradicional');
+                if (primeraConsola && primeraConsola.textContent === 'Presiona el botón para ver el resultado...') {
+                    primeraConsola.textContent = '👆 Presiona el botón azul para comenzar la demostración\n\n💡 Este ejemplo muestra las diferencias entre:\n• For tradicional (Clase 5)\n• While loops (nuevo)\n• For...of loops (nuevo)';
+                }
+            }, 1000);
+        });
+
+        /* 
+        ===================================
+        NOTAS ADICIONALES PARA EL PROFESOR
+        ===================================
+        
+        🎯 FLUJO RECOMENDADO DE LA DEMOSTRACIÓN:
+        
+        1. COMENZAR con repaso de for tradicional (conectar con Clase 5)
+        2. INTRODUCIR while con ejemplos claros de "no saber cuántas veces"
+        3. MOSTRAR for...of como evolución elegante del for tradicional
+        4. COMPARAR los tres tipos lado a lado
+        5. CONECTAR con casos reales del proyecto personal
+        
+        🚨 ERRORES COMUNES A PREVENIR:
+        
+        • Bucles infinitos en while (siempre mencionar)
+        • Confundir for...of con for...in (solo arrays por ahora)
+        • Pensar que for...of es siempre mejor (necesidad del índice)
+        
+        🔗 CONEXIÓN CON RESTO DE CLASE 6:
+        
+        • Los casos prácticos usan funciones básicas (siguiente sección)
+        • Las validaciones usan condicionales (sección anterior)
+        • Los ejemplos preparan para métodos de arrays con callbacks
+        
+        ⏰ TIMING SUGERIDO:
+        
+        • Demo 1 (Repaso): 3 min
+        • Demo 2 (While): 8 min  
+        • Demo 3 (For...of): 6 min
+        • Demo 4 (Comparación): 4 min
+        • Demo 5 (Casos prácticos): 4 min
+        • TOTAL: 25 minutos ✅
+        
+        📝 PREGUNTAS PARA VERIFICAR COMPRENSIÓN:
+        
+        1. "¿Cuándo usarían while en lugar de for?"
+        2. "¿Qué ventaja tiene for...of sobre for tradicional?"
+        3. "¿En qué casos todavía necesitamos for tradicional?"
+        4. "¿Cómo evitamos bucles infinitos en while?"
+        
+        🎯 OBJETIVO DE APRENDIZAJE:
+        
+        Al final de esta sección, los estudiantes deben poder:
+        • Elegir el tipo de loop apropiado para cada situación
+        • Escribir while loops seguros (sin bucles infinitos)
+        • Usar for...of para código más limpio
+        • Aplicar estos conceptos en su proyecto personal
+        */
+    </script>
+</body>
+</html>
+            

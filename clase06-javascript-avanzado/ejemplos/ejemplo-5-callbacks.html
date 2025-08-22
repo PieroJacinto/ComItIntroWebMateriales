@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo 5: Callbacks - Clase 6</title>
+    <link rel="stylesheet" href="./ejemplo-5-callbacks.css">
+</head>
+<body>
+    <div class="container">
+        <!-- HEADER -->
+        <div class="header">
+            <h1>🎯 CALLBACKS y Métodos de Arrays</h1>
+            <p>Aprende forEach, map, filter y cómo las funciones pueden ser parámetros de otras funciones</p>
+        </div>
+
+        <!-- INTRO: QUÉ ES UN CALLBACK -->
+        <div class="demo-section">
+            <h2>🤔 Introducción: ¿Qué es un Callback?</h2>
+            <p>Un <strong>callback</strong> es una función que se pasa como parámetro a otra función.</p>
+            
+            <div class="info-box">
+                <h3>💡 Piénsalo así:</h3>
+                <p>Es como decirle a alguien: <em>"Haz esta tarea, y cuando termines, ejecuta esta función que te doy"</em></p>
+                <p><strong>Ejemplo de la vida real:</strong> "Lava los platos, y cuando termines, llámame por teléfono"</p>
+                <ul>
+                    <li>📞 <strong>Llamarte</strong> = función callback</li>
+                    <li>🍽️ <strong>Lavar platos</strong> = tarea principal</li>
+                </ul>
+            </div>
+
+            <div class="code-block">// CALLBACK SIMPLE
+function saludar(nombre) {
+    console.log(`¡Hola ${nombre}!`);
+}
+
+function procesarUsuario(nombre, callback) {
+    console.log(`Procesando usuario: ${nombre}`);
+    callback(nombre); // Ejecutar el callback
+}
+
+// Usar la función con callback
+procesarUsuario("Ana", saludar);
+// Output: Procesando usuario: Ana
+//         ¡Hola Ana!</div>
+
+            <div class="demo-controls">
+                <button class="btn" onclick="demoIntro()">🤔 Ver Callback Básico</button>
+            </div>
+
+            <div class="console-output" id="outputIntro">Presiona el botón para ver el resultado...</div>
+        </div>
+
+        <!-- DEMO 1: FOREACH -->
+        <div class="demo-section">
+            <h2>🔄 Demo 1: forEach - Iterar con Elegancia</h2>
+            <p><strong>forEach</strong> ejecuta una función para cada elemento del array. Es más elegante que el for tradicional.</p>
+            
+            <div class="comparison-grid">
+                <div class="comparison-item">
+                    <h4>📚 FOR TRADICIONAL (Clase 5)</h4>
+                    <div class="code-block">let frutas = ["🍎", "🍌", "🍊"];
+
+for (let i = 0; i < frutas.length; i++) {
+    console.log(frutas[i]);
+}</div>
+                </div>
+
+                <div class="comparison-item">
+                    <h4>✨ FOREACH (Más elegante)</h4>
+                    <div class="code-block">let frutas = ["🍎", "🍌", "🍊"];
+
+frutas.forEach(function(fruta) {
+    console.log(fruta);
+});</div>
+                </div>
+            </div>
+
+            <div class="code-block">// FOREACH con diferentes callbacks
+let tecnologias = ["HTML", "CSS", "JavaScript", "React"];
+
+// Callback 1: Mostrar simple
+tecnologias.forEach(function(tech) {
+    console.log(`Aprendiendo: ${tech}`);
+});
+
+// Callback 2: Con índice
+tecnologias.forEach(function(tech, indice) {
+    console.log(`${indice + 1}. ${tech}`);
+});
+
+// Callback 3: Arrow function (más moderno)
+tecnologias.forEach(tech => {
+    console.log(`💡 ${tech} es importante`);
+});</div>
+
+            <div class="demo-controls">
+                <button class="btn" onclick="demo1()">🔄 Probar forEach</button>
+            </div>
+
+            <div class="console-output" id="output1">Presiona el botón para ver el resultado...</div>
+        </div>
+
+        <!-- DEMO 2: MAP -->
+        <div class="demo-section">
+            <h2>🔄 Demo 2: map - Transformar Arrays</h2>
+            <p><strong>map</strong> crea un nuevo array transformando cada elemento con una función.</p>
+            
+            <div class="warning-box">
+                <h3>🎯 Diferencia clave:</h3>
+                <ul>
+                    <li><strong>forEach:</strong> Ejecuta algo, NO devuelve nada</li>
+                    <li><strong>map:</strong> Transforma elementos, DEVUELVE nuevo array</li>
+                </ul>
+            </div>
+
+            <div class="code-block">// MAP: Transformar números
+let numeros = [1, 2, 3, 4, 5];
+
+// Multiplicar por 2
+let dobles = numeros.map(function(num) {
+    return num * 2;
+});
+console.log(dobles); // [2, 4, 6, 8, 10]
+
+// MAP: Transformar strings
+let nombres = ["ana", "carlos", "maria"];
+
+let nombresMayusculas = nombres.map(function(nombre) {
+    return nombre.toUpperCase();
+});
+console.log(nombresMayusculas); // ["ANA", "CARLOS", "MARIA"]
+
+// MAP: Transformar objetos
+let estudiantes = [
+    { nombre: "Ana", nota: 85 },
+    { nombre: "Carlos", nota: 92 }
+];
+
+let estudiantesConEstado = estudiantes.map(function(estudiante) {
+    return {
+        nombre: estudiante.nombre,
+        nota: estudiante.nota,
+        aprobado: estudiante.nota >= 80
+    };
+});</div>
+
+            <div class="demo-controls">
+                <button class="btn btn-secondary" onclick="demo2()">🔄 Probar map</button>
+            </div>
+
+            <div class="console-output" id="output2">Presiona el botón para ver el resultado...</div>
+        </div>
+
+        <!-- DEMO 3: FILTER -->
+        <div class="demo-section">
+            <h2>🔍 Demo 3: filter - Filtrar Arrays</h2>
+            <p><strong>filter</strong> crea un nuevo array con elementos que cumplen una condición.</p>
+            
+            <div class="code-block">// FILTER: Números pares
+let numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+let pares = numeros.filter(function(num) {
+    return num % 2 === 0;
+});
+console.log(pares); // [2, 4, 6, 8, 10]
+
+// FILTER: Strings largos
+let palabras = ["hola", "JavaScript", "web", "programación"];
+
+let palabrasLargas = palabras.filter(function(palabra) {
+    return palabra.length > 5;
+});
+console.log(palabrasLargas); // ["JavaScript", "programación"]
+
+// FILTER: Objetos con condición
+let proyectos = [
+    { nombre: "Portfolio", completado: true },
+    { nombre: "Blog", completado: false },
+    { nombre: "Tienda", completado: true }
+];
+
+let completados = proyectos.filter(function(proyecto) {
+    return proyecto.completado === true;
+});
+
+let pendientes = proyectos.filter(function(proyecto) {
+    return proyecto.completado === false;
+});</div>
+
+            <div class="demo-controls">
+                <button class="btn btn-warning" onclick="demo3()">🔍 Probar filter</button>
+            </div>
+
+            <div class="console-output" id="output3">Presiona el botón para ver el resultado...</div>
+        </div>
+
+        <!-- DEMO 4: COMBINANDO MÉTODOS -->
+        <div class="demo-section">
+            <h2>🎭 Demo 4: Combinando Métodos (Chaining)</h2>
+            <p>Puedes <strong>encadenar</strong> métodos para operaciones complejas en una sola línea.</p>
+            
+            <div class="code-block">// EJEMPLO: Procesar lista de productos
+let productos = [
+    { nombre: "Laptop", precio: 1000, categoria: "tech" },
+    { nombre: "Mouse", precio: 50, categoria: "tech" },
+    { nombre: "Libro", precio: 25, categoria: "educacion" },
+    { nombre: "Tablet", precio: 300, categoria: "tech" }
+];
+
+// PASO A PASO:
+// 1. Filtrar solo productos tech
+let soloTech = productos.filter(p => p.categoria === "tech");
+
+// 2. Aplicar descuento del 10%
+let conDescuento = soloTech.map(p => {
+    return {
+        nombre: p.nombre,
+        precioOriginal: p.precio,
+        precioFinal: p.precio * 0.9,
+        ahorro: p.precio * 0.1
+    };
+});
+
+// 3. Calcular total ahorrado
+let totalAhorro = 0;
+conDescuento.forEach(p => {
+    totalAhorro += p.ahorro;
+});
+
+// TODO EN UNA LÍNEA (chaining):
+let resultado = productos
+    .filter(p => p.categoria === "tech")
+    .map(p => ({
+        nombre: p.nombre,
+        precio: p.precio * 0.9,
+        ahorro: p.precio * 0.1
+    }));</div>
+
+            <div class="demo-controls">
+                <button class="btn btn-info" onclick="demo4()">🎭 Ver Chaining</button>
+            </div>
+
+            <div class="console-output" id="output4">Presiona el botón para ver el resultado...</div>
+        </div>
+
+        <!-- DEMO 5: APLICACIÓN AL PROYECTO -->
+        <div class="demo-section">
+            <h2>🎯 Demo 5: Aplicación a tu Proyecto Personal</h2>
+            <p>Casos reales de cómo usarás estos métodos en tu portfolio:</p>
+            
+            <div class="code-block">// DATOS DE TU PORTFOLIO
+let miPortfolio = {
+    proyectos: [
+        { nombre: "Portfolio Personal", tecnologias: ["HTML", "CSS", "JS"], completado: true, destacado: true },
+        { nombre: "Blog Personal", tecnologias: ["HTML", "CSS"], completado: false, destacado: false },
+        { nombre: "E-commerce", tecnologias: ["HTML", "CSS", "JS", "React"], completado: true, destacado: true },
+        { nombre: "App del Clima", tecnologias: ["JS", "API"], completado: false, destacado: false }
+    ],
+    skills: ["HTML", "CSS", "JavaScript", "React", "Git", "Figma"]
+};
+
+// CASO 1: Mostrar solo proyectos completados
+function mostrarProyectosCompletados() {
+    return miPortfolio.proyectos
+        .filter(proyecto => proyecto.completado)
+        .forEach(proyecto => {
+            console.log(`✅ ${proyecto.nombre}`);
+        });
+}
+
+// CASO 2: Crear lista de tecnologías únicas
+function obtenerTecnologiasUnicas() {
+    let todasLasTecnologias = [];
+    
+    miPortfolio.proyectos.forEach(proyecto => {
+        proyecto.tecnologias.forEach(tech => {
+            if (!todasLasTecnologias.includes(tech)) {
+                todasLasTecnologias.push(tech);
+            }
+        });
+    });
+    
+    return todasLasTecnologias;
+}
+
+// CASO 3: Generar estadísticas
+function generarEstadisticas() {
+    let stats = {
+        totalProyectos: miPortfolio.proyectos.length,
+        completados: miPortfolio.proyectos.filter(p => p.completado).length,
+        destacados: miPortfolio.proyectos.filter(p => p.destacado).length,
+        tecnologiasUsadas: obtenerTecnologiasUnicas().length
+    };
+    
+    stats.porcentajeCompletado = Math.round((stats.completados / stats.totalProyectos) * 100);
+    
+    return stats;
+}</div>
+
+            <div class="demo-controls">
+                <button class="btn" onclick="demo5()">🎯 Ver Aplicación Práctica</button>
+            </div>
+
+            <div class="console-output" id="output5">Presiona el botón para ver el resultado...</div>
+        </div>
+
+        <!-- GUÍA DE CUÁNDO USAR CADA UNO -->
+        <div class="demo-section">
+            <h2>🧭 Guía: ¿Cuándo usar cada método?</h2>
+            
+            <div class="highlight-box">
+                <h3>🔄 USA forEach cuando:</h3>
+                <ul>
+                    <li>✅ Quieres hacer algo con cada elemento</li>
+                    <li>✅ NO necesitas crear un nuevo array</li>
+                    <li>✅ Solo quieres mostrar, guardar, o ejecutar una acción</li>
+                </ul>
+            </div>
+
+            <div class="highlight-box">
+                <h3>🔄 USA map cuando:</h3>
+                <ul>
+                    <li>✅ Quieres transformar cada elemento</li>
+                    <li>✅ Necesitas un nuevo array con los elementos modificados</li>
+                    <li>✅ El nuevo array tiene el mismo tamaño que el original</li>
+                </ul>
+            </div>
+
+            <div class="highlight-box">
+                <h3>🔍 USA filter cuando:</h3>
+                <ul>
+                    <li>✅ Quieres seleccionar solo algunos elementos</li>
+                    <li>✅ Tienes una condición específica</li>
+                    <li>✅ El nuevo array puede ser más pequeño que el original</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <h3>🎯 En tu proyecto usarás callbacks para:</h3>
+                <ul>
+                    <li>🎨 <strong>Mostrar proyectos:</strong> forEach para renderizar cada proyecto</li>
+                    <li>🔍 <strong>Filtrar por tecnología:</strong> filter para mostrar proyectos de JavaScript</li>
+                    <li>📊 <strong>Generar estadísticas:</strong> map para transformar datos</li>
+                    <li>🎭 <strong>Crear elementos HTML:</strong> map para generar HTML dinámico</li>
+                </ul>
+            </div>
+
+            <div class="warning-box">
+                <h3>🚀 Próxima clase:</h3>
+                <p><strong>Clase 7:</strong> Conectaremos estos métodos con el DOM para hacer tu sitio web interactivo. Usarás forEach para mostrar elementos, filter para buscar, y map para generar HTML dinámico.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Demo Intro: Callback básico
+        function demoIntro() {
+            const output = document.getElementById('outputIntro');
+            
+            let mensaje = "";
+            mensaje += "=== CALLBACK BÁSICO ===\n";
+            
+            // Simular el ejemplo del código
+            function saludar(nombre) {
+                return `¡Hola ${nombre}!`;
+            }
+            
+            function procesarUsuario(nombre, callback) {
+                const paso1 = `Procesando usuario: ${nombre}`;
+                const paso2 = callback(nombre);
+                return { paso1, paso2 };
+            }
+            
+            const resultado = procesarUsuario("Ana", saludar);
+            mensaje += resultado.paso1 + "\n";
+            mensaje += resultado.paso2 + "\n";
+            
+            mensaje += "\n💡 La función 'saludar' se pasó como parámetro\n";
+            mensaje += "y se ejecutó dentro de 'procesarUsuario'\n";
+            mensaje += "\nEsto es exactamente lo que hacen forEach, map, filter:\n";
+            mensaje += "Reciben funciones como parámetros y las ejecutan";
+            
+            output.textContent = mensaje;
+        }
+
+        // Demo 1: forEach
+        function demo1() {
+            const output = document.getElementById('output1');
+            
+            let mensaje = "";
+            const tecnologias = ["HTML", "CSS", "JavaScript", "React"];
+            
+            mensaje += "=== FOREACH DEMO ===\n";
+            mensaje += "Array: " + tecnologias.join(", ") + "\n\n";
+            
+            // Callback 1: Simple
+            mensaje += "1. Callback simple:\n";
+            tecnologias.forEach(function(tech) {
+                mensaje += `Aprendiendo: ${tech}\n`;
+            });
+            
+            // Callback 2: Con índice
+            mensaje += "\n2. Callback con índice:\n";
+            tecnologias.forEach(function(tech, indice) {
+                mensaje += `${indice + 1}. ${tech}\n`;
+            });
+            
+            // Callback 3: Arrow function
+            mensaje += "\n3. Con arrow function:\n";
+            tecnologias.forEach(tech => {
+                mensaje += `💡 ${tech} es importante\n`;
+            });
+            
+            mensaje += "\n✨ forEach NO devuelve nada, solo ejecuta la función";
+            
+            output.textContent = mensaje;
+        }
+
+        // Demo 2: map
+        function demo2() {
+            const output = document.getElementById('output2');
+            
+            let mensaje = "";
+            
+            // Ejemplo 1: Números
+            mensaje += "=== MAP DEMO ===\n";
+            const numeros = [1, 2, 3, 4, 5];
+            mensaje += "Array original: " + numeros.join(", ") + "\n";
+            
+            const dobles = numeros.map(function(num) {
+                return num * 2;
+            });
+            mensaje += "Multiplicados x2: " + dobles.join(", ") + "\n\n";
+            
+            // Ejemplo 2: Strings
+            const nombres = ["ana", "carlos", "maria"];
+            mensaje += "Nombres originales: " + nombres.join(", ") + "\n";
+            
+            const nombresMayusculas = nombres.map(function(nombre) {
+                return nombre.toUpperCase();
+            });
+            mensaje += "En mayúsculas: " + nombresMayusculas.join(", ") + "\n\n";
+            
+            // Ejemplo 3: Objetos
+            const estudiantes = [
+                { nombre: "Ana", nota: 85 },
+                { nombre: "Carlos", nota: 92 },
+                { nombre: "Luis", nota: 78 }
+            ];
+            
+            const estudiantesConEstado = estudiantes.map(function(estudiante) {
+                return {
+                    nombre: estudiante.nombre,
+                    nota: estudiante.nota,
+                    aprobado: estudiante.nota >= 80
+                };
+            });
+            
+            mensaje += "Estudiantes con estado de aprobación:\n";
+            estudiantesConEstado.forEach(est => {
+                const estado = est.aprobado ? "✅ Aprobado" : "❌ Reprobado";
+                mensaje += `${est.nombre}: ${est.nota} - ${estado}\n`;
+            });
+            
+            mensaje += "\n✨ map DEVUELVE un nuevo array transformado";
+            
+            output.textContent = mensaje;
+        }
+
+        // Demo 3: filter
+        function demo3() {
+            const output = document.getElementById('output3');
+            
+            let mensaje = "";
+            
+            // Ejemplo 1: Números pares
+            mensaje += "=== FILTER DEMO ===\n";
+            const numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+            mensaje += "Números: " + numeros.join(", ") + "\n";
+            
+            const pares = numeros.filter(function(num) {
+                return num % 2 === 0;
+            });
+            mensaje += "Solo pares: " + pares.join(", ") + "\n\n";
+            
+            // Ejemplo 2: Strings largos
+            const palabras = ["hola", "JavaScript", "web", "programación", "HTML"];
+            mensaje += "Palabras: " + palabras.join(", ") + "\n";
+            
+            const palabrasLargas = palabras.filter(function(palabra) {
+                return palabra.length > 5;
+            });
+            mensaje += "Más de 5 letras: " + palabrasLargas.join(", ") + "\n\n";
+            
+            // Ejemplo 3: Proyectos
+            const proyectos = [
+                { nombre: "Portfolio", completado: true },
+                { nombre: "Blog", completado: false },
+                { nombre: "Tienda", completado: true },
+                { nombre: "App Clima", completado: false }
+            ];
+            
+            const completados = proyectos.filter(function(proyecto) {
+                return proyecto.completado === true;
+            });
+            
+            const pendientes = proyectos.filter(function(proyecto) {
+                return proyecto.completado === false;
+            });
+            
+            mensaje += "Proyectos completados:\n";
+            completados.forEach(p => mensaje += `✅ ${p.nombre}\n`);
+            
+            mensaje += "\nProyectos pendientes:\n";
+            pendientes.forEach(p => mensaje += `⏳ ${p.nombre}\n`);
+            
+            mensaje += "\n✨ filter DEVUELVE un nuevo array filtrado";
+            
+            output.textContent = mensaje;
+        }
+
+        // Demo 4: Chaining
+        function demo4() {
+            const output = document.getElementById('output4');
+            
+            let mensaje = "";
+            
+            const productos = [
+                { nombre: "Laptop", precio: 1000, categoria: "tech" },
+                { nombre: "Mouse", precio: 50, categoria: "tech" },
+                { nombre: "Libro", precio: 25, categoria: "educacion" },
+                { nombre: "Tablet", precio: 300, categoria: "tech" },
+                { nombre: "Curso", precio: 100, categoria: "educacion" }
+            ];
+            
+            mensaje += "=== CHAINING DEMO ===\n";
+            mensaje += "Productos originales:\n";
+            productos.forEach(p => {
+                mensaje += `${p.nombre}: $${p.precio} (${p.categoria})\n`;
+            });
+            
+            // Chaining: filtrar tech y aplicar descuento
+            const techConDescuento = productos
+                .filter(p => p.categoria === "tech")
+                .map(p => {
+                    return {
+                        nombre: p.nombre,
+                        precioOriginal: p.precio,
+                        precioFinal: Math.round(p.precio * 0.9),
+                        ahorro: Math.round(p.precio * 0.1)
+                    };
+                });
+            
+            mensaje += "\n=== DESPUÉS DEL CHAINING ===\n";
+            mensaje += "Solo productos tech con 10% descuento:\n";
+            techConDescuento.forEach(p => {
+                mensaje += `${p.nombre}:\n`;
+                mensaje += `  Precio original: ${p.precioOriginal}\n`;
+                mensaje += `  Precio final: ${p.precioFinal}\n`;
+                mensaje += `  Ahorro: ${p.ahorro}\n`;
+            });
+            
+            // Calcular total de ahorro
+            const totalAhorro = techConDescuento
+                .map(p => p.ahorro)
+                .reduce((total, ahorro) => total + ahorro, 0);
+            
+            mensaje += `\nTotal ahorrado: ${totalAhorro}\n`;
+            mensaje += "\n✨ filter + map + reduce en cadena";
+            
+            output.textContent = mensaje;
+        }
+
+        // Demo 5: Aplicación práctica
+        function demo5() {
+            const output = document.getElementById('output5');
+            
+            let mensaje = "";
+            
+            const miPortfolio = {
+                proyectos: [
+                    { nombre: "Portfolio Personal", tecnologias: ["HTML", "CSS", "JS"], completado: true, destacado: true },
+                    { nombre: "Blog Personal", tecnologias: ["HTML", "CSS"], completado: false, destacado: false },
+                    { nombre: "E-commerce", tecnologias: ["HTML", "CSS", "JS", "React"], completado: true, destacado: true },
+                    { nombre: "App del Clima", tecnologias: ["JS", "API"], completado: false, destacado: false }
+                ],
+                skills: ["HTML", "CSS", "JavaScript", "React", "Git", "Figma"]
+            };
+            
+            mensaje += "=== MI PORTFOLIO - ANÁLISIS CON CALLBACKS ===\n\n";
+            
+            // Caso 1: Proyectos completados
+            mensaje += "1. PROYECTOS COMPLETADOS:\n";
+            const completados = miPortfolio.proyectos.filter(p => p.completado);
+            completados.forEach(proyecto => {
+                mensaje += `✅ ${proyecto.nombre}\n`;
+            });
+            
+            // Caso 2: Tecnologías únicas
+            mensaje += "\n2. TECNOLOGÍAS ÚNICAS USADAS:\n";
+            let todasLasTecnologias = [];
+            miPortfolio.proyectos.forEach(proyecto => {
+                proyecto.tecnologias.forEach(tech => {
+                    if (!todasLasTecnologias.includes(tech)) {
+                        todasLasTecnologias.push(tech);
+                    }
+                });
+            });
+            mensaje += todasLasTecnologias.join(", ") + "\n";
+            
+            // Caso 3: Estadísticas
+            mensaje += "\n3. ESTADÍSTICAS GENERALES:\n";
+            const stats = {
+                totalProyectos: miPortfolio.proyectos.length,
+                completados: miPortfolio.proyectos.filter(p => p.completado).length,
+                destacados: miPortfolio.proyectos.filter(p => p.destacado).length,
+                tecnologiasUsadas: todasLasTecnologias.length
+            };
+            
+            stats.porcentajeCompletado = Math.round((stats.completados / stats.totalProyectos) * 100);
+            
+            mensaje += `Total de proyectos: ${stats.totalProyectos}\n`;
+            mensaje += `Completados: ${stats.completados} (${stats.porcentajeCompletado}%)\n`;
+            mensaje += `Destacados: ${stats.destacados}\n`;
+            mensaje += `Tecnologías dominadas: ${stats.tecnologiasUsadas}\n`;
+            
+            // Caso 4: Proyectos por tecnología
+            mensaje += "\n4. PROYECTOS QUE USAN JAVASCRIPT:\n";
+            const proyectosJS = miPortfolio.proyectos
+                .filter(p => p.tecnologias.includes("JS"))
+                .map(p => p.nombre);
+            
+            proyectosJS.forEach(nombre => mensaje += `🚀 ${nombre}\n`);
+            
+            mensaje += "\n✨ Estos métodos harán tu portfolio dinámico e interactivo";
+            
+            output.textContent = mensaje;
+        }
+
+        // Inicialización
+        window.addEventListener('load', function() {
+            console.log('🎯 Ejemplo 5: Callbacks cargado correctamente');
+            
+            setTimeout(() => {
+                const outputIntro = document.getElementById('outputIntro');
+                if (outputIntro.textContent === 'Presiona el botón para ver el resultado...') {
+                    outputIntro.textContent = '👆 Presiona el botón para comenzar\n\n💡 Los callbacks son fundamentales para:\n• Métodos modernos de arrays\n• Programación funcional\n• Código más elegante y legible\n• Próxima clase: DOM interactivo';
+                }
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3: Loops Avanzados - Clase 6</title>
+    <link rel="stylesheet" href="./ejercicio-3-loops-avanzados.css">
+</head>
+<body>
+    <div class="container">
+        <!-- HEADER -->
+        <div class="header">
+            <h1>🔄 EJERCICIO 3: LOOPS AVANZADOS</h1>
+            <p>Practica while y for...of para situaciones especiales de iteración</p>
+        </div>
+
+        <!-- INSTRUCCIONES GENERALES -->
+        <div class="instrucciones">
+            <h3>📋 INSTRUCCIONES</h3>
+            <p><strong>🎯 OBJETIVO:</strong> Practicar while y for...of loops para casos específicos.</p>
+            <ul>
+                <li>✅ <strong>While:</strong> Cuando no sabes cuántas iteraciones necesitas</li>
+                <li>✅ <strong>For...of:</strong> Para iterar arrays de forma más elegante</li>
+                <li>✅ <strong>Comparar:</strong> Con for tradicional de la Clase 5</li>
+            </ul>
+        </div>
+
+        <div class="console-tip">
+            💡 Abre la consola del navegador (F12) para ver los resultados
+        </div>
+
+        <!-- EJERCICIO 1: WHILE LOOPS -->
+        <div class="ejercicio">
+            <h2>⏳ Ejercicio 1: While - Búsqueda Dinámica</h2>
+            
+            <div class="objetivo">
+                <h3>🎯 OBJETIVO:</h3>
+                <p>Usar while loop para buscar elementos cuando no sabes cuántas iteraciones necesitas.</p>
+            </div>
+
+            <div class="tiempo">⏰ TIEMPO: 8 minutos</div>
+
+            <div class="code-todo">// Ejercicio 1: While loop para búsquedas
+let colores = ["rojo", "azul", "verde", "amarillo", "morado"];
+let colorBuscado = "verde";
+
+// <span class="todo">TODO: Usar while para encontrar la posición de colorBuscado</span>
+let indice = 0;
+let encontrado = false;
+
+// Mientras no encontrado Y no hayamos llegado al final
+// - Verificar si colores[indice] === colorBuscado
+// - Si es igual: encontrado = true
+// - Si no: indice++
+// Al final mostrar: "Color [color] encontrado en posición [indice]"
+
+// <span class="todo">TODO: Buscar un color que NO existe</span>
+let colorInexistente = "rosa";
+// Usar while similar pero mostrar mensaje si no se encuentra</div>
+        </div>
+
+        <!-- EJERCICIO 2: WHILE CON CONTADOR -->
+        <div class="ejercicio">
+            <h2>🎲 Ejercicio 2: While - Contador Dinámico</h2>
+            
+            <div class="objetivo">
+                <h3>🎯 OBJETIVO:</h3>
+                <p>Usar while para contar hasta que se cumpla una condición.</p>
+            </div>
+
+            <div class="tiempo">⏰ TIEMPO: 7 minutos</div>
+
+            <div class="code-todo">// Ejercicio 2: While con contador
+let puntos = 0;
+let objetivo = 50;
+
+// <span class="todo">TODO: Usar while para sumar puntos aleatorios hasta llegar al objetivo</span>
+// Mientras puntos < objetivo:
+// - Generar número aleatorio entre 1 y 10: Math.floor(Math.random() * 10) + 1
+// - Sumar a puntos
+// - Mostrar: "Ronda X: +Y puntos (Total: Z)"
+// Al final: "¡Objetivo alcanzado en X rondas!"
+
+let ronda = 0;
+// Tu código aquí</div>
+        </div>
+
+        <!-- EJERCICIO 3: FOR...OF BÁSICO -->
+        <div class="ejercicio">
+            <h2>✨ Ejercicio 3: For...of - Iteración Elegante</h2>
+            
+            <div class="objetivo">
+                <h3>🎯 OBJETIVO:</h3>
+                <p>Comparar for tradicional vs for...of para ver la diferencia.</p>
+            </div>
+
+            <div class="tiempo">⏰ TIEMPO: 8 minutos</div>
+
+            <div class="code-todo">// Ejercicio 3: For...of vs For tradicional
+let frutas = ["🍎", "🍌", "🍊", "🍇", "🥝"];
+
+// <span class="todo">TODO: Mostrar frutas con for tradicional (de la Clase 5)</span>
+console.log("=== CON FOR TRADICIONAL ===");
+// for (let i = 0; i < frutas.length; i++) {
+//     console.log("Fruta " + (i + 1) + ": " + frutas[i]);
+// }
+
+// <span class="todo">TODO: Mostrar frutas con for...of (más elegante)</span>
+console.log("=== CON FOR...OF ===");
+// for (let fruta of frutas) {
+//     console.log("Fruta: " + fruta);
+// }
+
+// <span class="todo">TODO: ¿Cuál es más fácil de leer?</span>
+// Escribe un comentario con tu opinión</div>
+        </div>
+
+        <!-- EJERCICIO 4: FOR...OF CON OBJETOS -->
+        <div class="ejercicio">
+            <h2>📦 Ejercicio 4: For...of - Arrays de Objetos</h2>
+            
+            <div class="objetivo">
+                <h3>🎯 OBJETIVO:</h3>
+                <p>Usar for...of para procesar arrays de objetos de forma elegante.</p>
+            </div>
+
+            <div class="tiempo">⏰ TIEMPO: 10 minutos</div>
+
+            <div class="code-todo">// Ejercicio 4: For...of con objetos
+let estudiantes = [
+    { nombre: "Ana", edad: 20, materia: "JavaScript" },
+    { nombre: "Carlos", edad: 22, materia: "CSS" },
+    { nombre: "María", edad: 19, materia: "HTML" },
+    { nombre: "Luis", edad: 21, materia: "JavaScript" }
+];
+
+// <span class="todo">TODO: Mostrar información de cada estudiante con for...of</span>
+// Formato: "[nombre] tiene [edad] años y estudia [materia]"
+
+// <span class="todo">TODO: Contar estudiantes de JavaScript</span>
+let contadorJS = 0;
+// Usar for...of para recorrer y contar donde materia === "JavaScript"
+
+// <span class="todo">TODO: Encontrar el estudiante mayor</span>
+let mayorEdad = 0;
+let estudianteMayor = "";
+// Usar for...of para encontrar quien tiene más edad</div>
+        </div>
+
+        <!-- EJERCICIO 5: COMPARACIÓN PRÁCTICA -->
+        <div class="ejercicio">
+            <h2>⚖️ Ejercicio 5: ¿Cuándo usar cada loop?</h2>
+            
+            <div class="objetivo">
+                <h3>🎯 OBJETIVO:</h3>
+                <p>Aplicar el loop correcto para cada situación específica.</p>
+            </div>
+
+            <div class="tiempo">⏰ TIEMPO: 12 minutos</div>
+
+            <div class="code-todo">// Ejercicio 5: Eligir el loop correcto
+let numeros = [2, 4, 7, 8, 12, 15, 18, 20];
+
+// SITUACIÓN 1: Necesito mostrar "Número X está en posición Y"
+// <span class="todo">TODO: ¿Qué loop usarías? ¿Por qué?</span>
+// Escribe tu respuesta como comentario y luego implementa
+
+// SITUACIÓN 2: Necesito mostrar solo los números, sin posición
+// <span class="todo">TODO: ¿Qué loop usarías? ¿Por qué?</span>
+// Escribe tu respuesta e implementa
+
+// SITUACIÓN 3: Buscar el primer número mayor a 10
+// <span class="todo">TODO: ¿Qué loop usarías? ¿Por qué?</span>
+// Escribe tu respuesta e implementa
+
+// SITUACIÓN 4: Contar números pares
+// <span class="todo">TODO: ¿Qué loop usarías? ¿Por qué?</span>
+// Pista: num % 2 === 0 significa que es par</div>
+        </div>
+
+        <!-- VERIFICACIÓN -->
+        <div class="tip">
+            <h4>✅ VERIFICACIÓN:</h4>
+            <p>Si completaste todo correctamente, deberías haber usado:</p>
+            <p>• <strong>While:</strong> Para búsquedas y contadores dinámicos</p>
+            <p>• <strong>For...of:</strong> Para iterar valores sin necesidad del índice</p>
+            <p>• <strong>For tradicional:</strong> Cuando necesitas el índice específicamente</p>
+        </div>
+
+        <!-- WARNING -->
+        <div class="warning">
+            <h4>⚠️ CUIDADO CON WHILE:</h4>
+            <p>Siempre asegúrate de que la condición del while eventualmente se vuelva false, o tendrás un bucle infinito que puede bloquear tu navegador.</p>
+            <p><strong>Incluye siempre:</strong> Un contador que aumente, o una condición que cambie.</p>
+        </div>
+
+        <!-- TIPS FINALES -->
+        <div class="tip">
+            <h4>💡 Recordatorio de Sintaxis:</h4>
+            <p>• <strong>While:</strong> <code>while (condicion) { /* código */ }</code></p>
+            <p>• <strong>For...of:</strong> <code>for (let item of array) { /* código */ }</code></p>
+            <p>• <strong>For tradicional:</strong> <code>for (let i = 0; i < array.length; i++) { /* código */ }</code></p>
+        </div>
+
+        <div class="console-tip">
+            🎉 ¡Ahora dominas 3 tipos diferentes de loops! En la próxima clase verás cómo estos loops se usan con el DOM.
+        </div>
+    </div>
+
+    <script>
+        // INSTRUCCIONES PARA EL ESTUDIANTE:
+        
+        /* 
+        🎯 OBJETIVO: Dominar while y for...of loops para situaciones específicas
+        
+        📋 PASOS:
+        1. Abre la consola del navegador (F12)
+        2. Ve a la pestaña "Console"
+        3. Completa cada TODO en orden
+        4. Guarda el archivo (Ctrl+S)
+        5. Recarga la página (F5) para ver los resultados
+        
+        ⏰ TIEMPO TOTAL ESTIMADO: 45 minutos
+        
+        💡 CUÁNDO USAR CADA LOOP:
+        - WHILE: Búsquedas, contadores dinámicos, cuando no sabes cuántas veces
+        - FOR...OF: Cuando solo necesitas los valores del array
+        - FOR TRADICIONAL: Cuando necesitas el índice o control preciso
+        
+        🚨 CUIDADO:
+        En while loops, siempre asegúrate de que la condición cambie
+        para evitar bucles infinitos
+        
+        🎉 AL TERMINAR:
+        Sabrás elegir el loop perfecto para cada situación
+        */
+    </script>
+</body>
+</html>

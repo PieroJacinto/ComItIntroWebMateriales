@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo 4: JSON - Clase 6</title>
+    <link rel="stylesheet" href="./ejemplo-4-json.css">
+</head>
+<body>
+    <div class="container">
+        <!-- HEADER -->
+        <div class="header">
+            <h1>📄 JSON en JavaScript</h1>
+            <p>Aprende qué es JSON, para qué sirve, y cómo convertir entre objetos JavaScript y texto JSON</p>
+        </div>
+
+        <!-- DEMO 1: ¿QUÉ ES JSON? -->
+        <div class="demo-section">
+            <h2>🤔 Demo 1: ¿Qué es JSON?</h2>
+            <p><strong>JSON</strong> = <strong>J</strong>ava<strong>S</strong>cript <strong>O</strong>bject <strong>N</strong>otation</p>
+            <p>Es un <em>formato de texto</em> para intercambiar datos entre aplicaciones, especialmente con APIs.</p>
+            
+            <div class="info-box">
+                <h3>💡 JSON es como un "idioma universal" para datos:</h3>
+                <ul>
+                    <li>✅ <strong>Frontend ↔ Backend:</strong> Tu sitio web habla con el servidor</li>
+                    <li>✅ <strong>APIs:</strong> Datos de clima, noticias, redes sociales</li>
+                    <li>✅ <strong>Bases de datos:</strong> Guardar y leer información</li>
+                    <li>✅ <strong>Archivos:</strong> Configuraciones y datos</li>
+                </ul>
+            </div>
+
+            <div class="code-block">// OBJETO JAVASCRIPT (en memoria)
+let usuario = {
+    nombre: "Ana",
+    edad: 25,
+    activo: true
+};
+
+// TEXTO JSON (se puede enviar/guardar)
+let usuarioJSON = `{
+    "nombre": "Ana",
+    "edad": 25,
+    "activo": true
+}`;</div>
+
+            <div class="demo-controls">
+                <button class="btn" onclick="demo1()">🤔 Ver Diferencia JS vs JSON</button>
+            </div>
+
+            <div class="console-output" id="output1">Presiona el botón para ver el resultado...</div>
+        </div>
+
+        <!-- DEMO 2: JSON.stringify() -->
+        <div class="demo-section">
+            <h2>📤 Demo 2: JSON.stringify() - JS a JSON</h2>
+            <p><strong>JSON.stringify()</strong> convierte objetos JavaScript a texto JSON para enviar o guardar.</p>
+            
+            <div class="code-block">// Convertir objeto a JSON
+let producto = {
+    nombre: "Laptop",
+    precio: 1200,
+    disponible: true
+};
+
+let productoJSON = JSON.stringify(producto);
+console.log(typeof producto);     // "object"
+console.log(typeof productoJSON); // "string"
+
+// Con formato bonito
+let formatoBonito = JSON.stringify(producto, null, 2);</div>
+
+            <div class="demo-controls">
+                <button class="btn" onclick="demo2()">📤 Probar JSON.stringify()</button>
+            </div>
+
+            <div class="console-output" id="output2">Presiona el botón para ver el resultado...</div>
+            <div class="json-display" id="json2">Aquí aparecerá el JSON generado...</div>
+        </div>
+
+        <!-- DEMO 3: JSON.parse() -->
+        <div class="demo-section">
+            <h2>📥 Demo 3: JSON.parse() - JSON a JS</h2>
+            <p><strong>JSON.parse()</strong> convierte texto JSON de vuelta a objetos JavaScript para usar en tu código.</p>
+            
+            <div class="code-block">// Recibir datos JSON (como de una API)
+let climaTexto = `{
+    "ciudad": "Buenos Aires",
+    "temperatura": 25,
+    "clima": "soleado"
+}`;
+
+// Convertir a objeto JS para usar
+let clima = JSON.parse(climaTexto);
+console.log(clima.ciudad);      // "Buenos Aires"
+console.log(clima.temperatura); // 25</div>
+
+            <div class="demo-controls">
+                <button class="btn btn-secondary" onclick="demo3()">📥 Probar JSON.parse()</button>
+            </div>
+
+            <div class="console-output" id="output3">Presiona el botón para ver el resultado...</div>
+        </div>
+
+        <!-- DEMO 4: CASOS PRÁCTICOS -->
+        <div class="demo-section">
+            <h2>🎯 Demo 4: Casos Prácticos en tu Proyecto</h2>
+            <p>Ejemplos reales de cómo usarás JSON en tu sitio web:</p>
+            
+            <div class="code-block">// Perfil de usuario para tu portfolio
+let perfil = {
+    nombre: "Ana García",
+    profesion: "Desarrolladora Frontend",
+    skills: ["HTML", "CSS", "JavaScript"],
+    proyectos: [
+        { nombre: "Portfolio", completado: true },
+        { nombre: "Blog", completado: false }
+    ]
+};
+
+// Convertir a JSON para guardar
+let perfilJSON = JSON.stringify(perfil, null, 2);</div>
+
+            <div class="demo-controls">
+                <button class="btn" onclick="demo4()">🎯 Ver Casos Prácticos</button>
+            </div>
+
+            <div class="console-output" id="output4">Presiona el botón para ver el resultado...</div>
+        </div>
+
+        <!-- DEMO 5: ERRORES COMUNES -->
+        <div class="demo-section">
+            <h2>🚨 Demo 5: Errores Comunes</h2>
+            
+            <div class="warning-box">
+                <h3>⚠️ Errores típicos con JSON:</h3>
+                <ul>
+                    <li>❌ Usar comillas simples en lugar de dobles</li>
+                    <li>❌ Comas extra al final</li>
+                    <li>❌ Funciones no se convierten a JSON</li>
+                    <li>❌ undefined se pierde en la conversión</li>
+                </ul>
+            </div>
+
+            <div class="demo-controls">
+                <button class="btn btn-danger" onclick="demo5()">🚨 Ver Errores Comunes</button>
+            </div>
+
+            <div class="console-output" id="output5">Presiona el botón para ver los errores...</div>
+        </div>
+
+        <!-- GUÍA RÁPIDA -->
+        <div class="demo-section">
+            <h2>🧭 Guía Rápida: JSON</h2>
+            
+            <div class="highlight-box">
+                <h3>✅ Cuándo usar JSON:</h3>
+                <ul>
+                    <li>🌐 <strong>APIs:</strong> Recibir datos del clima, noticias, etc.</li>
+                    <li>💾 <strong>Guardar datos:</strong> Configuración, preferencias</li>
+                    <li>📂 <strong>Archivos:</strong> Información del proyecto</li>
+                    <li>🔄 <strong>Comunicación:</strong> Frontend ↔ Backend</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <h3>🎯 En tu proyecto usarás JSON para:</h3>
+                <ul>
+                    <li>📝 Datos del portfolio (proyectos, skills, info personal)</li>
+                    <li>⚙️ Configuración del sitio (colores, navegación)</li>
+                    <li>📊 Estadísticas (número de proyectos, tecnologías)</li>
+                    <li>🌐 APIs externas (GitHub repos, datos de contacto)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Demo 1: Diferencia entre JS y JSON
+        function demo1() {
+            const output = document.getElementById('output1');
+            
+            // Objeto JavaScript
+            const usuario = {
+                nombre: "Ana",
+                edad: 25,
+                activo: true,
+                skills: ["HTML", "CSS", "JS"]
+            };
+            
+            // Convertir a JSON
+            const usuarioJSON = JSON.stringify(usuario, null, 2);
+            
+            let mensaje = "";
+            mensaje += "=== OBJETO JAVASCRIPT ===\n";
+            mensaje += "Tipo: " + typeof usuario + "\n";
+            mensaje += "Nombre: " + usuario.nombre + "\n";
+            mensaje += "Skills: " + usuario.skills.join(", ") + "\n";
+            mensaje += "\n=== TEXTO JSON ===\n";
+            mensaje += "Tipo: " + typeof usuarioJSON + "\n";
+            mensaje += "Es texto que se puede:\n";
+            mensaje += "• Enviar por internet ✅\n";
+            mensaje += "• Guardar en archivos ✅\n";
+            mensaje += "• Usar en APIs ✅\n";
+            
+            output.textContent = mensaje;
+        }
+
+        // Demo 2: JSON.stringify()
+        function demo2() {
+            const output = document.getElementById('output2');
+            const jsonDisplay = document.getElementById('json2');
+            
+            const producto = {
+                nombre: "Laptop",
+                precio: 1200,
+                disponible: true,
+                categoria: "tecnologia"
+            };
+            
+            const productoJSON = JSON.stringify(producto, null, 2);
+            
+            let mensaje = "";
+            mensaje += "=== JSON.stringify() ===\n";
+            mensaje += "Objeto original: " + typeof producto + "\n";
+            mensaje += "JSON resultado: " + typeof productoJSON + "\n";
+            mensaje += "Caracteres: " + productoJSON.length + "\n";
+            mensaje += "\nJSON generado (ver abajo):\n";
+            
+            output.textContent = mensaje;
+            jsonDisplay.textContent = productoJSON;
+        }
+
+        // Demo 3: JSON.parse()
+        function demo3() {
+            const output = document.getElementById('output3');
+            
+            const climaTexto = `{
+    "ciudad": "Buenos Aires",
+    "temperatura": 25,
+    "clima": "soleado",
+    "pronostico": ["soleado", "nublado", "lluvia"]
+}`;
+            
+            const clima = JSON.parse(climaTexto);
+            
+            let mensaje = "";
+            mensaje += "=== JSON.parse() ===\n";
+            mensaje += "Texto original: " + typeof climaTexto + "\n";
+            mensaje += "Objeto resultado: " + typeof clima + "\n";
+            mensaje += "\nDatos parseados:\n";
+            mensaje += "Ciudad: " + clima.ciudad + "\n";
+            mensaje += "Temperatura: " + clima.temperatura + "°C\n";
+            mensaje += "Clima: " + clima.clima + "\n";
+            mensaje += "Próximos días: " + clima.pronostico.join(" → ") + "\n";
+            
+            output.textContent = mensaje;
+        }
+
+        // Demo 4: Casos prácticos
+        function demo4() {
+            const output = document.getElementById('output4');
+            
+            const perfil = {
+                nombre: "Ana García",
+                profesion: "Desarrolladora Frontend",
+                skills: ["HTML", "CSS", "JavaScript", "React"],
+                proyectos: [
+                    { nombre: "Portfolio", completado: true },
+                    { nombre: "Blog", completado: false },
+                    { nombre: "E-commerce", completado: true }
+                ],
+                contacto: {
+                    email: "ana@email.com",
+                    linkedin: "linkedin.com/in/ana"
+                }
+            };
+            
+            const perfilJSON = JSON.stringify(perfil, null, 2);
+            const completados = perfil.proyectos.filter(p => p.completado).length;
+            
+            let mensaje = "";
+            mensaje += "=== PERFIL DE USUARIO ===\n";
+            mensaje += "Nombre: " + perfil.nombre + "\n";
+            mensaje += "Skills: " + perfil.skills.join(", ") + "\n";
+            mensaje += "Proyectos completados: " + completados + "/" + perfil.proyectos.length + "\n";
+            mensaje += "Email: " + perfil.contacto.email + "\n";
+            mensaje += "\n=== CONVERTIDO A JSON ===\n";
+            mensaje += "Caracteres: " + perfilJSON.length + "\n";
+            mensaje += "Listo para:\n";
+            mensaje += "• Guardar en archivo ✅\n";
+            mensaje += "• Enviar a API ✅\n";
+            mensaje += "• Usar en localStorage ✅\n";
+            
+            output.textContent = mensaje;
+        }
+
+        // Demo 5: Errores comunes
+        function demo5() {
+            const output = document.getElementById('output5');
+            
+            let mensaje = "";
+            mensaje += "=== ERROR 1: JSON mal formateado ===\n";
+            
+            const malJSON = `{
+    nombre: "Ana",
+    'edad': 25,
+    activo: true,
+}`;
+            
+            try {
+                JSON.parse(malJSON);
+                mensaje += "✅ Éxito (no debería llegar aquí)\n";
+            } catch (error) {
+                mensaje += "❌ Error: " + error.message + "\n";
+            }
+            
+            mensaje += "\n=== ERROR 2: Tipos no soportados ===\n";
+            
+            const objetoComplejo = {
+                nombre: "Ana",
+                edad: 25,
+                saludar: function() { return "Hola"; },
+                datos: undefined,
+                vacio: null
+            };
+            
+            const json = JSON.stringify(objetoComplejo, null, 2);
+            const recuperado = JSON.parse(json);
+            
+            mensaje += "Original tenía:\n";
+            mensaje += "• nombre: " + typeof objetoComplejo.nombre + " ✅\n";
+            mensaje += "• edad: " + typeof objetoComplejo.edad + " ✅\n";
+            mensaje += "• saludar: " + typeof objetoComplejo.saludar + " ❌\n";
+            mensaje += "• datos: " + typeof objetoComplejo.datos + " ❌\n";
+            mensaje += "• vacio: " + typeof objetoComplejo.vacio + " ✅\n";
+            mensaje += "\nDespués de JSON:\n";
+            mensaje += "• nombre: " + typeof recuperado.nombre + " ✅\n";
+            mensaje += "• edad: " + typeof recuperado.edad + " ✅\n";
+            mensaje += "• saludar: " + typeof recuperado.saludar + " ❌ (perdida)\n";
+            mensaje += "• datos: " + typeof recuperado.datos + " ❌ (perdida)\n";
+            mensaje += "• vacio: " + typeof recuperado.vacio + " ✅\n";
+            
+            output.textContent = mensaje;
+        }
+
+        // Inicialización
+        window.addEventListener('load', function() {
+            console.log('📄 Ejemplo 4: JSON cargado correctamente');
+            
+            setTimeout(() => {
+                const output1 = document.getElementById('output1');
+                if (output1.textContent === 'Presiona el botón para ver el resultado...') {
+                    output1.textContent = '👆 Presiona el botón para comenzar\n\n💡 JSON es fundamental para:\n• APIs y comunicación web\n• Guardar y cargar datos\n• Intercambio entre aplicaciones';
+                }
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

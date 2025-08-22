@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo 2: Funciones - Clase 6</title>
+  <link rel="stylesheet" href="./ejemplo_2_funciones.css">
+</head>
+<body>
+    <div class="container">
+        <!-- HEADER -->
+        <div class="header">
+            <h1>🔧 FUNCIONES en JavaScript</h1>
+            <p>Aprende a organizar tu código en bloques reutilizables con parámetros y valores de retorno</p>
+        </div>
+
+        <!-- DEMO 1: FUNCIONES BÁSICAS -->
+        <div class="demo-section">
+            <h2>🚀 Demo 1: Funciones Básicas</h2>
+            <p>Las funciones son bloques de código reutilizables que puedes "llamar" cuando los necesites.</p>
+            
+            <div class="code-block">// Función simple sin parámetros
+function saludar() {
+    console.log("¡Hola mundo!");
+}
+
+// Función con parámetros
+function saludarPersona(nombre) {
+    console.log(`¡Hola ${nombre}!`);
+}
+
+// Función con múltiples parámetros
+function presentarPersona(nombre, edad, ciudad) {
+    console.log(`Hola, soy ${nombre}, tengo ${edad} años y vivo en ${ciudad}`);
+}
+
+// Llamar las funciones
+saludar();
+saludarPersona("Ana");
+saludarPersona("Carlos");
+presentarPersona("María", 25, "Buenos Aires");</div>
+
+            <div class="demo-controls">
+                <button class="btn" onclick="demoFuncionesBasicas()">🚀 Probar Funciones Básicas</button>
+            </div>
+
+            <div class="console-output" id="consoleFuncionesBasicas">Presiona el botón para ver el resultado...</div>
+        </div>
+
+        <!-- DEMO 2: FUNCIONES CON RETURN -->
+        <div class="demo-section">
+            <h2>↩️ Demo 2: Funciones con Return</h2>
+            <p>Las funciones pueden devolver valores usando <strong>return</strong>. Esto las hace mucho más poderosas.</p>
+            
+            <div class="code-block">// Función que devuelve un valor
+function sumar(a, b) {
+    return a + b;
+}
+
+// Función que devuelve un string
+function crearSaludo(nombre, hora) {
+    if (hora &lt; 12) {
+        return `Buenos días, ${nombre}`;
+    } else if (hora &lt; 18) {
+        return `Buenas tardes, ${nombre}`;
+    } else {
+        return `Buenas noches, ${nombre}`;
+    }
+}
+
+// Función que devuelve un objeto
+function crearPersona(nombre, edad) {
+    return {
+        nombre: nombre,
+        edad: edad,
+        esMayor: edad &gt;= 18,
+        presentarse: function() {
+            return `Hola, soy ${this.nombre} y tengo ${this.edad} años`;
+        }
+    };
+}
+
+// Usar las funciones
+let resultado = sumar(5, 3);
+console.log(`5 + 3 = ${resultado}`);
+
+let saludo = crearSaludo("Ana", 14);
+console.log(saludo);
+
+let persona = crearPersona("Carlos", 22);
+console.log(persona.presentarse());</div>
+
+            <div class="input-group">
+                <label>Primer número:</label>
+                <input type="number" id="numero1" value="5">
+                <label>Segundo número:</label>
+                <input type="number" id="numero2" value="3">
+            </div>
+
+            <div class="demo-controls">
+                <button class="btn" onclick="demoFuncionesReturn()">↩️ Probar Return</button>
+            </div>
+
+            <div class="console-output" id="consoleFuncionesReturn">Presiona el botón para ver el resultado...</div>
+        </div>
+
+        <!-- DEMO 3: ARROW FUNCTIONS -->
+        <div class="demo-section">
+            <h2>🏹 Demo 3: Arrow Functions (Funciones Flecha)</h2>
+            <p>Una forma moderna y más corta de escribir funciones usando <strong>=&gt;</strong></p>
+            
+            <div class="code-block">// Función tradicional vs Arrow Function
+
+// ❌ Función tradicional (forma larga)
+function multiplicarTradicional(a, b) {
+    return a * b;
+}
+
+// ✅ Arrow function (forma corta)
+const multiplicar = (a, b) =&gt; {
+    return a * b;
+};
+
+// ✅ Arrow function ultra-corta (una línea)
+const multiplicarCorta = (a, b) =&gt; a * b;
+
+// Más ejemplos de arrow functions
+const saludarFlecha = nombre =&gt; `¡Hola ${nombre}!`;
+const obtenerPi = () =&gt; 3.14159;
+const duplicar = x =&gt; x * 2;
+
+// Comparación de sintaxis
+console.log("=== COMPARACIÓN ===");
+console.log("Tradicional:", multiplicarTradicional(4, 5));
+console.log("Arrow normal:", multiplicar(4, 5));
+console.log("Arrow corta:", multiplicarCorta(4, 5));
+
+console.log("\n=== ARROW FUNCTIONS ÚTILES ===");
+console.log(saludarFlecha("María"));
+console.log("Pi:", obtenerPi());
+console.log("Doble de 7:", duplicar(7));</div>
+
+            <div class="demo-controls">
+                <button class="btn" onclick="demoArrowFunctions()">🏹 Probar Arrow Functions</button>
+            </div>
+
+            <div class="console-output" id="consoleArrowFunctions">Presiona el botón para ver el resultado...</div>
+        </div>
+
+        <!-- DEMO 4: SCOPE Y VARIABLES -->
+        <div class="demo-section">
+            <h2>🏠 Demo 4: Scope (Alcance de Variables)</h2>
+            <p>Las variables tienen diferentes "alcances" - dónde pueden ser usadas.</p>
+            
+            <div class="code-block">// Variables globales (disponibles en todo el código)
+let variableGlobal = "Soy global";
+const PI = 3.14159;
+
+function ejemploScope() {
+    // Variables locales (solo dentro de esta función)
+    let variableLocal = "Soy local";
+    
+    console.log("Dentro de la función:");
+    console.log("- Variable global:", variableGlobal);
+    console.log("- Variable local:", variableLocal);
+    console.log("- Constante PI:", PI);
+    
+    // Modificar variable global desde función
+    variableGlobal = "Fui modificada desde la función";
+}
+
+function otraFuncion() {
+    console.log("\nEn otra función:");
+    console.log("- Variable global:", variableGlobal);
+    // console.log(variableLocal); // ❌ ERROR! No existe aquí
+}
+
+// Parámetros también son variables locales
+function calcularArea(radio) {
+    // 'radio' solo existe dentro de esta función
+    let area = PI * radio * radio;
+    return area;
+}
+
+console.log("=== DEMOSTRACIÓN DE SCOPE ===");
+console.log("Antes:", variableGlobal);
+ejemploScope();
+console.log("Después:", variableGlobal);
+otraFuncion();
+console.log("\nÁrea de círculo (radio 5):", calcularArea(5));</div>
+
+            <div class="demo-controls">
+                <button class="btn" onclick="demoScope()">🏠 Probar Scope</button>
+            </div>
+
+            <div class="console-output" id="consoleScope">Presiona el botón para ver el resultado...</div>
+        </div>
+
+        <!-- DEMO 5: FUNCIONES COMO PARÁMETROS -->
+        <div class="demo-section">
+            <h2>📦 Demo 5: Funciones como Parámetros (Callbacks)</h2>
+            <p>¡Las funciones pueden pasarse como parámetros a otras funciones! Esto prepara el camino para métodos como forEach.</p>
+            
+            <div class="code-block">// Funciones que podemos pasar como parámetros
+function decirHola(nombre) {
+    return `¡Hola ${nombre}!`;
+}
+
+function decirAdios(nombre) {
+    return `¡Adiós ${nombre}!`;
+}
+
+// Función que recibe otra función como parámetro
+function saludarPersonas(nombres, funcionSaludo) {
+    console.log("=== SALUDANDO CON FUNCIÓN ===");
+    for (let i = 0; i &lt; nombres.length; i++) {
+        let mensaje = funcionSaludo(nombres[i]);
+        console.log(mensaje);
+    }
+}
+
+// Función que ejecuta operaciones con callback
+function procesar(numero, operacion) {
+    console.log(`Procesando ${numero}...`);
+    let resultado = operacion(numero);
+    console.log(`Resultado: ${resultado}`);
+    return resultado;
+}
+
+// Operaciones como funciones
+const duplicar = x =&gt; x * 2;
+const elevarAlCuadrado = x =&gt; x * x;
+const convertirAString = x =&gt; `El número es: ${x}`;
+
+// Ejemplos de uso
+let nombres = ["Ana", "Carlos", "María"];
+
+console.log("👋 Saludando:");
+saludarPersonas(nombres, decirHola);
+
+console.log("\n👋 Despidiendo:");
+saludarPersonas(nombres, decirAdios);
+
+console.log("\n🔢 Procesando números:");
+procesar(5, duplicar);
+procesar(4, elevarAlCuadrado);
+procesar(42, convertirAString);</div>
+
+            <div class="demo-controls">
+                <button class="btn" onclick="demoCallbacks()">📦 Probar Callbacks</button>
+            </div>
+
+            <div class="console-output" id="consoleCallbacks">Presiona el botón para ver el resultado...</div>
+        </div>
+
+        <!-- INFORMACIÓN IMPORTANTE -->
+        <div class="info-box">
+            <h3>💡 Conceptos Clave de Funciones</h3>
+            <ul>
+                <li><strong>Declaración:</strong> <code>function nombre() { }</code></li>
+                <li><strong>Parámetros:</strong> Variables que recibe la función</li>
+                <li><strong>Return:</strong> Valor que devuelve la función</li>
+                <li><strong>Arrow functions:</strong> Sintaxis moderna <code>=&gt;</code></li>
+                <li><strong>Scope:</strong> Variables locales vs globales</li>
+                <li><strong>Callbacks:</strong> Funciones como parámetros</li>
+            </ul>
+        </div>
+
+        <div class="success-box">
+            <h3>🎯 Lo que aprendiste hoy</h3>
+            <p>✅ Crear funciones con parámetros<br>
+            ✅ Usar return para devolver valores<br>
+            ✅ Arrow functions (sintaxis moderna)<br>
+            ✅ Scope (alcance de variables)<br>
+            ✅ Callbacks (funciones como parámetros)<br>
+            ✅ Organizar código de forma reutilizable</p>
+        </div>
+
+        <div class="warning-box">
+            <h3>🔄 Conexión con conceptos anteriores</h3>
+            <p><strong>Ahora que sabes funciones, puedes entender:</strong><br>
+            • <code>forEach(function(elemento) { })</code> - Función como parámetro<br>
+            • <code>map(elemento =&gt; elemento * 2)</code> - Arrow function como callback<br>
+            • <code>filter(item =&gt; item.edad &gt; 18)</code> - Return true/false en arrow function</p>
+        </div>
+    </div>
+
+    <script>
+        // ===== FUNCIONES PARA LOS DEMOS =====
+        
+        function escribirConsola(elementId, texto) {
+            document.getElementById(elementId).textContent = texto;
+        }
+
+        function demoFuncionesBasicas() {
+            let resultado = "=== DEMO FUNCIONES BÁSICAS ===\n\n";
+            
+            // Simular las funciones del ejemplo
+            function saludar() {
+                return "¡Hola mundo!";
+            }
+
+            function saludarPersona(nombre) {
+                return `¡Hola ${nombre}!`;
+            }
+
+            function presentarPersona(nombre, edad, ciudad) {
+                return `Hola, soy ${nombre}, tengo ${edad} años y vivo en ${ciudad}`;
+            }
+            
+            resultado += "🔧 Ejecutando funciones:\n\n";
+            resultado += "saludar():\n";
+            resultado += `${saludar()}\n\n`;
+            
+            resultado += 'saludarPersona("Ana"):\n';
+            resultado += `${saludarPersona("Ana")}\n\n`;
+            
+            resultado += 'saludarPersona("Carlos"):\n';
+            resultado += `${saludarPersona("Carlos")}\n\n`;
+            
+            resultado += 'presentarPersona("María", 25, "Buenos Aires"):\n';
+            resultado += `${presentarPersona("María", 25, "Buenos Aires")}\n\n`;
+            
+            resultado += "💡 Ventajas de las funciones:\n";
+            resultado += "✅ Reutilización de código\n";
+            resultado += "✅ Organización clara\n";
+            resultado += "✅ Fácil mantenimiento\n";
+            resultado += "✅ Menos repetición";
+            
+            escribirConsola('consoleFuncionesBasicas', resultado);
+        }
+
+        function demoFuncionesReturn() {
+            const num1 = parseInt(document.getElementById('numero1').value);
+            const num2 = parseInt(document.getElementById('numero2').value);
+            
+            let resultado = "=== DEMO FUNCIONES CON RETURN ===\n\n";
+            
+            // Simular las funciones del ejemplo
+            function sumar(a, b) {
+                return a + b;
+            }
+
+            function crearSaludo(nombre, hora) {
+                if (hora < 12) {
+                    return `Buenos días, ${nombre}`;
+                } else if (hora < 18) {
+                    return `Buenas tardes, ${nombre}`;
+                } else {
+                    return `Buenas noches, ${nombre}`;
+                }
+            }
+
+            function crearPersona(nombre, edad) {
+                return {
+                    nombre: nombre,
+                    edad: edad,
+                    esMayor: edad >= 18,
+                    presentarse: function() {
+                        return `Hola, soy ${this.nombre} y tengo ${this.edad} años`;
+                    }
+                };
+            }
+            
+            resultado += "🔢 Función sumar:\n";
+            let suma = sumar(num1, num2);
+            resultado += `sumar(${num1}, ${num2}) = ${suma}\n\n`;
+            
+            resultado += "👋 Función crearSaludo:\n";
+            let saludoManana = crearSaludo("Ana", 10);
+            let saludoTarde = crearSaludo("Carlos", 15);
+            let saludoNoche = crearSaludo("María", 20);
+            resultado += `10:00 → ${saludoManana}\n`;
+            resultado += `15:00 → ${saludoTarde}\n`;
+            resultado += `20:00 → ${saludoNoche}\n\n`;
+            
+            resultado += "👤 Función crearPersona:\n";
+            let persona1 = crearPersona("Elena", 17);
+            let persona2 = crearPersona("Roberto", 25);
+            resultado += `Elena (17): Mayor de edad = ${persona1.esMayor}\n`;
+            resultado += `Roberto (25): Mayor de edad = ${persona2.esMayor}\n`;
+            resultado += `${persona2.presentarse()}\n\n`;
+            
+            resultado += "🎯 Return permite:\n";
+            resultado += "✅ Obtener resultados de cálculos\n";
+            resultado += "✅ Crear datos dinámicos\n";
+            resultado += "✅ Componer funciones (usar resultado de una en otra)";
+            
+            escribirConsola('consoleFuncionesReturn', resultado);
+        }
+
+        function demoArrowFunctions() {
+            let resultado = "=== DEMO ARROW FUNCTIONS ===\n\n";
+            
+            // Funciones del ejemplo
+            function multiplicarTradicional(a, b) {
+                return a * b;
+            }
+
+            const multiplicar = (a, b) => {
+                return a * b;
+            };
+
+            const multiplicarCorta = (a, b) => a * b;
+            const saludarFlecha = nombre => `¡Hola ${nombre}!`;
+            const obtenerPi = () => 3.14159;
+            const duplicar = x => x * 2;
+            
+            resultado += "📝 Comparación de sintaxis:\n";
+            resultado += `Tradicional: multiplicarTradicional(4, 5) = ${multiplicarTradicional(4, 5)}\n`;
+            resultado += `Arrow normal: multiplicar(4, 5) = ${multiplicar(4, 5)}\n`;
+            resultado += `Arrow corta: multiplicarCorta(4, 5) = ${multiplicarCorta(4, 5)}\n\n`;
+            
+            resultado += "🏹 Arrow functions útiles:\n";
+            resultado += `saludarFlecha("María") = ${saludarFlecha("María")}\n`;
+            resultado += `obtenerPi() = ${obtenerPi()}\n`;
+            resultado += `duplicar(7) = ${duplicar(7)}\n\n`;
+            
+            resultado += "🔄 Evolución de la sintaxis:\n";
+            resultado += "Función tradicional:\n";
+            resultado += "function nombre(param) { return valor; }\n\n";
+            resultado += "Arrow function:\n";
+            resultado += "const nombre = (param) => { return valor; }\n\n";
+            resultado += "Arrow function corta:\n";
+            resultado += "const nombre = param => valor\n\n";
+            
+            resultado += "💡 Cuándo usar cada una:\n";
+            resultado += "✅ Arrow functions: Para funciones simples y callbacks\n";
+            resultado += "✅ Funciones tradicionales: Para métodos de objetos\n";
+            resultado += "✅ Arrow cortas: Para operaciones de una línea";
+            
+            escribirConsola('consoleArrowFunctions', resultado);
+        }
+
+        function demoScope() {
+            let resultado = "=== DEMO SCOPE (ALCANCE) ===\n\n";
+            
+            // Simulando el scope del ejemplo
+            let variableGlobal = "Soy global";
+            const PI = 3.14159;
+            
+            function ejemploScope() {
+                let variableLocal = "Soy local";
+                
+                let info = "";
+                info += "Dentro de la función:\n";
+                info += `- Variable global: ${variableGlobal}\n`;
+                info += `- Variable local: ${variableLocal}\n`;
+                info += `- Constante PI: ${PI}\n`;
+                
+                variableGlobal = "Fui modificada desde la función";
+                return info;
+            }
+
+            function calcularArea(radio) {
+                let area = PI * radio * radio;
+                return area;
+            }
+            
+            resultado += `📍 Antes: variableGlobal = "${variableGlobal}"\n\n`;
+            
+            resultado += ejemploScope();
+            
+            resultado += `\n📍 Después: variableGlobal = "${variableGlobal}"\n\n`;
+            
+            resultado += "🔍 En otra función:\n";
+            resultado += `- Variable global: ${variableGlobal}\n`;
+            resultado += "- Variable local: ❌ No existe aquí\n\n";
+            
+            resultado += `📐 Área de círculo (radio 5): ${calcularArea(5).toFixed(2)}\n\n`;
+            
+            resultado += "🏠 Reglas de Scope:\n";
+            resultado += "✅ Variables globales: Accesibles en todo el código\n";
+            resultado += "✅ Variables locales: Solo dentro de su función\n";
+            resultado += "✅ Parámetros: Son variables locales de la función\n";
+            resultado += "⚠️ Evita modificar variables globales cuando sea posible";
+            
+            escribirConsola('consoleScope', resultado);
+        }
+
+        function demoCallbacks() {
+            let resultado = "=== DEMO CALLBACKS (FUNCIONES COMO PARÁMETROS) ===\n\n";
+            
+            // Funciones que usaremos como callbacks
+            function decirHola(nombre) {
+                return `¡Hola ${nombre}!`;
+            }
+
+            function decirAdios(nombre) {
+                return `¡Adiós ${nombre}!`;
+            }
+
+            function saludarPersonas(nombres, funcionSaludo) {
+                let mensajes = [];
+                for (let i = 0; i < nombres.length; i++) {
+                    let mensaje = funcionSaludo(nombres[i]);
+                    mensajes.push(mensaje);
+                }
+                return mensajes;
+            }
+
+            function procesar(numero, operacion) {
+                return operacion(numero);
+            }
+
+            const duplicar = x => x * 2;
+            const elevarAlCuadrado = x => x * x;
+            const convertirAString = x => `El número es: ${x}`;
+            
+            let nombres = ["Ana", "Carlos", "María"];
+            
+            resultado += "👋 Saludando con diferentes funciones:\n";
+            let saludos = saludarPersonas(nombres, decirHola);
+            saludos.forEach(saludo => resultado += `${saludo}\n`);
+            
+            resultado += "\n👋 Despidiendo:\n";
+            let despedidas = saludarPersonas(nombres, decirAdios);
+            despedidas.forEach(despedida => resultado += `${despedida}\n`);
+            
+            resultado += "\n🔢 Procesando números con diferentes operaciones:\n";
+            resultado += `duplicar(5) = ${procesar(5, duplicar)}\n`;
+            resultado += `elevarAlCuadrado(4) = ${procesar(4, elevarAlCuadrado)}\n`;
+            resultado += `convertirAString(42) = ${procesar(42, convertirAString)}\n\n`;
+            
+            resultado += "🔮 Esto te prepara para métodos como:\n";
+            resultado += `números.forEach(numero => console.log(numero))\n`;
+            resultado += `números.map(numero => numero * 2)\n`;
+            resultado += `números.filter(numero => numero > 10)\n\n`;
+            
+            resultado += "💡 Los callbacks son funciones que:\n";
+            resultado += "✅ Se pasan como parámetros a otras funciones\n";
+            resultado += "✅ Se ejecutan en el momento apropiado\n";
+            resultado += "✅ Permiten personalizar el comportamiento\n";
+            resultado += "✅ Son la base de forEach, map, filter";
+            
+            escribirConsola('consoleCallbacks', resultado);
+        }
+
+        // ===== INICIALIZACIÓN =====
+        window.onload = function() {
+            // Mostrar mensaje inicial en todas las consolas
+            escribirConsola('consoleFuncionesBasicas', 'Presiona el botón "🚀 Probar Funciones Básicas" para ver el ejemplo...');
+            escribirConsola('consoleFuncionesReturn', 'Presiona el botón "↩️ Probar Return" para ver el ejemplo...');
+            escribirConsola('consoleArrowFunctions', 'Presiona el botón "🏹 Probar Arrow Functions" para ver el ejemplo...');
+            escribirConsola('consoleScope', 'Presiona el botón "🏠 Probar Scope" para ver el ejemplo...');
+            escribirConsola('consoleCallbacks', 'Presiona el botón "📦 Probar Callbacks" para ver el ejemplo...');
+        };
+    </script>
+</body>
+</html>

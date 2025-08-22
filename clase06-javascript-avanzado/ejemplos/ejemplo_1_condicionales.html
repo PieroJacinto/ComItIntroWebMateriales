@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo 1: Condicionales - Clase 6</title>
+    <link rel="stylesheet" href="./ejemplo_1_condicionales.css">
+</head>
+<body>
+    <div class="container">
+        <!-- HEADER -->
+        <div class="header">
+            <h1>🤔 CONDICIONALES en JavaScript</h1>
+            <p>Aprende a tomar decisiones en tu código usando if/else, switch y operadores</p>
+        </div>
+
+        <!-- DEMO 1: IF/ELSE BÁSICO -->
+        <div class="demo-section">
+            <h2>🚦 Demo 1: If/Else Básico</h2>
+            <p>Las condicionales nos permiten ejecutar código solo cuando se cumple una condición.</p>
+            
+            <div class="code-block">// Ejemplo básico: Verificar edad
+let edad = 18;
+
+if (edad &gt;= 18) {
+    console.log("✅ Eres mayor de edad");
+} else {
+    console.log("❌ Eres menor de edad");
+}
+
+// Ejemplo con entrada del usuario
+let nombre = "Ana";
+let puntuacion = 85;
+
+if (puntuacion &gt;= 90) {
+    console.log(`🏆 ${nombre}, ¡Excelente trabajo!`);
+} else if (puntuacion &gt;= 70) {
+    console.log(`👍 ${nombre}, buen trabajo`);
+} else if (puntuacion &gt;= 50) {
+    console.log(`📚 ${nombre}, puedes mejorar`);
+} else {
+    console.log(`❗ ${nombre}, necesitas estudiar más`);
+}</div>
+
+            <div class="input-group">
+                <label>Tu edad:</label>
+                <input type="number" id="edadInput" value="18" min="1" max="120">
+                <label>Tu puntuación:</label>
+                <input type="number" id="puntuacionInput" value="85" min="0" max="100">
+            </div>
+
+            <div class="demo-controls">
+                <button class="btn" onclick="demoIfElse()">🚦 Probar If/Else</button>
+            </div>
+
+            <div class="console-output" id="consoleIfElse">Presiona el botón para ver el resultado...</div>
+        </div>
+
+        <!-- DEMO 2: OPERADORES DE COMPARACIÓN -->
+        <div class="demo-section">
+            <h2>⚖️ Demo 2: Operadores de Comparación</h2>
+            <p>Los operadores nos permiten comparar valores y crear condiciones más complejas.</p>
+            
+            <div class="code-block">// Operadores de comparación
+let numero1 = 10;
+let numero2 = 5;
+let texto1 = "hola";
+let texto2 = "HOLA";
+
+console.log("=== OPERADORES DE COMPARACIÓN ===");
+console.log(`${numero1} === ${numero2} →`, numero1 === numero2);
+// false (igualdad estricta)
+
+console.log(`${numero1} !== ${numero2} →`, numero1 !== numero2);
+// true (diferente)
+
+console.log(`${numero1} &gt; ${numero2} →`, numero1 &gt; numero2);
+// true (mayor que)
+
+console.log(`${numero1} &lt;= ${numero2} →`, numero1 &lt;= numero2);
+// false (menor o igual)
+
+console.log("\n=== COMPARACIÓN DE STRINGS ===");
+console.log(`"${texto1}" === "${texto2}" →`, texto1 === texto2);
+// false (case-sensitive)
+
+console.log(`"${texto1}" === "${texto2.toLowerCase()}" →`, 
+           texto1 === texto2.toLowerCase());
+// true</div>
+
+            <div class="demo-controls">
+                <button class="btn" onclick="demoOperadores()">⚖️ Probar Operadores</button>
+            </div>
+
+            <div class="console-output" id="consoleOperadores">Presiona el botón para ver los resultados...</div>
+        </div>
+
+        <!-- DEMO 3: OPERADORES LÓGICOS -->
+        <div class="demo-section">
+            <h2>🧠 Demo 3: Operadores Lógicos</h2>
+            <p>Combina múltiples condiciones usando AND (&&), OR (||) y NOT (!).</p>
+            
+            <div class="code-block">// Operadores lógicos
+let esEstudiante = true;
+let edad = 20;
+let tieneDescuento = false;
+
+console.log("=== OPERADOR AND (&amp;&amp;) ===");
+let puedeEntrarGratis = esEstudiante &amp;&amp; edad &lt; 25;
+console.log(`Estudiante: ${esEstudiante} AND Edad &lt; 25: ${edad &lt; 25}`);
+console.log(`Resultado: ${puedeEntrarGratis}`);
+
+console.log("\n=== OPERADOR OR (||) ===");
+let tieneDescuentoEspecial = tieneDescuento || esEstudiante || edad &gt; 65;
+console.log(`Descuento: ${tieneDescuento} OR Estudiante: ${esEstudiante}`);
+console.log(`OR Senior: ${edad &gt; 65} → ${tieneDescuentoEspecial}`);
+
+console.log("\n=== OPERADOR NOT (!) ===");
+let noEsEstudiante = !esEstudiante;
+console.log(`NOT Estudiante: !${esEstudiante} → ${noEsEstudiante}`);
+
+// Ejemplo práctico: Sistema de acceso
+let esVIP = false;
+let esEmpleado = true;
+let horarioLaboral = true;
+
+let puedeAcceder = esVIP || (esEmpleado &amp;&amp; horarioLaboral);
+console.log(`\n🏢 ACCESO AL EDIFICIO:`);
+console.log(`VIP: ${esVIP} OR (Empleado: ${esEmpleado} AND Horario: ${horarioLaboral})`);
+console.log(`Resultado: ${puedeAcceder ? "✅ ACCESO PERMITIDO" : "❌ ACCESO DENEGADO"}`);
+</div>
+
+            <div class="demo-controls">
+                <button class="btn" onclick="demoLogicos()">🧠 Probar Lógicos</button>
+            </div>
+
+            <div class="console-output" id="consoleLogicos">Presiona el botón para ver los resultados...</div>
+        </div>
+
+        <!-- DEMO 4: SWITCH STATEMENT -->
+        <div class="demo-section">
+            <h2>🔀 Demo 4: Switch Statement</h2>
+            <p>Cuando tienes muchas opciones, switch es más limpio que múltiples if/else.</p>
+            
+            <div class="code-block">// Switch para múltiples opciones
+function obtenerMensajeDia(dia) {
+    let mensaje;
+    
+    switch (dia) {
+        case "lunes":
+            mensaje = "😴 Inicio de semana... ¡A trabajar!";
+            break;
+        case "martes":
+            mensaje = "💪 ¡Sigamos con energía!";
+            break;
+        case "miércoles":
+            mensaje = "⚡ Mitad de semana, ¡tú puedes!";
+            break;
+        case "jueves":
+            mensaje = "🎯 Casi llegamos al fin de semana";
+            break;
+        case "viernes":
+            mensaje = "🎉 ¡Viernes! ¡Weekend incoming!";
+            break;
+        case "sábado":
+        case "domingo":
+            mensaje = "🏖️ ¡Disfruta el fin de semana!";
+            break;
+        default:
+            mensaje = "❓ ¿Ese día existe?";
+    }
+    
+    return mensaje;
+}
+
+// Ejemplo de calificación con letras
+function obtenerCalificacion(puntuacion) {
+    let letra;
+    
+    switch (true) {
+        case (puntuacion >= 90):
+            letra = "A - Excelente 🏆";
+            break;
+        case (puntuacion >= 80):
+            letra = "B - Muy bien 👍";
+            break;
+        case (puntuacion >= 70):
+            letra = "C - Bien 📚";
+            break;
+        case (puntuacion >= 60):
+            letra = "D - Suficiente ⚠️";
+            break;
+        default:
+            letra = "F - Necesita mejorar ❗";
+    }
+    
+    return letra;
+}</div>
+
+            <div class="input-group">
+                <label>Día de la semana:</label>
+                <select id="diaSelect">
+                    <option value="lunes">Lunes</option>
+                    <option value="martes">Martes</option>
+                    <option value="miércoles">Miércoles</option>
+                    <option value="jueves">Jueves</option>
+                    <option value="viernes" selected>Viernes</option>
+                    <option value="sábado">Sábado</option>
+                    <option value="domingo">Domingo</option>
+                </select>
+            </div>
+
+            <div class="demo-controls">
+                <button class="btn" onclick="demoSwitch()">🔀 Probar Switch</button>
+            </div>
+
+            <div class="console-output" id="consoleSwitch">Presiona el botón para ver el resultado...</div>
+        </div>
+
+        <!-- DEMO 5: OPERADOR TERNARIO -->
+        <div class="demo-section">
+            <h2>❓ Demo 5: Operador Ternario</h2>
+            <p>Una forma corta de escribir if/else simple: condición ? valorSiTrue : valorSiFalse</p>
+            
+            <div class="code-block">// Operador ternario (forma corta de if/else)
+let edad = 17;
+let estado = edad >= 18 ? "Mayor de edad" : "Menor de edad";
+console.log(`Edad: ${edad} → ${estado}`);
+
+// Ejemplos prácticos
+let precio = 150;
+let descuento = precio > 100 ? precio * 0.1 : 0;
+console.log(`Precio: ${precio} → Descuento: ${descuento}`);
+
+let usuario = "invitado";
+let saludo = usuario === "admin" ? "¡Bienvenido, administrador!" : "Hola, usuario";
+console.log(`Usuario: ${usuario} → ${saludo}`);
+
+// Operador ternario anidado (¡cuidado, puede ser confuso!)
+let puntuacion = 85;
+let resultado = puntuacion >= 90 ? "Excelente" : 
+                puntuacion >= 70 ? "Bien" : 
+                "Necesita mejorar";
+console.log(`Puntuación: ${puntuacion} → ${resultado}`);
+
+// Comparación: if/else vs ternario
+// ✅ Ternario bueno (simple)
+let acceso = esVIP ? "Acceso inmediato" : "Hacer cola";
+
+// ❌ Ternario malo (muy complejo)
+// let mensaje = edad >= 18 ? (esEstudiante ? "Estudiante adulto" : "Adulto normal") : (esNiño ? "Niño" : "Adolescente");
+// ↑ Mejor usar if/else para casos complejos</div>
+
+            <div class="input-group">
+                <label>Precio del producto:</label>
+                <input type="number" id="precioInput" value="150" min="0">
+            </div>
+
+            <div class="demo-controls">
+                <button class="btn" onclick="demoTernario()">❓ Probar Ternario</button>
+            </div>
+
+            <div class="console-output" id="consoleTernario">Presiona el botón para ver el resultado...</div>
+        </div>
+
+        <!-- INFORMACIÓN IMPORTANTE -->
+        <div class="info-box">
+            <h3>💡 Consejos Importantes</h3>
+            <ul>
+                <li><strong>Usa === en lugar de ==</strong> - Es más preciso y evita errores</li>
+                <li><strong>Operador ternario</strong> - Solo para casos simples, si es complejo usa if/else</li>
+                <li><strong>Switch</strong> - Perfecto cuando tienes muchas opciones específicas</li>
+                <li><strong>Operadores lógicos</strong> - && = "Y", || = "O", ! = "NO"</li>
+            </ul>
+        </div>
+
+        <div class="success-box">
+            <h3>🎯 Lo que aprendiste hoy</h3>
+            <p>✅ If/else para tomar decisiones<br>
+            ✅ Operadores de comparación (===, !==, >, <, >=, <=)<br>
+            ✅ Operadores lógicos (&&, ||, !)<br>
+            ✅ Switch para múltiples opciones<br>
+            ✅ Operador ternario para casos simples</p>
+        </div>
+
+        <div class="warning-box">
+            <h3>🚨 En la próxima clase veremos</h3>
+            <p><strong>FUNCIONES</strong> - Aprenderemos a organizar nuestro código en bloques reutilizables que pueden recibir parámetros y devolver valores.</p>
+        </div>
+    </div>
+
+    <script>
+        // ===== FUNCIONES PARA LOS DEMOS =====
+        
+        function escribirConsola(elementId, texto) {
+            document.getElementById(elementId).textContent = texto;
+        }
+
+        function demoIfElse() {
+            const edad = parseInt(document.getElementById('edadInput').value);
+            const puntuacion = parseInt(document.getElementById('puntuacionInput').value);
+            const nombre = "Estudiante";
+            
+            let resultado = "=== DEMO IF/ELSE ===\n\n";
+            
+            // Demo 1: Verificar edad
+            resultado += `📋 Verificación de edad:\n`;
+            resultado += `Edad ingresada: ${edad} años\n`;
+            
+            if (edad >= 18) {
+                resultado += "✅ Eres mayor de edad\n";
+            } else {
+                resultado += "❌ Eres menor de edad\n";
+            }
+            
+            resultado += "\n";
+            
+            // Demo 2: Sistema de calificaciones
+            resultado += `📊 Sistema de calificaciones:\n`;
+            resultado += `Puntuación: ${puntuacion}/100\n`;
+            
+            if (puntuacion >= 90) {
+                resultado += `🏆 ${nombre}, ¡Excelente trabajo!\n`;
+            } else if (puntuacion >= 70) {
+                resultado += `👍 ${nombre}, buen trabajo\n`;
+            } else if (puntuacion >= 50) {
+                resultado += `📚 ${nombre}, puedes mejorar\n`;
+            } else {
+                resultado += `❗ ${nombre}, necesitas estudiar más\n`;
+            }
+            
+            resultado += "\n💡 Cambia los valores arriba para probar diferentes resultados!";
+            
+            escribirConsola('consoleIfElse', resultado);
+        }
+
+        function demoOperadores() {
+            let resultado = "=== OPERADORES DE COMPARACIÓN ===\n\n";
+            
+            const numero1 = 10;
+            const numero2 = 5;
+            const texto1 = "hola";
+            const texto2 = "HOLA";
+            
+            resultado += "🔢 Comparando números:\n";
+            resultado += `${numero1} === ${numero2} → ${numero1 === numero2} (igualdad estricta)\n`;
+            resultado += `${numero1} !== ${numero2} → ${numero1 !== numero2} (diferente)\n`;
+            resultado += `${numero1} > ${numero2} → ${numero1 > numero2} (mayor que)\n`;
+            resultado += `${numero1} >= ${numero2} → ${numero1 >= numero2} (mayor o igual)\n`;
+            resultado += `${numero1} < ${numero2} → ${numero1 < numero2} (menor que)\n`;
+            resultado += `${numero1} <= ${numero2} → ${numero1 <= numero2} (menor o igual)\n\n`;
+            
+            resultado += "📝 Comparando strings:\n";
+            resultado += `"${texto1}" === "${texto2}" → ${texto1 === texto2} (case-sensitive)\n`;
+            resultado += `"${texto1}" === "${texto2.toLowerCase()}" → ${texto1 === texto2.toLowerCase()} (convertido a minúsculas)\n\n`;
+            
+            resultado += "⚠️ Diferencia entre == y ===:\n";
+            resultado += `5 == "5" → ${5 == "5"} (conversión automática)\n`;
+            resultado += `5 === "5" → ${5 === "5"} (comparación estricta)\n`;
+            resultado += "👍 Siempre usa === para evitar errores!";
+            
+            escribirConsola('consoleOperadores', resultado);
+        }
+
+        function demoLogicos() {
+            let resultado = "=== OPERADORES LÓGICOS ===\n\n";
+            
+            const esEstudiante = true;
+            const edad = 20;
+            const tieneDescuento = false;
+            
+            resultado += "🎓 Ejemplo: Sistema universitario\n";
+            resultado += `Datos: esEstudiante=${esEstudiante}, edad=${edad}, tieneDescuento=${tieneDescuento}\n\n`;
+            
+            resultado += "🔹 OPERADOR AND (&&):\n";
+            const puedeEntrarGratis = esEstudiante && edad < 25;
+            resultado += `esEstudiante && edad < 25 → ${esEstudiante} && ${edad < 25} → ${puedeEntrarGratis}\n`;
+            resultado += `Resultado: ${puedeEntrarGratis ? "✅ Puede entrar gratis" : "❌ Debe pagar"}\n\n`;
+            
+            resultado += "🔹 OPERADOR OR (||):\n";
+            const tieneDescuentoEspecial = tieneDescuento || esEstudiante || edad > 65;
+            resultado += `tieneDescuento || esEstudiante || edad > 65\n`;
+            resultado += `${tieneDescuento} || ${esEstudiante} || ${edad > 65} → ${tieneDescuentoEspecial}\n`;
+            resultado += `Resultado: ${tieneDescuentoEspecial ? "✅ Tiene descuento" : "❌ Sin descuento"}\n\n`;
+            
+            resultado += "🔹 OPERADOR NOT (!):\n";
+            const noEsEstudiante = !esEstudiante;
+            resultado += `!esEstudiante → !${esEstudiante} → ${noEsEstudiante}\n\n`;
+            
+            resultado += "🏢 Ejemplo práctico: Control de acceso\n";
+            const esVIP = false;
+            const esEmpleado = true;
+            const horarioLaboral = true;
+            
+            const puedeAcceder = esVIP || (esEmpleado && horarioLaboral);
+            resultado += `esVIP || (esEmpleado && horarioLaboral)\n`;
+            resultado += `${esVIP} || (${esEmpleado} && ${horarioLaboral}) → ${puedeAcceder}\n`;
+            resultado += `Resultado: ${puedeAcceder ? "✅ ACCESO PERMITIDO" : "❌ ACCESO DENEGADO"}`;
+            
+            escribirConsola('consoleLogicos', resultado);
+        }
+
+        function demoSwitch() {
+            const dia = document.getElementById('diaSelect').value;
+            
+            let resultado = "=== DEMO SWITCH ===\n\n";
+            
+            // Función de mensaje del día (implementada aquí)
+            function obtenerMensajeDia(dia) {
+                let mensaje;
+                
+                switch (dia) {
+                    case "lunes":
+                        mensaje = "😴 Inicio de semana... ¡A trabajar!";
+                        break;
+                    case "martes":
+                        mensaje = "💪 ¡Sigamos con energía!";
+                        break;
+                    case "miércoles":
+                        mensaje = "⚡ Mitad de semana, ¡tú puedes!";
+                        break;
+                    case "jueves":
+                        mensaje = "🎯 Casi llegamos al fin de semana";
+                        break;
+                    case "viernes":
+                        mensaje = "🎉 ¡Viernes! ¡Weekend incoming!";
+                        break;
+                    case "sábado":
+                    case "domingo":
+                        mensaje = "🏖️ ¡Disfruta el fin de semana!";
+                        break;
+                    default:
+                        mensaje = "❓ ¿Ese día existe?";
+                }
+                
+                return mensaje;
+            }
+            
+            // Función de calificación
+            function obtenerCalificacion(puntuacion) {
+                let letra;
+                
+                switch (true) {
+                    case (puntuacion >= 90):
+                        letra = "A - Excelente 🏆";
+                        break;
+                    case (puntuacion >= 80):
+                        letra = "B - Muy bien 👍";
+                        break;
+                    case (puntuacion >= 70):
+                        letra = "C - Bien 📚";
+                        break;
+                    case (puntuacion >= 60):
+                        letra = "D - Suficiente ⚠️";
+                        break;
+                    default:
+                        letra = "F - Necesita mejorar ❗";
+                }
+                
+                return letra;
+            }
+            
+            resultado += `📅 Día seleccionado: ${dia}\n`;
+            resultado += `Mensaje: ${obtenerMensajeDia(dia)}\n\n`;
+            
+            resultado += "📊 Ejemplos de calificaciones:\n";
+            const puntuaciones = [95, 85, 75, 65, 45];
+            puntuaciones.forEach(puntuacion => {
+                resultado += `Puntuación ${puntuacion}: ${obtenerCalificacion(puntuacion)}\n`;
+            });
+            
+            resultado += "\n💡 Switch es perfecto cuando tienes muchas opciones específicas!";
+            resultado += "\n🔧 Cambia el día arriba para ver diferentes mensajes.";
+            
+            escribirConsola('consoleSwitch', resultado);
+        }
+
+        function demoTernario() {
+            const precio = parseFloat(document.getElementById('precioInput').value);
+            
+            let resultado = "=== OPERADOR TERNARIO ===\n\n";
+            
+            resultado += "❓ Sintaxis: condición ? valorSiTrue : valorSiFalse\n\n";
+            
+            // Ejemplo 2: Descuento por precio
+            const descuento = precio > 100 ? precio * 0.1 : 0;
+            resultado += `💰 Precio: ${precio}\n`;
+            resultado += `Descuento: ${descuento.toFixed(2)}\n`;
+            resultado += `Código: precio > 100 ? precio * 0.1 : 0\n\n`;
+            
+            // Ejemplo 3: Tipo de usuario
+            const usuario = "admin";
+            const saludo = usuario === "admin" ? "¡Bienvenido, administrador!" : "Hola, usuario";
+            resultado += `👤 Usuario: ${usuario}\n`;
+            resultado += `Saludo: ${saludo}\n`;
+            resultado += `Código: usuario === "admin" ? "¡Bienvenido, administrador!" : "Hola, usuario"\n\n`;
+            
+            // Ejemplo 4: Ternario anidado
+            const puntuacion = 85;
+            const resultado_puntuacion = puntuacion >= 90 ? "Excelente" : 
+                            puntuacion >= 70 ? "Bien" : 
+                            "Necesita mejorar";
+            resultado += `📊 Puntuación: ${puntuacion}\n`;
+            resultado += `Resultado: ${resultado_puntuacion}\n`;
+            resultado += `Código: puntuacion >= 90 ? "Excelente" : puntuacion >= 70 ? "Bien" : "Necesita mejorar"\n\n`;
+            
+            // Comparación con if/else
+            resultado += "🔄 Comparación IF/ELSE vs TERNARIO:\n\n";
+            
+            resultado += "✅ TERNARIO (bueno para casos simples):\n";
+            resultado += `let acceso = esVIP ? "Inmediato" : "Hacer cola";\n\n`;
+            
+            resultado += "❌ TERNARIO (malo para casos complejos):\n";
+            resultado += `let mensaje = edad >= 18 ? (esEstudiante ? "Estudiante adulto" : "Adulto") : "Menor";\n`;
+            resultado += "↑ Mejor usar if/else para casos complejos\n\n";
+            
+            resultado += "🎯 Regla: Si cabe en una línea y es fácil de leer, usa ternario. Si no, usa if/else.";
+            
+            escribirConsola('consoleTernario', resultado);
+        }
+
+        // ===== INICIALIZACIÓN =====
+        window.onload = function() {
+            // Mostrar mensaje inicial en todas las consolas
+            escribirConsola('consoleIfElse', 'Presiona el botón "🚦 Probar If/Else" para ver el ejemplo...');
+            escribirConsola('consoleOperadores', 'Presiona el botón "⚖️ Probar Operadores" para ver el ejemplo...');
+            escribirConsola('consoleLogicos', 'Presiona el botón "🧠 Probar Lógicos" para ver el ejemplo...');
+            escribirConsola('consoleSwitch', 'Presiona el botón "🔀 Probar Switch" para ver el ejemplo...');
+            escribirConsola('consoleTernario', 'Presiona el botón "❓ Probar Ternario" para ver el ejemplo...');
+        };
+    </script>
+</body>
+</html> 1: Edad
+            const edad = 17;
+            const estado = edad >= 18 ? "Mayor de edad" : "Menor de edad";
+            resultado += `🎂 Edad: ${edad} años\n`;
+            resultado += `Estado: ${estado}\n`;
+            resultado += `Código: edad >= 18 ? "Mayor de edad" : "Menor de edad"\n\n`;
+            
+            // Ejemplo

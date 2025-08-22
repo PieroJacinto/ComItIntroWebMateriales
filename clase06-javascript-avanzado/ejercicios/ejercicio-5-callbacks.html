@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5: Callbacks - Clase 6</title>
+   <link rel="stylesheet" href="./ejercicio-5-callbacks.css">
+</head>
+<body>
+    <div class="container">
+        <!-- HEADER -->
+        <div class="header">
+            <h1>🎯 EJERCICIO 5: CALLBACKS</h1>
+            <p>Practica forEach, map y filter para procesar arrays de forma moderna</p>
+        </div>
+
+        <!-- INSTRUCCIONES GENERALES -->
+        <div class="instrucciones">
+            <h3>📋 OBJETIVO</h3>
+            <p>Aprender los métodos modernos de arrays que usan funciones como parámetros.</p>
+            <ul>
+                <li>✅ <strong>forEach:</strong> Ejecutar algo con cada elemento</li>
+                <li>✅ <strong>map:</strong> Transformar cada elemento</li>
+                <li>✅ <strong>filter:</strong> Seleccionar elementos específicos</li>
+            </ul>
+        </div>
+
+        <div class="console-tip">
+            💡 Abre la consola del navegador (F12) para ver los resultados
+        </div>
+
+        <!-- EJERCICIO 1: FOREACH -->
+        <div class="ejercicio">
+            <h2>🔄 Ejercicio 1: forEach - Mostrar Elementos</h2>
+            
+            <div class="objetivo">
+                <h3>🎯 OBJETIVO:</h3>
+                <p>Usar forEach para recorrer un array y hacer algo con cada elemento.</p>
+            </div>
+
+            <div class="tiempo">⏰ TIEMPO: 8 minutos</div>
+
+            <div class="code-todo">// Ejercicio 1: forEach
+let colores = ["rojo", "azul", "verde", "amarillo"];
+
+// <span class="todo">TODO: Usar forEach para mostrar cada color en la consola</span>
+
+// <span class="todo">TODO: Usar forEach para mostrar cada color con su posición (índice)</span>
+
+let numeros = [5, 10, 15, 20];
+
+// <span class="todo">TODO: Usar forEach para mostrar cada número multiplicado por 2</span></div>
+        </div>
+
+        <!-- EJERCICIO 2: MAP -->
+        <div class="ejercicio">
+            <h2>🔄 Ejercicio 2: map - Transformar Elementos</h2>
+            
+            <div class="objetivo">
+                <h3>🎯 OBJETIVO:</h3>
+                <p>Usar map para crear un nuevo array transformando cada elemento.</p>
+            </div>
+
+            <div class="tiempo">⏰ TIEMPO: 10 minutos</div>
+
+            <div class="code-todo">// Ejercicio 2: map
+let precios = [100, 250, 75, 500];
+
+// <span class="todo">TODO: Crear un nuevo array con los precios con descuento del 20%</span>
+
+// <span class="todo">TODO: Mostrar el array original y el nuevo array</span>
+
+let nombres = ["ana", "carlos", "maria"];
+
+// <span class="todo">TODO: Crear un nuevo array con los nombres en mayúsculas</span>
+
+// <span class="todo">TODO: Crear un nuevo array con saludos: "Hola [nombre]"</span></div>
+        </div>
+
+        <!-- EJERCICIO 3: FILTER -->
+        <div class="ejercicio">
+            <h2>🔍 Ejercicio 3: filter - Seleccionar Elementos</h2>
+            
+            <div class="objetivo">
+                <h3>🎯 OBJETIVO:</h3>
+                <p>Usar filter para crear un nuevo array solo con elementos que cumplan una condición.</p>
+            </div>
+
+            <div class="tiempo">⏰ TIEMPO: 10 minutos</div>
+
+            <div class="code-todo">// Ejercicio 3: filter
+let edades = [15, 22, 17, 30, 12, 25];
+
+// <span class="todo">TODO: Crear un array solo con personas mayores de edad (>= 18)</span>
+
+// <span class="todo">TODO: Crear un array solo con personas menores de edad (< 18)</span>
+
+let palabras = ["hola", "JavaScript", "web", "programación", "HTML"];
+
+// <span class="todo">TODO: Crear un array solo con palabras de más de 5 letras</span>
+
+// <span class="todo">TODO: Mostrar cuántas palabras tienen más de 5 letras</span></div>
+        </div>
+
+        <!-- EJERCICIO 4: OBJETOS CON CALLBACKS -->
+        <div class="ejercicio">
+            <h2>📦 Ejercicio 4: Arrays de Objetos</h2>
+            
+            <div class="objetivo">
+                <h3>🎯 OBJETIVO:</h3>
+                <p>Aplicar forEach, map y filter a arrays de objetos (casos más reales).</p>
+            </div>
+
+            <div class="tiempo">⏰ TIEMPO: 12 minutos</div>
+
+            <div class="code-todo">// Ejercicio 4: Arrays de objetos
+let estudiantes = [
+    { nombre: "Ana", nota: 85 },
+    { nombre: "Carlos", nota: 92 },
+    { nombre: "María", nota: 78 },
+    { nombre: "Luis", nota: 88 }
+];
+
+// <span class="todo">TODO: Usar forEach para mostrar el nombre y nota de cada estudiante</span>
+
+// <span class="todo">TODO: Usar map para crear un array solo con los nombres</span>
+
+// <span class="todo">TODO: Usar filter para obtener solo estudiantes aprobados (nota >= 80)</span>
+
+// <span class="todo">TODO: Usar map para crear objetos con nombre y estado (aprobado/reprobado)</span></div>
+        </div>
+
+        <!-- EJERCICIO 5: COMBINANDO MÉTODOS -->
+        <div class="ejercicio">
+            <h2>🎭 Ejercicio 5: Combinando Métodos</h2>
+            
+            <div class="objetivo">
+                <h3>🎯 OBJETIVO:</h3>
+                <p>Usar múltiples métodos juntos para resolver problemas más complejos.</p>
+            </div>
+
+            <div class="tiempo">⏰ TIEMPO: 10 minutos</div>
+
+            <div class="code-todo">// Ejercicio 5: Combinando métodos
+let productos = [
+    { nombre: "Laptop", precio: 1000, categoria: "tecnologia" },
+    { nombre: "Camiseta", precio: 30, categoria: "ropa" },
+    { nombre: "Smartphone", precio: 800, categoria: "tecnologia" },
+    { nombre: "Pantalón", precio: 60, categoria: "ropa" }
+];
+
+// <span class="todo">TODO: Filtrar solo productos de tecnología</span>
+
+// <span class="todo">TODO: De esos productos, crear un array solo con los nombres</span>
+
+// <span class="todo">TODO: Mostrar todos los precios usando forEach</span>
+
+// <span class="todo">TODO: Crear un array con los productos más baratos (precio < 100)</span></div>
+        </div>
+
+        <!-- TIPS FINALES -->
+        <div class="tip">
+            <h4>💡 Recordatorio:</h4>
+            <p>• <strong>forEach:</strong> Hace algo con cada elemento, no devuelve nada</p>
+            <p>• <strong>map:</strong> Transforma cada elemento, devuelve nuevo array</p>
+            <p>• <strong>filter:</strong> Selecciona elementos, devuelve nuevo array</p>
+        </div>
+
+        <div class="console-tip">
+            🎉 ¡Ahora puedes procesar arrays como un profesional!
+        </div>
+    </div>
+
+    <script>
+        // INSTRUCCIONES PARA EL ESTUDIANTE:
+        
+        /* 
+        🎯 OBJETIVO: Dominar forEach, map y filter
+        
+        📋 PASOS:
+        1. Abre la consola (F12)
+        2. Completa cada TODO
+        3. Guarda y recarga para ver resultados
+        
+        ⏰ TIEMPO TOTAL: 50 minutos
+        
+        💡 CONCEPTOS:
+        - forEach = ejecutar con cada elemento
+        - map = transformar elementos
+        - filter = seleccionar elementos
+        - Todos usan funciones como parámetros
+        */
+    </script>
+</body>
+</html>
